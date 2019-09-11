@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
             if(!lookingRight)
             {
                 lookingRight = true;
-                spriteRenderer.transform.localScale += new Vector3(2, 0, 0);
+                spriteRenderer.flipX = false;
             }
             animator.SetBool("RunningR", true);
         }
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
             if(lookingRight)
             {
                 lookingRight = false;
-                spriteRenderer.transform.localScale -= new Vector3(2, 0, 0);
+                spriteRenderer.flipX = true;
             }
             animator.SetBool("RunningR", true);
         }
@@ -82,11 +82,11 @@ public class PlayerController : MonoBehaviour
 
         if (hor == 0)
         {
-            Invoke("ReserVelocity", 0.2f);
+            Invoke("ResetVelocity", 0.2f);
         }
         else
         {
-            CancelInvoke("ReserVelocity");
+            CancelInvoke("ResetVelocity");
             rig.velocity = new Vector2(hor * velX * Time.fixedDeltaTime, rig.velocity.y);
         }
      
@@ -98,9 +98,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void ReserVelocity()
+    public void ResetVelocity()
     {
         rig.velocity = new Vector2(0, rig.velocity.y);
-
     }
 }
