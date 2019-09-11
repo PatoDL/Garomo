@@ -85,7 +85,8 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.LeftControl))
         {
             animator.SetTrigger("Roll");
-            rig.MovePosition(new Vector2(transform.position.x + 20f, 0f));
+            rig.MovePosition(transform.position + transform.right * rollVel * Time.fixedDeltaTime);
+            
         }
 
         if (hor == 0)
