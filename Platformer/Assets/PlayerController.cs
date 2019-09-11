@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public float velX;
     public float velY;
+    public float rollVel;
 
     bool lookingRight;
 
@@ -18,7 +19,6 @@ public class PlayerController : MonoBehaviour
     public float distance;
     void Start()
     {
-
         rig = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("RunningR", false);
         }
 
+        
+
         Vector3 origin = new Vector3(transform.position.x-transform.localScale.x/2,transform.position.y,transform.position.z);
         Vector3 origin2 = new Vector3(transform.position.x + transform.localScale.x / 2, transform.position.y, transform.position.z);
 
@@ -79,6 +81,12 @@ public class PlayerController : MonoBehaviour
     {
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
+
+        if(Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            animator.SetTrigger("Roll");
+            rig.MovePosition(new Vector2(transform.position.x + 20f, 0f));
+        }
 
         if (hor == 0)
         {
