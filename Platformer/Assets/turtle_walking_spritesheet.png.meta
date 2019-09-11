@@ -1,23 +1,21 @@
 fileFormatVersion: 2
-guid: a9ae972079492c347b7e3f07c9f1275c
+guid: 67770830cdd5461429d853a159854def
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spritesheet trote_0
-    21300002: spritesheet trote_1
-    21300004: spritesheet trote_2
-    21300006: spritesheet trote_3
-    21300008: spritesheet trote_4
-    21300010: spritesheet trote_5
-    21300012: spritesheet trote_6
-    21300014: spritesheet trote_7
-    21300016: spritesheet trote_8
-    21300018: spritesheet trote_9
-    21300020: spritesheet trote_10
-    21300022: spritesheet trote_11
-    21300024: spritesheet trote_12
-    21300026: spritesheet trote_13
-    21300028: spritesheet trote_14
-    21300030: spritesheet trote_15
+    21300000: turtle_walking_spritesheet_0
+    21300002: turtle_walking_spritesheet_1
+    21300004: turtle_walking_spritesheet_2
+    21300006: turtle_walking_spritesheet_3
+    21300008: turtle_walking_spritesheet_4
+    21300010: turtle_walking_spritesheet_5
+    21300012: turtle_walking_spritesheet_6
+    21300014: turtle_walking_spritesheet_7
+    21300016: turtle_walking_spritesheet_8
+    21300018: turtle_walking_spritesheet_9
+    21300020: turtle_walking_spritesheet_10
+    21300022: turtle_walking_spritesheet_11
+    21300024: turtle_walking_spritesheet_12
+    21300026: turtle_walking_spritesheet_13
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -61,7 +59,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,17 +95,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -120,6 +107,17 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -155,13 +153,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet trote_0
+      name: turtle_walking_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 465
-        y: 2411
-        width: 7
-        height: 5
+        x: 0
+        y: 2500
+        width: 1400
+        height: 500
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,19 +167,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecf893b7381cbdc418addf7cb3ea8718
+      spriteID: b110640e07f9e6949b64f04c1f4dabf3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet trote_1
+      name: turtle_walking_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 490
-        y: 2408
-        width: 6
-        height: 4
+        x: 1400
+        y: 2500
+        width: 1400
+        height: 500
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,19 +187,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85f55ccdf91d9f846861789cdfa0ced1
+      spriteID: 44436d610e5c8954cbf1425c6a4c4c1d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet trote_2
+      name: turtle_walking_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 504
-        y: 2405
-        width: 6
-        height: 6
+        x: 0
+        y: 2000
+        width: 1400
+        height: 500
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,19 +207,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f464bd6d08904140a8f2b4187127f04
+      spriteID: 82a3654a38a417b4f885a9db1e41e2ab
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet trote_3
+      name: turtle_walking_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 514
-        y: 2399
-        width: 7
-        height: 8
+        x: 1400
+        y: 2000
+        width: 1400
+        height: 500
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,19 +227,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67f7be41344793945ae0bd3afa68a9f9
+      spriteID: 5dd137a40ac2962478945fb62c3fa78d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet trote_4
+      name: turtle_walking_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 12
-        y: 1840
-        width: 696
-        height: 543
+        x: 0
+        y: 1500
+        width: 1400
+        height: 500
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,19 +247,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57b13978c95035949b6a80fbf7cde9f5
+      spriteID: cb9a6b78d1171624ab63566d60bc4eb2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet trote_5
+      name: turtle_walking_spritesheet_5
       rect:
         serializedVersion: 2
-        x: 495
-        y: 2381
-        width: 6
-        height: 8
+        x: 1400
+        y: 1500
+        width: 1400
+        height: 500
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,19 +267,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4afebccf8a030ba4381b5855a9caf231
+      spriteID: 1d9ab03b089913a46a7ba6f73cfe7b96
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet trote_6
+      name: turtle_walking_spritesheet_6
       rect:
         serializedVersion: 2
-        x: 509
-        y: 2378
-        width: 5
-        height: 7
+        x: 0
+        y: 1000
+        width: 1400
+        height: 500
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,19 +287,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec705f0d2e9a03f45a075fa3cd83e019
+      spriteID: c8247e3e7d5d9d440b39eb8dc0130469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet trote_7
+      name: turtle_walking_spritesheet_7
       rect:
         serializedVersion: 2
-        x: 731
-        y: 1840
-        width: 728
-        height: 542
+        x: 1400
+        y: 1000
+        width: 1400
+        height: 500
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,19 +307,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28690e256adee8f408753ff9de9234f6
+      spriteID: d2f497534ab3edf4f809fd3d7308fb3f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet trote_8
+      name: turtle_walking_spritesheet_8
       rect:
         serializedVersion: 2
-        x: 27
-        y: 1217
-        width: 710
-        height: 558
+        x: 0
+        y: 500
+        width: 1400
+        height: 500
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,19 +327,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cef91a182bc673479e8c3fcf749f37a
+      spriteID: b2d1e9aa6ae8706449d74cdd0b86e0d6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet trote_9
+      name: turtle_walking_spritesheet_9
       rect:
         serializedVersion: 2
-        x: 753
-        y: 1255
-        width: 724
-        height: 534
+        x: 1400
+        y: 500
+        width: 1400
+        height: 500
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,59 +347,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e661adbb3a916744a9054a6b40055191
+      spriteID: f1e527cfb5d645b44a09fd386314985b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet trote_10
+      name: turtle_walking_spritesheet_10
       rect:
         serializedVersion: 2
-        x: 8
-        y: 661
-        width: 728
-        height: 542
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08854cf45f04e514d8aded37e0727bf6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet trote_11
-      rect:
-        serializedVersion: 2
-        x: 745
-        y: 664
-        width: 691
-        height: 540
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb1d63df6a1461b4c9c619799a3ecab6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet trote_12
-      rect:
-        serializedVersion: 2
-        x: 9
+        x: 0
         y: 0
-        width: 658
-        height: 604
+        width: 1400
+        height: 500
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -409,67 +367,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 725f47a13a4d1884492221787deb5702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet trote_13
-      rect:
-        serializedVersion: 2
-        x: 255
-        y: 599
-        width: 6
-        height: 7
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a9ba68670d547448839173169ea6e51
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet trote_14
-      rect:
-        serializedVersion: 2
-        x: 746
-        y: 22
-        width: 672
-        height: 580
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba500ff4a3180d9488c93d3ec58598cc
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet trote_15
-      rect:
-        serializedVersion: 2
-        x: 986
-        y: 601
-        width: 5
-        height: 5
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e7a94c86718e034ba9e7c161bf196b7
+      spriteID: 060d5673a90ffd343a3eeebaa408510b
       vertices: []
       indices: 
       edges: []
@@ -477,7 +375,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e56761159e37efa4c8571d5e08623a8d
+    spriteID: 9ce10824f46951f49a2238a31a161cac
     vertices: []
     indices: 
     edges: []
