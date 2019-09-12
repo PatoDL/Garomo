@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     public bool jumping;
 
-    public int life = 100;
+    public int life = 10;
 
     public float rayDistance;
 
@@ -158,8 +158,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.transform.tag == "Enemy")
         {
-            life -= 10;
-            Debug.Log(life);
+            life -= 1;
             if (life <= 0)
             {
 
@@ -171,5 +170,10 @@ public class PlayerController : MonoBehaviour
     {
         if (col.transform.tag == "Goal")
             Debug.Log("You Win");
+    }
+
+    public int GetLife()
+    {
+        return life;
     }
 }
