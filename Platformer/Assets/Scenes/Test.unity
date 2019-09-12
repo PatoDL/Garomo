@@ -256,13 +256,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -0.09764026, y: -0.01731965, z: 0.0017022506, w: -0.9950696}
-  m_LocalPosition: {x: -0.27987412, y: 1.828759, z: -6.375987}
-  m_LocalScale: {x: 0.18765712, y: 0.18975444, z: 0.037952397}
+  m_LocalRotation: {x: 0.17191756, y: -0, z: -0, w: 0.98511136}
+  m_LocalPosition: {x: 0.20000076, y: 6.34, z: -11.45}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1050361237}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 14.653001, y: -180.00002, z: 0}
+  m_LocalEulerAnglesHint: {x: 19.799002, y: 0, z: 0}
 --- !u!1 &747129062
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 747129065}
   - component: {fileID: 747129064}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Collider
   m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 917101572}
   m_Layer: 0
   m_Name: Turtle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -570,18 +570,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2283836, y: 0.87896}
+  m_Offset: {x: 0.8025172, y: 2.626053}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.8, y: 1.8}
+    oldSize: {x: 5.12, y: 5.12}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.04574, y: 1.6866682}
+  m_Size: {x: 3.5149655, y: 4.9878936}
   m_EdgeRadius: 0
 --- !u!212 &1050361236
 SpriteRenderer:
@@ -639,8 +639,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050361233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.79, y: 0.67, z: -19.22}
-  m_LocalScale: {x: 2.6644423, y: 2.6644423, z: 2.6644423}
+  m_LocalPosition: {x: -30.4, y: 0.67, z: -19.22}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 534669905}
   m_Father: {fileID: 0}
@@ -660,9 +660,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velX: 1000
   velY: 100
-  rollVel: 100
   jumping: 0
-  distance: 0
+  life: 100
+  rayDistance: 0
+  rolling: 0
+  rollVel: 500
 --- !u!50 &1050361239
 Rigidbody2D:
   serializedVersion: 4
@@ -902,7 +904,7 @@ GameObject:
   - component: {fileID: 1871928558}
   - component: {fileID: 1871928557}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: FloorCol
   m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1097,7 +1099,7 @@ GameObject:
   - component: {fileID: 2094662858}
   - component: {fileID: 2094662857}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Collider
   m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
