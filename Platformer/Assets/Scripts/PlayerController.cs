@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     public bool rolling;
     public float rollVel;
 
+    public GameObject punchCol;
+
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -40,6 +42,8 @@ public class PlayerController : MonoBehaviour
     {
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
+
+        //movement and sprite flipping
 
         if(hor>0)
         {
@@ -68,6 +72,8 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("RunningR", false);
         }
 
+        //jumping and obstacle checking
+
         Vector3 origin = new Vector3(transform.position.x-transform.localScale.x/2,transform.position.y,transform.position.z);
         Vector3 origin2 = new Vector3(transform.position.x + transform.localScale.x / 2, transform.position.y, transform.position.z);
 
@@ -88,6 +94,14 @@ public class PlayerController : MonoBehaviour
                 if (raycastHit2D[i].transform.tag == "floor" && jumping)
                     jumping = false;
             }
+        }
+
+        //punching
+
+        if(Input.GetKeyUp(KeyCode.F))
+        {
+            GameObject g = Instantiate(punchCol);
+            g.transform.position = new Vector3(transform.position.x + spriteRenderer.size.x * 3 / 4, transform.position.y + spriteRenderer.size.y * 3 / 4, transform.position.z);
         }
     }
 
@@ -142,14 +156,20 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.transform.tag == "Enemy")
+        if (col.transform.tag == "Enemy")
         {
             life -= 10;
             Debug.Log(life);
-            if (life<=0)
+            if (life <= 0)
             {
 
             }
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.transform.tag == "Goal")
+            Debug.Log("You Win");
     }
 }

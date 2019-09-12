@@ -43,4 +43,12 @@ public class TurtleBehaviour : MonoBehaviour
     {
         rig.velocity = new Vector3(velX * Time.fixedDeltaTime * direction.x, rig.velocity.y);
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.transform.tag=="Attack")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
