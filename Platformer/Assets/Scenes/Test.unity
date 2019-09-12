@@ -382,6 +382,7 @@ GameObject:
   - component: {fileID: 917101568}
   - component: {fileID: 917101571}
   - component: {fileID: 917101572}
+  - component: {fileID: 917101573}
   m_Layer: 0
   m_Name: Turtle
   m_TagString: Enemy
@@ -399,7 +400,7 @@ Animator:
   m_GameObject: {fileID: 917101567}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0888a80efca0d3b49b7d6b8bfa797d94, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1ca4f4aaa1e229049a220be56412eab0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -517,6 +518,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &917101573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917101567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e7f4f2b63266534185f465afe7e3707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velX: 110
+  direction: {x: 0, y: 0}
+  raycastOffset: 0
 --- !u!1 &1050361233
 GameObject:
   m_ObjectHideFlags: 0
