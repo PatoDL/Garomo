@@ -4,11 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - floor
-  - Garomo
-  - Enemy
   - Attack
+  - Garomo
   - Goal
+  - Enemy
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -19,7 +19,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - Garomo
+  - 
   - 
   - 
   - 

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Animator animator;
-    SpriteRenderer spriteRenderer;
-    Rigidbody2D rig;
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
+    public Rigidbody2D rig;
 
     public float velX;
     public float velY;
@@ -28,9 +28,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        rig = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         lookingRight = true;
         jumping = false;
         Physics2D.gravity = new Vector2(0,-40f);
@@ -44,7 +41,7 @@ public class PlayerController : MonoBehaviour
         float ver = Input.GetAxis("Vertical");
 
         //movement and sprite flipping
-
+        
         if(hor>0)
         {
             if(!lookingRight)
@@ -82,6 +79,8 @@ public class PlayerController : MonoBehaviour
         raycastHit2D[0] = Physics2D.Raycast(origin, Vector2.down * rayDistance);
         raycastHit2D[1] = Physics2D.Raycast(origin2, Vector2.down * rayDistance);
 
+        Debug.DrawRay(origin2, Vector2.down * rayDistance, Color.blue);
+
         RaycastHit2D r = Physics2D.Raycast(new Vector3(transform.position.x + spriteRenderer.size.x / 2+spriteRenderer.size.x/10, transform.position.y + spriteRenderer.size.y / 2, transform.position.z), transform.right, rayDistance);
 
         if (r && rolling)
@@ -91,7 +90,8 @@ public class PlayerController : MonoBehaviour
         {
             if (raycastHit2D[i])
             {
-                if (raycastHit2D[i].transform.tag == "floor" && jumping)
+                Debug.Log(raycastHit2D[i].transform.tag);
+                if (raycastHit2D[i].transform.tag == "Floor" && jumping)
                     jumping = false;
             }
         }
@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
 
         if (rolling)
         {
-            rig.MovePosition(transform.position+(rollFinalPos-rollInitPos)*1/6);
+            rig.MovePosition(transform.position+(rollFinalPos-rollInitPos)*1/(rollVel/12));
             if (Vector3.Distance(transform.position, rollFinalPos) < 1f)
                 rolling = false;
         }
@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
      
         if (!jumping && ver > 0)
         {
-            rig.AddForce(new Vector2(0, 20f), ForceMode2D.Impulse);
+            rig.AddForce(new Vector2(0, velY*Time.deltaTime), ForceMode2D.Impulse);
             jumping = true;
         }
     }
