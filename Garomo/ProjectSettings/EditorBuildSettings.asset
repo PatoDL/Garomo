@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/tiles.unity
+    guid: 6d09aa91e4b9edc4b861ee7afbc452eb
   m_configObjects: {}
