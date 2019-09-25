@@ -165,6 +165,11 @@ public class PlayerController : MonoBehaviour
 
             }
         }
+
+        if(col.transform.tag=="Trampoline")
+        {
+            rig.AddForce(new Vector3(velY / 5 * Time.deltaTime, velY * 4 / 3 * Time.deltaTime), ForceMode2D.Impulse);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
