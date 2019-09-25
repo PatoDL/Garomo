@@ -171,6 +171,8 @@ public class PlayerController : MonoBehaviour
     {
         if (col.transform.tag == "Goal")
             Debug.Log("You Win");
+        if (col.transform.tag == "Enemy")
+            life -= 1;
     }
 
     public int GetLife()
