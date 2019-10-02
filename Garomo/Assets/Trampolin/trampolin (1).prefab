@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7537383597632062381}
   - component: {fileID: 2804771568240922034}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: JumpCollider
   m_TagString: Trampoline
   m_Icon: {fileID: 0}
