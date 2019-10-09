@@ -1,21 +1,28 @@
 fileFormatVersion: 2
-guid: 132824da60533fd4582b560d2347adad
+guid: 1923b3d9796400049a9e1871e09484da
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: coche_low
-    100004: ruedas_low
-    400000: //RootNode
-    400002: coche_low
-    400004: ruedas_low
-    2100000: lambert2
-    2300000: coche_low
-    2300002: ruedas_low
-    3300000: coche_low
-    3300002: ruedas_low
-    4300000: coche_low
-    4300002: ruedas_low
+    100000: almohadon
+    100002: cucha
+    100004: //RootNode
+    100006: techo
+    400000: almohadon
+    400002: cucha
+    400004: //RootNode
+    400006: techo
+    2100000: lambert3
+    2100002: lambert4
+    2100004: lambert5
+    2300000: almohadon
+    2300002: cucha
+    2300004: techo
+    3300000: almohadon
+    3300002: cucha
+    3300004: techo
+    4300000: techo
+    4300002: cucha
+    4300004: almohadon
   externalObjects: {}
   materials:
     importMaterials: 1
