@@ -1,15 +1,13 @@
 fileFormatVersion: 2
-guid: 97baeaa8fb934f24a928bdabace21aa7
+guid: 116a1e7bb0100d149a7dc0e88935a123
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spritesheet idle_0
-    21300002: spritesheet idle_1
-    21300004: spritesheet idle_2
-    21300006: spritesheet idle_3
-    21300008: spritesheet idle_4
-    21300010: spritesheet idle_5
-    21300012: spritesheet idle_6
-    21300014: spritesheet idle_7
+    21300000: spritesheet damage_0
+    21300002: spritesheet damage_1
+    21300004: spritesheet damage_2
+    21300006: spritesheet damage_3
+    21300008: spritesheet damage_4
+    21300010: spritesheet damage_5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -103,47 +101,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet idle_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2274
-        width: 1039
-        height: 758
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c600d238cc42776488b201ee7d7f2306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet idle_1
-      rect:
-        serializedVersion: 2
-        x: 1039
-        y: 2274
-        width: 1039
-        height: 758
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 219c2c8c59a813347815d27d53ce1728
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet idle_2
+      name: spritesheet damage_0
       rect:
         serializedVersion: 2
         x: 0
@@ -157,13 +115,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e24304cc9754a224f80cdbad8e30dc31
+      spriteID: 0bc031f20ede0c94f91a562e7657c2d0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet idle_3
+      name: spritesheet damage_1
       rect:
         serializedVersion: 2
         x: 1039
@@ -177,13 +135,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63cc608ebd3004342b78e4f291fae9f0
+      spriteID: 152b4605fb6700343afd782c05ce6dc0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet idle_4
+      name: spritesheet damage_2
       rect:
         serializedVersion: 2
         x: 0
@@ -197,17 +155,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3ee8a357ea48f34cbbc67ecc0f32b24
+      spriteID: 6cf8037b2d13fb748b550d8e3c247328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet idle_5
+      name: spritesheet damage_3
       rect:
         serializedVersion: 2
         x: 1039
-        y: 758
+        y: 750
         width: 1039
         height: 758
       alignment: 7
@@ -217,13 +175,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01b03f5275170df4185b60bb21055d4c
+      spriteID: cdcc99c37f9ed75429e3f80a463bc08a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet idle_6
+      name: spritesheet damage_4
       rect:
         serializedVersion: 2
         x: 0
@@ -237,13 +195,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0287d4a60caad8d44b69f5b139ab6c69
+      spriteID: 14f6439c2fceb814aa3f8d3b3d73f36b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet idle_7
+      name: spritesheet damage_5
       rect:
         serializedVersion: 2
         x: 1039
@@ -257,7 +215,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7257ed4c3d7c1fa4193518c4442a1226
+      spriteID: 8d8f0265deb9235459575f9bdfb950ca
       vertices: []
       indices: 
       edges: []
@@ -265,7 +223,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 27e2a68fd7659f04e95da7a132a5c15a
+    spriteID: dbd9c345206d6cc4aa9dac57f5c06391
     vertices: []
     indices: 
     edges: []

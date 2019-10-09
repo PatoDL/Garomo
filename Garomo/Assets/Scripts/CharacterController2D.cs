@@ -28,6 +28,8 @@ public class CharacterController2D : MonoBehaviour
 		public bool wasGroundedLastFrame;
 		public bool movingDownSlope;
 		public float slopeAngle;
+        public bool nearFloor;
+        public bool recoiledLastFrame;
 
 
 		public bool hasCollision()
@@ -38,7 +40,7 @@ public class CharacterController2D : MonoBehaviour
 
 		public void reset()
 		{
-			right = left = above = below = becameGroundedThisFrame = movingDownSlope = false;
+			right = left = above = below = becameGroundedThisFrame = movingDownSlope = recoiledLastFrame = false;
 			slopeAngle = 0f;
 		}
 
@@ -136,7 +138,7 @@ public class CharacterController2D : MonoBehaviour
 
 	[HideInInspector][NonSerialized]
 	public new Transform transform;
-	[HideInInspector][NonSerialized]
+	//[HideInInspector]
 	public BoxCollider2D boxCollider;
 	[HideInInspector][NonSerialized]
 	public Rigidbody2D rigidBody2D;
@@ -146,8 +148,10 @@ public class CharacterController2D : MonoBehaviour
 	[HideInInspector][NonSerialized]
 	public Vector3 velocity;
 	public bool isGrounded { get { return collisionState.below; } }
-
-	const float kSkinWidthFloatFudgeFactor = 0.001f;
+    public bool collidedRight { get { return collisionState.right; } }
+    public bool collidedLeft { get { return collisionState.left; } }
+    public bool nearFloor { get { return collisionState.nearFloor; } }
+    const float kSkinWidthFloatFudgeFactor = 0.001f;
 
 	#endregion
 
@@ -289,6 +293,7 @@ public class CharacterController2D : MonoBehaviour
 		}
 
 		ignoreOneWayPlatformsThisFrame = false;
+            
 	}
 
 

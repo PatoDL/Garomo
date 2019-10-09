@@ -1,15 +1,13 @@
 fileFormatVersion: 2
-guid: 97baeaa8fb934f24a928bdabace21aa7
+guid: 744c1b43c3c95c940951d8b364698d0c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spritesheet idle_0
-    21300002: spritesheet idle_1
-    21300004: spritesheet idle_2
-    21300006: spritesheet idle_3
-    21300008: spritesheet idle_4
-    21300010: spritesheet idle_5
-    21300012: spritesheet idle_6
-    21300014: spritesheet idle_7
+    21300000: spritesheet crouch_0
+    21300002: spritesheet crouch_1
+    21300004: spritesheet crouch_2
+    21300006: spritesheet crouch_3
+    21300008: spritesheet crouch_4
+    21300010: spritesheet crouch_5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -103,47 +101,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet idle_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2274
-        width: 1039
-        height: 758
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c600d238cc42776488b201ee7d7f2306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet idle_1
-      rect:
-        serializedVersion: 2
-        x: 1039
-        y: 2274
-        width: 1039
-        height: 758
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 219c2c8c59a813347815d27d53ce1728
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet idle_2
+      name: spritesheet crouch_0
       rect:
         serializedVersion: 2
         x: 0
@@ -157,13 +115,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e24304cc9754a224f80cdbad8e30dc31
+      spriteID: f32d43713eb24ff4f9fa61d5eb0a9870
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet idle_3
+      name: spritesheet crouch_1
       rect:
         serializedVersion: 2
         x: 1039
@@ -177,13 +135,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63cc608ebd3004342b78e4f291fae9f0
+      spriteID: 4f06dd2bf67b49e459b36d7020fab432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet idle_4
+      name: spritesheet crouch_2
       rect:
         serializedVersion: 2
         x: 0
@@ -197,13 +155,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3ee8a357ea48f34cbbc67ecc0f32b24
+      spriteID: c55429350c4d6d6468e9d3beddf140bd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet idle_5
+      name: spritesheet crouch_3
       rect:
         serializedVersion: 2
         x: 1039
@@ -217,13 +175,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01b03f5275170df4185b60bb21055d4c
+      spriteID: 8d6df06fbb5db79469e389e9adb3e388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet idle_6
+      name: spritesheet crouch_4
       rect:
         serializedVersion: 2
         x: 0
@@ -237,13 +195,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0287d4a60caad8d44b69f5b139ab6c69
+      spriteID: 7abdaece7e6b6c44abc438e7457363e2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet idle_7
+      name: spritesheet crouch_5
       rect:
         serializedVersion: 2
         x: 1039
@@ -257,7 +215,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7257ed4c3d7c1fa4193518c4442a1226
+      spriteID: 6a96650811b3e8a47aad2a5336f14bea
       vertices: []
       indices: 
       edges: []
@@ -265,7 +223,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 27e2a68fd7659f04e95da7a132a5c15a
+    spriteID: 9cfded52d56eaed4a8aa54ac27b01fd0
     vertices: []
     indices: 
     edges: []
