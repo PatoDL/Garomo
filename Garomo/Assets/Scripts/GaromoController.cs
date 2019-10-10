@@ -34,6 +34,8 @@ public class GaromoController : MonoBehaviour
 
     bool canMove = true;
 
+    Vector3 startPos;
+
 	void Awake()
 	{
 		_animator = GetComponent<Animator>();
@@ -43,6 +45,8 @@ public class GaromoController : MonoBehaviour
 		_controller.onControllerCollidedEvent += onControllerCollider;
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
+
+        startPos = transform.position;
 	}
 
 
@@ -86,15 +90,13 @@ public class GaromoController : MonoBehaviour
 	// the Update loop contains a very simple example of moving the character around and controlling the animation
 	void Update()
 	{
-        if (!IsInvoking())
+
+        if (_controller.isGrounded)
         {
-            if (_controller.isGrounded)
-            {
-                _velocity.y = 0;
-                _animator.SetBool("Jumping", false);
-                _animator.SetBool("Falling", false);
-            }
+            _velocity.y = 0;
+            _animator.SetBool("Jumping", false);
         }
+        
         if (canMove)
         {
             if (Input.GetKey(KeyCode.RightArrow))
@@ -130,15 +132,16 @@ public class GaromoController : MonoBehaviour
 		// we can only jump whilst grounded
 		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) )
 		{
-            //Invoke("Jump", 0.1f);
             Jump();
             _animator.SetBool("Jumping", true);
             _animator.SetBool("Running", false);
         }
 
-        if(!_controller.isGrounded && /*_velocity.y > 0 &&*/ _controller.nearFloor)
+        if(!_controller.isGrounded && _controller.nearFloor)
         {
+            _animator.SetBool("Jumping", false);
             _animator.SetBool("Falling", true);
+            _animator.SetBool("Running", false);
         }
 
         if(enemyCollision)
@@ -170,17 +173,26 @@ public class GaromoController : MonoBehaviour
         // this lets us jump down through one way platforms
         if (_controller.isGrounded && Input.GetKey(KeyCode.DownArrow))
         {
-            _velocity.y *= 3f;
-            //_controller.ignoreOneWayPlatformsThisFrame = true;
             if (_controller.boxCollider != crouchCollider)
             { 
                 _controller.boxCollider = crouchCollider;
                 _controller.recalculateDistanceBetweenRays();
                 _animator.SetBool("Crouching", true);
             }
+            if(Input.GetKey(KeyCode.UpArrow))
+            {
+                if (_controller.boxCollider != idleCollider)
+                {
+                    _controller.boxCollider = idleCollider;
+                    _controller.recalculateDistanceBetweenRays();
+                    _animator.SetBool("Jumping", true);
+                    _animator.SetBool("Crouching", false);
+                    _animator.SetBool("Jumping", false);
+                }
+            }
 		}
 
-        if(_controller.isGrounded && Input.GetKeyUp(KeyCode.DownArrow))
+        if (Input.GetKeyUp(KeyCode.DownArrow))
         {
             if (_controller.boxCollider != idleCollider)
             {
@@ -190,10 +202,12 @@ public class GaromoController : MonoBehaviour
             }
         }
 
-            _controller.move( _velocity * Time.deltaTime );
+        _controller.move( _velocity * Time.deltaTime );
 
 		// grab our current _velocity to use as a base for all calculations
 		_velocity = _controller.velocity;
+
+        Debug.Log(_controller.isGrounded);
 	}
 
     public void Restart()
@@ -206,14 +220,25 @@ public class GaromoController : MonoBehaviour
         if (col.transform.tag == "Trampoline")
         {
             _velocity.y = Mathf.Sqrt(8f * jumpHeight * -gravity);
+            _animator.SetBool("Jumping", true);
+            _animator.SetBool("Running", false);
             _controller.move(_velocity * Time.deltaTime);
+        }
+        else if(col.transform.tag == "LimitTrigger")
+        {
+            transform.position = startPos;
+            _velocity.y = 0;
+            _controller.move(_velocity * Time.deltaTime);
+        }
+        else if (col.transform.tag == "EndlevelTrigger")
+        {
+            Debug.Log("Ganaste");
         }
     }
 
     public void Jump()
     {
         _velocity.y = Mathf.Sqrt(4f * jumpHeight * -gravity);
-        Debug.Log("jump");
     }
 
     void ValidateMovement()

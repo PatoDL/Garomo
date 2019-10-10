@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Attack
   - Trampoline
+  - LimitTrigger
+  - EndlevelTrigger
   layers:
   - Default
   - TransparentFX

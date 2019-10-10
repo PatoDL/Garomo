@@ -29,7 +29,6 @@ public class CharacterController2D : MonoBehaviour
 		public bool movingDownSlope;
 		public float slopeAngle;
         public bool nearFloor;
-        public bool recoiledLastFrame;
 
 
 		public bool hasCollision()
@@ -40,7 +39,7 @@ public class CharacterController2D : MonoBehaviour
 
 		public void reset()
 		{
-			right = left = above = below = becameGroundedThisFrame = movingDownSlope = recoiledLastFrame = false;
+			right = left = above = below = becameGroundedThisFrame = movingDownSlope = nearFloor = false;
 			slopeAngle = 0f;
 		}
 
@@ -479,61 +478,81 @@ public class CharacterController2D : MonoBehaviour
 	}
 
 
-	void moveVertically( ref Vector3 deltaMovement )
-	{
-		var isGoingUp = deltaMovement.y > 0;
-		var rayDistance = Mathf.Abs( deltaMovement.y ) + _skinWidth;
-		var rayDirection = isGoingUp ? Vector2.up : -Vector2.up;
-		var initialRayOrigin = isGoingUp ? _raycastOrigins.topLeft : _raycastOrigins.bottomLeft;
+    void moveVertically(ref Vector3 deltaMovement)
+    {
+        var isGoingUp = deltaMovement.y > 0;
+        var rayDistance = Mathf.Abs(deltaMovement.y) + _skinWidth;
+            var rayNearDistance = deltaMovement.y + _skinWidth * 200;
+        var rayNearDirection = -Vector2.up;
+        var rayDirection = isGoingUp ? Vector2.up : -Vector2.up;
+        var initialRayOrigin = isGoingUp ? _raycastOrigins.topLeft : _raycastOrigins.bottomLeft;
 
-		// apply our horizontal deltaMovement here so that we do our raycast from the actual position we would be in if we had moved
-		initialRayOrigin.x += deltaMovement.x;
+        // apply our horizontal deltaMovement here so that we do our raycast from the actual position we would be in if we had moved
+        initialRayOrigin.x += deltaMovement.x;
 
-		// if we are moving up, we should ignore the layers in oneWayPlatformMask
-		var mask = platformMask;
-		if( ( isGoingUp && !collisionState.wasGroundedLastFrame ) || ignoreOneWayPlatformsThisFrame )
-			mask &= ~oneWayPlatformMask;
+        // if we are moving up, we should ignore the layers in oneWayPlatformMask
+        var mask = platformMask;
+        if ((isGoingUp && !collisionState.wasGroundedLastFrame) || ignoreOneWayPlatformsThisFrame)
+            mask &= ~oneWayPlatformMask;
 
-		for( var i = 0; i < totalVerticalRays; i++ )
-		{
-			var ray = new Vector2( initialRayOrigin.x + i * _horizontalDistanceBetweenRays, initialRayOrigin.y );
+        for (var i = 0; i < totalVerticalRays; i++)
+        {
+            var ray = new Vector2(initialRayOrigin.x + i * _horizontalDistanceBetweenRays, initialRayOrigin.y);
 
-			DrawRay( ray, rayDirection * rayDistance, Color.red );
-			_raycastHit = Physics2D.Raycast( ray, rayDirection, rayDistance, mask );
-			if( _raycastHit )
-			{
-				// set our new deltaMovement and recalculate the rayDistance taking it into account
-				deltaMovement.y = _raycastHit.point.y - ray.y;
-				rayDistance = Mathf.Abs( deltaMovement.y );
+            DrawRay(ray, rayDirection * rayDistance, Color.red);
+            _raycastHit = Physics2D.Raycast(ray, rayDirection, rayDistance, mask);
+            if (_raycastHit)
+            {
+                // set our new deltaMovement and recalculate the rayDistance taking it into account
+                deltaMovement.y = _raycastHit.point.y - ray.y;
+                rayDistance = Mathf.Abs(deltaMovement.y);
 
-				// remember to remove the skinWidth from our deltaMovement
-				if( isGoingUp )
-				{
-					deltaMovement.y -= _skinWidth;
-					collisionState.above = true;
-				}
-				else
-				{
-					deltaMovement.y += _skinWidth;
-					collisionState.below = true;
-				}
+                // remember to remove the skinWidth from our deltaMovement
+                if (isGoingUp)
+                {
+                    deltaMovement.y -= _skinWidth;
+                    collisionState.above = true;
+                }
+                else
+                {
+                    deltaMovement.y += _skinWidth;
+                    collisionState.below = true;
+                }
 
-				_raycastHitsThisFrame.Add( _raycastHit );
+                _raycastHitsThisFrame.Add(_raycastHit);
 
-				// this is a hack to deal with the top of slopes. if we walk up a slope and reach the apex we can get in a situation
-				// where our ray gets a hit that is less then skinWidth causing us to be ungrounded the next frame due to residual velocity.
-				if( !isGoingUp && deltaMovement.y > 0.00001f )
-					_isGoingUpSlope = true;
+                // this is a hack to deal with the top of slopes. if we walk up a slope and reach the apex we can get in a situation
+                // where our ray gets a hit that is less then skinWidth causing us to be ungrounded the next frame due to residual velocity.
+                if (!isGoingUp && deltaMovement.y > 0.00001f)
+                    _isGoingUpSlope = true;
 
-				// we add a small fudge factor for the float operations here. if our rayDistance is smaller
-				// than the width + fudge bail out because we have a direct impact
-				if( rayDistance < _skinWidth + kSkinWidthFloatFudgeFactor )
-					break;
-			}
-		}
-	}
+                // we add a small fudge factor for the float operations here. if our rayDistance is smaller
+                // than the width + fudge bail out because we have a direct impact
+                if (rayDistance < _skinWidth + kSkinWidthFloatFudgeFactor)
+                    break;
+            }
+        }
 
+        var nearMask = platformMask;
+        nearMask &= triggerMask;
 
+        if (!isGoingUp)
+        {
+            for (var i = 0; i < totalVerticalRays; i++)
+            {
+                var ray = new Vector2(initialRayOrigin.x + i * _horizontalDistanceBetweenRays, initialRayOrigin.y);
+
+                DrawRay(ray, rayNearDirection * rayNearDistance, Color.blue);
+                _raycastHit = Physics2D.Raycast(ray, rayNearDirection, rayNearDistance, mask);
+
+                if (_raycastHit)
+                {
+                        if(_raycastHit.distance < 90f)
+                            collisionState.nearFloor = true;
+                }
+            }
+        }
+    }
 	/// <summary>
 	/// checks the center point under the BoxCollider2D for a slope. If it finds one then the deltaMovement is adjusted so that
 	/// the player stays grounded and the slopeSpeedModifier is taken into account to speed up movement.
