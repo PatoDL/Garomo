@@ -43,7 +43,7 @@ public class FlamencoBehaviour : MonoBehaviour
             shotTimer = 0;
             GameObject go = Instantiate(shot);
             go.transform.position = transform.position;
-            go.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 100 * Time.deltaTime, 0);
+            go.GetComponent<Rigidbody2D>().velocity = new Vector3(0, speed*2/3 * Time.deltaTime, 0);
         }
     }
 }
