@@ -16,7 +16,10 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Q))
+        {
+            cheatsPanel.gameObject.SetActive(true);
+        }
     }
 
     public void Touch()
