@@ -15,6 +15,9 @@ public class GaromoController : MonoBehaviour
     public int life = 100;
 
     public float recoil = 0f;
+
+    public float rollVel = 0f;
+
     int recoiled = 0;
 
     bool enemyCollidedlastFrame = false;
@@ -28,10 +31,14 @@ public class GaromoController : MonoBehaviour
 	private RaycastHit2D _lastControllerColliderHit;
 	private Vector3 _velocity;
 
+    bool rolled = false;
+    float rollTimer = 0.0f;
+
+    private bool immunity = false;
+    private float enemyCollisionTimer = 0.0f;
+
     public BoxCollider2D crouchCollider;
-
     public BoxCollider2D idleCollider;
-
     bool canMove = true;
 
     Vector3 startPos;
@@ -58,15 +65,10 @@ public class GaromoController : MonoBehaviour
 		if( hit.normal.y == 1f )
 			return;
 
-        if(hit.transform.tag == "Enemy" && !enemyCollidedlastFrame)
+        if(hit.transform.tag == "Enemy" && !immunity)
         {
-            enemyCollision = true;
+            enemyCollision = immunity = true;
         }
-        else if(enemyCollidedlastFrame)
-        {
-            enemyCollidedlastFrame = false;
-        }
-
 
         // logs any collider hits if uncommented. it gets noisy so it is commented out for the demo
         //Debug.Log( "flags: " + _controller.collisionState + ", hit.normal: " + hit.normal );
@@ -90,6 +92,25 @@ public class GaromoController : MonoBehaviour
 	// the Update loop contains a very simple example of moving the character around and controlling the animation
 	void Update()
 	{
+        if(immunity)
+        {
+            enemyCollisionTimer += Time.deltaTime;
+            if(enemyCollisionTimer>1.5f)
+            {
+                immunity = false;
+                enemyCollisionTimer = 0.0f;
+            }
+        }
+
+        if(rolled)
+        {
+            rollTimer += Time.deltaTime;
+            if(rollTimer>1.5f)
+            {
+                rollTimer = 0f;
+                rolled = false;
+            }
+        }
 
         if (_controller.isGrounded)
         {
@@ -152,15 +173,33 @@ public class GaromoController : MonoBehaviour
             if(_controller.collidedLeft)
             {
                 _velocity.x += recoil;
+                Debug.Log("left");
             }
             else if(_controller.collidedRight)
             {
                 _velocity.x -= recoil;
+                Debug.Log("right");
             }
-            Debug.Log("recoil");
             canMove = false;
             Invoke("ValidateMovement",0.5f);
+            Debug.Log(_controller.collidedLeft);
+            Debug.Log(_controller.collidedRight);
         }
+
+        //if(!rolled && Input.GetKey(KeyCode.LeftControl))
+        //{
+        //    _animator.SetTrigger("Roll");
+        //    rolled = true;
+
+        //    if (transform.localScale.x > 0f)
+        //    {
+        //        _velocity.x += rollVel;
+        //    }
+        //    else if(transform.localScale.x < 0f)
+        //    {
+        //        _velocity.x -= rollVel;
+        //    }
+        //}
 
 		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
 		var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
@@ -206,8 +245,6 @@ public class GaromoController : MonoBehaviour
 
 		// grab our current _velocity to use as a base for all calculations
 		_velocity = _controller.velocity;
-
-        Debug.Log(_controller.isGrounded);
 	}
 
     public void Restart()
@@ -244,5 +281,10 @@ public class GaromoController : MonoBehaviour
     void ValidateMovement()
     {
         canMove = true;
+    }
+
+    public void TeleportTo(Transform t)
+    {
+        transform.position = t.position;
     }
 }
