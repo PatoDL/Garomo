@@ -132,7 +132,7 @@ public class CharacterController2D : MonoBehaviour
 	/// this is used to calculate the downward ray that is cast to check for slopes. We use the somewhat arbitrary value 75 degrees
 	/// to calculate the length of the ray that checks for slopes.
 	/// </summary>
-	float _slopeLimitTangent = Mathf.Tan( 75f * Mathf.Deg2Rad );
+	float _slopeLimitTangent = Mathf.Tan( 40f * Mathf.Deg2Rad );
 
 
 	[HideInInspector][NonSerialized]
@@ -574,7 +574,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 			// bail out if we have no slope
 			var angle = Vector2.Angle( _raycastHit.normal, Vector2.up );
-			if( angle == 0 )
+			if( angle < 0.001f )
 				return;
 
 			// we are moving down the slope if our normal and movement direction are in the same x direction

@@ -68,6 +68,7 @@ public class GaromoController : MonoBehaviour
         if(hit.transform.tag == "Enemy" && !immunity)
         {
             enemyCollision = immunity = true;
+            
         }
 
         // logs any collider hits if uncommented. it gets noisy so it is commented out for the demo
@@ -148,6 +149,14 @@ public class GaromoController : MonoBehaviour
         {
             normalizedHorizontalSpeed = 0;
             _animator.SetBool("Running", false);
+            if(!_controller.isGrounded && recoil>25)
+            {
+                if (_velocity.x > 0)
+                    _velocity.x = 1;
+                else
+                    _velocity.x = -1;
+
+            }
         }
 
 		// we can only jump whilst grounded
@@ -170,7 +179,13 @@ public class GaromoController : MonoBehaviour
             _animator.SetTrigger("Damage");
             enemyCollision = false;
             enemyCollidedlastFrame = true;
-            if(_controller.collidedLeft)
+
+            if (_controller.isGrounded)
+                recoil = 250;
+            else
+                recoil = 25;
+
+            if (_controller.collidedLeft)
             {
                 _velocity.x += recoil;
                 Debug.Log("left");
@@ -185,6 +200,8 @@ public class GaromoController : MonoBehaviour
             Debug.Log(_controller.collidedLeft);
             Debug.Log(_controller.collidedRight);
         }
+
+        Debug.Log(_velocity.x);
 
         //if(!rolled && Input.GetKey(KeyCode.LeftControl))
         //{
