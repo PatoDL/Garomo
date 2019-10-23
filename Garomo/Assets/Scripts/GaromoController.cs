@@ -168,8 +168,7 @@ public class GaromoController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Z))
         {
             _animator.SetTrigger("Punch");
-            if (_controller.isGrounded)
-                GroundAttackCollider.gameObject.SetActive(true);
+            GroundAttackCollider.gameObject.SetActive(true);
             Invoke("DeActivePunch", 0.5f);
         }
 
