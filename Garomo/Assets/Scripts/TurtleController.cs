@@ -18,6 +18,8 @@ public class TurtleController : MonoBehaviour
 
     public bool haveToAttack = false;
 
+    public bool wasDamaged = false;
+
 	[HideInInspector]
 	private float normalizedHorizontalSpeed = -1;
 
@@ -26,6 +28,8 @@ public class TurtleController : MonoBehaviour
 	private Vector3 _velocity;
 
     public Vector3 direction;
+
+    
 
     public BoxCollider2D upAttackCollider;
     public BoxCollider2D downAttackCollider;
@@ -62,6 +66,8 @@ public class TurtleController : MonoBehaviour
 
 	void onTriggerEnterEvent( Collider2D col )
 	{
+        if (col.tag == "Attack")
+            wasDamaged = true;
 		//Debug.Log( "onTriggerEnterEvent: " + col.gameObject.name );
 	}
 
@@ -92,7 +98,15 @@ public class TurtleController : MonoBehaviour
         else if (_controller.collidedRight)
             normalizedHorizontalSpeed = -1;
 
-        if(haveToAttack)
+        if (wasDamaged)
+        {
+            life -= 1;
+            _animator.SetTrigger("Damage");
+            wasDamaged = false;
+            haveToAttack = false;
+        }
+
+        if (haveToAttack)
         {
             int whereToAttack = Random.Range(0, 2);
             _animator.SetTrigger("Attack");
@@ -110,6 +124,8 @@ public class TurtleController : MonoBehaviour
             haveToAttack = false;
             Invoke("DeActiveAttacks", 0.5f);
         }
+
+        
 
 		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
 		var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?

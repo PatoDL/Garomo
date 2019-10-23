@@ -16,7 +16,7 @@ public class GaromoController : MonoBehaviour
 
     public float recoil = 0f;
 
-    public float rollVel = 0f;
+    public float rollSpeed = 0f;
 
     int recoiled = 0;
 
@@ -39,7 +39,12 @@ public class GaromoController : MonoBehaviour
 
     public BoxCollider2D crouchCollider;
     public BoxCollider2D idleCollider;
+    public BoxCollider2D GroundAttackCollider;
+    public BoxCollider2D AirAttackCollider;
     bool canMove = true;
+
+    public bool isRolling = false;
+    public float rollDistance = 0f;
 
     Vector3 startPos;
 
@@ -160,6 +165,14 @@ public class GaromoController : MonoBehaviour
             }
         }
 
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            _animator.SetTrigger("Punch");
+            if (_controller.isGrounded)
+                GroundAttackCollider.gameObject.SetActive(true);
+            Invoke("DeActivePunch", 0.5f);
+        }
+
 		// we can only jump whilst grounded
 		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) )
 		{
@@ -189,38 +202,34 @@ public class GaromoController : MonoBehaviour
             if (_controller.collidedLeft)
             {
                 _velocity.x += recoil;
-                //Debug.Log("left");
             }
             else if(_controller.collidedRight)
             {
                 _velocity.x -= recoil;
-                //Debug.Log("right");
             }
             canMove = false;
             Invoke("ValidateMovement",0.5f);
-            //Debug.Log(_controller.collidedLeft);
-           // Debug.Log(_controller.collidedRight);
         }
 
-      //  Debug.Log(_velocity.x);
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            isRolling = true;
+            _animator.SetTrigger("Roll");
+        }
 
-        //if(!rolled && Input.GetKey(KeyCode.LeftControl))
-        //{
-        //    _animator.SetTrigger("Roll");
-        //    rolled = true;
+        if (isRolling)
+        {
+            Roll();
+            rollTimer += Time.deltaTime;
+            if (rollTimer > rollDistance)
+            {
+                isRolling = false;
+                rollTimer = 0.0f;
+            }
+        }
 
-        //    if (transform.localScale.x > 0f)
-        //    {
-        //        _velocity.x += rollVel;
-        //    }
-        //    else if(transform.localScale.x < 0f)
-        //    {
-        //        _velocity.x -= rollVel;
-        //    }
-        //}
-
-		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
-		var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
+        // apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
+        var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
 		_velocity.x = Mathf.Lerp( _velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor );
 
 		// apply gravity before moving
@@ -304,5 +313,15 @@ public class GaromoController : MonoBehaviour
     public void TeleportTo(Transform t)
     {
         transform.position = t.position;
+    }
+
+    public void DeActivePunch()
+    {
+        GroundAttackCollider.gameObject.SetActive(false);
+    }
+
+    public void Roll()
+    {
+        _velocity.x += transform.localScale.x * rollSpeed;
     }
 }
