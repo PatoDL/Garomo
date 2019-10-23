@@ -16,6 +16,8 @@ public class TurtleController : MonoBehaviour
 
     public float recoil = 0f;
 
+    public bool haveToAttack = false;
+
 	[HideInInspector]
 	private float normalizedHorizontalSpeed = -1;
 
@@ -25,7 +27,8 @@ public class TurtleController : MonoBehaviour
 
     public Vector3 direction;
 
-    public BoxCollider2D attackCollider;
+    public BoxCollider2D upAttackCollider;
+    public BoxCollider2D downAttackCollider;
 
     public BoxCollider2D idleCollider;
 
@@ -39,6 +42,8 @@ public class TurtleController : MonoBehaviour
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
         _controller.collisionState.right = true;
+
+        normalizedHorizontalSpeed = -1;
 	}
 
 
@@ -57,18 +62,16 @@ public class TurtleController : MonoBehaviour
 
 	void onTriggerEnterEvent( Collider2D col )
 	{
-		Debug.Log( "onTriggerEnterEvent: " + col.gameObject.name );
+		//Debug.Log( "onTriggerEnterEvent: " + col.gameObject.name );
 	}
 
 
 	void onTriggerExitEvent( Collider2D col )
 	{
-		Debug.Log( "onTriggerExitEvent: " + col.gameObject.name );
+		//Debug.Log( "onTriggerExitEvent: " + col.gameObject.name );
 	}
 
 	#endregion
-
-
 	// the Update loop contains a very simple example of moving the character around and controlling the animation
 	void Update()
 	{
@@ -84,6 +87,30 @@ public class TurtleController : MonoBehaviour
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
 
+        if (_controller.collidedLeft)
+            normalizedHorizontalSpeed = 1;
+        else if (_controller.collidedRight)
+            normalizedHorizontalSpeed = -1;
+
+        if(haveToAttack)
+        {
+            int whereToAttack = Random.Range(0, 2);
+            _animator.SetTrigger("Attack");
+            if (whereToAttack == 0)
+            {
+                _animator.SetBool("HighAttack", true);
+                upAttackCollider.gameObject.SetActive(true);
+            }
+            else
+            {
+                _animator.SetBool("HighAttack", false);
+                downAttackCollider.gameObject.SetActive(true);
+            }
+            runSpeed = 0f;
+            haveToAttack = false;
+            Invoke("DeActiveAttacks", 0.5f);
+        }
+
 		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
 		var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
 		_velocity.x = Mathf.Lerp( _velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor );
@@ -94,7 +121,7 @@ public class TurtleController : MonoBehaviour
         // if holding down bump up our movement amount and turn off one way platform detection for a frame.
         // this lets us jump down through one way platforms
 
-            _controller.move( _velocity * Time.deltaTime );
+        _controller.move( _velocity * Time.deltaTime );
 
 		// grab our current _velocity to use as a base for all calculations
 		_velocity = _controller.velocity;
@@ -103,5 +130,18 @@ public class TurtleController : MonoBehaviour
     public void Restart()
     {
         transform.position = new Vector3(-380f,-1f,0f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "LimitTrigger")
+            gameObject.SetActive(false);
+    }
+
+    void DeActiveAttacks()
+    {
+        upAttackCollider.gameObject.SetActive(false);
+        downAttackCollider.gameObject.SetActive(false);
+        runSpeed = 2.5f;
     }
 }

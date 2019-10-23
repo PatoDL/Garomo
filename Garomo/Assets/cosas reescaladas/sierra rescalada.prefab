@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3979730062695295599}
   - component: {fileID: 5381680974555433288}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 7301377353609719856}
   - component: {fileID: 7301377353606328336}
   - component: {fileID: 7301377353607295696}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: sierra rescalada
   m_TagString: Enemy
   m_Icon: {fileID: 0}

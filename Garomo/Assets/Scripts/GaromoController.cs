@@ -65,7 +65,7 @@ public class GaromoController : MonoBehaviour
 		if( hit.normal.y == 1f )
 			return;
 
-        if(hit.transform.tag == "Enemy" && !immunity)
+        if((hit.transform.tag == "Enemy" || hit.transform.tag == "Obstacle") && !immunity)
         {
             enemyCollision = immunity = true;
             
@@ -78,13 +78,14 @@ public class GaromoController : MonoBehaviour
 
 	void onTriggerEnterEvent( Collider2D col )
 	{
-        //Debug.Log( "onTriggerEnterEvent: " + col.gameObject.name );
+        if(col.tag=="Enemy")
+            enemyCollision = immunity = true;
     }
 
 
 	void onTriggerExitEvent( Collider2D col )
 	{
-		Debug.Log( "onTriggerExitEvent: " + col.gameObject.name );
+		//Debug.Log( "onTriggerExitEvent: " + col.gameObject.name );
 	}
 
 	#endregion
@@ -188,20 +189,20 @@ public class GaromoController : MonoBehaviour
             if (_controller.collidedLeft)
             {
                 _velocity.x += recoil;
-                Debug.Log("left");
+                //Debug.Log("left");
             }
             else if(_controller.collidedRight)
             {
                 _velocity.x -= recoil;
-                Debug.Log("right");
+                //Debug.Log("right");
             }
             canMove = false;
             Invoke("ValidateMovement",0.5f);
-            Debug.Log(_controller.collidedLeft);
-            Debug.Log(_controller.collidedRight);
+            //Debug.Log(_controller.collidedLeft);
+           // Debug.Log(_controller.collidedRight);
         }
 
-        Debug.Log(_velocity.x);
+      //  Debug.Log(_velocity.x);
 
         //if(!rolled && Input.GetKey(KeyCode.LeftControl))
         //{
