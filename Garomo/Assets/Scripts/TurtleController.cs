@@ -29,7 +29,7 @@ public class TurtleController : MonoBehaviour
 
     public Vector3 direction;
 
-    
+    private GaromoChecker gc;
 
     public BoxCollider2D upAttackCollider;
     public BoxCollider2D downAttackCollider;
@@ -46,6 +46,9 @@ public class TurtleController : MonoBehaviour
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
         _controller.collisionState.right = true;
+
+        gc = GetComponentInChildren<GaromoChecker>();
+        gc.GaromoEntrance = Attack;
 
         normalizedHorizontalSpeed = -1;
 	}
@@ -106,24 +109,7 @@ public class TurtleController : MonoBehaviour
             haveToAttack = false;
         }
 
-        if (haveToAttack)
-        {
-            int whereToAttack = Random.Range(0, 2);
-            _animator.SetTrigger("Attack");
-            if (whereToAttack == 0)
-            {
-                _animator.SetBool("HighAttack", true);
-                upAttackCollider.gameObject.SetActive(true);
-            }
-            else
-            {
-                _animator.SetBool("HighAttack", false);
-                downAttackCollider.gameObject.SetActive(true);
-            }
-            runSpeed = 0f;
-            haveToAttack = false;
-            Invoke("DeActiveAttacks", 0.5f);
-        }
+        
 
         
 
@@ -154,10 +140,43 @@ public class TurtleController : MonoBehaviour
             gameObject.SetActive(false);
     }
 
-    void DeActiveAttacks()
+    int whereToAttack;
+
+    void Attack()
+    {
+        whereToAttack = Random.Range(0, 2);
+        _animator.SetTrigger("Attack");
+        if (whereToAttack == 0)
+        {
+            _animator.SetBool("HighAttack", true);
+        }
+        else
+        {
+            _animator.SetBool("HighAttack", false);
+        }
+        
+        runSpeed = 0f;
+    }
+
+    void ActivateAttack(int where)
+    {
+        if (where == 0)
+        {
+            upAttackCollider.gameObject.SetActive(true);
+        }
+        else
+        {
+            downAttackCollider.gameObject.SetActive(true);
+        }
+
+        Invoke("DeActivateAttacks", 0.5f);
+    }
+
+    void DeActivateAttacks()
     {
         upAttackCollider.gameObject.SetActive(false);
         downAttackCollider.gameObject.SetActive(false);
+        normalizedHorizontalSpeed = -normalizedHorizontalSpeed;
         runSpeed = 2.5f;
     }
 }

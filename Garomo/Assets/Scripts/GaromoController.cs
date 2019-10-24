@@ -43,6 +43,8 @@ public class GaromoController : MonoBehaviour
     public BoxCollider2D AirAttackCollider;
     bool canMove = true;
 
+    
+
     public bool isRolling = false;
     public float rollDistance = 0f;
 
@@ -58,6 +60,8 @@ public class GaromoController : MonoBehaviour
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
 
+
+
         startPos = transform.position;
 	}
 
@@ -70,11 +74,11 @@ public class GaromoController : MonoBehaviour
 		if( hit.normal.y == 1f )
 			return;
 
-        if((hit.transform.tag == "Enemy" || hit.transform.tag == "Obstacle") && !immunity)
-        {
-            enemyCollision = immunity = true;
+        //if((hit.transform.tag == "Enemy" || hit.transform.tag == "Obstacle") && !immunity)
+        //{
+        //    enemyCollision = immunity = true;
             
-        }
+        //}
 
         // logs any collider hits if uncommented. it gets noisy so it is commented out for the demo
         //Debug.Log( "flags: " + _controller.collisionState + ", hit.normal: " + hit.normal );

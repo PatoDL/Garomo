@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GaromoChecker : MonoBehaviour
 {
-    private TurtleController tc;
+    public delegate void OnGaromoEnter();
+    public OnGaromoEnter GaromoEntrance;
 
     private void Start()
     {
-        tc = GetComponentInParent<TurtleController>();
+        
 
     }
 
@@ -16,7 +17,7 @@ public class GaromoChecker : MonoBehaviour
     {
         if(other.tag == "Garomo")
         {
-            tc.haveToAttack = true;
+            GaromoEntrance();
             Debug.Log("entro");
         }
     }
