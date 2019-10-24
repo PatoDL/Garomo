@@ -255,21 +255,21 @@ public class CharacterController2D : MonoBehaviour
 		primeRaycastOrigins();
 
 
-		// first, we check for a slope below us before moving
-		// only check slopes if we are going down and grounded
-		if( deltaMovement.y < 0f && collisionState.wasGroundedLastFrame )
-			handleVerticalSlope( ref deltaMovement );
+        // first, we check for a slope below us before moving
+        // only check slopes if we are going down and grounded
+        if (deltaMovement.y < 0f && collisionState.wasGroundedLastFrame)
+            handleVerticalSlope(ref deltaMovement);
 
-		// now we check movement in the horizontal dir
-		if( deltaMovement.x != 0f )
-			moveHorizontally( ref deltaMovement );
+        // now we check movement in the horizontal dir
+        if ( deltaMovement.x != 0f )
+		    moveHorizontally( ref deltaMovement );
 
 		// next, check movement in the vertical dir
 		if( deltaMovement.y != 0f )
 			moveVertically( ref deltaMovement );
 
-		// move then update our state
-		deltaMovement.z = 0;
+        // move then update our state
+        deltaMovement.z = 0;
 		transform.Translate( deltaMovement, Space.World );
 
 		// only calculate velocity if we have a non-zero deltaTime
@@ -291,8 +291,7 @@ public class CharacterController2D : MonoBehaviour
 				onControllerCollidedEvent( _raycastHitsThisFrame[i] );
 		}
 
-		ignoreOneWayPlatformsThisFrame = false;
-            
+		ignoreOneWayPlatformsThisFrame = false;    
 	}
 
 
