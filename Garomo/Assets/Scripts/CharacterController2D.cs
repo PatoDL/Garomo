@@ -150,6 +150,8 @@ public class CharacterController2D : MonoBehaviour
     public bool collidedRight { get { return collisionState.right; } }
     public bool collidedLeft { get { return collisionState.left; } }
     public bool nearFloor { get { return collisionState.nearFloor; } }
+    public float onSlope { get { return collisionState.slopeAngle; } }
+    public bool upSlope { get { return _isGoingUpSlope; } }
     const float kSkinWidthFloatFudgeFactor = 0.001f;
 
 	#endregion

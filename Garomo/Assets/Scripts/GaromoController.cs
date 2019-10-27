@@ -232,8 +232,11 @@ public class GaromoController : MonoBehaviour
         }
 
         // apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
-        var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
-		_velocity.x = Mathf.Lerp( _velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor );
+        if (!isRolling)
+        {
+            var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
+            _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
+        }
 
 		// apply gravity before moving
 		_velocity.y += gravity * Time.deltaTime;
@@ -273,8 +276,10 @@ public class GaromoController : MonoBehaviour
 
         _controller.move( _velocity * Time.deltaTime );
 
-		// grab our current _velocity to use as a base for all calculations
-		_velocity = _controller.velocity;
+        //Debug.Log(_controller.onSlope);
+
+        // grab our current _velocity to use as a base for all calculations
+        _velocity = _controller.velocity;
 	}
 
     public void Restart()
@@ -303,6 +308,8 @@ public class GaromoController : MonoBehaviour
         }
     }
 
+    
+
     public void Jump()
     {
         _velocity.y = Mathf.Sqrt(4f * jumpHeight * -gravity);
@@ -325,6 +332,15 @@ public class GaromoController : MonoBehaviour
 
     public void Roll()
     {
-        _velocity.x += transform.localScale.x * rollSpeed;
+        Debug.Log(_controller.upSlope);
+        if(_controller.upSlope)
+        {
+            rollSpeed = 200f;
+        }
+        else
+        {
+            rollSpeed = 130f;
+        }
+        _velocity.x += transform.localScale.x * rollSpeed * Time.deltaTime;
     }
 }
