@@ -150,8 +150,7 @@ public class CharacterController2D : MonoBehaviour
     public bool collidedRight { get { return collisionState.right; } }
     public bool collidedLeft { get { return collisionState.left; } }
     public bool nearFloor { get { return collisionState.nearFloor; } }
-    public float onSlope { get { return collisionState.slopeAngle; } }
-    public bool upSlope { get { return _isGoingUpSlope; } }
+    public bool ignoreSlopeModifier = false;
     const float kSkinWidthFloatFudgeFactor = 0.001f;
 
 	#endregion
@@ -436,9 +435,12 @@ public class CharacterController2D : MonoBehaviour
 			// TODO: this uses a magic number which isn't ideal! The alternative is to have the user pass in if there is a jump this frame
 			if( deltaMovement.y < jumpingThreshold )
 			{
-				// apply the slopeModifier to slow our movement up the slope
-				var slopeModifier = slopeSpeedMultiplier.Evaluate( angle );
-				deltaMovement.x *= slopeModifier;
+                // apply the slopeModifier to slow our movement up the slope
+                if (!ignoreSlopeModifier)
+                {
+                    var slopeModifier = slopeSpeedMultiplier.Evaluate(angle);
+                    deltaMovement.x *= slopeModifier;
+                }
 
 				// we dont set collisions on the sides for this since a slope is not technically a side collision.
 				// smooth y movement when we climb. we make the y movement equivalent to the actual y location that corresponds
@@ -584,6 +586,8 @@ public class CharacterController2D : MonoBehaviour
 			{
 				// going down we want to speed up in most cases so the slopeSpeedMultiplier curve should be > 1 for negative angles
 				var slopeModifier = slopeSpeedMultiplier.Evaluate( -angle );
+                if (ignoreSlopeModifier)
+                    slopeModifier = 1;
 				// we add the extra downward movement here to ensure we "stick" to the surface below
 				deltaMovement.y += _raycastHit.point.y - slopeRay.y - skinWidth;
 				deltaMovement = new Vector3( 0, deltaMovement.y, 0 ) +

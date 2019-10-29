@@ -217,6 +217,7 @@ public class GaromoController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             isRolling = true;
+            _controller.ignoreSlopeModifier = true;
             _animator.SetTrigger("Roll");
         }
 
@@ -227,6 +228,7 @@ public class GaromoController : MonoBehaviour
             if (rollTimer > rollDistance)
             {
                 isRolling = false;
+                _controller.ignoreSlopeModifier = false;
                 rollTimer = 0.0f;
             }
         }
@@ -331,16 +333,7 @@ public class GaromoController : MonoBehaviour
     }
 
     public void Roll()
-    {
-        Debug.Log(_controller.upSlope);
-        if(_controller.upSlope)
-        {
-            rollSpeed = 200f;
-        }
-        else
-        {
-            rollSpeed = 130f;
-        }
+    {  
         _velocity.x += transform.localScale.x * rollSpeed * Time.deltaTime;
     }
 }
