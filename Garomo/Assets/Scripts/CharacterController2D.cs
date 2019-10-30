@@ -489,7 +489,6 @@ public class CharacterController2D : MonoBehaviour
 	{
 		var isGoingUp = deltaMovement.y > 0;
 		var rayDistance = Mathf.Abs( deltaMovement.y ) + _skinWidth;
-            Debug.Log(deltaMovement);
         //var rayNearDistance = Mathf.Abs(deltaMovement.y) + _skinWidth * 200;
         //var rayNearDirection = -Vector2.up;
         var rayDirection = isGoingUp ? Vector2.up : -Vector2.up;

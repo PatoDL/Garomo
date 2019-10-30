@@ -20,33 +20,48 @@ public class FlamencoBehaviour : MonoBehaviour
 
     Rigidbody2D rig;
     Animator anim;
+    SpriteRenderer spr;
+    BoxCollider2D col;
+
+    public Sprite deadBody;
+
+    public bool dead = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spr = GetComponent<SpriteRenderer>();
+        col = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        shotTimer -= Time.deltaTime;
-        changeDirTimer += Time.deltaTime;
-
-        rig.velocity = new Vector3(direction.x * speed * Time.deltaTime, 0, 0);
-
-        if (changeDirTimer > 5)
+        if (!dead)
         {
-            changeDirTimer = 0;
-            direction = -direction;
-            transform.localScale = new Vector3(-direction.x, 1, 1);
+            shotTimer -= Time.deltaTime;
+            changeDirTimer += Time.deltaTime;
+
+            rig.velocity = new Vector3(direction.x * speed * Time.deltaTime, 0, 0);
+
+            if (changeDirTimer > 5)
+            {
+                changeDirTimer = 0;
+                direction = -direction;
+                transform.localScale = new Vector3(-direction.x, 1, 1);
+            }
+
+            if (shotTimer <= 0)
+            {
+                shotTimer = shotTimerMax;
+                anim.SetTrigger("Attack");
+            }
         }
-
-        if(shotTimer <= 0)
+        else
         {
-            shotTimer = shotTimerMax;
-            anim.SetTrigger("Attack");
+            rig.velocity += Vector2.down * speed * Time.deltaTime;
         }
     }
 
@@ -69,6 +84,18 @@ public class FlamencoBehaviour : MonoBehaviour
             }
             anim.SetTrigger("Damage");
             rig.velocity = Vector3.zero;
+            if(life <= 0f)
+            {
+                speed = 500f;
+                spr.sprite = deadBody;
+                col.isTrigger = true;
+                anim.enabled = false;
+                dead = true;
+            }
+        }
+        else if (collision.transform.tag == "LimitTrigger")
+        {
+            gameObject.SetActive(false);
         }
     }
 
