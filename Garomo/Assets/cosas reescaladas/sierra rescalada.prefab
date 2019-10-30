@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3979730062695295599}
   - component: {fileID: 5381680974555433288}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3979730062695295599
 Transform:
@@ -58,12 +58,13 @@ GameObject:
   - component: {fileID: 7301377353609719856}
   - component: {fileID: 7301377353606328336}
   - component: {fileID: 7301377353607295696}
-  m_Layer: 12
+  - component: {fileID: 232138075912528427}
+  m_Layer: 0
   m_Name: sierra rescalada
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7301377353609719856
 Transform:
@@ -125,3 +126,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &232138075912528427
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7301377353609554960}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8cd5a5e8c57af740bf6ad4d252129f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

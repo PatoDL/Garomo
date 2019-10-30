@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -9,10 +10,19 @@ public class UIController : MonoBehaviour
     public GameObject cheatsPanel;
     public Text versionText;
 
+    public Image[] muzzleParts;
+    public Sprite muzzlePiece;
+    public Sprite lastMuzzle;
+
+    public GaromoController garomoController;
+
+    public GameObject retryButton;
+
     // Start is called before the first frame update
     void Start()
     {
         versionText.text = "v" + Application.version;
+        GaromoController.GaromoDie = ShowRetryButton;
     }
 
     // Update is called once per frame
@@ -22,6 +32,35 @@ public class UIController : MonoBehaviour
         {
             cheatsPanel.gameObject.SetActive(true);
         }
+
+        for(int i=0;i<garomoController.life;i++)
+        {
+            if(i== garomoController.life - 1)
+            {
+                muzzleParts[i].sprite = lastMuzzle;
+            }
+            else
+            {
+                muzzleParts[i].sprite = muzzlePiece;
+            }
+        }
+
+        for(int i=garomoController.life;i<5;i++)
+        {
+            muzzleParts[i].gameObject.SetActive(false);
+        }
+    }
+
+    void ShowRetryButton()
+    {
+        retryButton.SetActive(true);
+    }
+
+    public void Restart()
+    {
+        garomoController.Restart();
+        SceneManager.LoadScene("tiles");
+        garomoController.Restart();
     }
 
     public void Touch()

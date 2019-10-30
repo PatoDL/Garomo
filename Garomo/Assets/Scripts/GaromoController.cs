@@ -5,6 +5,9 @@ using Prime31;
 
 public class GaromoController : MonoBehaviour
 {
+    public delegate void OnGaromoDeath();
+    public static OnGaromoDeath GaromoDie;
+
 	// movement config
 	public float gravity = -25f;
 	public float runSpeed = 8f;
@@ -31,7 +34,6 @@ public class GaromoController : MonoBehaviour
 	private RaycastHit2D _lastControllerColliderHit;
 	private Vector3 _velocity;
 
-    bool rolled = false;
     float rollTimer = 0.0f;
 
     private bool immunity = false;
@@ -42,6 +44,8 @@ public class GaromoController : MonoBehaviour
     public BoxCollider2D GroundAttackCollider;
     public BoxCollider2D AirAttackCollider;
     bool canMove = true;
+
+    public BoxCollider2D skinnyGaromo;
 
     public bool isRolling = false;
     public float rollDistance = 0f;
@@ -56,7 +60,8 @@ public class GaromoController : MonoBehaviour
 		// listen to some events for illustration purposes
 		_controller.onControllerCollidedEvent += onControllerCollider;
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
-		_controller.onTriggerExitEvent += onTriggerExitEvent;
+        _controller.onTriggerStayEvent += onTriggerStayEvent;
+        _controller.onTriggerExitEvent += onTriggerExitEvent;
 
 
 
@@ -72,10 +77,12 @@ public class GaromoController : MonoBehaviour
 		if( hit.normal.y == 1f )
 			return;
 
+       
+
         //if((hit.transform.tag == "Enemy" || hit.transform.tag == "Obstacle") && !immunity)
         //{
         //    enemyCollision = immunity = true;
-            
+
         //}
 
         // logs any collider hits if uncommented. it gets noisy so it is commented out for the demo
@@ -87,13 +94,32 @@ public class GaromoController : MonoBehaviour
 	{
         if(col.tag=="Enemy")
             enemyCollision = immunity = true;
+
+        if (col.transform.tag != "SewTile" && _controller.boxCollider == skinnyGaromo)
+        {
+            _controller.boxCollider = idleCollider;
+            _controller.recalculateDistanceBetweenRays();
+        }
+       
     }
 
+    void onTriggerStayEvent(Collider2D col)
+    {
+        if (col.transform.tag == "SewTile" && _controller.boxCollider != skinnyGaromo)
+        {
+            _controller.boxCollider = skinnyGaromo;
+            _controller.recalculateDistanceBetweenRays();
+        }
+    }
 
-	void onTriggerExitEvent( Collider2D col )
+    void onTriggerExitEvent( Collider2D col )
 	{
-		//Debug.Log( "onTriggerExitEvent: " + col.gameObject.name );
-	}
+        if (col.transform.tag == "SewTile" && _controller.boxCollider == skinnyGaromo)
+        {
+            _controller.boxCollider = idleCollider;
+            _controller.recalculateDistanceBetweenRays();
+        }
+    }
 
 	#endregion
 
@@ -108,16 +134,6 @@ public class GaromoController : MonoBehaviour
             {
                 immunity = false;
                 enemyCollisionTimer = 0.0f;
-            }
-        }
-
-        if(rolled)
-        {
-            rollTimer += Time.deltaTime;
-            if(rollTimer>1.5f)
-            {
-                rollTimer = 0f;
-                rolled = false;
             }
         }
 
@@ -167,13 +183,13 @@ public class GaromoController : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Z))
+        if(Input.GetKeyDown(KeyCode.Z) && canMove && !isRolling)
         {
             _animator.SetTrigger("Punch");
         }
 
 		// we can only jump whilst grounded
-		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) )
+		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) && canMove && !isRolling)
 		{
             Jump();
             _animator.SetBool("Jumping", true);
@@ -189,26 +205,45 @@ public class GaromoController : MonoBehaviour
 
         if(enemyCollision)
         {
-            _animator.SetTrigger("Damage");
-            enemyCollision = false;
-
-            if (_controller.isGrounded)
-                recoil = 1500;
+            if (life <= 0f)
+            {
+                _animator.SetTrigger("Dead");
+                canMove = false;
+                _velocity = Vector3.zero;
+                GaromoDie();
+            }
             else
-                recoil = 25;
+            {
+                life -= 1;
+                _animator.SetTrigger("Damage");
+                enemyCollision = false;
 
-            //if (_controller.collidedLeft)
-            //{
-            //    _velocity.x += recoil;
-            //}
-            //else if(_controller.collidedRight)
-            //{
-            //    _velocity.x -= recoil;
-            //}
+                if (_controller.isGrounded)
+                    recoil = 1500;
+                else
+                    recoil = 25;
 
-            isRecoiling = true;
-            canMove = false;
-            recoilTime = recoilTimeMax;
+                //if (_controller.collidedLeft)
+                //{
+                //    _velocity.x += recoil;
+                //}
+                //else if(_controller.collidedRight)
+                //{
+                //    _velocity.x -= recoil;
+                //}
+
+                //if (_controller.isGrounded)
+                //{
+                //    isRecoiling = true;
+                //    canMove = false;
+                //    recoilTime = recoilTimeMax;
+                //}
+                //else
+                //{
+                    isRecoiling = false;
+                    canMove = true;
+                //}
+            }
         }
 
         if(isRecoiling)
@@ -222,7 +257,7 @@ public class GaromoController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C) && canMove && _controller.isGrounded)
         {
             isRolling = true;
             _controller.ignoreSlopeModifier = true;
@@ -243,7 +278,7 @@ public class GaromoController : MonoBehaviour
         }
 
         // apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
-        if (!isRolling || canMove)
+        if (!isRolling && canMove)
         {
             var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
             _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
@@ -254,7 +289,7 @@ public class GaromoController : MonoBehaviour
 
         // if holding down bump up our movement amount and turn off one way platform detection for a frame.
         // this lets us jump down through one way platforms
-        if (_controller.isGrounded && Input.GetKey(KeyCode.DownArrow))
+        if (_controller.isGrounded && Input.GetKey(KeyCode.DownArrow) && canMove)
         {
             if (_controller.boxCollider != crouchCollider)
             { 
@@ -287,15 +322,15 @@ public class GaromoController : MonoBehaviour
 
         _controller.move( _velocity * Time.deltaTime );
 
-        //Debug.Log(_controller.onSlope);
-
         // grab our current _velocity to use as a base for all calculations
         _velocity = _controller.velocity;
 	}
 
     public void Restart()
     {
-        transform.position = new Vector3(-380f,-1f,0f);
+        transform.position = startPos;
+        life = 5;
+        canMove = true;
     }
 
     public void OnTriggerEnter2D(Collider2D col)
@@ -307,10 +342,22 @@ public class GaromoController : MonoBehaviour
             _animator.SetBool("Running", false);
             _controller.move(_velocity * Time.deltaTime);
         }
-        else if(col.transform.tag == "LimitTrigger")
+        else if (col.transform.tag == "LimitTrigger")
         {
             transform.position = startPos;
-            _velocity.y = 0;
+
+            if (life <= 0)
+            {
+                _animator.SetTrigger("Dead");
+                canMove = false;
+                _velocity = Vector3.zero;
+                GaromoDie();
+            }
+            else
+            {
+                life -= 1;
+                Debug.Log("1 menos trigger");
+            }
             _controller.move(_velocity * Time.deltaTime);
         }
         else if (col.transform.tag == "EndlevelTrigger")

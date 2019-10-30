@@ -36,6 +36,9 @@ public class TurtleController : MonoBehaviour
 
     public BoxCollider2D idleCollider;
 
+    public Sprite deadTurtle;
+    bool falling = false;
+
 	void Awake()
 	{
 		_animator = GetComponent<Animator>();
@@ -72,7 +75,10 @@ public class TurtleController : MonoBehaviour
         if (col.tag == "Attack")
         {
             wasDamaged = true;
-            Debug.Log("ouch");
+        }
+        else if(col.tag=="Redirectioner")
+        {
+            normalizedHorizontalSpeed= -normalizedHorizontalSpeed;
         }
 		//Debug.Log( "onTriggerEnterEvent: " + col.gameObject.name );
 	}
@@ -107,8 +113,22 @@ public class TurtleController : MonoBehaviour
         if (wasDamaged)
         {
             life -= 1;
-            _animator.SetTrigger("Damage");
-            wasDamaged = false;
+            if(life<=0)
+            {
+                _controller.platformMask = -1;
+                _animator.enabled = false;
+                GetComponent<SpriteRenderer>().sprite = deadTurtle;
+                falling = true;
+            }
+            else if(falling)
+            {
+                _velocity = Vector3.down * runSpeed * Time.deltaTime;
+            }
+            else
+            {
+                _animator.SetTrigger("Damage");
+                wasDamaged = false;
+            }
         }
 
 		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
