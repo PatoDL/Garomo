@@ -14,8 +14,8 @@ public class FlamencoBehaviour : MonoBehaviour
 
     private float normalizedHorizontalSpeed = 0;
 
-    float shotTimer=0;
-
+    public float shotTimerMax = 2f;
+    public float shotTimer = 2f;
     public GameObject shot;
 
     Rigidbody2D rig;
@@ -31,7 +31,7 @@ public class FlamencoBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shotTimer += Time.deltaTime;
+        shotTimer -= Time.deltaTime;
         changeDirTimer += Time.deltaTime;
 
         rig.velocity = new Vector3(direction.x * speed * Time.deltaTime, 0, 0);
@@ -43,11 +43,10 @@ public class FlamencoBehaviour : MonoBehaviour
             transform.localScale = new Vector3(-direction.x, 1, 1);
         }
 
-        if(shotTimer>2)
+        if(shotTimer <= 0)
         {
-            shotTimer = 0;
+            shotTimer = shotTimerMax;
             anim.SetTrigger("Attack");
-            Invoke("Shot", 0.8f);
         }
     }
 
@@ -55,6 +54,6 @@ public class FlamencoBehaviour : MonoBehaviour
     {
         GameObject go = Instantiate(shot);
         go.transform.position = transform.position;
-        go.GetComponent<Rigidbody2D>().velocity = new Vector3(0, speed * 2 / 3 * Time.deltaTime, 0);
+        go.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -speed * 3/2 * Time.deltaTime, 0);
     }
 }

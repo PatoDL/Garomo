@@ -31,7 +31,7 @@ public class CharacterController2D : MonoBehaviour
         public bool nearFloor;
 
 
-		public bool hasCollision()
+        public bool hasCollision()
 		{
 			return below || right || left || above;
 		}
@@ -128,16 +128,18 @@ public class CharacterController2D : MonoBehaviour
 	public int totalVerticalRays = 4;
 
 
-	/// <summary>
-	/// this is used to calculate the downward ray that is cast to check for slopes. We use the somewhat arbitrary value 75 degrees
-	/// to calculate the length of the ray that checks for slopes.
-	/// </summary>
-	float _slopeLimitTangent = Mathf.Tan( 40f * Mathf.Deg2Rad );
+    public float slopeRayDistance = 75f;
+
+        /// <summary>
+        /// this is used to calculate the downward ray that is cast to check for slopes. We use the somewhat arbitrary value 75 degrees
+        /// to calculate the length of the ray that checks for slopes.
+        /// </summary>
+    float _slopeLimitTangent;
 
 
 	[HideInInspector][NonSerialized]
 	public new Transform transform;
-	//[HideInInspector]
+	[HideInInspector][NonSerialized]
 	public BoxCollider2D boxCollider;
 	[HideInInspector][NonSerialized]
 	public Rigidbody2D rigidBody2D;
@@ -203,7 +205,9 @@ public class CharacterController2D : MonoBehaviour
 			if( ( triggerMask.value & 1 << i ) == 0 )
 				Physics2D.IgnoreLayerCollision( gameObject.layer, i );
 		}
-	}
+
+        _slopeLimitTangent = Mathf.Tan(slopeRayDistance * Mathf.Deg2Rad);
+    }
 
 
 	public void OnTriggerEnter2D( Collider2D col )
@@ -256,21 +260,21 @@ public class CharacterController2D : MonoBehaviour
 		primeRaycastOrigins();
 
 
-        // first, we check for a slope below us before moving
-        // only check slopes if we are going down and grounded
-        if (deltaMovement.y < 0f && collisionState.wasGroundedLastFrame)
-            handleVerticalSlope(ref deltaMovement);
+		// first, we check for a slope below us before moving
+		// only check slopes if we are going down and grounded
+		if( deltaMovement.y < 0f && collisionState.wasGroundedLastFrame )
+			handleVerticalSlope( ref deltaMovement );
 
-        // now we check movement in the horizontal dir
-        if ( deltaMovement.x != 0f )
-		    moveHorizontally( ref deltaMovement );
+		// now we check movement in the horizontal dir
+		if( deltaMovement.x != 0f )
+			moveHorizontally( ref deltaMovement );
 
 		// next, check movement in the vertical dir
 		if( deltaMovement.y != 0f )
 			moveVertically( ref deltaMovement );
 
-        // move then update our state
-        deltaMovement.z = 0;
+		// move then update our state
+		deltaMovement.z = 0;
 		transform.Translate( deltaMovement, Space.World );
 
 		// only calculate velocity if we have a non-zero deltaTime
@@ -292,7 +296,7 @@ public class CharacterController2D : MonoBehaviour
 				onControllerCollidedEvent( _raycastHitsThisFrame[i] );
 		}
 
-		ignoreOneWayPlatformsThisFrame = false;    
+		ignoreOneWayPlatformsThisFrame = false;
 	}
 
 
@@ -435,12 +439,12 @@ public class CharacterController2D : MonoBehaviour
 			// TODO: this uses a magic number which isn't ideal! The alternative is to have the user pass in if there is a jump this frame
 			if( deltaMovement.y < jumpingThreshold )
 			{
-                // apply the slopeModifier to slow our movement up the slope
-                if (!ignoreSlopeModifier)
-                {
-                    var slopeModifier = slopeSpeedMultiplier.Evaluate(angle);
-                    deltaMovement.x *= slopeModifier;
-                }
+                    // apply the slopeModifier to slow our movement up the slope
+                    if (!ignoreSlopeModifier)
+                    {
+                        var slopeModifier = slopeSpeedMultiplier.Evaluate(angle);
+                        deltaMovement.x *= slopeModifier;
+                    }
 
 				// we dont set collisions on the sides for this since a slope is not technically a side collision.
 				// smooth y movement when we climb. we make the y movement equivalent to the actual y location that corresponds
@@ -457,17 +461,17 @@ public class CharacterController2D : MonoBehaviour
 				else
 					raycastHit = Physics2D.Raycast( ray, deltaMovement.normalized, deltaMovement.magnitude, platformMask & ~oneWayPlatformMask );
 
-				if( raycastHit )
-				{
-					// we crossed an edge when using Pythagoras calculation, so we set the actual delta movement to the ray hit location
-					deltaMovement = (Vector3)raycastHit.point - ray;
-					if( isGoingRight )
-						deltaMovement.x -= _skinWidth;
-					else
-						deltaMovement.x += _skinWidth;
-				}
+                if (raycastHit)
+                {
+                    // we crossed an edge when using Pythagoras calculation, so we set the actual delta movement to the ray hit location
+                    deltaMovement = (Vector3)raycastHit.point - ray;
+                    if (isGoingRight)
+                        deltaMovement.x -= _skinWidth;
+                    else
+                        deltaMovement.x += _skinWidth;
+                }
 
-				_isGoingUpSlope = true;
+                _isGoingUpSlope = true;
 				collisionState.below = true;
 				collisionState.slopeAngle = -angle;
 			}
@@ -481,81 +485,83 @@ public class CharacterController2D : MonoBehaviour
 	}
 
 
-    void moveVertically(ref Vector3 deltaMovement)
-    {
-        var isGoingUp = deltaMovement.y > 0;
-        var rayDistance = Mathf.Abs(deltaMovement.y) + _skinWidth;
-            var rayNearDistance = deltaMovement.y + _skinWidth * 200;
-        var rayNearDirection = -Vector2.up;
+	void moveVertically( ref Vector3 deltaMovement )
+	{
+		var isGoingUp = deltaMovement.y > 0;
+		var rayDistance = Mathf.Abs( deltaMovement.y ) + _skinWidth;
+            Debug.Log(deltaMovement);
+        //var rayNearDistance = Mathf.Abs(deltaMovement.y) + _skinWidth * 200;
+        //var rayNearDirection = -Vector2.up;
         var rayDirection = isGoingUp ? Vector2.up : -Vector2.up;
-        var initialRayOrigin = isGoingUp ? _raycastOrigins.topLeft : _raycastOrigins.bottomLeft;
+		var initialRayOrigin = isGoingUp ? _raycastOrigins.topLeft : _raycastOrigins.bottomLeft;
 
-        // apply our horizontal deltaMovement here so that we do our raycast from the actual position we would be in if we had moved
-        initialRayOrigin.x += deltaMovement.x;
+		// apply our horizontal deltaMovement here so that we do our raycast from the actual position we would be in if we had moved
+		initialRayOrigin.x += deltaMovement.x;
 
-        // if we are moving up, we should ignore the layers in oneWayPlatformMask
-        var mask = platformMask;
-        if ((isGoingUp && !collisionState.wasGroundedLastFrame) || ignoreOneWayPlatformsThisFrame)
-            mask &= ~oneWayPlatformMask;
+		// if we are moving up, we should ignore the layers in oneWayPlatformMask
+		var mask = platformMask;
+		if( ( isGoingUp && !collisionState.wasGroundedLastFrame ) || ignoreOneWayPlatformsThisFrame )
+			mask &= ~oneWayPlatformMask;
 
-        for (var i = 0; i < totalVerticalRays; i++)
-        {
-            var ray = new Vector2(initialRayOrigin.x + i * _horizontalDistanceBetweenRays, initialRayOrigin.y);
+		for( var i = 0; i < totalVerticalRays; i++ )
+		{
+			var ray = new Vector2( initialRayOrigin.x + i * _horizontalDistanceBetweenRays, initialRayOrigin.y );
 
-            DrawRay(ray, rayDirection * rayDistance, Color.red);
-            _raycastHit = Physics2D.Raycast(ray, rayDirection, rayDistance, mask);
-            if (_raycastHit)
-            {
-                // set our new deltaMovement and recalculate the rayDistance taking it into account
-                deltaMovement.y = _raycastHit.point.y - ray.y;
-                rayDistance = Mathf.Abs(deltaMovement.y);
+			DrawRay( ray, rayDirection * rayDistance, Color.red );
+			_raycastHit = Physics2D.Raycast( ray, rayDirection, rayDistance, mask );
+			if( _raycastHit )
+			{
+				// set our new deltaMovement and recalculate the rayDistance taking it into account
+				deltaMovement.y = _raycastHit.point.y - ray.y;
+				rayDistance = Mathf.Abs( deltaMovement.y );
 
-                // remember to remove the skinWidth from our deltaMovement
-                if (isGoingUp)
-                {
-                    deltaMovement.y -= _skinWidth;
-                    collisionState.above = true;
-                }
-                else
-                {
-                    deltaMovement.y += _skinWidth;
-                    collisionState.below = true;
-                }
+				// remember to remove the skinWidth from our deltaMovement
+				if( isGoingUp )
+				{
+					deltaMovement.y -= _skinWidth;
+					collisionState.above = true;
+				}
+				else
+				{
+					deltaMovement.y += _skinWidth;
+					collisionState.below = true;
+				}
 
-                _raycastHitsThisFrame.Add(_raycastHit);
+				_raycastHitsThisFrame.Add( _raycastHit );
 
-                // this is a hack to deal with the top of slopes. if we walk up a slope and reach the apex we can get in a situation
-                // where our ray gets a hit that is less then skinWidth causing us to be ungrounded the next frame due to residual velocity.
-                if (!isGoingUp && deltaMovement.y > 0.00001f)
-                    _isGoingUpSlope = true;
+				// this is a hack to deal with the top of slopes. if we walk up a slope and reach the apex we can get in a situation
+				// where our ray gets a hit that is less then skinWidth causing us to be ungrounded the next frame due to residual velocity.
+				if( !isGoingUp && deltaMovement.y > 0.00001f )
+					_isGoingUpSlope = true;
 
-                // we add a small fudge factor for the float operations here. if our rayDistance is smaller
-                // than the width + fudge bail out because we have a direct impact
-                if (rayDistance < _skinWidth + kSkinWidthFloatFudgeFactor)
-                    break;
-            }
+				// we add a small fudge factor for the float operations here. if our rayDistance is smaller
+				// than the width + fudge bail out because we have a direct impact
+				if( rayDistance < _skinWidth + kSkinWidthFloatFudgeFactor )
+					break;
+			}
         }
+        //var nearMask = platformMask;
+        //nearMask &= triggerMask;
 
-        var nearMask = platformMask;
-        nearMask &= triggerMask;
+        //if (!isGoingUp)
+        //{
+        //    for (var i = 0; i < totalVerticalRays; i++)
+        //    {
+        //        var ray = new Vector2(initialRayOrigin.x + i * _horizontalDistanceBetweenRays, initialRayOrigin.y);
 
-        if (!isGoingUp)
-        {
-            for (var i = 0; i < totalVerticalRays; i++)
-            {
-                var ray = new Vector2(initialRayOrigin.x + i * _horizontalDistanceBetweenRays, initialRayOrigin.y);
+        //        DrawRay(ray, rayNearDirection * rayNearDistance, Color.blue);
+        //        _raycastHit = Physics2D.Raycast(ray, rayNearDirection, rayNearDistance, mask);
 
-                DrawRay(ray, rayNearDirection * rayNearDistance, Color.blue);
-                _raycastHit = Physics2D.Raycast(ray, rayNearDirection, rayNearDistance, mask);
-
-                if (_raycastHit)
-                {
-                        if(_raycastHit.distance < 90f)
-                            collisionState.nearFloor = true;
-                }
-            }
-        }
+        //        if (_raycastHit)
+        //        {
+        //            if (_raycastHit.distance < 90f)
+        //                collisionState.nearFloor = true;
+        //        }
+        //    }
+        //}
     }
+
+
 	/// <summary>
 	/// checks the center point under the BoxCollider2D for a slope. If it finds one then the deltaMovement is adjusted so that
 	/// the player stays grounded and the slopeSpeedModifier is taken into account to speed up movement.
@@ -577,7 +583,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 			// bail out if we have no slope
 			var angle = Vector2.Angle( _raycastHit.normal, Vector2.up );
-			if( angle < 0.001f )
+			if( angle < 0.0000001f )
 				return;
 
 			// we are moving down the slope if our normal and movement direction are in the same x direction
@@ -588,8 +594,8 @@ public class CharacterController2D : MonoBehaviour
 				var slopeModifier = slopeSpeedMultiplier.Evaluate( -angle );
                 if (ignoreSlopeModifier)
                     slopeModifier = 1;
-				// we add the extra downward movement here to ensure we "stick" to the surface below
-				deltaMovement.y += _raycastHit.point.y - slopeRay.y - skinWidth;
+                // we add the extra downward movement here to ensure we "stick" to the surface below
+                deltaMovement.y += _raycastHit.point.y - slopeRay.y - skinWidth;
 				deltaMovement = new Vector3( 0, deltaMovement.y, 0 ) +
                                 ( Quaternion.AngleAxis( -angle, Vector3.forward ) * new Vector3( deltaMovement.x * slopeModifier, 0, 0 ) );
 				collisionState.movingDownSlope = true;
