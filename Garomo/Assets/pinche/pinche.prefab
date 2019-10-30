@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7772979472142466879}
   - component: {fileID: 5644747362231914475}
   - component: {fileID: 1060771264191108791}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: pinche
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3417244732907417110}
   - component: {fileID: 864016731029968552}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Enemy
   m_Icon: {fileID: 0}
