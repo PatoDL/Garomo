@@ -126,7 +126,6 @@ public class GaromoController : MonoBehaviour
                 life -= 1;
                 transform.position = (Vector2)lastCheckpoint.transform.position;
             }
-            //_controller.move(_velocity * Time.deltaTime);
         }
         else if(col.transform.tag=="Checkpoint")
         {

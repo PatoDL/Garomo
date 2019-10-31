@@ -39,6 +39,11 @@ public class TurtleController : MonoBehaviour
     public Sprite deadTurtle;
     bool falling = false;
 
+    public float fallingTime;
+    public float fallingMaxTime = 3f;
+
+    public AnimationCurve deadAnim;
+
 	void Awake()
 	{
 		_animator = GetComponent<Animator>();
@@ -74,7 +79,28 @@ public class TurtleController : MonoBehaviour
 	{
         if (col.tag == "Attack")
         {
-            wasDamaged = true;
+            life -= 1;
+            if (life <= 0)
+            {
+                GetComponent<SpriteRenderer>().sprite = deadTurtle;
+                _animator.enabled = false;
+                _controller.boxCollider.enabled = false;
+                _controller.rigidBody2D.Sleep();
+                falling = true;
+                fallingTime = fallingMaxTime;
+                //Debug.Break();
+            }
+            else
+            {
+                if((col.transform.position.x > transform.position.x && normalizedHorizontalSpeed == 1) || 
+                    (col.transform.position.x < transform.position.x && normalizedHorizontalSpeed == -1))
+                {
+                    transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                    normalizedHorizontalSpeed = -normalizedHorizontalSpeed;
+                }
+                _animator.SetTrigger("Damage");
+
+            }
         }
         else if(col.tag=="Redirectioner")
         {
@@ -110,38 +136,28 @@ public class TurtleController : MonoBehaviour
         else if (_controller.collidedRight)
             normalizedHorizontalSpeed = -1;
 
-        if (wasDamaged)
+        if (falling)
         {
-            life -= 1;
-            if(life<=0)
+            fallingTime -= Time.deltaTime;
+            transform.position += new Vector3(- normalizedHorizontalSpeed * (fallingMaxTime - fallingTime)*runSpeed, deadAnim.Evaluate((fallingMaxTime - fallingTime) / fallingMaxTime)*runSpeed)*Time.deltaTime;
+
+            if(fallingTime<=0f)
             {
-                _controller.platformMask = -1;
-                _animator.enabled = false;
-                GetComponent<SpriteRenderer>().sprite = deadTurtle;
-                falling = true;
-            }
-            else if(falling)
-            {
-                _velocity = Vector3.down * runSpeed * Time.deltaTime;
-            }
-            else
-            {
-                _animator.SetTrigger("Damage");
-                wasDamaged = false;
+                gameObject.SetActive(false);
             }
         }
 
-		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
-		var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
-		_velocity.x = Mathf.Lerp( _velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor );
+        if (!falling)
+        {
+            // apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
+            var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
+            _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
 
-		// apply gravity before moving
-		_velocity.y += gravity * Time.deltaTime;
+            // apply gravity before moving
+            _velocity.y += gravity * Time.deltaTime;
 
-        // if holding down bump up our movement amount and turn off one way platform detection for a frame.
-        // this lets us jump down through one way platforms
-
-        _controller.move( _velocity * Time.deltaTime );
+            _controller.move(_velocity * Time.deltaTime);
+        }
 
 		// grab our current _velocity to use as a base for all calculations
 		_velocity = _controller.velocity;

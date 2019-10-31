@@ -101,6 +101,7 @@ MonoBehaviour:
   shotTimerMax: 3
   shotTimer: 2
   shot: {fileID: 3345883960903355751, guid: 1403a5f8209bfab46aa719e9f74da2f3, type: 3}
+  deadBodySpeed: 50
   deadBody: {fileID: 21300006, guid: 24365d5fbb8bcb84b80ae8aab5280af1, type: 3}
   dead: 0
 --- !u!61 &4717678708450897720
@@ -113,7 +114,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.29459763, y: 2.4040155}

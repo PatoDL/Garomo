@@ -18,6 +18,8 @@ public class FlamencoBehaviour : MonoBehaviour
     public float shotTimer = 2f;
     public GameObject shot;
 
+    public float deadBodySpeed;
+
     Rigidbody2D rig;
     Animator anim;
     SpriteRenderer spr;
@@ -76,7 +78,7 @@ public class FlamencoBehaviour : MonoBehaviour
     {
         if(collision.tag == "Attack")
         {
-            life -= 10;
+            life -= 1;
             if((collision.gameObject.transform.position.x < transform.position.x && transform.localScale.x < 0f) || 
                 (collision.gameObject.transform.position.x > transform.position.x && transform.localScale.x > 0f))
             {
@@ -86,7 +88,7 @@ public class FlamencoBehaviour : MonoBehaviour
             rig.velocity = Vector3.zero;
             if(life <= 0f)
             {
-                speed = 500f;
+                speed = deadBodySpeed;
                 spr.sprite = deadBody;
                 col.isTrigger = true;
                 anim.enabled = false;

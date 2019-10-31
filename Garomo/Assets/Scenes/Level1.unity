@@ -6477,6 +6477,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7963839829350110718, guid: 84ca561307436a247a9aa1148e74dae9,
+        type: 3}
+      propertyPath: life
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963839829350110718, guid: 84ca561307436a247a9aa1148e74dae9,
+        type: 3}
+      propertyPath: deadAnim.m_Curve.Array.data[1].value
+      value: -9.989826
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963839829350110718, guid: 84ca561307436a247a9aa1148e74dae9,
+        type: 3}
+      propertyPath: deadAnim.m_Curve.Array.data[1].time
+      value: 1.0071204
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963839829350110718, guid: 84ca561307436a247a9aa1148e74dae9,
+        type: 3}
+      propertyPath: deadAnim.m_Curve.Array.data[0].inSlope
+      value: 8.669298
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963839829350110718, guid: 84ca561307436a247a9aa1148e74dae9,
+        type: 3}
+      propertyPath: deadAnim.m_Curve.Array.data[0].outSlope
+      value: 8.669298
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963839829350110718, guid: 84ca561307436a247a9aa1148e74dae9,
+        type: 3}
+      propertyPath: deadAnim.m_Curve.Array.data[0].outWeight
+      value: 0.06929973
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84ca561307436a247a9aa1148e74dae9, type: 3}
 --- !u!1 &324411119
@@ -24648,15 +24678,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlamencoMosquito
       objectReference: {fileID: 0}
+    - target: {fileID: 4717678708450897723, guid: 77c6a23260a049148ac13ca8fb7e0f62,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4717678708450897727, guid: 77c6a23260a049148ac13ca8fb7e0f62,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.5
+      value: -60.99
       objectReference: {fileID: 0}
     - target: {fileID: 4717678708450897727, guid: 77c6a23260a049148ac13ca8fb7e0f62,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.44
+      value: 21.91
       objectReference: {fileID: 0}
     - target: {fileID: 4717678708450897727, guid: 77c6a23260a049148ac13ca8fb7e0f62,
         type: 3}
@@ -54832,7 +54867,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8973597956158451974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -221.4, y: 2.8, z: 0}
+  m_LocalPosition: {x: -76.7, y: 23.2, z: 0}
   m_LocalScale: {x: 0.43279344, y: 0.43279344, z: 0.43279338}
   m_Children:
   - {fileID: 8083580207090680746}

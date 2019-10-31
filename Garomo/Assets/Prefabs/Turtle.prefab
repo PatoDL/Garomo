@@ -281,7 +281,33 @@ MonoBehaviour:
   upAttackCollider: {fileID: 2081361935745551187}
   downAttackCollider: {fileID: 3080719245109970431}
   idleCollider: {fileID: 0}
-  deadTurtle: {fileID: 0}
+  deadTurtle: {fileID: 21300006, guid: c2199a27ace4a9545b8521177397a2a2, type: 3}
+  fallingTime: 0
+  fallingMaxTime: 1
+  deadAnim:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.006254625
+      value: 0.0013434432
+      inSlope: 4.688937
+      outSlope: 4.688937
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.055212036
+    - serializedVersion: 3
+      time: 1.0021765
+      value: -3.9355817
+      inSlope: -23.8959
+      outSlope: -23.8959
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.048244946
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!61 &8572798240533179579
 BoxCollider2D:
   m_ObjectHideFlags: 0
