@@ -47,6 +47,8 @@ public class GaromoController : MonoBehaviour
 
     public BoxCollider2D skinnyGaromo;
 
+    public AnimationCurve rollVelVariation;
+
     public bool isRolling = false;
     public float rollDistance = 0f;
 
@@ -284,8 +286,8 @@ public class GaromoController : MonoBehaviour
 
         if (isRolling)
         {
-            Roll();
             rollTimer -= Time.deltaTime;
+            Roll();
             if (rollTimer <= 0.0f)
             {
                 isRolling = false;
@@ -409,11 +411,11 @@ public class GaromoController : MonoBehaviour
 
     public void Roll()
     {  
-        _velocity.x += transform.localScale.x * rollSpeed * Time.deltaTime;
+        _velocity.x += rollSpeed * transform.localScale.x * rollVelVariation.Evaluate((rollDistance - rollTimer) / rollDistance) * Time.deltaTime;
     }
 
     public void Recoil()
     {
-        _velocity.x -= transform.localScale.x * recoil * Time.deltaTime;
+        _velocity.x = -transform.localScale.x * _velocity.x + (recoil * transform.localScale.x) * Time.deltaTime;
     }
 }
