@@ -14,6 +14,7 @@ TagManager:
   - NextScene
   - SewTile
   - Redirectioner
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

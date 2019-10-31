@@ -23,6 +23,7 @@ public class GaromoController : MonoBehaviour
 
     bool enemyCollision = false;
     bool isRecoiling = false;
+
     public float recoilTimeMax = 3.0f;
     public float recoilTime = 3.0f;
 
@@ -54,6 +55,8 @@ public class GaromoController : MonoBehaviour
 
     Vector3 startPos;
 
+    GameObject lastCheckpoint;
+
 	void Awake()
 	{
 		_animator = GetComponent<Animator>();
@@ -68,6 +71,10 @@ public class GaromoController : MonoBehaviour
         Time.timeScale = 0f;
 
         startPos = transform.position;
+
+        lastCheckpoint = new GameObject();
+
+        lastCheckpoint.transform.position = startPos;
 	}
 
 
@@ -94,7 +101,7 @@ public class GaromoController : MonoBehaviour
 
 	void onTriggerEnterEvent( Collider2D col )
 	{
-        if(col.tag=="Enemy")
+        if(col.tag=="Enemy" && !immunity)
             enemyCollision = immunity = true;
 
         if (col.transform.tag != "SewTile" && _controller.boxCollider == skinnyGaromo)
@@ -104,21 +111,31 @@ public class GaromoController : MonoBehaviour
         }
         else if (col.transform.tag == "LimitTrigger")
         {
-            transform.position = startPos;
+            
 
             if (life <= 0)
             {
                 _animator.SetTrigger("Dead");
                 canMove = false;
                 _velocity = Vector3.zero;
+                transform.position = startPos;
                 GaromoDie();
             }
             else
             {
                 life -= 1;
+                transform.position = (Vector2)lastCheckpoint.transform.position;
             }
-            _controller.move(_velocity * Time.deltaTime);
-            //("hell yeah");
+            //_controller.move(_velocity * Time.deltaTime);
+        }
+        else if(col.transform.tag=="Checkpoint")
+        {
+            if (lastCheckpoint.transform.position == startPos)
+            {
+                Destroy(lastCheckpoint);
+                lastCheckpoint = null;
+            }
+            lastCheckpoint = col.transform.gameObject;
         }
     }
 
@@ -146,15 +163,7 @@ public class GaromoController : MonoBehaviour
 	// the Update loop contains a very simple example of moving the character around and controlling the animation
 	void Update()
 	{
-        if(immunity)
-        {
-            enemyCollisionTimer += Time.deltaTime;
-            if(enemyCollisionTimer>1.5f)
-            {
-                immunity = false;
-                enemyCollisionTimer = 0.0f;
-            }
-        }
+        
 
         if (_controller.isGrounded)
         {
@@ -164,42 +173,37 @@ public class GaromoController : MonoBehaviour
         
         if (canMove)
         {
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Time.timeScale > 0f)
             {
-                normalizedHorizontalSpeed = 1;
-                if (transform.localScale.x < 0f)
-                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    normalizedHorizontalSpeed = 1;
+                    if (transform.localScale.x < 0f)
+                        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 
-                if (_controller.isGrounded)
-                    _animator.SetBool("Running", true);
-            }
-            else if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                normalizedHorizontalSpeed = -1;
-                if (transform.localScale.x > 0f)
-                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                    if (_controller.isGrounded)
+                        _animator.SetBool("Running", true);
+                }
+                else if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    normalizedHorizontalSpeed = -1;
+                    if (transform.localScale.x > 0f)
+                        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 
-                if (_controller.isGrounded)
-                    _animator.SetBool("Running", true);
-            }
-            else
-            {
-                normalizedHorizontalSpeed = 0;
-                _animator.SetBool("Running", false);
+                    if (_controller.isGrounded)
+                        _animator.SetBool("Running", true);
+                }
+                else
+                {
+                    normalizedHorizontalSpeed = 0;
+                    _animator.SetBool("Running", false);
+                }
             }
         }
         else
         {
             normalizedHorizontalSpeed = 0;
             _animator.SetBool("Running", false);
-            if(!_controller.isGrounded && recoil>25)
-            {
-                if (_velocity.x > 0)
-                    _velocity.x = 1;
-                else
-                    _velocity.x = -1;
-
-            }
         }
 
         if(Input.GetKeyDown(KeyCode.Z) && canMove && !isRolling)
@@ -227,7 +231,6 @@ public class GaromoController : MonoBehaviour
             if (life <= 0f)
             {
                 _animator.SetTrigger("Dead");
-                canMove = false;
                 _velocity = Vector3.zero;
                 GaromoDie();
             }
@@ -235,34 +238,12 @@ public class GaromoController : MonoBehaviour
             {
                 life -= 1;
                 _animator.SetTrigger("Damage");
-                enemyCollision = false;
-
-                if (_controller.isGrounded)
-                    recoil = 1500;
-                else
-                    recoil = 25;
-
-                //if (_controller.collidedLeft)
-                //{
-                //    _velocity.x += recoil;
-                //}
-                //else if(_controller.collidedRight)
-                //{
-                //    _velocity.x -= recoil;
-                //}
-
-                //if (_controller.isGrounded)
-                //{
-                //    isRecoiling = true;
-                //    canMove = false;
-                //    recoilTime = recoilTimeMax;
-                //}
-                //else
-                //{
-                    isRecoiling = false;
-                    canMove = true;
-                //}
+                isRecoiling = true;
             }
+            enemyCollision = false;
+            _velocity = Vector3.zero;
+            canMove = false;
+            recoilTime = recoilTimeMax;
         }
 
         if(isRecoiling)
@@ -273,6 +254,8 @@ public class GaromoController : MonoBehaviour
             {
                 isRecoiling = false;
                 canMove = true;
+                recoilTime = recoilTimeMax;
+                immunity = false;
             }
         }
 
@@ -416,6 +399,6 @@ public class GaromoController : MonoBehaviour
 
     public void Recoil()
     {
-        _velocity.x = -transform.localScale.x * _velocity.x + (recoil * transform.localScale.x) * Time.deltaTime;
+        _velocity.x -= transform.localScale.x * recoil * Time.deltaTime;
     }
 }
