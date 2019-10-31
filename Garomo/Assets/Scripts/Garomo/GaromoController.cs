@@ -141,6 +141,8 @@ public class GaromoController : MonoBehaviour
         {
             transform.position = teleporter.transform.position;
         }
+
+        
     }
 
     void onTriggerStayEvent(Collider2D col)
@@ -150,6 +152,7 @@ public class GaromoController : MonoBehaviour
             _controller.boxCollider = skinnyGaromo;
             _controller.recalculateDistanceBetweenRays();
         }
+        Debug.Log(col.tag);
     }
 
     void onTriggerExitEvent( Collider2D col )
