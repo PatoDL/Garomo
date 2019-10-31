@@ -57,6 +57,8 @@ public class GaromoController : MonoBehaviour
 
     GameObject lastCheckpoint;
 
+    public GameObject teleporter;
+
 	void Awake()
 	{
 		_animator = GetComponent<Animator>();
@@ -111,8 +113,6 @@ public class GaromoController : MonoBehaviour
         }
         else if (col.transform.tag == "LimitTrigger")
         {
-            
-
             if (life <= 0)
             {
                 _animator.SetTrigger("Dead");
@@ -135,6 +135,11 @@ public class GaromoController : MonoBehaviour
                 lastCheckpoint = null;
             }
             lastCheckpoint = col.transform.gameObject;
+        }
+
+        if(col.transform.tag == "NextScene")
+        {
+            transform.position = teleporter.transform.position;
         }
     }
 
@@ -211,7 +216,7 @@ public class GaromoController : MonoBehaviour
         }
 
 		// we can only jump whilst grounded
-		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) && canMove && !isRolling)
+		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) && canMove )
 		{
             Jump();
             _animator.SetBool("Jumping", true);
@@ -392,8 +397,14 @@ public class GaromoController : MonoBehaviour
     }
 
     public void Roll()
-    {  
-        _velocity.x += rollSpeed * transform.localScale.x * rollVelVariation.Evaluate((rollDistance - rollTimer) / rollDistance) * Time.deltaTime;
+    {
+        float rollSpeedAux = rollSpeed;
+        if(!_controller.isGrounded)
+        {
+            rollSpeedAux *= 1.5f;
+        }
+
+        _velocity.x += rollSpeedAux * transform.localScale.x * rollVelVariation.Evaluate((rollDistance - rollTimer) / rollDistance) * Time.deltaTime;
     }
 
     public void Recoil()
