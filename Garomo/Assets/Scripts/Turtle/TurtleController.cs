@@ -231,7 +231,6 @@ public class TurtleController : MonoBehaviour
 
             
         }
-        runSpeed = 0f;
     }
 
     void ActivateAttack(int where)
