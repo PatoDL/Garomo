@@ -11,7 +11,7 @@ public class GaromoController : MonoBehaviour
     public delegate void OnLevelEnd();
     public static OnLevelEnd GaromoWin;
 
-    
+    public bool win = false;
 
 	// movement config
 	public float gravity = -25f;
@@ -250,7 +250,7 @@ public class GaromoController : MonoBehaviour
 
         if(enemyCollision)
         {
-            if (life <= 0f)
+            if (life <= 1f)
             {
                 _animator.SetTrigger("Dead");
                 _velocity = Vector3.zero;
@@ -361,6 +361,8 @@ public class GaromoController : MonoBehaviour
         canMove = true;
         isRolling = false;
         enemyCollision = false;
+        win = false;
+        _animator.Play("Idle");
     }
 
     public void OnTriggerEnter2D(Collider2D col)
@@ -375,7 +377,8 @@ public class GaromoController : MonoBehaviour
         
         else if (col.transform.tag == "EndlevelTrigger")
         {
-            Debug.Log("Ganaste");
+            win = true;
+            GaromoWin();
         }
     }
 
