@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+
 using Prime31;
 
 
@@ -66,11 +67,18 @@ public class GaromoController : MonoBehaviour
 
     public bool rollJump = false;
 
-	void Awake()
+    public bool isCrouching = false;
+
+    public Sprite garomoFalling;
+
+    SpriteRenderer spr;
+
+    void Awake()
 	{
 		_animator = GetComponent<Animator>();
 		_controller = GetComponent<CharacterController2D>();
         idleCollider = _controller.boxCollider;
+        spr = GetComponent<SpriteRenderer>();
 		// listen to some events for illustration purposes
 		_controller.onControllerCollidedEvent += onControllerCollider;
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
@@ -119,7 +127,7 @@ public class GaromoController : MonoBehaviour
         }
         else if (col.transform.tag == "LimitTrigger")
         {
-            if (life <= 0)
+            if (life <= 1)
             {
                 _animator.SetTrigger("Dead");
                 canMove = false;
@@ -224,7 +232,7 @@ public class GaromoController : MonoBehaviour
             _animator.SetBool("Running", false);
         }
 
-        if(Input.GetKeyDown(KeyCode.Z) && canMove && !isRolling)
+        if(Input.GetKeyDown(KeyCode.Z) && canMove && !isRolling && !isCrouching && !(!_controller.isGrounded && _velocity.y < 0f))
         {
             _animator.SetTrigger("Punch");
         }
@@ -281,12 +289,15 @@ public class GaromoController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && canMove && _controller.isGrounded && !isRolling)
+        if (!_controller.isGrounded && !isRolling && !isCrouching && canMove && _velocity.y < 0f)
+            spr.sprite = garomoFalling;
+
+        if (Input.GetKeyDown(KeyCode.C) && canMove && _controller.isGrounded && !isRolling && !isCrouching)
         {
             isRolling = true;
             _controller.ignoreSlopeModifier = true;
             _animator.SetBool("Running", false);
-            _animator.SetTrigger("Roll");
+            _animator.Play("Garomo_roll");
             rollTimer = rollDistance;
         }
 
@@ -321,6 +332,7 @@ public class GaromoController : MonoBehaviour
             {
                 ActiveCrouchCollider();
                 _animator.SetBool("Crouching", true);
+                isCrouching = true;
             }
             if(Input.GetKey(KeyCode.UpArrow))
             {
@@ -330,6 +342,7 @@ public class GaromoController : MonoBehaviour
                     _animator.SetBool("Jumping", true);
                     _animator.SetBool("Crouching", false);
                     _animator.SetBool("Jumping", false);
+                    isCrouching = false;
                 }
             }
 		}
@@ -345,6 +358,7 @@ public class GaromoController : MonoBehaviour
             {
                 DeActiveCrouchCollider();
                 _animator.SetBool("Crouching", false);
+                isCrouching = false;
             }
         }
 
@@ -357,10 +371,12 @@ public class GaromoController : MonoBehaviour
     public void Restart()
     {
         transform.position = startPos;
+        _controller.recalculateDistanceBetweenRays();
         life = 5;
         canMove = true;
         isRolling = false;
         enemyCollision = false;
+        immunity = false;
         win = false;
         _animator.Play("Idle");
     }
@@ -386,13 +402,15 @@ public class GaromoController : MonoBehaviour
     {
         crouchCollider.gameObject.SetActive(true);
         _controller.boxCollider = crouchCollider;
+        idleCollider.enabled = false;
         _controller.recalculateDistanceBetweenRays();
     }
 
     public void DeActiveCrouchCollider()
     {
-        crouchCollider.gameObject.SetActive(false);
+        idleCollider.enabled = true;
         _controller.boxCollider = idleCollider;
+        crouchCollider.gameObject.SetActive(false);
         _controller.recalculateDistanceBetweenRays();
     }
 

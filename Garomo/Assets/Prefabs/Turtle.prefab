@@ -273,7 +273,9 @@ MonoBehaviour:
   inAirDamping: 5
   jumpHeight: 3
   life: 3
-  recoil: 0
+  recoil: 500
+  recoilTime: 0.5
+  recoilTimeMax: 0.5
   haveToAttack: 0
   wasDamaged: 0
   _animator: {fileID: 0}

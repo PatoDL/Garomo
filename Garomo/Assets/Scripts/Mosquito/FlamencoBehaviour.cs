@@ -25,9 +25,13 @@ public class FlamencoBehaviour : MonoBehaviour
     SpriteRenderer spr;
     BoxCollider2D col;
 
+    Vector3 startPos;
+
     public Sprite deadBody;
 
     public bool dead = false;
+
+    public static List<GameObject> mosquitos = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +40,25 @@ public class FlamencoBehaviour : MonoBehaviour
         anim = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
         col = GetComponent<BoxCollider2D>();
+        mosquitos.Add(gameObject);
+        startPos = transform.position;
+    }
+
+    public static void RestartMosquitos()
+    {
+        foreach(GameObject m in mosquitos)
+        {
+            m.gameObject.SetActive(true);
+            m.GetComponent<FlamencoBehaviour>().Restart();
+        }
+    }
+
+    public void Restart()
+    {
+        transform.position = startPos;
+        col.isTrigger = false;
+        anim.enabled = true;
+        dead = false;
     }
 
     // Update is called once per frame
@@ -63,7 +86,7 @@ public class FlamencoBehaviour : MonoBehaviour
         }
         else
         {
-            rig.velocity += Vector2.down * speed * Time.deltaTime;
+            rig.velocity += Vector2.down * deadBodySpeed * Time.deltaTime;
         }
     }
 
@@ -88,7 +111,6 @@ public class FlamencoBehaviour : MonoBehaviour
             rig.velocity = Vector3.zero;
             if(life <= 0f)
             {
-                speed = deadBodySpeed;
                 spr.sprite = deadBody;
                 col.isTrigger = true;
                 anim.enabled = false;

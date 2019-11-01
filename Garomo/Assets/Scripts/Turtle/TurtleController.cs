@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Prime31;
+using System.Collections.Generic;
 
 
 public class TurtleController : MonoBehaviour
@@ -15,6 +16,9 @@ public class TurtleController : MonoBehaviour
     public int life = 100;
 
     public float recoil = 0f;
+
+    public float recoilTime;
+    public float recoilTimeMax;
 
     public bool haveToAttack = false;
 
@@ -44,6 +48,30 @@ public class TurtleController : MonoBehaviour
 
     public AnimationCurve deadAnim;
 
+    Vector3 startPos;
+
+    public static List<GameObject> turtles = new List<GameObject>();
+
+    public static void RestartTurtles()
+    {
+        foreach(GameObject g in turtles)
+        {
+            g.SetActive(true);
+            g.GetComponent<TurtleController>().Restart();
+        }
+    }
+
+    public void Restart()
+    {
+        transform.position = startPos;
+        life = 3;
+        _animator.enabled = true;
+        _controller.boxCollider.enabled = true;
+        _controller.rigidBody2D.WakeUp();
+        falling = false;
+        wasDamaged = false;
+    }
+
 	void Awake()
 	{
 		_animator = GetComponent<Animator>();
@@ -54,9 +82,11 @@ public class TurtleController : MonoBehaviour
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
         _controller.collisionState.right = true;
-
+        recoilTime = recoilTimeMax;
         gc = GetComponentInChildren<GaromoChecker>();
         gc.GaromoEntrance = Attack;
+        startPos = transform.position;
+        turtles.Add(gameObject);
 
         normalizedHorizontalSpeed = -1;
 	}
@@ -75,12 +105,12 @@ public class TurtleController : MonoBehaviour
 	}
 
 
+
 	void onTriggerEnterEvent( Collider2D col )
 	{
         if (col.tag == "Attack")
         {
-            life -= 1;
-            if (life <= 0)
+            if (life <= 1)
             {
                 GetComponent<SpriteRenderer>().sprite = deadTurtle;
                 _animator.enabled = false;
@@ -88,18 +118,19 @@ public class TurtleController : MonoBehaviour
                 _controller.rigidBody2D.Sleep();
                 falling = true;
                 fallingTime = fallingMaxTime;
-                //Debug.Break();
             }
             else
             {
-                if((col.transform.position.x > transform.position.x && normalizedHorizontalSpeed == 1) || 
+                life -= 1;
+                if ((col.transform.position.x > transform.position.x && normalizedHorizontalSpeed == 1) || 
                     (col.transform.position.x < transform.position.x && normalizedHorizontalSpeed == -1))
                 {
                     transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
-                    normalizedHorizontalSpeed = -normalizedHorizontalSpeed;
+                    
                 }
                 _animator.SetTrigger("Damage");
-
+                wasDamaged = true;
+                recoilTime = recoilTimeMax;
             }
         }
         else if(col.tag=="Redirectioner")
@@ -147,7 +178,19 @@ public class TurtleController : MonoBehaviour
             }
         }
 
-        if (!falling)
+        if(wasDamaged)
+        {
+            recoilTime -= Time.deltaTime;
+            Recoil();
+            if(recoilTime<=0)
+            {
+                wasDamaged = false;
+                recoilTime = recoilTimeMax;
+                normalizedHorizontalSpeed = -normalizedHorizontalSpeed;
+            }
+        }
+
+        if (!falling && !wasDamaged)
         {
             // apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
             var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
@@ -162,11 +205,6 @@ public class TurtleController : MonoBehaviour
 		// grab our current _velocity to use as a base for all calculations
 		_velocity = _controller.velocity;
 	}
-
-    public void Restart()
-    {
-        transform.position = new Vector3(-380f,-1f,0f);
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -216,5 +254,10 @@ public class TurtleController : MonoBehaviour
         downAttackCollider.gameObject.SetActive(false);
         normalizedHorizontalSpeed = -normalizedHorizontalSpeed;
         runSpeed = 2.5f;
+    }
+
+    void Recoil()
+    {
+        _velocity.x -= transform.localScale.x * recoil * Time.deltaTime;
     }
 }

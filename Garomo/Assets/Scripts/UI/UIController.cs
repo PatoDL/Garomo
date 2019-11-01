@@ -123,7 +123,6 @@ public class UIController : MonoBehaviour
     public void ShowGameOver()
     {
         GameOverPanel.gameObject.SetActive(true);
-        Restart();
         Time.timeScale = 0f;
     }
 
@@ -158,6 +157,8 @@ public class UIController : MonoBehaviour
     {
         Time.timeScale = 1f;
         garomoController.Restart();
+        TurtleController.RestartTurtles();
+        FlamencoBehaviour.RestartMosquitos();
     }
 
     public void IncreaseButton(GameObject g)
