@@ -11,6 +11,8 @@ public class GaromoController : MonoBehaviour
     public delegate void OnLevelEnd();
     public static OnLevelEnd GaromoWin;
 
+    
+
 	// movement config
 	public float gravity = -25f;
 	public float runSpeed = 8f;
@@ -144,6 +146,7 @@ public class GaromoController : MonoBehaviour
         if(col.transform.tag == "NextScene")
         {
             transform.position = teleporter.transform.position;
+            SmoothFollow.ChangeCameraDistance(20);
         }
     }
 
