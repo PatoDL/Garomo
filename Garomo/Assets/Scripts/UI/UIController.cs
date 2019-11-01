@@ -14,6 +14,12 @@ public class UIController : MonoBehaviour
     public Sprite muzzlePiece;
     public Sprite lastMuzzle;
 
+    public Image[] fadingPanels;
+
+    public Image actualFading;
+
+    public GameObject instructionsPanel;
+
     public GaromoController garomoController;
 
     public GameObject retryButton;
@@ -32,42 +38,85 @@ public class UIController : MonoBehaviour
         versionText.text = "v" + Application.version;
         GaromoController.GaromoDie = ShowGameOver;
         GaromoController.GaromoWin = OpenCredits;
+        actualFading = fadingPanels[0];
     }
+
+    float fadingTimeMax = 1.5f;
+    float fadingTime = 1.5f;
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (!fadingPanels[0].gameObject.activeInHierarchy && !fadingPanels[1].gameObject.activeInHierarchy)
         {
-            PauseGame(true);
-        }
-
-        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Q))
-        {
-            cheatsPanel.gameObject.SetActive(true);
-        }
-
-        for(int i=0;i<garomoController.life;i++)
-        {
-            muzzleParts[i].gameObject.SetActive(true);
-        }
-
-        for(int i=0;i<garomoController.life;i++)
-        {
-            if(i == garomoController.life - 1)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                muzzleParts[i].sprite = lastMuzzle;
+                PauseGame(true);
             }
-            else
+
+            if (Input.GetKeyDown(KeyCode.Y))
             {
-                if(muzzleParts[i].IsActive())
-                    muzzleParts[i].sprite = muzzlePiece;
+                instructionsPanel.SetActive(!instructionsPanel.activeInHierarchy);
+                if (instructionsPanel.activeInHierarchy)
+                    Time.timeScale = 0f;
+                else
+                    Time.timeScale = 1f;
+            }
+
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Q))
+            {
+                cheatsPanel.gameObject.SetActive(true);
+            }
+
+            for (int i = 0; i < garomoController.life; i++)
+            {
+                muzzleParts[i].gameObject.SetActive(true);
+            }
+
+            for (int i = 0; i < garomoController.life; i++)
+            {
+                if (i == garomoController.life - 1)
+                {
+                    muzzleParts[i].sprite = lastMuzzle;
+                }
+                else
+                {
+                    if (muzzleParts[i].IsActive())
+                        muzzleParts[i].sprite = muzzlePiece;
+                }
+            }
+
+            for (int i = garomoController.life; i < 5; i++)
+            {
+                muzzleParts[i].gameObject.SetActive(false);
             }
         }
-
-        for(int i=garomoController.life;i<5;i++)
+        else
         {
-            muzzleParts[i].gameObject.SetActive(false);
+            if (fadingTime > 0)
+            {
+                Color color = new Color(0, 0, 0, fadingTime / fadingTimeMax);
+                actualFading.color = color;
+                fadingTime -= Time.deltaTime;
+                if(actualFading.transform.childCount > 0)
+                {
+                    Image childIm = actualFading.transform.Find("Logo").GetComponent<Image>();
+                    Color c = new Color(1, 1, 1, fadingTime / fadingTimeMax);
+                    childIm.color = c;
+
+                    
+                }
+                if (fadingTime < 0)
+                {
+                    fadingTime = 0;
+                    actualFading.gameObject.SetActive(false);
+                }
+            }
+            else if(actualFading == fadingPanels[0])
+            {
+                actualFading = fadingPanels[1];
+                fadingTime = 5f;
+            }
         }
     }
 
@@ -82,7 +131,7 @@ public class UIController : MonoBehaviour
     {
         MenuPanel.gameObject.SetActive(false);
         inGameUI.gameObject.SetActive(true);
-        Time.timeScale = 1f;
+        instructionsPanel.SetActive(true);
     }
 
     public void OpenCredits()
@@ -135,8 +184,16 @@ public class UIController : MonoBehaviour
     {
         if (pause)
         {
-            Time.timeScale = 0f;
-            PausePanel.gameObject.SetActive(true);
+            if (!PausePanel.gameObject.activeInHierarchy)
+            {
+                Time.timeScale = 0f;
+                PausePanel.gameObject.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                PausePanel.gameObject.SetActive(false);
+            }
         }
         else
         {
