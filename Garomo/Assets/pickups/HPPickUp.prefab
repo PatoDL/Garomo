@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 608009870944772770}
   - component: {fileID: 3682040075284034736}
   - component: {fileID: 7938233092490256582}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HPPickUp
-  m_TagString: Untagged
+  m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,7 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 608009871019818337}
   - component: {fileID: 608009871019818270}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pocion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 608009872547477621}
   - component: {fileID: 608009872547477618}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fondo pocion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
