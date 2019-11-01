@@ -35,13 +35,19 @@ public class UIController : MonoBehaviour
 
         for(int i=0;i<garomoController.life;i++)
         {
-            if(i== garomoController.life - 1)
+            muzzleParts[i].gameObject.SetActive(true);
+        }
+
+        for(int i=0;i<garomoController.life;i++)
+        {
+            if(i == garomoController.life - 1)
             {
                 muzzleParts[i].sprite = lastMuzzle;
             }
             else
             {
-                muzzleParts[i].sprite = muzzlePiece;
+                if(muzzleParts[i].IsActive())
+                    muzzleParts[i].sprite = muzzlePiece;
             }
         }
 

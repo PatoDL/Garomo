@@ -148,6 +148,11 @@ public class GaromoController : MonoBehaviour
             transform.position = teleporter.transform.position;
             SmoothFollow.ChangeCameraDistance(20);
         }
+
+        if(col.tag == "Potion")
+        {
+            life = 5;
+        }
     }
 
     void onTriggerStayEvent(Collider2D col)
@@ -416,20 +421,18 @@ public class GaromoController : MonoBehaviour
     public void Roll()
     {
         float rollSpeedAux = rollSpeed;
-        if(!_controller.isGrounded)
+        if (!_controller.isGrounded)
         {
             rollSpeedAux *= 1.5f;
         }
 
         if (!rollJump && _controller.isGrounded)
-            _velocity.y = gravity * 10;
+            _velocity.y = gravity * 10 * Time.deltaTime;
         if (!rollJump && !_controller.isGrounded)
             rollSpeedAux = 0f;
 
         _velocity.x += rollSpeedAux * transform.localScale.x * rollVelVariation.Evaluate((rollDistance - rollTimer) / rollDistance) * Time.deltaTime;
        
-
-        Debug.Log(_controller.isGrounded);
     }
 
     public void Recoil()

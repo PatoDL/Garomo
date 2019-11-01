@@ -15,6 +15,7 @@ TagManager:
   - SewTile
   - Redirectioner
   - Checkpoint
+  - Potion
   layers:
   - Default
   - TransparentFX
