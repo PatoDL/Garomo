@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4717678708450897720}
   - component: {fileID: 4717678708450897725}
   - component: {fileID: 1630767771909847092}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FlamencoMosquito
   m_TagString: Enemy
   m_Icon: {fileID: 0}

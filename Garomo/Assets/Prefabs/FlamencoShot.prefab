@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6305308549163430485}
   - component: {fileID: 5034591556384798709}
   - component: {fileID: 8275150337124549991}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FlamencoShot
   m_TagString: Enemy
   m_Icon: {fileID: 0}

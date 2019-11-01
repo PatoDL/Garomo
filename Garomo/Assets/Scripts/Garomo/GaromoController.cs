@@ -8,6 +8,9 @@ public class GaromoController : MonoBehaviour
     public delegate void OnGaromoDeath();
     public static OnGaromoDeath GaromoDie;
 
+    public delegate void OnLevelEnd();
+    public static OnLevelEnd GaromoWin;
+
 	// movement config
 	public float gravity = -25f;
 	public float runSpeed = 8f;
@@ -59,6 +62,8 @@ public class GaromoController : MonoBehaviour
 
     public GameObject teleporter;
 
+    public bool rollJump = false;
+
 	void Awake()
 	{
 		_animator = GetComponent<Animator>();
@@ -69,8 +74,6 @@ public class GaromoController : MonoBehaviour
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
         _controller.onTriggerStayEvent += onTriggerStayEvent;
         _controller.onTriggerExitEvent += onTriggerExitEvent;
-
-        Time.timeScale = 0f;
 
         startPos = transform.position;
 
@@ -110,6 +113,7 @@ public class GaromoController : MonoBehaviour
         {
             _controller.boxCollider = idleCollider;
             _controller.recalculateDistanceBetweenRays();
+            skinnyGaromo.gameObject.SetActive(false);
         }
         else if (col.transform.tag == "LimitTrigger")
         {
@@ -141,18 +145,18 @@ public class GaromoController : MonoBehaviour
         {
             transform.position = teleporter.transform.position;
         }
-
-        
     }
 
     void onTriggerStayEvent(Collider2D col)
     {
         if (col.transform.tag == "SewTile" && _controller.boxCollider != skinnyGaromo)
         {
+            skinnyGaromo.gameObject.SetActive(true);
             _controller.boxCollider = skinnyGaromo;
             _controller.recalculateDistanceBetweenRays();
         }
-        Debug.Log(col.tag);
+        else if (col.tag == "Enemy" && !immunity)
+            enemyCollision = immunity = true;
     }
 
     void onTriggerExitEvent( Collider2D col )
@@ -161,6 +165,7 @@ public class GaromoController : MonoBehaviour
         {
             _controller.boxCollider = idleCollider;
             _controller.recalculateDistanceBetweenRays();
+            skinnyGaromo.gameObject.SetActive(false);
         }
     }
 
@@ -170,8 +175,6 @@ public class GaromoController : MonoBehaviour
 	// the Update loop contains a very simple example of moving the character around and controlling the animation
 	void Update()
 	{
-        
-
         if (_controller.isGrounded)
         {
             _velocity.y = 0;
@@ -224,6 +227,10 @@ public class GaromoController : MonoBehaviour
             Jump();
             _animator.SetBool("Jumping", true);
             _animator.SetBool("Running", false);
+            if(isRolling)
+            {
+                rollJump = true;
+            }
         }
 
         if(!_controller.isGrounded && _controller.nearFloor)
@@ -270,6 +277,7 @@ public class GaromoController : MonoBehaviour
         {
             isRolling = true;
             _controller.ignoreSlopeModifier = true;
+            _animator.SetBool("Running", false);
             _animator.SetTrigger("Roll");
             rollTimer = rollDistance;
         }
@@ -283,6 +291,7 @@ public class GaromoController : MonoBehaviour
                 isRolling = false;
                 _controller.ignoreSlopeModifier = false;
                 rollTimer = rollDistance;
+                rollJump = false;
             }
         }
 
@@ -342,6 +351,8 @@ public class GaromoController : MonoBehaviour
         transform.position = startPos;
         life = 5;
         canMove = true;
+        isRolling = false;
+        enemyCollision = false;
     }
 
     public void OnTriggerEnter2D(Collider2D col)
@@ -407,7 +418,15 @@ public class GaromoController : MonoBehaviour
             rollSpeedAux *= 1.5f;
         }
 
+        if (!rollJump && _controller.isGrounded)
+            _velocity.y = gravity * 10;
+        if (!rollJump && !_controller.isGrounded)
+            rollSpeedAux = 0f;
+
         _velocity.x += rollSpeedAux * transform.localScale.x * rollVelVariation.Evaluate((rollDistance - rollTimer) / rollDistance) * Time.deltaTime;
+       
+
+        Debug.Log(_controller.isGrounded);
     }
 
     public void Recoil()
