@@ -2712,6 +2712,7 @@ GameObject:
   - component: {fileID: 97489758}
   - component: {fileID: 97489757}
   - component: {fileID: 97489756}
+  - component: {fileID: 97489759}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -2829,6 +2830,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97489754}
   m_CullTransparentMesh: 0
+--- !u!95 &97489759
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97489754}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f91e66807b1da84fadd2f1a91aa000c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &104684038
 GameObject:
   m_ObjectHideFlags: 0
@@ -4313,6 +4333,7 @@ GameObject:
   - component: {fileID: 182927090}
   - component: {fileID: 182927089}
   - component: {fileID: 182927092}
+  - component: {fileID: 182927094}
   m_Layer: 5
   m_Name: RetryButton
   m_TagString: Untagged
@@ -4463,41 +4484,21 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: IncreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 182927087}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: DecreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 182927087}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Delegates: []
+  delegates: []
+--- !u!114 &182927094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182927087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727b691f9bc40d3469571ec257679de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
   delegates: []
 --- !u!1001 &184360440
 PrefabInstance:
@@ -9900,6 +9901,7 @@ GameObject:
   - component: {fileID: 489523560}
   - component: {fileID: 489523559}
   - component: {fileID: 489523562}
+  - component: {fileID: 489523564}
   m_Layer: 5
   m_Name: RetryButton
   m_TagString: Untagged
@@ -10039,41 +10041,21 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: IncreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 489523557}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: DecreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 489523557}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Delegates: []
+  delegates: []
+--- !u!114 &489523564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489523557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727b691f9bc40d3469571ec257679de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
   delegates: []
 --- !u!1 &492018084
 GameObject:
@@ -10088,6 +10070,7 @@ GameObject:
   - component: {fileID: 492018087}
   - component: {fileID: 492018086}
   - component: {fileID: 492018089}
+  - component: {fileID: 492018091}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -10238,41 +10221,21 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: IncreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 492018084}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: DecreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 492018084}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Delegates: []
+  delegates: []
+--- !u!114 &492018091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492018084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727b691f9bc40d3469571ec257679de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
   delegates: []
 --- !u!4 &495749379 stripped
 Transform:
@@ -16229,6 +16192,7 @@ GameObject:
   - component: {fileID: 796769259}
   - component: {fileID: 796769258}
   - component: {fileID: 796769261}
+  - component: {fileID: 796769263}
   m_Layer: 5
   m_Name: CreditsButton
   m_TagString: Untagged
@@ -16368,41 +16332,21 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: IncreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 796769256}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: DecreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 796769256}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Delegates: []
+  delegates: []
+--- !u!114 &796769263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796769256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727b691f9bc40d3469571ec257679de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
   delegates: []
 --- !u!4 &798600723 stripped
 Transform:
@@ -23015,6 +22959,7 @@ GameObject:
   - component: {fileID: 1173553279}
   - component: {fileID: 1173553278}
   - component: {fileID: 1173553281}
+  - component: {fileID: 1173553283}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -23165,41 +23110,21 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: IncreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1173553276}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: DecreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1173553276}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Delegates: []
+  delegates: []
+--- !u!114 &1173553283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173553276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727b691f9bc40d3469571ec257679de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
   delegates: []
 --- !u!1001 &1175532990
 PrefabInstance:
@@ -26114,7 +26039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1333972054
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27816,6 +27741,7 @@ GameObject:
   - component: {fileID: 1461908093}
   - component: {fileID: 1461908092}
   - component: {fileID: 1461908095}
+  - component: {fileID: 1461908097}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -27944,41 +27870,21 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: IncreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1461908090}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: DecreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1461908090}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Delegates: []
+  delegates: []
+--- !u!114 &1461908097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461908090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727b691f9bc40d3469571ec257679de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
   delegates: []
 --- !u!1 &1463829819
 GameObject:
@@ -29103,6 +29009,7 @@ GameObject:
   - component: {fileID: 1543506863}
   - component: {fileID: 1543506862}
   - component: {fileID: 1543506865}
+  - component: {fileID: 1543506867}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -29242,41 +29149,21 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: IncreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1543506860}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: DecreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1543506860}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Delegates: []
+  delegates: []
+--- !u!114 &1543506867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543506860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727b691f9bc40d3469571ec257679de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
   delegates: []
 --- !u!4 &1545354847 stripped
 Transform:
@@ -30482,6 +30369,7 @@ GameObject:
   - component: {fileID: 1625854172}
   - component: {fileID: 1625854171}
   - component: {fileID: 1625854174}
+  - component: {fileID: 1625854176}
   m_Layer: 5
   m_Name: RetryButton
   m_TagString: Untagged
@@ -30621,41 +30509,21 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: IncreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1625854169}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: DecreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1625854169}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Delegates: []
+  delegates: []
+--- !u!114 &1625854176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625854169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727b691f9bc40d3469571ec257679de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
   delegates: []
 --- !u!4 &1628229293 stripped
 Transform:
@@ -34357,7 +34225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1846856304
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37551,6 +37419,7 @@ GameObject:
   - component: {fileID: 2006698759}
   - component: {fileID: 2006698758}
   - component: {fileID: 2006698761}
+  - component: {fileID: 2006698763}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -37679,41 +37548,21 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: IncreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2006698756}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: DecreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2006698756}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Delegates: []
+  delegates: []
+--- !u!114 &2006698763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006698756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727b691f9bc40d3469571ec257679de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
   delegates: []
 --- !u!1001 &2007378360
 PrefabInstance:
@@ -38926,6 +38775,7 @@ GameObject:
   - component: {fileID: 2087828817}
   - component: {fileID: 2087828816}
   - component: {fileID: 2087828819}
+  - component: {fileID: 2087828821}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -39065,41 +38915,21 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: IncreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2087828814}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: DecreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2087828814}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Delegates: []
+  delegates: []
+--- !u!114 &2087828821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087828814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727b691f9bc40d3469571ec257679de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
   delegates: []
 --- !u!4 &2088320594 stripped
 Transform:
@@ -40410,6 +40240,7 @@ GameObject:
   - component: {fileID: 2138816398}
   - component: {fileID: 2138816397}
   - component: {fileID: 2138816400}
+  - component: {fileID: 2138816402}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -40560,41 +40391,21 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: IncreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2138816395}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1210152418}
-          m_MethodName: DecreaseButton
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2138816395}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Delegates: []
+  delegates: []
+--- !u!114 &2138816402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138816395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727b691f9bc40d3469571ec257679de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
   delegates: []
 --- !u!1001 &2140971020
 PrefabInstance:
@@ -41409,7 +41220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &911480375732859167
 Transform:
   m_ObjectHideFlags: 0
@@ -56618,7 +56429,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2479516621374072495}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
