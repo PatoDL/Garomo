@@ -39,7 +39,7 @@ public class UIController : MonoBehaviour
         GaromoController.GaromoDie = ShowGameOver;
         GaromoController.GaromoWin += OpenCredits;
         actualFading = fadingPanels[0];
-        GameManager.PauseTime();
+
     }
 
     private void OnDestroy()
@@ -128,6 +128,10 @@ public class UIController : MonoBehaviour
                 {
                     fadingTime = 0;
                     actualFading.gameObject.SetActive(false);
+                    if(actualFading.transform.childCount > 0)
+                    {
+                        GameManager.PauseTime();
+                    }
                 }
             }
             else if(actualFading == fadingPanels[0])
