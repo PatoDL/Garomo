@@ -39,6 +39,7 @@ public class UIController : MonoBehaviour
         GaromoController.GaromoDie = ShowGameOver;
         GaromoController.GaromoWin = OpenCredits;
         actualFading = fadingPanels[0];
+        GameManager.PauseTime();
     }
 
     float fadingTimeMax = 1.5f;
@@ -51,7 +52,19 @@ public class UIController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                PauseGame(true);
+                if (!MenuPanel.activeInHierarchy)
+                {
+                    PauseGame(true);
+                }
+            }
+
+            if(!MenuPanel.activeInHierarchy)
+            {
+                if (Input.anyKeyDown && instructionsPanel.activeInHierarchy)
+                {
+                    instructionsPanel.SetActive(false);
+                    GameManager.ResumeTime();
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.Y))
@@ -123,7 +136,7 @@ public class UIController : MonoBehaviour
     public void ShowGameOver()
     {
         GameOverPanel.gameObject.SetActive(true);
-        Time.timeScale = 0f;
+        GameManager.PauseTime();
     }
 
     public void StartGame()
@@ -148,14 +161,8 @@ public class UIController : MonoBehaviour
         }
     }
 
-    void ShowRetryButton()
-    {
-        retryButton.SetActive(true);
-    }
-
     public void Restart()
     {
-        Time.timeScale = 1f;
         garomoController.Restart();
         TurtleController.RestartTurtles();
         FlamencoBehaviour.RestartMosquitos();

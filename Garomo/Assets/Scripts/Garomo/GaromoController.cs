@@ -125,13 +125,15 @@ public class GaromoController : MonoBehaviour
             _controller.recalculateDistanceBetweenRays();
             skinnyGaromo.gameObject.SetActive(false);
         }
-        else if (col.transform.tag == "LimitTrigger")
+
+        if (col.transform.tag == "LimitTrigger")
         {
             if (life <= 1)
             {
                 _animator.SetTrigger("Dead");
                 canMove = false;
                 _velocity = Vector3.zero;
+                _controller.move(_velocity);
                 transform.position = startPos;
                 GaromoDie();
             }
@@ -141,7 +143,8 @@ public class GaromoController : MonoBehaviour
                 transform.position = (Vector2)lastCheckpoint.transform.position;
             }
         }
-        else if(col.transform.tag=="Checkpoint")
+
+        if (col.transform.tag=="Checkpoint")
         {
             if (lastCheckpoint.transform.position == startPos)
             {
@@ -346,11 +349,6 @@ public class GaromoController : MonoBehaviour
                 }
             }
 		}
-
-        if(Input.GetKeyDown(KeyCode.G))
-        {
-            Time.timeScale = 1f;
-        }
 
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {

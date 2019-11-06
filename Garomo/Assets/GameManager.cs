@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private void Awake()
+    public static void PauseTime()
     {
-        //Time.timeScale = 0f;
+        Time.timeScale = 0f;
+    }
+
+    public static void ResumeTime()
+    {
+        Time.timeScale = 1f;
     }
 }
