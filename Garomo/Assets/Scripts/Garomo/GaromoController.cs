@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 using Prime31;
 
 
@@ -123,7 +123,6 @@ public class GaromoController : MonoBehaviour
                 _animator.SetTrigger("Dead");
                 canMove = false;
                 _velocity = Vector3.zero;
-                _controller.move(_velocity);
                 transform.position = startPos;
                 GaromoDie();
             }
@@ -153,6 +152,21 @@ public class GaromoController : MonoBehaviour
         if(col.tag == "Potion")
         {
             life = maxLives;
+        }
+
+        if (col.transform.tag == "Trampoline")
+        {
+            _velocity.y = Mathf.Sqrt(8f * jumpHeight * -gravity);
+            _animator.SetBool("Jumping", true);
+            _animator.SetBool("Running", false);
+            _controller.move(_velocity * Time.deltaTime);
+        }
+
+        if (col.transform.tag == "EndlevelTrigger")
+        {
+            win = true;
+            GaromoWin();
+            lastCheckpoint.transform.position = startPos;
         }
     }
 
@@ -371,19 +385,7 @@ public class GaromoController : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.transform.tag == "Trampoline")
-        {
-            _velocity.y = Mathf.Sqrt(8f * jumpHeight * -gravity);
-            _animator.SetBool("Jumping", true);
-            _animator.SetBool("Running", false);
-            _controller.move(_velocity * Time.deltaTime);
-        }
         
-        else if (col.transform.tag == "EndlevelTrigger")
-        {
-            win = true;
-            GaromoWin();
-        }
     }
 
     public void ActiveCrouchCollider()

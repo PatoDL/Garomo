@@ -37,9 +37,14 @@ public class UIController : MonoBehaviour
     {
         versionText.text = "v" + Application.version;
         GaromoController.GaromoDie = ShowGameOver;
-        GaromoController.GaromoWin = OpenCredits;
+        GaromoController.GaromoWin += OpenCredits;
         actualFading = fadingPanels[0];
         GameManager.PauseTime();
+    }
+
+    private void OnDestroy()
+    {
+        GaromoController.GaromoWin -= OpenCredits;
     }
 
     float fadingTimeMax = 1.5f;

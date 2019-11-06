@@ -57907,7 +57907,7 @@ MonoBehaviour:
   groundDamping: 20
   inAirDamping: 5
   jumpHeight: 3
-  life: 1
+  life: 2
   recoil: 200
   rollSpeed: 300
   recoilTimeMax: 0.2
