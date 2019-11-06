@@ -22,6 +22,7 @@ public class GaromoController : MonoBehaviour
 	public float jumpHeight = 3f;
 
     public int life = 100;
+    int maxLives;
 
     public float recoil = 0f;
 
@@ -90,6 +91,7 @@ public class GaromoController : MonoBehaviour
         lastCheckpoint = new GameObject();
 
         lastCheckpoint.transform.position = startPos;
+        maxLives = life;
 	}
 
 
@@ -97,20 +99,8 @@ public class GaromoController : MonoBehaviour
 
 	void onControllerCollider( RaycastHit2D hit )
 	{
-		// bail out on plain old ground hits cause they arent very interesting
 		if( hit.normal.y == 1f )
 			return;
-
-       
-
-        //if((hit.transform.tag == "Enemy" || hit.transform.tag == "Obstacle") && !immunity)
-        //{
-        //    enemyCollision = immunity = true;
-
-        //}
-
-        // logs any collider hits if uncommented. it gets noisy so it is commented out for the demo
-        //Debug.Log( "flags: " + _controller.collisionState + ", hit.normal: " + hit.normal );
     }
 
 
@@ -162,7 +152,7 @@ public class GaromoController : MonoBehaviour
 
         if(col.tag == "Potion")
         {
-            life = 5;
+            life = maxLives;
         }
     }
 
@@ -370,13 +360,13 @@ public class GaromoController : MonoBehaviour
     {
         transform.position = startPos;
         _controller.recalculateDistanceBetweenRays();
-        life = 5;
+        life = maxLives;
         canMove = true;
         isRolling = false;
         enemyCollision = false;
         immunity = false;
         win = false;
-        _animator.Play("Idle");
+        _animator.SetTrigger("Restart");
     }
 
     public void OnTriggerEnter2D(Collider2D col)

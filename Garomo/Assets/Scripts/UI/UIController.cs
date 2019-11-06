@@ -63,7 +63,7 @@ public class UIController : MonoBehaviour
                 if (Input.anyKeyDown && instructionsPanel.activeInHierarchy)
                 {
                     instructionsPanel.SetActive(false);
-                    GameManager.ResumeTime();
+                    Restart();
                 }
             }
 
@@ -163,6 +163,7 @@ public class UIController : MonoBehaviour
 
     public void Restart()
     {
+        GameManager.ResumeTime();
         garomoController.Restart();
         TurtleController.RestartTurtles();
         FlamencoBehaviour.RestartMosquitos();
