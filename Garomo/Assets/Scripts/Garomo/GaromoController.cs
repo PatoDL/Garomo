@@ -373,7 +373,9 @@ public class GaromoController : MonoBehaviour
     public void Restart()
     {
         transform.position = startPos;
-        _controller.recalculateDistanceBetweenRays();
+        if (transform.localScale.x < 0f)
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        //_controller.recalculateDistanceBetweenRays();
         life = maxLives;
         canMove = true;
         isRolling = false;
@@ -381,11 +383,6 @@ public class GaromoController : MonoBehaviour
         immunity = false;
         win = false;
         _animator.SetTrigger("Restart");
-    }
-
-    public void OnTriggerEnter2D(Collider2D col)
-    {
-        
     }
 
     public void ActiveCrouchCollider()
