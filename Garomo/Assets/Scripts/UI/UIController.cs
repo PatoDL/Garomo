@@ -32,6 +32,8 @@ public class UIController : MonoBehaviour
     public GameObject GameOverPanel;
     public GameObject inGameUI;
 
+    bool firstTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,7 @@ public class UIController : MonoBehaviour
         GaromoController.GaromoDie = ShowGameOver;
         GaromoController.GaromoWin += OpenCredits;
         actualFading = fadingPanels[0];
-
+        firstTime = true;
     }
 
     private void OnDestroy()
@@ -68,7 +70,11 @@ public class UIController : MonoBehaviour
                 if (Input.anyKeyDown && instructionsPanel.activeInHierarchy)
                 {
                     instructionsPanel.SetActive(false);
-                    Restart();
+                    if (firstTime)
+                    {
+                        Restart();
+                        firstTime = false;
+                    }
                 }
             }
 
