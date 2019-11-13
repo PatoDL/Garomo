@@ -75,6 +75,8 @@ public class UIController : MonoBehaviour
                         Restart();
                         firstTime = false;
                     }
+                    else
+                        GameManager.ResumeTime();
                 }
             }
 
