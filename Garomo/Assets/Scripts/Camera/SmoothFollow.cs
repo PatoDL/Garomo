@@ -15,14 +15,10 @@ public class SmoothFollow : MonoBehaviour
 	private CharacterController2D _playerController;
 	private Vector3 _smoothDampVelocity;
 
-    public delegate void OnCameraChangeDistance(int distance);
-    public static OnCameraChangeDistance ChangeCameraDistance;
-
     void Awake()
 	{
 		transform = gameObject.transform;
 		_playerController = target.GetComponent<CharacterController2D>();
-        ChangeCameraDistance = ChangeCameraDis;
 	}
 	
 	
@@ -60,9 +56,4 @@ public class SmoothFollow : MonoBehaviour
 		}
 	}
 	
-
-    void ChangeCameraDis(int distance)
-    {
-        cameraOffset.z = distance;
-    }
 }

@@ -146,7 +146,6 @@ public class GaromoController : MonoBehaviour
         if(col.transform.tag == "NextScene")
         {
             transform.position = teleporter.transform.position;
-            SmoothFollow.ChangeCameraDistance(20);
         }
 
         if(col.tag == "Potion")

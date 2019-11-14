@@ -89,11 +89,6 @@ public class UIController : MonoBehaviour
                     Time.timeScale = 1f;
             }
 
-            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Q))
-            {
-                cheatsPanel.gameObject.SetActive(true);
-            }
-
             for (int i = 0; i < garomoController.life; i++)
             {
                 muzzleParts[i].gameObject.SetActive(true);
