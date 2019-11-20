@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Prime31;
+using UnityEngine.SceneManagement;
 
 
 public class GaromoController : MonoBehaviour
@@ -11,6 +12,9 @@ public class GaromoController : MonoBehaviour
 
     public delegate void OnLevelEnd();
     public static OnLevelEnd GaromoWin;
+
+    public delegate void OnLevelPass(int livesAm);
+    public static OnLevelPass GoToNext;
 
     public bool win = false;
 
@@ -24,7 +28,7 @@ public class GaromoController : MonoBehaviour
     public int life = 100;
     int maxLives;
 
-    public bool gravityAct = false;
+    public bool gravityAct = true;
 
     public float recoil = 0f;
 
@@ -147,7 +151,9 @@ public class GaromoController : MonoBehaviour
 
         if(col.transform.tag == "NextScene")
         {
-            transform.position = teleporter.transform.position;
+            //if(GoToNext != null)
+                GoToNext(life);
+            Debug.Log("pasa");
         }
 
         if(col.tag == "Potion")
@@ -372,9 +378,17 @@ public class GaromoController : MonoBehaviour
         bool active = action == "Active";
 
         crouchCollider.gameObject.SetActive(active);
-        _controller.boxCollider = crouchCollider;
+       
         idleCollider.enabled = !active;
+
+        if(active)
+            _controller.boxCollider = crouchCollider;
+        else
+            _controller.boxCollider = idleCollider;
+
         _controller.recalculateDistanceBetweenRays();
+
+        Debug.Log(active);
     }
 
     public void Jump()
@@ -434,8 +448,11 @@ public class GaromoController : MonoBehaviour
         //    rollSpeedAux *= 1.5f;
         //}
 
-        //if (!rollJump && _controller.isGrounded)
-        //    _velocity.y = gravity * 10 * Time.deltaTime;
+        if (!rollJump)
+        {
+            _velocity.y = gravity * 10 * Time.deltaTime;
+            rollSpeedAux *= 1.3f;
+        }
         //if (!rollJump && !_controller.isGrounded)
         //    rollSpeedAux = 0f;
 

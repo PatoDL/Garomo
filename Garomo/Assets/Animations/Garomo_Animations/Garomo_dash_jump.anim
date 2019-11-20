@@ -139,8 +139,8 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.083333336
-    functionName: DeActiveCrouchCollider
-    data: 
+    functionName: CrouchColliderActivation
+    data: Deactive
     objectReferenceParameter: {fileID: 11500000, guid: 2abdc192b66589644ae6a812a50367d6,
       type: 3}
     floatParameter: 0

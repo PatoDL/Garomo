@@ -89,3 +89,11 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.41666666
+    functionName: CrouchColliderActivation
+    data: Deactive
+    objectReferenceParameter: {fileID: 11500000, guid: 2abdc192b66589644ae6a812a50367d6,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
