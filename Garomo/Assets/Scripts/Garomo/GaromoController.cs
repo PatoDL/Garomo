@@ -98,6 +98,8 @@ public class GaromoController : MonoBehaviour
 
         lastCheckpoint.transform.position = startPos;
         maxLives = life;
+
+        gravityAct = true;
 	}
 
 

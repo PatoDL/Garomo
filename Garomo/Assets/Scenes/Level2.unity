@@ -8015,7 +8015,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbdff9524c006be4099be9321b09f030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrel: {fileID: 0}
+  barrel: {fileID: 2038093634}
+  barrelMaxReturnTime: 20
+  barrelReturnTimer: 0
+  barrelActivated: 0
 --- !u!61 &1211801663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11515,7 +11518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705517592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45, y: -107.49, z: 0}
+  m_LocalPosition: {x: -41.9, y: -107, z: 0}
   m_LocalScale: {x: 0.43279344, y: 0.43279344, z: 0.43279338}
   m_Children:
   - {fileID: 1061418814}
@@ -11535,11 +11538,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FlamencoMosquito (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4717678708450897723, guid: 77c6a23260a049148ac13ca8fb7e0f62,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4717678708450897727, guid: 77c6a23260a049148ac13ca8fb7e0f62,
         type: 3}
@@ -11595,11 +11593,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4717678708450897720, guid: 77c6a23260a049148ac13ca8fb7e0f62,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c6a23260a049148ac13ca8fb7e0f62, type: 3}
