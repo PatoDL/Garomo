@@ -13,6 +13,10 @@ public class TurtleController : MonoBehaviour
 	public float inAirDamping = 5f;
 	public float jumpHeight = 3f;
 
+    public float attackTimeMax;
+    public float attackTimer;
+    public bool attacked = false;
+
     public int life = 100;
 
     public float recoil = 0f;
@@ -89,6 +93,8 @@ public class TurtleController : MonoBehaviour
         turtles.Add(gameObject);
 
         normalizedHorizontalSpeed = -1;
+
+        attackTimer = attackTimeMax;
 	}
 
 
@@ -202,6 +208,16 @@ public class TurtleController : MonoBehaviour
             _controller.move(_velocity * Time.deltaTime);
         }
 
+        if(attacked)
+        {
+            attackTimer -= Time.deltaTime;
+            if (attackTimer <= 0f)
+            {
+                attacked = false;
+                attackTimer = attackTimeMax;
+            }
+        }
+
 		// grab our current _velocity to use as a base for all calculations
 		_velocity = _controller.velocity;
 	}
@@ -216,7 +232,7 @@ public class TurtleController : MonoBehaviour
 
     void Attack()
     {
-        if (!wasDamaged)
+        if (!wasDamaged && !attacked)
         {
             whereToAttack = Random.Range(0, 2);
             _animator.SetTrigger("Attack");
@@ -231,6 +247,7 @@ public class TurtleController : MonoBehaviour
 
             
         }
+        attacked = true;
     }
 
     void ActivateAttack(int where)

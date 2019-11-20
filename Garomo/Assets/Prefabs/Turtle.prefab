@@ -272,6 +272,9 @@ MonoBehaviour:
   groundDamping: 20
   inAirDamping: 5
   jumpHeight: 3
+  attackTimeMax: 2
+  attackTimer: 0
+  attacked: 0
   life: 3
   recoil: 500
   recoilTime: 0.5
