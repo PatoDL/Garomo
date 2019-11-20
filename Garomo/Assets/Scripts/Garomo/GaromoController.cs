@@ -24,6 +24,8 @@ public class GaromoController : MonoBehaviour
     public int life = 100;
     int maxLives;
 
+    public bool gravityAct = false;
+
     public float recoil = 0f;
 
     public float rollSpeed = 0f;
@@ -282,7 +284,7 @@ public class GaromoController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && canMove && _controller.isGrounded && !isRolling && !isCrouching)
+        if (Input.GetKeyDown(KeyCode.C) && canMove && /*_controller.isGrounded && */ !isRolling && !isCrouching)
         {
             isRolling = true;
             _controller.ignoreSlopeModifier = true;
@@ -308,7 +310,8 @@ public class GaromoController : MonoBehaviour
 
 
         // apply gravity before moving
-        ApplyGravity();
+        if(gravityAct)
+            ApplyGravity();
 
         // if holding down bump up our movement amount and turn off one way platform detection for a frame.
         // this lets us jump down through one way platforms
@@ -401,7 +404,7 @@ public class GaromoController : MonoBehaviour
 
     void Walk()
     {
-        if (_controller.isGrounded)
+        //if (_controller.isGrounded)
             _animator.SetBool("Running", true);
 
         if (normalizedHorizontalSpeed > 0f)
@@ -426,15 +429,15 @@ public class GaromoController : MonoBehaviour
     public void Roll()
     {
         float rollSpeedAux = rollSpeed;
-        if (!_controller.isGrounded)
-        {
-            rollSpeedAux *= 1.5f;
-        }
+        //if (!_controller.isGrounded)
+        //{
+        //    rollSpeedAux *= 1.5f;
+        //}
 
-        if (!rollJump && _controller.isGrounded)
-            _velocity.y = gravity * 10 * Time.deltaTime;
-        if (!rollJump && !_controller.isGrounded)
-            rollSpeedAux = 0f;
+        //if (!rollJump && _controller.isGrounded)
+        //    _velocity.y = gravity * 10 * Time.deltaTime;
+        //if (!rollJump && !_controller.isGrounded)
+        //    rollSpeedAux = 0f;
 
         _velocity.x += rollSpeedAux * transform.localScale.x * rollVelVariation.Evaluate((rollDistance - rollTimer) / rollDistance) * Time.deltaTime;
        

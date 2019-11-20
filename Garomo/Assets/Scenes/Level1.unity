@@ -17916,7 +17916,7 @@ Transform:
   - {fileID: 2143499198}
   - {fileID: 1159149965}
   m_Father: {fileID: 911480377056466517}
-  m_RootOrder: 9
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &870628315
 GameObject:
@@ -32594,7 +32594,7 @@ Transform:
   - {fileID: 717327775}
   - {fileID: 748470729}
   m_Father: {fileID: 911480377056466517}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1701029816 stripped
 Transform:
@@ -44023,12 +44023,12 @@ Transform:
   - {fileID: 757958405}
   - {fileID: 243310563}
   - {fileID: 43485012}
+  - {fileID: 1697719824}
+  - {fileID: 869617698}
   - {fileID: 485499787}
   - {fileID: 1070605025}
   - {fileID: 737396013}
   - {fileID: 1904161237}
-  - {fileID: 1697719824}
-  - {fileID: 869617698}
   - {fileID: 1755843785}
   m_Father: {fileID: 911480377105395581}
   m_RootOrder: 3
@@ -58693,6 +58693,7 @@ MonoBehaviour:
   inAirDamping: 5
   jumpHeight: 3
   life: 5
+  gravityAct: 1
   recoil: 200
   rollSpeed: 300
   recoilTimeMax: 0.2
@@ -58891,7 +58892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8973597956158451974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.3, y: -3.2, z: 0}
+  m_LocalPosition: {x: -388.79, y: 0.79, z: 0}
   m_LocalScale: {x: 0.43279344, y: 0.43279344, z: 0.43279338}
   m_Children:
   - {fileID: 8083580207090680746}
