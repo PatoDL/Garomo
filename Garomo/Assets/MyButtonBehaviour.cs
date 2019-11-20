@@ -15,13 +15,11 @@ public class MyButtonBehaviour : EventTrigger
     public override void OnPointerEnter(PointerEventData data)
     {
         transform.localScale *= 1.2f;
-        Debug.Log("entra");
     }
 
     public override void OnPointerExit(PointerEventData data)
     {
         transform.localScale /= 1.2f;
-        Debug.Log("sale");
     }
 
     private void OnDisable()

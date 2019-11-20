@@ -208,37 +208,24 @@ public class GaromoController : MonoBehaviour
             if (Time.timeScale > 0f)
             {
                 if (Input.GetKey(KeyCode.RightArrow))
-                {
                     normalizedHorizontalSpeed = 1;
-                    if (transform.localScale.x < 0f)
-                        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-
-                    if (_controller.isGrounded)
-                        _animator.SetBool("Running", true);
-                }
                 else if (Input.GetKey(KeyCode.LeftArrow))
-                {
-                    normalizedHorizontalSpeed = -1;
-                    if (transform.localScale.x > 0f)
-                        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-
-                    if (_controller.isGrounded)
-                        _animator.SetBool("Running", true);
-                }
+                    normalizedHorizontalSpeed = -1;        
                 else
-                {
                     normalizedHorizontalSpeed = 0;
-                    _animator.SetBool("Running", false);
-                }
             }
         }
         else
         {
             normalizedHorizontalSpeed = 0;
-            _animator.SetBool("Running", false);
         }
 
-        if(Input.GetKeyDown(KeyCode.Z) && canMove && !isRolling && !isCrouching && !(!_controller.isGrounded && _velocity.y < 0f))
+        if (!isRolling && canMove)
+        {
+            Walk();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z) && canMove && !isRolling && !isCrouching && !(!_controller.isGrounded && _velocity.y < 0f))
         {
             _animator.SetTrigger("Punch");
         }
@@ -295,9 +282,6 @@ public class GaromoController : MonoBehaviour
             }
         }
 
-        if (!_controller.isGrounded && !isRolling && !isCrouching && canMove && _velocity.y < 0f)
-            spr.sprite = garomoFalling;
-
         if (Input.GetKeyDown(KeyCode.C) && canMove && _controller.isGrounded && !isRolling && !isCrouching)
         {
             isRolling = true;
@@ -321,47 +305,43 @@ public class GaromoController : MonoBehaviour
         }
 
         // apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
-        if (!isRolling && canMove)
-        {
-            var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
-            _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
-        }
 
-		// apply gravity before moving
-		_velocity.y += gravity * Time.deltaTime;
+
+        // apply gravity before moving
+        ApplyGravity();
 
         // if holding down bump up our movement amount and turn off one way platform detection for a frame.
         // this lets us jump down through one way platforms
-        if (_controller.isGrounded && Input.GetKey(KeyCode.DownArrow) && canMove)
-        {
-            if (_controller.boxCollider != crouchCollider)
-            {
-                ActiveCrouchCollider();
-                _animator.SetBool("Crouching", true);
-                isCrouching = true;
-            }
-            if(Input.GetKey(KeyCode.UpArrow))
-            {
-                if (_controller.boxCollider != idleCollider)
-                {
-                    DeActiveCrouchCollider();
-                    _animator.SetBool("Jumping", true);
-                    _animator.SetBool("Crouching", false);
-                    _animator.SetBool("Jumping", false);
-                    isCrouching = false;
-                }
-            }
-		}
+        //if (_controller.isGrounded && Input.GetKey(KeyCode.DownArrow) && canMove)
+        //{
+            //if (_controller.boxCollider != crouchCollider)
+            //{
+                //CrouchColliderActivation("Active");
+                //_animator.SetBool("Crouching", true);
+                //isCrouching = true;
+            //}
+            //if(Input.GetKey(KeyCode.UpArrow))
+            //{
+                //if (_controller.boxCollider != idleCollider)
+                //{
+                    //CrouchColliderActivation("Deactive");
+                    //_animator.SetBool("Jumping", true);
+                    //_animator.SetBool("Crouching", false);
+                    //_animator.SetBool("Jumping", false);
+                    //isCrouching = false;
+                //}
+            //}
+		//}
 
-        if (Input.GetKeyUp(KeyCode.DownArrow))
-        {
-            if (_controller.boxCollider != idleCollider)
-            {
-                DeActiveCrouchCollider();
-                _animator.SetBool("Crouching", false);
-                isCrouching = false;
-            }
-        }
+        //if (Input.GetKeyUp(KeyCode.DownArrow))
+        //{
+            //if (_controller.boxCollider != idleCollider)
+            //{
+                //CrouchColliderActivation("Deactive");
+                //_animator.SetBool("Crouching", false);
+                //isCrouching = false;
+            //}
+        //}
 
         _controller.move( _velocity * Time.deltaTime );
 
@@ -384,19 +364,13 @@ public class GaromoController : MonoBehaviour
         lastCheckpoint.transform.position = startPos;
     }
 
-    public void ActiveCrouchCollider()
+    public void CrouchColliderActivation(string action)
     {
-        crouchCollider.gameObject.SetActive(true);
-        _controller.boxCollider = crouchCollider;
-        idleCollider.enabled = false;
-        _controller.recalculateDistanceBetweenRays();
-    }
+        bool active = action == "Active";
 
-    public void DeActiveCrouchCollider()
-    {
-        idleCollider.enabled = true;
-        _controller.boxCollider = idleCollider;
-        crouchCollider.gameObject.SetActive(false);
+        crouchCollider.gameObject.SetActive(active);
+        _controller.boxCollider = crouchCollider;
+        idleCollider.enabled = !active;
         _controller.recalculateDistanceBetweenRays();
     }
 
@@ -425,6 +399,30 @@ public class GaromoController : MonoBehaviour
         GroundAttackCollider.gameObject.SetActive(false);
     }
 
+    void Walk()
+    {
+        if (_controller.isGrounded)
+            _animator.SetBool("Running", true);
+
+        if (normalizedHorizontalSpeed > 0f)
+        {
+            if (transform.localScale.x < 0f)
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
+        else if(normalizedHorizontalSpeed < 0f)
+        {
+            if (transform.localScale.x > 0f)
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
+        else
+        {
+            _animator.SetBool("Running", false);
+        }
+
+        var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
+        _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
+    }
+
     public void Roll()
     {
         float rollSpeedAux = rollSpeed;
@@ -445,5 +443,10 @@ public class GaromoController : MonoBehaviour
     public void Recoil()
     {
         _velocity.x -= transform.localScale.x * recoil * Time.deltaTime;
+    }
+
+    public void ApplyGravity()
+    {
+        _velocity.y += gravity * Time.deltaTime;
     }
 }
