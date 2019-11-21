@@ -9,6 +9,9 @@ public class CheckPointBehaviour : MonoBehaviour
     Texture badGuyCheck;
     Material mat;
 
+    public delegate void OnCheckPointReach(GameObject cp);
+    public static OnCheckPointReach ReachCheckPoint;
+
     private void Start()
     {
         mat = image.GetComponent<MeshRenderer>().material;
@@ -28,6 +31,7 @@ public class CheckPointBehaviour : MonoBehaviour
             {
                 badGuyCheck = mat.mainTexture;
                 mat.mainTexture = garomoCheck;
+                ReachCheckPoint(this.gameObject);
             }
         }
     }

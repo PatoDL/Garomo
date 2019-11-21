@@ -47,7 +47,6 @@ public class BarrelActivation : MonoBehaviour
         if(collision.tag == "Garomo" && !barrelActivated)
         {
             barrelRig.velocity = new Vector2(-100f, 0f) * Time.deltaTime;
-            Debug.Log("entro");
             barrelActivated = true;
         }
     }

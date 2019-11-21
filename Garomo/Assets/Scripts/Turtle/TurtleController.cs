@@ -105,9 +105,6 @@ public class TurtleController : MonoBehaviour
 		// bail out on plain old ground hits cause they arent very interesting
 		if( hit.normal.y == 1f )
 			return;
-
-		// logs any collider hits if uncommented. it gets noisy so it is commented out for the demo
-		//Debug.Log( "flags: " + _controller.collisionState + ", hit.normal: " + hit.normal );
 	}
 
 
@@ -143,13 +140,11 @@ public class TurtleController : MonoBehaviour
         {
             normalizedHorizontalSpeed= -normalizedHorizontalSpeed;
         }
-		//Debug.Log( "onTriggerEnterEvent: " + col.gameObject.name );
 	}
 
 
 	void onTriggerExitEvent( Collider2D col )
 	{
-		//Debug.Log( "onTriggerExitEvent: " + col.gameObject.name );
 	}
 
 	#endregion

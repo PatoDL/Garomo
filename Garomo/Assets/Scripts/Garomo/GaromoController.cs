@@ -16,69 +16,57 @@ public class GaromoController : MonoBehaviour
     public delegate void OnLevelPass(int livesAm);
     public static OnLevelPass GoToNext;
 
-    public bool win = false;
-
-	// movement config
+	[Header("Movement")]
 	public float gravity = -25f;
 	public float runSpeed = 8f;
 	public float groundDamping = 20f; // how fast do we change direction? higher means faster
 	public float inAirDamping = 5f;
 	public float jumpHeight = 3f;
-
-    public int life = 100;
-    int maxLives;
-
+    public bool canMove = true;
+    public AnimationCurve runVelocityModifier;
+    public float runModifierMultiplier;
     public bool gravityAct = true;
 
-    public float recoil = 0f;
+    [Header("Player Attributes")]
+    public int life = 100;
+    public bool win = false;
+    public Sprite garomoFalling;
+    public BoxCollider2D skinnyGaromo;
+    int maxLives;
+    private Vector3 _velocity;
+    SpriteRenderer spr;
+    GameObject lastCheckpoint;
 
-    public float rollSpeed = 0f;
-
-    bool enemyCollision = false;
-    bool isRecoiling = false;
-
+    [Header("Enemy")]
+    public bool enemyCollision = false;
+    public bool isRecoiling = false;
     public float recoilTimeMax = 3.0f;
     public float recoilTime = 3.0f;
-
-    [HideInInspector]
-	private float normalizedHorizontalSpeed = 0;
-
-	private CharacterController2D _controller;
-	public Animator _animator;
-	private RaycastHit2D _lastControllerColliderHit;
-	private Vector3 _velocity;
-
-    float rollTimer = 0.0f;
-
+    public float recoil = 0f;
     private bool immunity = false;
     private float enemyCollisionTimer = 0.0f;
 
-    public BoxCollider2D crouchCollider;
-    public BoxCollider2D idleCollider;
-    public BoxCollider2D GroundAttackCollider;
-    public BoxCollider2D AirAttackCollider;
-    bool canMove = true;
-
-    public BoxCollider2D skinnyGaromo;
-
-    public AnimationCurve rollVelVariation;
-
+    [Header("Roll")]
+    public float rollTimer = 0.0f;
+    public float rollSpeed = 0f;
+    public bool rollJump = false;
     public bool isRolling = false;
     public float rollDistance = 0f;
+    public AnimationCurve rollVelVariation;
 
-    Vector3 startPos;
+    [Header("Crouch")]
+    public BoxCollider2D crouchCollider;
+    public BoxCollider2D idleCollider;
 
-    GameObject lastCheckpoint;
+    [Header("Punch")]
+    public BoxCollider2D GroundAttackCollider;
 
-    public GameObject teleporter;
+    [HideInInspector]
+    private float normalizedHorizontalSpeed = 0;
 
-    public bool rollJump = false;
+    private CharacterController2D _controller;
+    public Animator _animator;
 
-    public bool isCrouching = false;
-
-    public Sprite garomoFalling;
-
-    SpriteRenderer spr;
 
     void Awake()
 	{
@@ -92,11 +80,6 @@ public class GaromoController : MonoBehaviour
         _controller.onTriggerStayEvent += onTriggerStayEvent;
         _controller.onTriggerExitEvent += onTriggerExitEvent;
 
-        startPos = transform.position;
-
-        lastCheckpoint = new GameObject();
-
-        lastCheckpoint.transform.position = startPos;
         maxLives = life;
 
         gravityAct = true;
@@ -114,8 +97,12 @@ public class GaromoController : MonoBehaviour
 
 	void onTriggerEnterEvent( Collider2D col )
 	{
-        if(col.tag=="Enemy" && !immunity)
+        if (col.tag == "Enemy" && !immunity)
+        {
             enemyCollision = immunity = true;
+            runModifierMultiplier = 0f;
+            isRolling = canMove = false;
+        }
 
         if (col.transform.tag != "SewTile" && _controller.boxCollider == skinnyGaromo)
         {
@@ -131,31 +118,18 @@ public class GaromoController : MonoBehaviour
                 _animator.SetTrigger("Dead");
                 canMove = false;
                 _velocity = Vector3.zero;
-                transform.position = startPos;
                 GaromoDie();
             }
             else
             {
                 life -= 1;
-                transform.position = (Vector2)lastCheckpoint.transform.position;
             }
-        }
-
-        if (col.transform.tag=="Checkpoint")
-        {
-            if (lastCheckpoint.transform.position == startPos)
-            {
-                Destroy(lastCheckpoint);
-                lastCheckpoint = null;
-            }
-            lastCheckpoint = col.transform.gameObject;
+            transform.position = (Vector2)CheckPointManager.instance.GetLastCheckPoint().transform.position;
         }
 
         if(col.transform.tag == "NextScene")
         {
-            //if(GoToNext != null)
-                GoToNext(life);
-            Debug.Log("pasa");
+            GoToNext(life);
         }
 
         if(col.tag == "Potion")
@@ -165,17 +139,16 @@ public class GaromoController : MonoBehaviour
 
         if (col.transform.tag == "Trampoline")
         {
-            _velocity.y = Mathf.Sqrt(8f * jumpHeight * -gravity);
+            _velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
             _animator.SetBool("Jumping", true);
             _animator.SetBool("Running", false);
-            _controller.move(_velocity * Time.deltaTime);
         }
 
         if (col.transform.tag == "EndlevelTrigger")
         {
             win = true;
             GaromoWin();
-            lastCheckpoint.transform.position = startPos;
+            CheckPointManager.instance.RestartLevel();
         }
     }
 
@@ -212,22 +185,35 @@ public class GaromoController : MonoBehaviour
             _velocity.y = 0;
             _animator.SetBool("Jumping", false);
         }
-        
+        else if (_velocity.y <= 0f)
+        {
+
+        }
+
         if (canMove)
         {
             if (Time.timeScale > 0f)
             {
                 if (Input.GetKey(KeyCode.RightArrow))
+                {
                     normalizedHorizontalSpeed = 1;
+                    runModifierMultiplier += Time.deltaTime;
+                }
                 else if (Input.GetKey(KeyCode.LeftArrow))
-                    normalizedHorizontalSpeed = -1;        
+                {
+                    normalizedHorizontalSpeed = -1;
+                    runModifierMultiplier += Time.deltaTime;
+                }
                 else
-                    normalizedHorizontalSpeed = 0;
+                {
+                    if (runModifierMultiplier > 0f)
+                        runModifierMultiplier -= Time.deltaTime;
+                    else
+                        normalizedHorizontalSpeed = 0;
+                }
+                if (runModifierMultiplier > 0.5f)
+                    runModifierMultiplier = 0.5f;
             }
-        }
-        else
-        {
-            normalizedHorizontalSpeed = 0;
         }
 
         if (!isRolling && canMove)
@@ -235,7 +221,11 @@ public class GaromoController : MonoBehaviour
             Walk();
         }
 
-        if (Input.GetKeyDown(KeyCode.Z) && canMove && !isRolling && !isCrouching && !(!_controller.isGrounded && _velocity.y < 0f))
+        if (_velocity.y < 0f)
+            _animator.SetBool("Jumping", false);
+
+
+        if (Input.GetKeyDown(KeyCode.Z) && canMove && !isRolling && !(!_controller.isGrounded && _velocity.y <= 0f))
         {
             _animator.SetTrigger("Punch");
         }
@@ -244,19 +234,6 @@ public class GaromoController : MonoBehaviour
 		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) && canMove )
 		{
             Jump();
-            _animator.SetBool("Jumping", true);
-            _animator.SetBool("Running", false);
-            if(isRolling)
-            {
-                rollJump = true;
-            }
-        }
-
-        if(!_controller.isGrounded && _controller.nearFloor)
-        {
-            _animator.SetBool("Jumping", false);
-            _animator.SetBool("Falling", true);
-            _animator.SetBool("Running", false);
         }
 
         if(enemyCollision)
@@ -281,78 +258,27 @@ public class GaromoController : MonoBehaviour
 
         if(isRecoiling)
         {
-            recoilTime -= Time.deltaTime;
             Recoil();
-            if(recoilTime<=0f)
-            {
-                isRecoiling = false;
-                canMove = true;
-                recoilTime = recoilTimeMax;
-                immunity = false;
-            }
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && canMove && /*_controller.isGrounded && */ !isRolling && !isCrouching)
+        if (Input.GetKeyDown(KeyCode.C) && canMove && !isRolling)
         {
             isRolling = true;
             _controller.ignoreSlopeModifier = true;
             _animator.SetBool("Running", false);
             _animator.Play("Garomo_roll");
             rollTimer = rollDistance;
+            _velocity = Vector3.zero;
         }
 
         if (isRolling)
         {
-            rollTimer -= Time.deltaTime;
             Roll();
-            if (rollTimer <= 0.0f)
-            {
-                isRolling = false;
-                _controller.ignoreSlopeModifier = false;
-                rollTimer = rollDistance;
-                rollJump = false;
-            }
         }
-
-        // apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
-
 
         // apply gravity before moving
         if(gravityAct)
             ApplyGravity();
-
-        // if holding down bump up our movement amount and turn off one way platform detection for a frame.
-        // this lets us jump down through one way platforms
-        //if (_controller.isGrounded && Input.GetKey(KeyCode.DownArrow) && canMove)
-        //{
-            //if (_controller.boxCollider != crouchCollider)
-            //{
-                //CrouchColliderActivation("Active");
-                //_animator.SetBool("Crouching", true);
-                //isCrouching = true;
-            //}
-            //if(Input.GetKey(KeyCode.UpArrow))
-            //{
-                //if (_controller.boxCollider != idleCollider)
-                //{
-                    //CrouchColliderActivation("Deactive");
-                    //_animator.SetBool("Jumping", true);
-                    //_animator.SetBool("Crouching", false);
-                    //_animator.SetBool("Jumping", false);
-                    //isCrouching = false;
-                //}
-            //}
-		//}
-
-        //if (Input.GetKeyUp(KeyCode.DownArrow))
-        //{
-            //if (_controller.boxCollider != idleCollider)
-            //{
-                //CrouchColliderActivation("Deactive");
-                //_animator.SetBool("Crouching", false);
-                //isCrouching = false;
-            //}
-        //}
 
         _controller.move( _velocity * Time.deltaTime );
 
@@ -362,7 +288,6 @@ public class GaromoController : MonoBehaviour
 
     public void Restart()
     {
-        transform.position = startPos;
         if (transform.localScale.x < 0f)
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         life = maxLives;
@@ -372,7 +297,6 @@ public class GaromoController : MonoBehaviour
         immunity = false;
         win = false;
         _animator.SetTrigger("Restart");
-        lastCheckpoint.transform.position = startPos;
     }
 
     public void CrouchColliderActivation(string action)
@@ -389,18 +313,18 @@ public class GaromoController : MonoBehaviour
             _controller.boxCollider = idleCollider;
 
         _controller.recalculateDistanceBetweenRays();
-
-        Debug.Log(active);
     }
 
     public void Jump()
     {
-        _velocity.y = Mathf.Sqrt(4f * jumpHeight * -gravity);
-    }
-
-    void ValidateMovement()
-    {
-        canMove = true;
+        _velocity.y = Mathf.Sqrt(jumpHeight * -gravity);
+        Debug.Log(_velocity.y);
+        _animator.SetBool("Jumping", true);
+        _animator.SetBool("Running", false);
+        if (isRolling)
+        {
+            rollJump = true;
+        }
     }
 
     public void TeleportTo(Transform t)
@@ -420,7 +344,7 @@ public class GaromoController : MonoBehaviour
 
     void Walk()
     {
-        //if (_controller.isGrounded)
+        if (_controller.isGrounded)
             _animator.SetBool("Running", true);
 
         if (normalizedHorizontalSpeed > 0f)
@@ -439,36 +363,47 @@ public class GaromoController : MonoBehaviour
         }
 
         var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
-        _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
+        //_velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, /*Time.deltaTime**/ smoothedMovementFactor);
+        _velocity.x = normalizedHorizontalSpeed * runSpeed * runVelocityModifier.Evaluate(runModifierMultiplier);
     }
 
     public void Roll()
     {
+        rollTimer -= Time.deltaTime;
         float rollSpeedAux = rollSpeed;
-        //if (!_controller.isGrounded)
-        //{
-        //    rollSpeedAux *= 1.5f;
-        //}
 
-        if (!rollJump)
+        if (!rollJump && !_controller.isGrounded)
         {
-            _velocity.y = gravity * 10 * Time.deltaTime;
+            _velocity.y = gravity * 10;
             rollSpeedAux *= 1.3f;
         }
-        //if (!rollJump && !_controller.isGrounded)
-        //    rollSpeedAux = 0f;
 
-        _velocity.x += rollSpeedAux * transform.localScale.x * rollVelVariation.Evaluate((rollDistance - rollTimer) / rollDistance) * Time.deltaTime;
-       
+        _velocity.x += rollSpeedAux * transform.localScale.x * rollVelVariation.Evaluate((rollDistance - rollTimer) / rollDistance);
+
+        if (rollTimer <= 0.0f)
+        {
+            isRolling = false;
+            _controller.ignoreSlopeModifier = false;
+            rollTimer = rollDistance;
+            rollJump = false;
+        }
     }
 
     public void Recoil()
     {
-        _velocity.x -= transform.localScale.x * recoil * Time.deltaTime;
+        recoilTime -= Time.deltaTime;
+        _velocity.x -= transform.localScale.x * recoil;
+        if (recoilTime <= 0f)
+        {
+            isRecoiling = false;
+            canMove = true;
+            recoilTime = recoilTimeMax;
+            immunity = false;
+        }
     }
 
     public void ApplyGravity()
     {
-        _velocity.y += gravity * Time.deltaTime;
+        _velocity.y += gravity;
     }
 }
