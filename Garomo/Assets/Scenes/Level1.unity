@@ -55532,7 +55532,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  runModifierMultiplier: -0.0036040507
+  runModifierMultiplier: -0.009666331
   gravityAct: 1
   life: 5
   win: 0
@@ -55543,8 +55543,8 @@ MonoBehaviour:
   recoilTimeMax: 0.2
   recoilTime: 3
   recoil: 5
-  rollTimer: 0.4
-  rollSpeed: 150
+  rollTimer: 0
+  rollSpeed: 8
   rollJump: 0
   isRolling: 0
   rollDistance: 0.4

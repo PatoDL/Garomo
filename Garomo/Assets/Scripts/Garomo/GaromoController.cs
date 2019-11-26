@@ -382,7 +382,7 @@ public class GaromoController : MonoBehaviour
             rollSpeedAux *= 1.3f;
         }
 
-        _velocity.x += rollSpeedAux * transform.localScale.x * rollVelVariation.Evaluate((rollDistance - rollTimer) / rollDistance) * Time.deltaTime;
+        _velocity.x += rollSpeedAux * transform.localScale.x * rollVelVariation.Evaluate((rollDistance - rollTimer) / rollDistance);
 
         if (rollTimer <= 0.0f)
         {
