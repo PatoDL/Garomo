@@ -64,14 +64,14 @@ public class GaromoController : MonoBehaviour
     [HideInInspector]
     private float normalizedHorizontalSpeed = 0;
 
-    private CharacterController2D _controller;
+    private CharacterController2Di _controller;
     public Animator _animator;
 
 
     void Awake()
 	{
 		_animator = GetComponent<Animator>();
-		_controller = GetComponent<CharacterController2D>();
+		_controller = GetComponent<CharacterController2Di>();
         idleCollider = _controller.boxCollider;
         spr = GetComponent<SpriteRenderer>();
 		// listen to some events for illustration purposes
@@ -179,7 +179,7 @@ public class GaromoController : MonoBehaviour
 
 
 	// the Update loop contains a very simple example of moving the character around and controlling the animation
-	void Update()
+	void FixedUpdate()
 	{
         if (_controller.isGrounded)
         {
@@ -265,7 +265,7 @@ public class GaromoController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C) && canMove && !isRolling)
         {
             isRolling = true;
-            _controller.ignoreSlopeModifier = true;
+            //_controller.ignoreSlopeModifier = true;
             _animator.SetBool("Running", false);
             _animator.Play("Garomo_roll");
             rollTimer = rollDistance;
@@ -367,7 +367,7 @@ public class GaromoController : MonoBehaviour
 
         var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
         //_velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, /*Time.deltaTime**/ smoothedMovementFactor);
-        _velocity.x = normalizedHorizontalSpeed * runSpeed * runVelocityModifier.Evaluate(runModifierMultiplier);
+        _velocity.x = normalizedHorizontalSpeed * runSpeed /** runVelocityModifier.Evaluate(runModifierMultiplier)*/;
     }
 
     public void Roll()
@@ -386,7 +386,7 @@ public class GaromoController : MonoBehaviour
         if (rollTimer <= 0.0f)
         {
             isRolling = false;
-            _controller.ignoreSlopeModifier = false;
+            //_controller.ignoreSlopeModifier = false;
             rollTimer = rollDistance;
             rollJump = false;
         }
