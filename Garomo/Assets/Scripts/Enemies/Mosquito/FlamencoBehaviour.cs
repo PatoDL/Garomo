@@ -31,8 +31,6 @@ public class FlamencoBehaviour : MonoBehaviour
 
     public bool dead = false;
 
-    public static List<GameObject> mosquitos = new List<GameObject>();
-
     // Start is called before the first frame update
     void Start()
     {
@@ -40,22 +38,10 @@ public class FlamencoBehaviour : MonoBehaviour
         anim = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
         col = GetComponent<BoxCollider2D>();
-        mosquitos.Add(gameObject);
-        startPos = transform.position;
-    }
-
-    public static void RestartMosquitos()
-    {
-        foreach(GameObject m in mosquitos)
-        {
-            m.gameObject.SetActive(true);
-            m.GetComponent<FlamencoBehaviour>().Restart();
-        }
     }
 
     public void Restart()
     {
-        transform.position = startPos;
         col.isTrigger = false;
         anim.enabled = true;
         dead = false;
@@ -120,11 +106,7 @@ public class FlamencoBehaviour : MonoBehaviour
         else if (collision.transform.tag == "LimitTrigger")
         {
             gameObject.SetActive(false);
+            Restart();
         }
-    }
-
-    public void ContinueIdle()
-    {
-        rig.velocity = new Vector3(direction.x * speed * Time.deltaTime, 0, 0);
     }
 }

@@ -54,20 +54,8 @@ public class TurtleController : MonoBehaviour
 
     Vector3 startPos;
 
-    public static List<GameObject> turtles = new List<GameObject>();
-
-    public static void RestartTurtles()
-    {
-        foreach(GameObject g in turtles)
-        {
-            g.SetActive(true);
-            g.GetComponent<TurtleController>().Restart();
-        }
-    }
-
     public void Restart()
     {
-        transform.position = startPos;
         life = 3;
         _animator.enabled = true;
         _controller.boxCollider.enabled = true;
@@ -90,7 +78,6 @@ public class TurtleController : MonoBehaviour
         gc = GetComponentInChildren<GaromoChecker>();
         gc.GaromoEntrance = Attack;
         startPos = transform.position;
-        turtles.Add(gameObject);
 
         normalizedHorizontalSpeed = -1;
 
@@ -125,22 +112,30 @@ public class TurtleController : MonoBehaviour
             else
             {
                 life -= 1;
-                if ((col.transform.position.x > transform.position.x && normalizedHorizontalSpeed == 1) || 
-                    (col.transform.position.x < transform.position.x && normalizedHorizontalSpeed == -1))
-                {
-                    transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
-                    
-                }
                 _animator.SetTrigger("Damage");
                 wasDamaged = true;
                 recoilTime = recoilTimeMax;
+
+                if ((col.transform.position.x > transform.position.x && normalizedHorizontalSpeed == -1) ||
+                    (col.transform.position.x < transform.position.x && normalizedHorizontalSpeed == 1))
+                {
+                    normalizedHorizontalSpeed = -normalizedHorizontalSpeed;
+                }
             }
         }
         else if(col.tag=="Redirectioner")
         {
-            normalizedHorizontalSpeed= -normalizedHorizontalSpeed;
+            normalizedHorizontalSpeed = -normalizedHorizontalSpeed;
+            if (wasDamaged)
+            {
+                _velocity = Vector3.zero;
+                _controller.move(_velocity * Time.deltaTime);
+            }
         }
-	}
+
+        if (col.tag == "LimitTrigger")
+            gameObject.SetActive(false);
+    }
 
 
 	void onTriggerExitEvent( Collider2D col )
@@ -181,14 +176,7 @@ public class TurtleController : MonoBehaviour
 
         if(wasDamaged)
         {
-            recoilTime -= Time.deltaTime;
             Recoil();
-            if(recoilTime<=0)
-            {
-                wasDamaged = false;
-                recoilTime = recoilTimeMax;
-                normalizedHorizontalSpeed = -normalizedHorizontalSpeed;
-            }
         }
 
         if (!falling && !wasDamaged)
@@ -198,9 +186,9 @@ public class TurtleController : MonoBehaviour
             _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
 
             // apply gravity before moving
-            _velocity.y += gravity * Time.deltaTime;
+            _velocity.y += gravity;
 
-            _controller.move(_velocity * Time.deltaTime);
+            
         }
 
         if(attacked)
@@ -213,15 +201,10 @@ public class TurtleController : MonoBehaviour
             }
         }
 
-		// grab our current _velocity to use as a base for all calculations
-		_velocity = _controller.velocity;
+        _controller.move(_velocity * Time.deltaTime);
+        // grab our current _velocity to use as a base for all calculations
+        _velocity = _controller.velocity;
 	}
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "LimitTrigger")
-            gameObject.SetActive(false);
-    }
 
     int whereToAttack;
 
@@ -239,8 +222,6 @@ public class TurtleController : MonoBehaviour
             {
                 _animator.SetBool("HighAttack", false);
             }
-
-            
         }
         attacked = true;
     }
@@ -269,6 +250,13 @@ public class TurtleController : MonoBehaviour
 
     void Recoil()
     {
-        _velocity.x -= transform.localScale.x * recoil * Time.deltaTime;
+        recoilTime -= Time.deltaTime;
+        _velocity.x -= -transform.localScale.x * recoil;
+        if (recoilTime <= 0)
+        {
+            wasDamaged = false;
+            recoilTime = recoilTimeMax;
+            normalizedHorizontalSpeed = -normalizedHorizontalSpeed;
+        }
     }
 }
