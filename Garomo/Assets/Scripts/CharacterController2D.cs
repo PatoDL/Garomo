@@ -269,9 +269,9 @@ public class CharacterController2D : MonoBehaviour
 		if( deltaMovement.x != 0f )
 			moveHorizontally( ref deltaMovement );
 
-		// next, check movement in the vertical dir
-		//if( deltaMovement.y != 0f )
-			moveVertically( ref deltaMovement );
+            // next, check movement in the vertical dir
+            if (deltaMovement.y != 0f)
+                moveVertically( ref deltaMovement );
 
 		// move then update our state
 		deltaMovement.z = 0;

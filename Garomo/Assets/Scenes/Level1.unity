@@ -55707,7 +55707,7 @@ MonoBehaviour:
   runSpeed: 10.3
   groundDamping: 20
   inAirDamping: 5
-  jumpHeight: 10
+  jumpHeight: 13
   canMove: 1
   runVelocityModifier:
     serializedVersion: 2
@@ -55743,9 +55743,9 @@ MonoBehaviour:
   isRecoiling: 0
   recoilTimeMax: 0.2
   recoilTime: 3
-  recoil: 2
+  recoil: 5
   rollTimer: 0
-  rollSpeed: 2
+  rollSpeed: 8
   rollJump: 0
   isRolling: 0
   rollDistance: 0.4
@@ -55841,7 +55841,7 @@ MonoBehaviour:
     m_Bits: 18433
   triggerMask:
     serializedVersion: 2
-    m_Bits: 35840
+    m_Bits: 33792
   oneWayPlatformMask:
     serializedVersion: 2
     m_Bits: 0
