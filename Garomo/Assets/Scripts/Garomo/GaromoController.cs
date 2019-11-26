@@ -367,8 +367,8 @@ public class GaromoController : MonoBehaviour
         }
 
         var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
-        //_velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, /*Time.deltaTime**/ smoothedMovementFactor);
-        _velocity.x = normalizedHorizontalSpeed * runSpeed /** runVelocityModifier.Evaluate(runModifierMultiplier)*/;
+        _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
+        //_velocity.x = normalizedHorizontalSpeed * runSpeed /** runVelocityModifier.Evaluate(runModifierMultiplier)*/;
     }
 
     public void Roll()
