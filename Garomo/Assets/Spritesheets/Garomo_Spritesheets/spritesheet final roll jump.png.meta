@@ -1,17 +1,18 @@
 fileFormatVersion: 2
-guid: fe2b0972d2083f74e9c8cc32adbd80cc
+guid: 07fe21a284d973547b16415858f601d7
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spritesheet air attack_0
-    21300002: spritesheet air attack_1
-    21300004: spritesheet air attack_2
-    21300006: spritesheet air attack_3
-    21300008: spritesheet air attack_4
-    21300010: spritesheet air attack_5
-    21300012: spritesheet air attack_6
-    21300014: spritesheet air attack_7
-    21300016: spritesheet air attack_8
-    21300018: spritesheet air attack_9
+    21300000: spritesheet final roll jump_0
+    21300002: spritesheet final roll jump_1
+    21300004: spritesheet final roll jump_2
+    21300006: spritesheet final roll jump_3
+    21300008: spritesheet final roll jump_4
+    21300010: spritesheet final roll jump_5
+    21300012: spritesheet final roll jump_6
+    21300014: spritesheet final roll jump_7
+    21300016: spritesheet final roll jump_8
+    21300018: spritesheet final roll jump_9
+    21300020: spritesheet final roll jump_10
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -91,17 +92,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -114,6 +104,17 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -149,13 +150,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet air attack_0
+      name: spritesheet final roll jump_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 3032
+        y: 2382
         width: 1039
-        height: 758
+        height: 794
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94bb152397639504e8a3972b48caab94
+      spriteID: 1cd022b7ebb18ec4ba296bd144b60d1d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_1
+      name: spritesheet final roll jump_1
       rect:
         serializedVersion: 2
         x: 1039
-        y: 3032
+        y: 2382
         width: 1039
-        height: 758
+        height: 794
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,19 +184,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32d9854536c6ad6408c2fab861054482
+      spriteID: 59214be061d95c14397ec6cd719768c3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_2
+      name: spritesheet final roll jump_2
+      rect:
+        serializedVersion: 2
+        x: 2078
+        y: 2382
+        width: 1039
+        height: 794
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dbc65441a38157489a25ad4ccf386c6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet final roll jump_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 2274
+        y: 1588
         width: 1039
-        height: 758
+        height: 794
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,19 +224,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f56ab0cd48e08294fa0fe2844320a906
+      spriteID: 3d4db04f2c289654796c6e840011008d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_3
+      name: spritesheet final roll jump_4
       rect:
         serializedVersion: 2
         x: 1039
-        y: 2274
+        y: 1588
         width: 1039
-        height: 758
+        height: 794
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,19 +244,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f058254db6592de42b5829799a963e8a
+      spriteID: d6e34f09e74e43647b68c41a53ad4039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_4
+      name: spritesheet final roll jump_5
+      rect:
+        serializedVersion: 2
+        x: 2078
+        y: 1588
+        width: 1039
+        height: 794
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c21171b338d4d84299e02dc8b75411f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet final roll jump_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 1516
+        y: 794
         width: 1039
-        height: 758
+        height: 794
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,19 +284,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8668888471aea6d4a9dcf19a1d8cdbc7
+      spriteID: 32729427e672b764884116def6e2c867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_5
+      name: spritesheet final roll jump_7
       rect:
         serializedVersion: 2
         x: 1039
-        y: 1516
+        y: 794
         width: 1039
-        height: 758
+        height: 794
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,19 +304,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b3c08bc859a37641b65c67a4b932d1f
+      spriteID: 1ab9e22df5b44f3448109b423505af7e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_6
+      name: spritesheet final roll jump_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 758
+        x: 2078
+        y: 794
         width: 1039
-        height: 758
+        height: 794
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,39 +324,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bb8b97f84da7ad41a54e3aa251586c2
+      spriteID: a912054239b66e34d9aee49db98bafc4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_7
-      rect:
-        serializedVersion: 2
-        x: 1039
-        y: 758
-        width: 1039
-        height: 758
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1dd816866f8ff6449282934c24eddbc
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet air attack_8
+      name: spritesheet final roll jump_9
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1039
-        height: 758
+        height: 794
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,19 +344,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b8a14666066d6047be0af76631092c1
+      spriteID: 943eae031bef6f646806a63c6620eebe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_9
+      name: spritesheet final roll jump_10
       rect:
         serializedVersion: 2
         x: 1039
         y: 0
         width: 1039
-        height: 758
+        height: 794
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,7 +364,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37f1f8e84cf1749439c63bbf93e4bba5
+      spriteID: 0c879741a3d512f42a99a3b32e97a35b
       vertices: []
       indices: 
       edges: []
@@ -351,7 +372,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 425ad19684cbbe549a4d8ce2641d9575
+    spriteID: 4e3d0a0dba28afd4f9fd7bbd5f9a8477
     vertices: []
     indices: 
     edges: []

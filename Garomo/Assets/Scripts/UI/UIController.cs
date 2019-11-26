@@ -57,15 +57,7 @@ public class UIController : MonoBehaviour
     {
         if (!fadingPanels[0].gameObject.activeInHierarchy && !fadingPanels[1].gameObject.activeInHierarchy)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (!MenuPanel.activeInHierarchy)
-                {
-                    PauseGame(true);
-                }
-            }
-
-            if(!MenuPanel.activeInHierarchy)
+            if(!MenuPanel.activeInHierarchy && !GameOverPanel.activeInHierarchy && !CreditsPanel.activeInHierarchy)
             {
                 if (Input.anyKeyDown && instructionsPanel.activeInHierarchy)
                 {
@@ -78,15 +70,20 @@ public class UIController : MonoBehaviour
                     else
                         GameManager.ResumeTime();
                 }
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    PauseGame(true);
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.Y))
             {
                 instructionsPanel.SetActive(!instructionsPanel.activeInHierarchy);
                 if (instructionsPanel.activeInHierarchy)
-                    Time.timeScale = 0f;
+                    GameManager.PauseTime();
                 else
-                    Time.timeScale = 1f;
+                    GameManager.ResumeTime();
             }
 
             for (int i = 0; i < garomoController.life; i++)
@@ -179,16 +176,6 @@ public class UIController : MonoBehaviour
         garomoController.Restart();
         EnemyManager.instance.RestartEnemies();
         ItemManager.instance.RestartItems();
-    }
-
-    public void IncreaseButton(GameObject g)
-    {
-        g.transform.localScale *= 1.2f;
-    }
-
-    public void DecreaseButton(GameObject g)
-    {
-        g.transform.localScale *= 0.8f;
     }
 
     public void Touch()

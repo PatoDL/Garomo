@@ -186,9 +186,7 @@ public class TurtleController : MonoBehaviour
             _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
 
             // apply gravity before moving
-            _velocity.y += gravity;
-
-            
+            _velocity.y += gravity * Time.deltaTime;
         }
 
         if(attacked)
@@ -251,7 +249,7 @@ public class TurtleController : MonoBehaviour
     void Recoil()
     {
         recoilTime -= Time.deltaTime;
-        _velocity.x -= -transform.localScale.x * recoil;
+        _velocity.x = -transform.localScale.x * recoil * Time.deltaTime;
         if (recoilTime <= 0)
         {
             wasDamaged = false;

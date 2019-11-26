@@ -113,17 +113,7 @@ public class GaromoController : MonoBehaviour
 
         if (col.transform.tag == "LimitTrigger")
         {
-            if (life <= 1)
-            {
-                _animator.SetTrigger("Dead");
-                canMove = false;
-                _velocity = Vector3.zero;
-                GaromoDie();
-            }
-            else
-            {
-                life -= 1;
-            }
+            BeDamaged();
             transform.position = (Vector2)CheckPointManager.instance.GetLastCheckPoint().transform.position;
         }
 
@@ -139,7 +129,7 @@ public class GaromoController : MonoBehaviour
 
         if (col.transform.tag == "Trampoline")
         {
-            Jump(1.25f);
+            Jump(true);
             _animator.SetBool("Jumping", true);
             _animator.SetBool("Running", false);
            _controller.move(_velocity * Time.deltaTime);
@@ -186,10 +176,6 @@ public class GaromoController : MonoBehaviour
             _velocity.y = 0;
             _animator.SetBool("Jumping", false);
         }
-        else if (_velocity.y <= 0f)
-        {
-
-        }
 
         if (canMove)
         {
@@ -222,11 +208,11 @@ public class GaromoController : MonoBehaviour
             Walk();
         }
 
-        if (_velocity.y < 0f)
-            _animator.SetBool("Jumping", false);
+        _animator.SetFloat("Yvel", _velocity.y);
 
 
-        if (Input.GetKeyDown(KeyCode.Z) && canMove && !isRolling && !(!_controller.isGrounded && _velocity.y <= 0f))
+
+        if (Input.GetKeyDown(KeyCode.Z) && canMove && !isRolling)
         {
             _animator.SetTrigger("Punch");
         }
@@ -234,23 +220,14 @@ public class GaromoController : MonoBehaviour
 		// we can only jump whilst grounded
 		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) && canMove )
 		{
-            Jump(1f);
+            Jump(false);
         }
 
         if(enemyCollision)
         {
-            if (life <= 1f)
-            {
-                _animator.SetTrigger("Dead");
-                _velocity = Vector3.zero;
-                GaromoDie();
-            }
-            else
-            {
-                life -= 1;
-                _animator.SetTrigger("Damage");
-                isRecoiling = true;
-            }
+            BeDamaged();
+            _animator.SetTrigger("Damage");
+            isRecoiling = true;
             enemyCollision = false;
             _velocity = Vector3.zero;
             canMove = false;
@@ -262,7 +239,7 @@ public class GaromoController : MonoBehaviour
             Recoil();
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && canMove && !isRolling)
+        if (Input.GetKeyDown(KeyCode.C) && canMove && !isRolling && _controller.isGrounded)
         {
             isRolling = true;
             //_controller.ignoreSlopeModifier = true;
@@ -299,7 +276,6 @@ public class GaromoController : MonoBehaviour
         enemyCollision = false;
         immunity = false;
         win = false;
-        _animator.SetTrigger("Restart");
     }
 
     public void CrouchColliderActivation(string action)
@@ -318,12 +294,19 @@ public class GaromoController : MonoBehaviour
         _controller.recalculateDistanceBetweenRays();
     }
 
-    public void Jump(float multiplier)
+    public void Jump(bool trampoline)
     {
         //_velocity.y = jumpHeight * multiplier * -gravity;
-        _velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
+
+        float finalJump = jumpHeight;
+
+        if (trampoline)
+            finalJump *= 1.5f;
+
+        _velocity.y = Mathf.Sqrt(2f * finalJump * -gravity);
         _animator.SetBool("Jumping", true);
         _animator.SetBool("Running", false);
+        
         if (isRolling)
         {
             rollJump = true;
@@ -381,6 +364,10 @@ public class GaromoController : MonoBehaviour
             _velocity.y = gravity * 10 * Time.deltaTime;
             rollSpeedAux *= 1.3f;
         }
+        else if(rollJump)
+        {
+            rollSpeedAux *=  1.5f;
+        }
 
         _velocity.x = rollSpeedAux * transform.localScale.x * rollVelVariation.Evaluate((rollDistance - rollTimer) / rollDistance) * Time.deltaTime;
 
@@ -403,6 +390,22 @@ public class GaromoController : MonoBehaviour
             canMove = true;
             recoilTime = recoilTimeMax;
             immunity = false;
+        }
+    }
+
+    void BeDamaged()
+    {
+        if(life <= 1)
+        {
+            _animator.SetTrigger("Dead");
+            canMove = false;
+            _velocity = Vector3.zero;
+            GaromoDie();
+            transform.position = (Vector2)CheckPointManager.instance.GetLastCheckPoint().transform.position;
+        }
+        else
+        {
+            life -= 1;
         }
     }
 

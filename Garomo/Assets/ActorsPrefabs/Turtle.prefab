@@ -276,7 +276,7 @@ MonoBehaviour:
   attackTimer: 0
   attacked: 0
   life: 3
-  recoil: 5
+  recoil: -1000
   recoilTime: 0.2
   recoilTimeMax: 0.5
   haveToAttack: 0
