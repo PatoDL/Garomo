@@ -179,7 +179,7 @@ public class GaromoController : MonoBehaviour
 
 
 	// the Update loop contains a very simple example of moving the character around and controlling the animation
-	void FixedUpdate()
+	void Update()
 	{
         if (_controller.isGrounded)
         {
