@@ -139,9 +139,11 @@ public class GaromoController : MonoBehaviour
 
         if (col.transform.tag == "Trampoline")
         {
-            _velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
+            Jump(2);
             _animator.SetBool("Jumping", true);
             _animator.SetBool("Running", false);
+            Debug.Log("trampo");
+            _controller.move(_velocity * Time.deltaTime);
         }
 
         if (col.transform.tag == "EndlevelTrigger")
@@ -233,7 +235,7 @@ public class GaromoController : MonoBehaviour
 		// we can only jump whilst grounded
 		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) && canMove )
 		{
-            Jump();
+            Jump(1);
         }
 
         if(enemyCollision)
@@ -315,16 +317,16 @@ public class GaromoController : MonoBehaviour
         _controller.recalculateDistanceBetweenRays();
     }
 
-    public void Jump()
+    public void Jump(int multiplier)
     {
-        _velocity.y = Mathf.Sqrt(jumpHeight * -gravity);
-        Debug.Log(_velocity.y);
+        _velocity.y = jumpHeight * multiplier * -gravity;
         _animator.SetBool("Jumping", true);
         _animator.SetBool("Running", false);
         if (isRolling)
         {
             rollJump = true;
         }
+        
     }
 
     public void TeleportTo(Transform t)
