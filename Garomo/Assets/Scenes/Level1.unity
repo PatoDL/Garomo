@@ -55544,7 +55544,7 @@ MonoBehaviour:
   recoilTime: 3
   recoil: 5
   rollTimer: 0
-  rollSpeed: 1000
+  rollSpeed: 6000
   rollJump: 0
   isRolling: 0
   rollDistance: 0.4

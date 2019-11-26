@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Prime31;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 
@@ -79,7 +80,6 @@ public class GaromoController : MonoBehaviour
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
         _controller.onTriggerStayEvent += onTriggerStayEvent;
         _controller.onTriggerExitEvent += onTriggerExitEvent;
-
         maxLives = life;
 
         gravityAct = true;
@@ -396,7 +396,7 @@ public class GaromoController : MonoBehaviour
     public void Recoil()
     {
         recoilTime -= Time.deltaTime;
-        _velocity.x -= transform.localScale.x * recoil;
+        _velocity.x = transform.localScale.x * recoil * Time.deltaTime;
         if (recoilTime <= 0f)
         {
             isRecoiling = false;
