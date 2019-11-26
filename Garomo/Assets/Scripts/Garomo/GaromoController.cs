@@ -320,7 +320,8 @@ public class GaromoController : MonoBehaviour
 
     public void Jump(float multiplier)
     {
-        _velocity.y = jumpHeight * multiplier * -gravity;
+        //_velocity.y = jumpHeight * multiplier * -gravity;
+        _velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
         _animator.SetBool("Jumping", true);
         _animator.SetBool("Running", false);
         if (isRolling)
@@ -377,7 +378,7 @@ public class GaromoController : MonoBehaviour
 
         if (!rollJump && !_controller.isGrounded)
         {
-            _velocity.y = gravity * 10;
+            _velocity.y = gravity * 10 * Time.deltaTime;
             rollSpeedAux *= 1.3f;
         }
 
@@ -407,6 +408,6 @@ public class GaromoController : MonoBehaviour
 
     public void ApplyGravity()
     {
-        _velocity.y += gravity;
+        _velocity.y += gravity * Time.deltaTime;
     }
 }

@@ -55502,11 +55502,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2abdc192b66589644ae6a812a50367d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: -0.5
+  gravity: -25
   runSpeed: 10.3
   groundDamping: 20
   inAirDamping: 5
-  jumpHeight: 44
+  jumpHeight: 3
   canMove: 1
   runVelocityModifier:
     serializedVersion: 2
