@@ -177,8 +177,8 @@ public class UIController : MonoBehaviour
     {
         GameManager.ResumeTime();
         garomoController.Restart();
-        TurtleController.RestartTurtles();
-        FlamencoBehaviour.RestartMosquitos();
+        EnemyManager.instance.RestartEnemies();
+        ItemManager.instance.RestartItems();
     }
 
     public void IncreaseButton(GameObject g)
