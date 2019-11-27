@@ -176,6 +176,7 @@ public class UIController : MonoBehaviour
         garomoController.Restart();
         EnemyManager.instance.RestartEnemies();
         ItemManager.instance.RestartItems();
+        CheckPointManager.instance.RestartLevel();
     }
 
     public void Touch()

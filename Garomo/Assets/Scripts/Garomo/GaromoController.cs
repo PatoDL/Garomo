@@ -208,8 +208,8 @@ public class GaromoController : MonoBehaviour
             Walk();
         }
 
-        _animator.SetFloat("Yvel", _velocity.y);
 
+        _animator.SetFloat("Yvel", _velocity.y);
 
 
         if (Input.GetKeyDown(KeyCode.Z) && canMove && !isRolling)
@@ -276,6 +276,7 @@ public class GaromoController : MonoBehaviour
         enemyCollision = false;
         immunity = false;
         win = false;
+        transform.position = CheckPointManager.instance.firstCheckPoint.transform.position;
     }
 
     public void CrouchColliderActivation(string action)

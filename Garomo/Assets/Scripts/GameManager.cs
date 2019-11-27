@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         GameObject.Find("Garomo").GetComponent<GaromoController>().life = lives;
     }
 
+    public void GoToLevel(int level)
+    {
+        if(actualLevel.actualLevel != level)
+            SceneManager.LoadScene(level);
+    }
+
     public static void PauseTime()
     {
         Time.timeScale = 0f;
