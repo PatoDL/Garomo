@@ -8,7 +8,7 @@ public class PotionBehaviour : MonoBehaviour
     {
         if(collision.tag=="Garomo")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

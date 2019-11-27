@@ -57,7 +57,8 @@ public class UIController : MonoBehaviour
     {
         if (!fadingPanels[0].gameObject.activeInHierarchy && !fadingPanels[1].gameObject.activeInHierarchy)
         {
-            if(!MenuPanel.activeInHierarchy && !GameOverPanel.activeInHierarchy && !CreditsPanel.activeInHierarchy)
+            if(!MenuPanel.activeInHierarchy && !GameOverPanel.activeInHierarchy &&
+                !CreditsPanel.activeInHierarchy && !PausePanel.activeInHierarchy && !WinPanel.activeInHierarchy)
             {
                 if (Input.anyKeyDown && instructionsPanel.activeInHierarchy)
                 {
@@ -92,6 +93,20 @@ public class UIController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     PauseGame(true);
+                }
+
+                if (Cursor.visible)
+                {
+                    Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.Locked;
+                }
+            }
+            else
+            {
+                if(!Cursor.visible)
+                {
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
                 }
             }
 

@@ -37,7 +37,7 @@ public class CheckPointBehaviour : MonoBehaviour
         }
     }
 
-    void RestartSprite()
+    public void RestartSprite()
     {
         mat.mainTexture = badGuyCheck;
     }

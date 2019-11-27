@@ -11,8 +11,6 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     public void Start()
     {
-        PauseTime();
-
         actualLevel = GameObject.Find("LevelData").GetComponent<LevelData>();
         GaromoController.GoToNext = NextLevel;
     }

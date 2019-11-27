@@ -42,9 +42,9 @@ public class FlamencoBehaviour : MonoBehaviour
 
     public void Restart()
     {
-        col.isTrigger = false;
         anim.enabled = true;
         dead = false;
+        life = 5;
     }
 
     // Update is called once per frame

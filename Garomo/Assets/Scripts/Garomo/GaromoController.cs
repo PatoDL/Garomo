@@ -175,8 +175,9 @@ public class GaromoController : MonoBehaviour
         }
     }
 
-	#endregion
+    #endregion
 
+    bool isRestarting = false;
 
 	// the Update loop contains a very simple example of moving the character around and controlling the animation
 	void Update()
@@ -279,6 +280,22 @@ public class GaromoController : MonoBehaviour
         if (!_controller.collisionState.wasGroundedLastFrame && _controller.isGrounded)
             AkSoundEngine.PostEvent("Garomo_Land", gameObject);
 
+        if(isRestarting)
+        {
+            if (transform.localScale.x < 0f)
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            life = maxLives;
+            canMove = true;
+            isRolling = false;
+            enemyCollision = false;
+            immunity = false;
+            win = false;
+            _velocity = Vector3.zero;
+            transform.position = (Vector2)CheckPointManager.instance.GetLastCheckPoint().transform.position;
+
+            isRestarting = false;
+        }
+
         _controller.move( _velocity * Time.deltaTime );
 
         // grab our current _velocity to use as a base for all calculations
@@ -287,16 +304,7 @@ public class GaromoController : MonoBehaviour
 
     public void Restart()
     {
-        if (transform.localScale.x < 0f)
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-        life = maxLives;
-        canMove = true;
-        isRolling = false;
-        enemyCollision = false;
-        immunity = false;
-        win = false;
-        _velocity = Vector3.zero;
-        transform.position = (Vector2)CheckPointManager.instance.GetLastCheckPoint().transform.position;
+        isRestarting = true;
     }
 
     public void CrouchColliderActivation(string action)

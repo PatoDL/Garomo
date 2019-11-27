@@ -24,6 +24,10 @@ public class CheckPointManager : MonoBehaviour
 
     void UpdateLastCheckPoint(GameObject checkPoint)
     {
+        if(lastCheckPoint.GetComponent<CheckPointBehaviour>())
+        {
+            lastCheckPoint.GetComponent<CheckPointBehaviour>().RestartSprite();
+        }
         lastCheckPoint = checkPoint;
         AkSoundEngine.PostEvent("Checkpoint", gameObject);
     }
@@ -35,6 +39,10 @@ public class CheckPointManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        if (lastCheckPoint.GetComponent<CheckPointBehaviour>())
+        {
+            lastCheckPoint.GetComponent<CheckPointBehaviour>().RestartSprite();
+        }
         lastCheckPoint = firstCheckPoint;
     }
 }
