@@ -64,11 +64,29 @@ public class UIController : MonoBehaviour
                     instructionsPanel.SetActive(false);
                     if (firstTime)
                     {
-                        Restart();
+                        Restart(true);
                         firstTime = false;
                     }
                     else
+                    {
                         GameManager.ResumeTime();
+                    }
+                    AkSoundEngine.PostEvent("Close_Help", gameObject);
+                }
+
+                if (Input.GetKeyDown(KeyCode.Y))
+                {
+                    instructionsPanel.SetActive(!instructionsPanel.activeInHierarchy);
+                    if (instructionsPanel.activeInHierarchy)
+                    {
+                        AkSoundEngine.PostEvent("Open_Help", gameObject);
+                        GameManager.PauseTime();
+                    }
+                    else
+                    {
+                        AkSoundEngine.PostEvent("Close_Help", gameObject);
+                        GameManager.ResumeTime();
+                    }
                 }
 
                 if (Input.GetKeyDown(KeyCode.Escape))
@@ -77,14 +95,7 @@ public class UIController : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Y))
-            {
-                instructionsPanel.SetActive(!instructionsPanel.activeInHierarchy);
-                if (instructionsPanel.activeInHierarchy)
-                    GameManager.PauseTime();
-                else
-                    GameManager.ResumeTime();
-            }
+            
 
             for (int i = 0; i < garomoController.life; i++)
             {
@@ -153,6 +164,7 @@ public class UIController : MonoBehaviour
         MenuPanel.gameObject.SetActive(false);
         inGameUI.gameObject.SetActive(true);
         instructionsPanel.SetActive(true);
+        AkSoundEngine.PostEvent("Open_Help", gameObject);
     }
 
     public void OpenCredits()
@@ -170,13 +182,14 @@ public class UIController : MonoBehaviour
         }
     }
 
-    public void Restart()
+    public void Restart(bool fromTheStart)
     {
+        if (fromTheStart)
+            CheckPointManager.instance.RestartLevel();
         GameManager.ResumeTime();
         garomoController.Restart();
         EnemyManager.instance.RestartEnemies();
         ItemManager.instance.RestartItems();
-        CheckPointManager.instance.RestartLevel();
     }
 
     public void Touch()

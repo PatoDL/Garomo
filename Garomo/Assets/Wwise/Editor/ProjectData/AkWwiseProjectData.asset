@@ -12,14 +12,334 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c991529088f40a341b51b880d37ac68e, type: 3}
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
-  AcousticTextureWwu: []
-  AuxBusWwu: []
-  BankWwu: []
-  EventWwu: []
-  RtpcWwu: []
-  StateWwu: []
-  SwitchWwu: []
-  TriggerWwu: []
-  ExpandedItems: []
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 1ffe64ec2306db44b1a9dbfd348fd34b
+    GuidInternal: 
+    m_lastTime: -8586275760679062691
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 74f6a4b75f89dd41860adda4644cac0a
+    GuidInternal: 
+    m_lastTime: -8586275760680020125
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 3cf09f2719429b46bf87ba38eb206c91
+    GuidInternal: 
+    m_lastTime: -8586268160504637544
+    List:
+    - name: main
+      guid: 7fc84f9f0e3943458fd5bc3d6d69fb91
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: main
+        ObjectType: 7
+      Path: Default Work Unit\main
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: c2757170fbe8004db9c23c34c691edf3
+    GuidInternal: 
+    m_lastTime: -8586268040955150042
+    List:
+    - name: Blades
+      guid: dc945f7ef0762646b573eba42172598d
+      id: 1041766312
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Blades
+        ObjectType: 3
+      Path: Default Work Unit\Blades
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Checkpoint
+      guid: c35fd6b3e3a4cc478976f2e6be7298a6
+      id: 612075679
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Checkpoint
+        ObjectType: 3
+      Path: Default Work Unit\Checkpoint
+      maxAttenuation: 0
+      maxDuration: 1712634
+      minDuration: 1227587
+    - name: Close_Help
+      guid: 3a40b59df1c3e54db270f04db0415ff5
+      id: 3133371051
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Close_Help
+        ObjectType: 3
+      Path: Default Work Unit\Close_Help
+      maxAttenuation: 0
+      maxDuration: 1712634
+      minDuration: 1227587
+    - name: Garomo_Hurt
+      guid: 8a7564e463bb9440b6d6b781ac891c52
+      id: 2050870508
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Garomo_Hurt
+        ObjectType: 3
+      Path: Default Work Unit\Garomo_Hurt
+      maxAttenuation: 0
+      maxDuration: 442982
+      minDuration: 384762
+    - name: Garomo_Jump
+      guid: a0b3a56c92a49c40bc1f8f2628875c06
+      id: 1042161699
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Garomo_Jump
+        ObjectType: 3
+      Path: Default Work Unit\Garomo_Jump
+      maxAttenuation: 0
+      maxDuration: 566831
+      minDuration: 504406
+    - name: Garomo_Land
+      guid: 5fee15c054bee2478578ce34c73a6d74
+      id: 409651904
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Garomo_Land
+        ObjectType: 3
+      Path: Default Work Unit\Garomo_Land
+      maxAttenuation: 0
+      maxDuration: 239751
+      minDuration: 226034
+    - name: Garomo_Punch
+      guid: 8499fd739c6753418fb7baaa99263b46
+      id: 3693086541
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Garomo_Punch
+        ObjectType: 3
+      Path: Default Work Unit\Garomo_Punch
+      maxAttenuation: 0
+      maxDuration: 402492
+      minDuration: 359086
+    - name: Garomo_Punch_Hit
+      guid: 88aed65933c6884ba7a1b0bf86c1ca12
+      id: 344699183
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Garomo_Punch_Hit
+        ObjectType: 3
+      Path: Default Work Unit\Garomo_Punch_Hit
+      maxAttenuation: 0
+      maxDuration: 452022
+      minDuration: 371924
+    - name: Garomo_Roll
+      guid: 327127369b11dd4f850c8120b568f3b5
+      id: 3352118102
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Garomo_Roll
+        ObjectType: 3
+      Path: Default Work Unit\Garomo_Roll
+      maxAttenuation: 0
+      maxDuration: 873312
+      minDuration: 843399
+    - name: Garomo_Roll_Jump
+      guid: 786c3f74c9be044ca11fd21277853c81
+      id: 291580225
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Garomo_Roll_Jump
+        ObjectType: 3
+      Path: Default Work Unit\Garomo_Roll_Jump
+      maxAttenuation: 0
+      maxDuration: 1166083
+      minDuration: 1037662
+    - name: Life_Potion
+      guid: 1805223992f8ae4fbec9015aa094b3ca
+      id: 1568957323
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Life_Potion
+        ObjectType: 3
+      Path: Default Work Unit\Life_Potion
+      maxAttenuation: 0
+      maxDuration: 2300000
+      minDuration: 2211000
+    - name: Menu_Press_Button
+      guid: 6bcae4d061e87e4d8fcbaa96323da91c
+      id: 1690405279
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Menu_Press_Button
+        ObjectType: 3
+      Path: Default Work Unit\Menu_Press_Button
+      maxAttenuation: 0
+      maxDuration: 337604
+      minDuration: 337604
+    - name: Menu_Shade_Button
+      guid: cf3a94be343e924089ae20bd5e213635
+      id: 2885501293
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Menu_Shade_Button
+        ObjectType: 3
+      Path: Default Work Unit\Menu_Shade_Button
+      maxAttenuation: 0
+      maxDuration: 48208
+      minDuration: 48208
+    - name: Open_Help
+      guid: f30acaa1f051c64a9eb11dd7e920910f
+      id: 3442252589
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Open_Help
+        ObjectType: 3
+      Path: Default Work Unit\Open_Help
+      maxAttenuation: 0
+      maxDuration: 432896
+      minDuration: 432896
+    - name: Saw
+      guid: 026a26c9ea54a7409d876475fa17470d
+      id: 443572616
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Saw
+        ObjectType: 3
+      Path: Default Work Unit\Saw
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Spike_Off
+      guid: d06750efad1dae489f54537c1e24c940
+      id: 4121003771
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Spike_Off
+        ObjectType: 3
+      Path: Default Work Unit\Spike_Off
+      maxAttenuation: 0
+      maxDuration: 1492625
+      minDuration: 1492625
+    - name: Spike_On
+      guid: b767adab30a0174986da7059ad8fc830
+      id: 691680519
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Spike_On
+        ObjectType: 3
+      Path: Default Work Unit\Spike_On
+      maxAttenuation: 0
+      maxDuration: 1635146
+      minDuration: 1635146
+    - name: Trampoline
+      guid: f1f66489704a3a4cb788915a72c1c6c7
+      id: 960094356
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Trampoline
+        ObjectType: 3
+      Path: Default Work Unit\Trampoline
+      maxAttenuation: 0
+      maxDuration: 1056479
+      minDuration: 1056479
+    - name: Turtle_Death
+      guid: 2eeb66a366da454684f4a87870c1e480
+      id: 1417097572
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Turtle_Death
+        ObjectType: 3
+      Path: Default Work Unit\Turtle_Death
+      maxAttenuation: 0
+      maxDuration: 1150375
+      minDuration: 1150375
+    - name: Turtle_Punch
+      guid: 01b3dd430fc43c47b9383b7000dbe2c8
+      id: 3072157990
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Turtle_Punch
+        ObjectType: 3
+      Path: Default Work Unit\Turtle_Punch
+      maxAttenuation: 0
+      maxDuration: 331880
+      minDuration: 285981
+    - name: Turtle_Punch_Hit
+      guid: a62596160b97fa408995e85fbdb3bab7
+      id: 710127064
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Turtle_Punch_Hit
+        ObjectType: 3
+      Path: Default Work Unit\Turtle_Punch_Hit
+      maxAttenuation: 0
+      maxDuration: 319000
+      minDuration: 319000
+  - PhysicalPath: Events\Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 26d8aa339e26584fa9718a423f9ed546
+    GuidInternal: 
+    m_lastTime: -8586275760679481581
+    List: []
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: ea1eb2bd78057f4698971cdd48cf579e
+    GuidInternal: 
+    m_lastTime: -8586268202112627824
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 08bc90285e5a4446969fc6cf37210c09
+    GuidInternal: 
+    m_lastTime: -8586275760679112572
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 312acbb1fb51d54ca4d59de78211ddab
+    GuidInternal: 
+    m_lastTime: -8586275760679441690
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 0cb22f6105f4cc47ab2418ce50209c71
+    GuidInternal: 
+    m_lastTime: -8586275760679092609
+    List: []
+  ExpandedItems:
+  - /Garomo_WwiseProject
+  - /Garomo_WwiseProject/Events
+  - /Garomo_WwiseProject/Events/Default Work Unit
+  - /Garomo_WwiseProject/SoundBanks
+  - /Garomo_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

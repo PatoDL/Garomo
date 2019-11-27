@@ -1,6 +1,282 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}" SchemaVersion="94">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Garomo_Jump" ID="{6CA5B3A0-A492-409C-BC1F-8F2628875C06}">
+					<ChildrenList>
+						<Action Name="" ID="{9C9C3E91-0940-482A-859F-117855DDF6A7}" ShortID="79402640">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Garomo_Jump" ID="{8E1989C6-0816-4162-8C71-860D4B46ED8D}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D47E2027-8752-42AC-AEEB-195568155D05}" ShortID="1071994302">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Garomo_Jump" ID="{A25EF107-584D-4355-91F4-0D5C1CCD3435}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Garomo_Land" ID="{C015EE5F-BE54-47E2-8578-CE34C73A6D74}">
+					<ChildrenList>
+						<Action Name="" ID="{86FF64DB-97E6-4BB2-B020-E4AA76ADDD3B}" ShortID="493217521">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Garomo_Land" ID="{E6D69A2C-6E80-4F53-A0B8-C65F5B41BDC5}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Garomo_Punch" ID="{73FD9984-679C-4153-8FB7-BAAA99263B46}">
+					<ChildrenList>
+						<Action Name="" ID="{D73BA725-C229-4F2B-ADFD-F13647B99B61}" ShortID="314298882">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Garomo_Punch" ID="{ED5BF4D0-3C07-4FD9-8497-53B90E8C5512}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F13416B0-E006-4791-9A03-300BE6C2482E}" ShortID="445615937">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Garomo_Punch" ID="{932F043D-CF39-4A73-933B-774E4F8FB212}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Garomo_Punch_Hit" ID="{59D6AE88-C633-4B88-A7A1-B0BF86C1CA12}">
+					<ChildrenList>
+						<Action Name="" ID="{139F71A3-F836-4110-8F50-56909C42E250}" ShortID="89648800">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Garomo_Punch_Hit" ID="{40EA2A13-AAB1-4CC7-8092-45EF36C54911}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Garomo_Roll" ID="{36277132-119B-4FDD-850C-8120B568F3B5}">
+					<ChildrenList>
+						<Action Name="" ID="{C0EA5694-DB5F-481C-B59E-FFD242378A02}" ShortID="518917461">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Garomo_Roll" ID="{472E8E9A-26C1-467A-8822-F5ED8721BF83}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Garomo_Roll_Jump" ID="{743F6C78-BEC9-4C04-A11F-D21277853C81}">
+					<ChildrenList>
+						<Action Name="" ID="{EEE218AF-3C37-441B-8284-D3EDC73FE900}" ShortID="75588345">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Garomo_Roll_Jump" ID="{61F9E5E1-3606-4F56-AE02-670D963D796C}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Garomo_Hurt" ID="{E464758A-BB63-4094-B6D6-B781AC891C52}">
+					<ChildrenList>
+						<Action Name="" ID="{1B84F6AB-A4EB-4311-9AB3-72C948862C16}" ShortID="776727409">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Garomo_Hurt" ID="{DC944D77-E032-4413-8EF3-937D09F2234E}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Turtle_Punch" ID="{43DDB301-C40F-473C-B938-3B7000DBE2C8}">
+					<ChildrenList>
+						<Action Name="" ID="{3AA22745-B5BF-40DC-A7C2-7C90F020B6F0}" ShortID="105142965">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Turtle_Punch" ID="{45137898-E2CA-4C21-A54B-6AB725173C42}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{B1BC161D-682E-446D-A8D1-76C414228D1E}" ShortID="651096634">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Turtle_Voice_Punch" ID="{DE4404FF-C08A-4D91-81F2-F04CE870D289}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Turtle_Punch_Hit" ID="{169625A6-970B-40FA-8995-E85FBDB3BAB7}">
+					<ChildrenList>
+						<Action Name="" ID="{9906CC8E-B08F-4CF4-B5DD-2832B3B95D76}" ShortID="748049663">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Turtle_Punch_Hit" ID="{A4A38988-ECF2-4EFD-A1D4-7AD272936F4A}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Turtle_Death" ID="{A366EB2E-DA66-4645-84F4-A87870C1E480}">
+					<ChildrenList>
+						<Action Name="" ID="{E9580526-566E-4F09-9F11-727875102057}" ShortID="676939949">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Turtle_Death" ID="{D03DFA47-A57B-4508-A9B5-C82B1C0471A5}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{BAFCF4F4-71E6-4D70-84E2-DAD522C70C67}" ShortID="318470528">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Turtle_Voice_Death" ID="{419149B0-83D9-4A89-84C7-929AB6EFA3B3}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Menu_Shade_Button" ID="{BE943ACF-3E34-4092-89AE-20BD5E213635}">
+					<ChildrenList>
+						<Action Name="" ID="{BA29D912-FA3F-4C69-8D7F-18517DC5541C}" ShortID="504843539">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Shade_Button" ID="{F559C2EE-D48D-4A41-8020-A41528D714A3}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Menu_Press_Button" ID="{D0E4CA6B-E861-4D7E-8FCB-AA96323DA91C}">
+					<ChildrenList>
+						<Action Name="" ID="{046600E2-50B0-4F93-AA6F-7F7486118E1F}" ShortID="1025899179">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Press_Button" ID="{EA6E1472-5F1B-4C2E-AA4C-AF93C3B76C5F}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Open_Help" ID="{A1CA0AF3-51F0-4AC6-9EB1-1DD7E920910F}">
+					<ChildrenList>
+						<Action Name="" ID="{47978BFD-433A-460E-A09A-43A6A7A7DC0E}" ShortID="689497288">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Open_Help" ID="{5E7068EF-4C16-41E2-B97F-176FE326E783}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Close_Help" ID="{9DB5403A-C3F1-4DE5-B270-F04DB0415FF5}">
+					<ChildrenList>
+						<Action Name="" ID="{D01BDF4B-DAD7-4131-950F-F9CF2C3419DB}" ShortID="654037900">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Close_Help" ID="{83C92EFD-E680-40FD-976A-8814D997BDA8}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{573B1B63-7C27-46CF-BD34-EE8022ACBF8A}" ShortID="973890954">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Garomo_Laugh" ID="{3C277684-B641-4F46-A8F7-1BB3AEA97279}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Trampoline" ID="{8964F6F1-4A70-4C3A-B788-915A72C1C6C7}">
+					<ChildrenList>
+						<Action Name="" ID="{B17E91A2-6F88-47BA-99D2-7656CC711BDD}" ShortID="335619211">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Trampoline" ID="{7BD0A565-FC56-4121-9791-96F463609669}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Life_Potion" ID="{39220518-F892-4FAE-BEC9-015AA094B3CA}">
+					<ChildrenList>
+						<Action Name="" ID="{C5791742-42E0-4638-94AF-2A84676C6525}" ShortID="451069220">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Life_Potion" ID="{8B987473-5324-4C04-9D4C-1611CD57A4BE}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{CFFB9C10-6135-4EEC-9BA9-9828ABB562B5}" ShortID="22438264">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Garomo_Drink" ID="{2ABF067A-D14B-4EE9-B127-E739B5FE0082}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Spike_On" ID="{ABAD67B7-A030-4917-86DA-7059AD8FC830}">
+					<ChildrenList>
+						<Action Name="" ID="{2CD1B392-DAD5-4090-911E-F734235B6A3E}" ShortID="576244957">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Spike_On" ID="{CC7D4533-C030-49AC-958E-B4C6F0D991A5}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Spike_Off" ID="{EF5067D0-1DAD-48AE-9F54-537C1E24C940}">
+					<ChildrenList>
+						<Action Name="" ID="{475ECF7F-3462-451F-B39D-9E69BB62900B}" ShortID="250321804">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Spike_Off" ID="{36149C18-6880-41A1-8C5B-D20D96DA66D4}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Blades" ID="{7E5F94DC-76F0-4626-B573-EBA42172598D}">
+					<ChildrenList>
+						<Action Name="" ID="{FC167514-1D58-45CD-BDE6-FB22C46B564B}" ShortID="122925413">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Blades" ID="{DC6CD203-AF11-4DBB-9EC0-DE29B58B7F10}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Saw" ID="{C9266A02-54EA-40A7-9D87-6475FA17470D}">
+					<ChildrenList>
+						<Action Name="" ID="{81163AAD-71D8-4491-9508-71BC0355F281}" ShortID="94023322">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Saw" ID="{FE1069B7-063C-4416-87F4-6FEA15D6A2F1}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Checkpoint" ID="{B3D65FC3-A4E3-47CC-8976-F2E6BE7298A6}">
+					<ChildrenList>
+						<Action Name="" ID="{1CA2403C-2DC8-41A4-98E1-3AF19B98E3D3}" ShortID="32306760">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Garomo_Laugh" ID="{3C277684-B641-4F46-A8F7-1BB3AEA97279}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

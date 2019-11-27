@@ -32,6 +32,7 @@ public class CheckPointBehaviour : MonoBehaviour
                 badGuyCheck = mat.mainTexture;
                 mat.mainTexture = garomoCheck;
                 ReachCheckPoint(this.gameObject);
+
             }
         }
     }

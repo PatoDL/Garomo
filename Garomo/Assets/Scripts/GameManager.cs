@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     public void NextLevel(int lives)
     {
+        AkSoundEngine.StopAll();
         SceneManager.LoadScene(actualLevel.nextLevel);
         actualLevel = GameObject.Find("LevelData").GetComponent<LevelData>();
 

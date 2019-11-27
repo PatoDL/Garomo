@@ -25,6 +25,7 @@ public class CheckPointManager : MonoBehaviour
     void UpdateLastCheckPoint(GameObject checkPoint)
     {
         lastCheckPoint = checkPoint;
+        AkSoundEngine.PostEvent("Checkpoint", gameObject);
     }
 
     public GameObject GetLastCheckPoint()

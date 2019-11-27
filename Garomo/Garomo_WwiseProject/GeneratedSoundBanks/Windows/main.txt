@@ -1,0 +1,70 @@
+Event	ID	Name			Wwise Object Path	Notes
+	291580225	Garomo_Roll_Jump			\Default Work Unit\Garomo_Roll_Jump	
+	344699183	Garomo_Punch_Hit			\Default Work Unit\Garomo_Punch_Hit	
+	409651904	Garomo_Land			\Default Work Unit\Garomo_Land	
+	443572616	Saw			\Default Work Unit\Saw	
+	612075679	Checkpoint			\Default Work Unit\Checkpoint	
+	691680519	Spike_On			\Default Work Unit\Spike_On	
+	710127064	Turtle_Punch_Hit			\Default Work Unit\Turtle_Punch_Hit	
+	960094356	Trampoline			\Default Work Unit\Trampoline	
+	1041766312	Blades			\Default Work Unit\Blades	
+	1042161699	Garomo_Jump			\Default Work Unit\Garomo_Jump	
+	1417097572	Turtle_Death			\Default Work Unit\Turtle_Death	
+	1568957323	Life_Potion			\Default Work Unit\Life_Potion	
+	1690405279	Menu_Press_Button			\Default Work Unit\Menu_Press_Button	
+	2050870508	Garomo_Hurt			\Default Work Unit\Garomo_Hurt	
+	2885501293	Menu_Shade_Button			\Default Work Unit\Menu_Shade_Button	
+	3072157990	Turtle_Punch			\Default Work Unit\Turtle_Punch	
+	3133371051	Close_Help			\Default Work Unit\Close_Help	
+	3352118102	Garomo_Roll			\Default Work Unit\Garomo_Roll	
+	3442252589	Open_Help			\Default Work Unit\Open_Help	
+	3693086541	Garomo_Punch			\Default Work Unit\Garomo_Punch	
+	4121003771	Spike_Off			\Default Work Unit\Spike_Off	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	20864471	Garomo_Land	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Land_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Land		44760
+	29366322	Spike_Off	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Spike_Off_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Level\Spike_Off		286648
+	32215052	Turtle_Death	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Turtle_Death_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turtle\Turtle_Death		220936
+	87936577	Blades_Motor	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Blades_Motor_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Level\Blades\Blades_Motor		1126464
+	96111811	Garomo_Throw_Punch	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Throw_Punch_AE39BDB7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Voices\Garomo_Punch\Garomo_Throw_Punch		71660
+	97609673	Trampoline	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Trampoline_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Level\Trampoline		202908
+	100616490	Turtle_Punch	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Turtle_Punch_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turtle\Turtle_Punch		23860
+	117220536	Garomo_Jump2	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Jump2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Voices\Garomo_Jump\Garomo_Jump2		83264
+	123338489	Garomo_Drink1	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Drink1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Voices\Garomo_Drink\Garomo_Drink1		424576
+	136414529	Shade_Button	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Shade_Button_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Menu\Shade_Button		9320
+	150637336	Turtle_Punch_Hit	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Turtle_Punch_Hit_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turtle\Turtle_Punch_Hit		61312
+	157025649	Garomo_Punch_Hit2	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Punch_Hit2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Punch_Hit\Garomo_Punch_Hit2		85572
+	185100644	Garomo_Laugh_02	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Laugh_874C7871.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Voices\Garomo_Laugh\Garomo_Laugh_02		235760
+	208315072	Garomo_Drink2	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Drink2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Voices\Garomo_Drink\Garomo_Drink2		441664
+	250801007	Garomo_Hurt	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Hurt_CC8ADC2F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Voices\Garomo_Hurt\Garomo_Hurt		73936
+	263029454	Garomo_Punch_Hit3	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Punch_Hit3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Punch_Hit\Garomo_Punch_Hit3		72512
+	279056906	Blades_Sword	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Blades_Sword_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Level\Blades\Blades_Sword		51264
+	314851852	Garomo_Hurt_01	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Hurt_80BCCA0A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Voices\Garomo_Hurt\Garomo_Hurt_01		81228
+	317599247	Turtle_Voice_Punch_02	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Turtle_Voice_Punch_E499E871.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turtle\Turtle Voice\Turtle_Voice_Punch\Turtle_Voice_Punch_02		54972
+	366508295	Saw_Motor1	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Saw_Motor1_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Level\Saw\Saw_Motor1		384064
+	374279151	Garomo_Roll_Jump	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Roll_Jump_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Roll_Jump		211264
+	375552362	Garomo_Roll1	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Roll1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Roll\Garomo_Roll1		164352
+	406092925	Turtle_Voice_Punch	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Turtle_Voice_Punch_34E82AD8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turtle\Turtle Voice\Turtle_Voice_Punch\Turtle_Voice_Punch		63784
+	408267943	Garomo_Punch	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Punch_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Punch		25248
+	435241782	Turtle_Voice_Death1	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Turtle_Voice_Death1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turtle\Turtle Voice\Turtle_Voice_Death\Turtle_Voice_Death1		211520
+	448369915	Garomo_Jump1	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Jump1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Voices\Garomo_Jump\Garomo_Jump1		89664
+	481252642	Spike_On	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Spike_On_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Level\Spike_On		314012
+	563855763	Turtle_Voice_Punch_01	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Turtle_Voice_Punch_C2219E61.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turtle\Turtle Voice\Turtle_Voice_Punch\Turtle_Voice_Punch_01		58024
+	610202914	Open_Help	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Open_Help_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Help\Open_Help		83180
+	627208179	Garomo_Jump3	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Jump3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Voices\Garomo_Jump\Garomo_Jump3		96064
+	722633583	Turtle_Voice_Death3	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Turtle_Voice_Death3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turtle\Turtle Voice\Turtle_Voice_Death\Turtle_Voice_Death3		211476
+	794353216	Garomo_Jump	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Jump_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Jump		102728
+	826769350	Life_Potion	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Life_Potion_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Level\Life_Potion		48156
+	843538773	Garomo_Laugh	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Laugh_210A1677.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Voices\Garomo_Laugh\Garomo_Laugh		328888
+	860549399	Garomo_Roll2	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Roll2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Roll\Garomo_Roll2		165336
+	866181301	Garomo_Punch_Hit1	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Punch_Hit1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Punch_Hit\Garomo_Punch_Hit1		85608
+	883550546	Garomo_Throw_Punch_02	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Throw_Punch_E013304C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Voices\Garomo_Punch\Garomo_Throw_Punch_02		69008
+	911672480	Turtle_Voice_Death2	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Turtle_Voice_Death2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turtle\Turtle Voice\Turtle_Voice_Death\Turtle_Voice_Death2		211472
+	932184566	Garomo_Throw_Punch_01	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Throw_Punch_74A06062.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Voices\Garomo_Punch\Garomo_Throw_Punch_01		77344
+	956005044	Saw_Motor2	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Saw_Motor2_C5579977.wem		\Actor-Mixer Hierarchy\Default Work Unit\Level\Saw\Saw_Motor2		64904
+	956168966	Garomo_Laugh_01	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Laugh_E7E2D5BB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Voices\Garomo_Laugh\Garomo_Laugh_01		328888
+	1005977076	Saw_Sword	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Saw_Sword_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Level\Saw\Saw_Sword		44864
+	1008271331	Close_Help	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Close_Help_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Help\Close_Help		132888
+	1021752828	Press_Button	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Press_Button_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Menu\Press_Button		64884
+	1024128142	Garomo_Hurt_02	C:\Users\Jose Ernesto\Desktop\Portfolio\Garomo\Garomo_WwiseProject\Garomo_WwiseProject\.cache\Windows\SFX\Garomo_Hurt_A8C5F52D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Garomo\Garomo_Voices\Garomo_Hurt\Garomo_Hurt_02		85116
+
