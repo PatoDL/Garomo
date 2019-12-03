@@ -62,6 +62,7 @@ public class TurtleController : MonoBehaviour
         _controller.rigidBody2D.WakeUp();
         falling = false;
         wasDamaged = false;
+        _velocity = Vector3.zero;
     }
 
 	void Awake()
@@ -72,7 +73,7 @@ public class TurtleController : MonoBehaviour
 		// listen to some events for illustration purposes
 		_controller.onControllerCollidedEvent += onControllerCollider;
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
-		_controller.onTriggerExitEvent += onTriggerExitEvent;
+		//_controller.onTriggerExitEvent += onTriggerExitEvent;
         _controller.collisionState.right = true;
         recoilTime = recoilTimeMax;
         gc = GetComponentInChildren<GaromoChecker>();
@@ -139,11 +140,6 @@ public class TurtleController : MonoBehaviour
             gameObject.SetActive(false);
     }
 
-
-	void onTriggerExitEvent( Collider2D col )
-	{
-	}
-
 	#endregion
 	// the Update loop contains a very simple example of moving the character around and controlling the animation
 	void Update()
@@ -170,9 +166,13 @@ public class TurtleController : MonoBehaviour
             fallingTime -= Time.deltaTime;
             transform.position += new Vector3(- normalizedHorizontalSpeed * (fallingMaxTime - fallingTime)*runSpeed, deadAnim.Evaluate((fallingMaxTime - fallingTime) / fallingMaxTime)*runSpeed)*Time.deltaTime;
 
+            Debug.Log("aca");
+
             if(fallingTime<=0f)
             {
                 gameObject.SetActive(false);
+                fallingTime = fallingMaxTime;
+                Restart();
             }
         }
 

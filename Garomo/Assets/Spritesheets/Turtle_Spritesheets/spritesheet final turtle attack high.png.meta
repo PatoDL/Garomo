@@ -1,15 +1,14 @@
 fileFormatVersion: 2
-guid: d4afd2a7ec172754ab2454bf5dfc285a
+guid: cb817cbae3edaad46b30f7f5e3a8b11f
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Garomo_Crouch_2_0
-    21300002: Garomo_Crouch_2_1
-    21300004: Garomo_Crouch_2_2
-    21300006: Garomo_Crouch_2_3
-    21300008: Garomo_Crouch_2_4
-    21300010: Garomo_Crouch_2_5
-    21300012: Garomo_Crouch_2_6
-    21300014: Garomo_Crouch_2_7
+    21300000: spritesheet final turtle attack high_0
+    21300002: spritesheet final turtle attack high_1
+    21300004: spritesheet final turtle attack high_2
+    21300006: spritesheet final turtle attack high_3
+    21300008: spritesheet final turtle attack high_4
+    21300010: spritesheet final turtle attack high_5
+    21300012: spritesheet final turtle attack high_6
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -53,7 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 150
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Garomo_Crouch_2_0
+      name: spritesheet final turtle attack high_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2304
-        width: 1200
-        height: 768
+        y: 2520
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,19 +116,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb0cb96df11e6d94496a534790060cfd
+      spriteID: cd345df6aeac34d438a16249b97e5240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Garomo_Crouch_2_1
+      name: spritesheet final turtle attack high_1
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 2304
-        width: 1200
-        height: 768
+        x: 1520
+        y: 2520
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,59 +136,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93f1ceff4e9afc240a0acd2e878dcf91
+      spriteID: a12753ae4b9fc5641826b06526c4c14d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Garomo_Crouch_2_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1531
-        width: 1200
-        height: 768
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bbb872f9024764e41823efefd1cfbe3f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garomo_Crouch_2_3
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 1536
-        width: 1200
-        height: 768
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e2acc3cb08cd3f44b76a9b10fba46c3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garomo_Crouch_2_4
+      name: spritesheet final turtle attack high_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 768
-        width: 1200
-        height: 768
+        y: 1680
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,19 +156,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eebdb299f6e29214d91dafe12f636624
+      spriteID: 1665afe5fc1f5a642bfc29caf0c4b2b5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Garomo_Crouch_2_5
+      name: spritesheet final turtle attack high_3
       rect:
         serializedVersion: 2
-        x: 1195
-        y: 763
-        width: 1200
-        height: 768
+        x: 1520
+        y: 1680
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,19 +176,59 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7edb9e966d95154e82d18d2beb890b7
+      spriteID: 65b9650c0c1c073489f2d331973ce780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Garomo_Crouch_2_6
+      name: spritesheet final turtle attack high_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 1520
+        height: 840
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e5a8f277c24b64d85993adf98414cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet final turtle attack high_5
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 840
+        width: 1520
+        height: 840
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e968ebe47a92db43aa0e2743d0717aa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet final turtle attack high_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1200
-        height: 768
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,27 +236,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e044510c76ce9f4408da6b7a75875697
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garomo_Crouch_2_7
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 0
-        width: 1200
-        height: 768
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0733cb23baecea6428a7adc06e46f10a
+      spriteID: 2f5c114f93c5d1b45add1d6be3955461
       vertices: []
       indices: 
       edges: []
@@ -265,7 +244,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8062628318e29b941a6fcb1083ea7641
+    spriteID: 8d25004f6492b6944a56b0faa3fc3b68
     vertices: []
     indices: 
     edges: []

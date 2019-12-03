@@ -1,17 +1,18 @@
 fileFormatVersion: 2
-guid: fe2b0972d2083f74e9c8cc32adbd80cc
+guid: c32d9351a555834479f1ea5f3fb8c3d2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spritesheet air attack_0
-    21300002: spritesheet air attack_1
-    21300004: spritesheet air attack_2
-    21300006: spritesheet air attack_3
-    21300008: spritesheet air attack_4
-    21300010: spritesheet air attack_5
-    21300012: spritesheet air attack_6
-    21300014: spritesheet air attack_7
-    21300016: spritesheet air attack_8
-    21300018: spritesheet air attack_9
+    21300000: spritesheet final turtle walk_0
+    21300002: spritesheet final turtle walk_1
+    21300004: spritesheet final turtle walk_2
+    21300006: spritesheet final turtle walk_3
+    21300008: spritesheet final turtle walk_4
+    21300010: spritesheet final turtle walk_5
+    21300012: spritesheet final turtle walk_6
+    21300014: spritesheet final turtle walk_7
+    21300016: spritesheet final turtle walk_8
+    21300018: spritesheet final turtle walk_9
+    21300020: spritesheet final turtle walk_10
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -55,7 +56,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 175
+  spritePixelsToUnits: 150
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,61 +102,17 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet air attack_0
+      name: spritesheet final turtle walk_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 3032
-        width: 1039
-        height: 758
+        y: 2520
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,19 +120,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94bb152397639504e8a3972b48caab94
+      spriteID: c9214a09a1258b4438f2fc8dd490aaba
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_1
+      name: spritesheet final turtle walk_1
       rect:
         serializedVersion: 2
-        x: 1039
-        y: 3032
-        width: 1039
-        height: 758
+        x: 1520
+        y: 2520
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,19 +140,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32d9854536c6ad6408c2fab861054482
+      spriteID: 13ee23a388582b649b366194a06b0615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_2
+      name: spritesheet final turtle walk_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2274
-        width: 1039
-        height: 758
+        x: 3040
+        y: 2520
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,39 +160,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f56ab0cd48e08294fa0fe2844320a906
+      spriteID: 763e929776bb6e94398ba786a2b3d6d8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_3
-      rect:
-        serializedVersion: 2
-        x: 1039
-        y: 2274
-        width: 1039
-        height: 758
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f058254db6592de42b5829799a963e8a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet air attack_4
+      name: spritesheet final turtle walk_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 1516
-        width: 1039
-        height: 758
+        y: 1680
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,19 +180,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8668888471aea6d4a9dcf19a1d8cdbc7
+      spriteID: 2cf527fda92d0cd4f866016ac41ba51f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_5
+      name: spritesheet final turtle walk_4
       rect:
         serializedVersion: 2
-        x: 1039
-        y: 1516
-        width: 1039
-        height: 758
+        x: 1520
+        y: 1680
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,19 +200,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b3c08bc859a37641b65c67a4b932d1f
+      spriteID: bb2b7e21473ee7840b9c8c680c47bbf2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_6
+      name: spritesheet final turtle walk_5
+      rect:
+        serializedVersion: 2
+        x: 3040
+        y: 1680
+        width: 1520
+        height: 840
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ec9ff598a36154885f97cb1ed6a854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet final turtle walk_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 758
-        width: 1039
-        height: 758
+        y: 840
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,19 +240,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bb8b97f84da7ad41a54e3aa251586c2
+      spriteID: ecf517f9700b81f42913388721864fbd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_7
+      name: spritesheet final turtle walk_7
       rect:
         serializedVersion: 2
-        x: 1039
-        y: 758
-        width: 1039
-        height: 758
+        x: 1520
+        y: 840
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,19 +260,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1dd816866f8ff6449282934c24eddbc
+      spriteID: f3d8490daf3791848bdab562bb6306cd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_8
+      name: spritesheet final turtle walk_8
+      rect:
+        serializedVersion: 2
+        x: 3040
+        y: 840
+        width: 1520
+        height: 840
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 980e404336bfbea40a69d66b0a665acd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet final turtle walk_9
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1039
-        height: 758
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,19 +300,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b8a14666066d6047be0af76631092c1
+      spriteID: 965174cb5229ddd4f926b47bcca85b81
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet air attack_9
+      name: spritesheet final turtle walk_10
       rect:
         serializedVersion: 2
-        x: 1039
+        x: 1520
         y: 0
-        width: 1039
-        height: 758
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,7 +320,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37f1f8e84cf1749439c63bbf93e4bba5
+      spriteID: 33ef59091ecea0c4fbef2973266a364b
       vertices: []
       indices: 
       edges: []
@@ -351,7 +328,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 425ad19684cbbe549a4d8ce2641d9575
+    spriteID: 3478c42e86183b746ae7473156249fd7
     vertices: []
     indices: 
     edges: []

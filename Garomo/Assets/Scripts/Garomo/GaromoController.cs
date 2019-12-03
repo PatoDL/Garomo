@@ -274,8 +274,6 @@ public class GaromoController : MonoBehaviour
         if(gravityAct)
             ApplyGravity();
 
-        Debug.Log(_velocity.y);
-
         if (!_controller.collisionState.wasGroundedLastFrame && _controller.isGrounded)
             AkSoundEngine.PostEvent("Garomo_Land", gameObject);
 

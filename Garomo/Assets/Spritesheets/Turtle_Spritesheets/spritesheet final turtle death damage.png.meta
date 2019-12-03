@@ -1,14 +1,10 @@
 fileFormatVersion: 2
-guid: ec7803ad6ee794a41a3dbce1443d12ec
+guid: fb25ce0ac51a2144ea2e124e712735df
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spritesheet turtle attack low_0
-    21300002: spritesheet turtle attack low_1
-    21300004: spritesheet turtle attack low_2
-    21300006: spritesheet turtle attack low_3
-    21300008: spritesheet turtle attack low_4
-    21300010: spritesheet turtle attack low_5
-    21300012: spritesheet turtle attack low_6
+    21300000: spritesheet final turtle death damage_0
+    21300002: spritesheet final turtle death damage_1
+    21300004: spritesheet final turtle death damage_2
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -102,112 +98,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet turtle attack low_0
+      name: spritesheet final turtle death damage_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2520
-        width: 1520
-        height: 840
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8e0189a6bda97a42a4276b52e70574b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet turtle attack low_1
-      rect:
-        serializedVersion: 2
-        x: 1520
-        y: 2520
-        width: 1520
-        height: 840
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5010d7dbc16b4bf46a1b7f16f38f0179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet turtle attack low_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1680
-        width: 1520
-        height: 840
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4056504542dc1d34b81360733f544d6d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet turtle attack low_3
-      rect:
-        serializedVersion: 2
-        x: 1520
-        y: 1680
-        width: 1520
-        height: 840
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 53cba06352f31954cb6ce68c6f539021
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet turtle attack low_4
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 829
-        width: 1520
-        height: 840
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eea7c631c9edae44496fc747635ab48e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet turtle attack low_5
-      rect:
-        serializedVersion: 2
-        x: 1520
+        x: 1401
         y: 840
-        width: 1520
+        width: 1401
         height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -216,18 +112,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15b9efa733be2214eb440d80a584ce8e
+      spriteID: c88ea283df99dba40a79f5612ba74f02
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet turtle attack low_6
+      name: spritesheet final turtle death damage_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1520
+        width: 1401
         height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -236,7 +132,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 699a49677daeb154494393f5aba28aec
+      spriteID: 312d4c2ab4c442c48b2a5cc4cfc959fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet final turtle death damage_2
+      rect:
+        serializedVersion: 2
+        x: 1401
+        y: 0
+        width: 1401
+        height: 840
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e4951b66465e546a64995775b7f773
       vertices: []
       indices: 
       edges: []
@@ -244,7 +160,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b63f0b3525b576a498baf80bbd8f5365
+    spriteID: db675e889281a484e883777754de5eed
     vertices: []
     indices: 
     edges: []

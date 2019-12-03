@@ -1,13 +1,17 @@
 fileFormatVersion: 2
-guid: 3cf344c7b826ae3489bc749a6c069626
+guid: a3f6ba2fd89bce04a838fdbf9067de35
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spritesheet ataque_0
-    21300002: spritesheet ataque_1
-    21300004: spritesheet ataque_2
-    21300006: spritesheet ataque_3
-    21300008: spritesheet ataque_4
-    21300010: spritesheet ataque_5
+    21300000: spritesheet final air attack_0
+    21300002: spritesheet final air attack_1
+    21300004: spritesheet final air attack_2
+    21300006: spritesheet final air attack_3
+    21300008: spritesheet final air attack_4
+    21300010: spritesheet final air attack_5
+    21300012: spritesheet final air attack_6
+    21300014: spritesheet final air attack_7
+    21300016: spritesheet final air attack_8
+    21300018: spritesheet final air attack_9
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -51,7 +55,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 210
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,7 +105,87 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet ataque_0
+      name: spritesheet final air attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3032
+        width: 1039
+        height: 758
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e03285a61740b1d409499ffdd0097ae3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet final air attack_1
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 3032
+        width: 1039
+        height: 758
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c349aa772db8c45bfac79e56145a1d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet final air attack_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2274
+        width: 1039
+        height: 758
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460304ac5d04f2b4b8bd38758cc7505d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet final air attack_3
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 2274
+        width: 1039
+        height: 758
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b966b0d6c3f9b8d48a6aae065e39ef27
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet final air attack_4
       rect:
         serializedVersion: 2
         x: 0
@@ -115,13 +199,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed135d51580635645a9271b6cb0d9070
+      spriteID: 0523f9e2fc360cc4c840639ecf70cd95
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet ataque_1
+      name: spritesheet final air attack_5
       rect:
         serializedVersion: 2
         x: 1039
@@ -135,13 +219,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 683be481359dd3842bb21e9cca59ea3d
+      spriteID: 9395bab2085323746ac276ff4c992836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet ataque_2
+      name: spritesheet final air attack_6
       rect:
         serializedVersion: 2
         x: 0
@@ -155,13 +239,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 938d8cc3613e86a4ba80046e595bfd69
+      spriteID: 24cd6b510fe86854b9b3660ff0563304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet ataque_3
+      name: spritesheet final air attack_7
       rect:
         serializedVersion: 2
         x: 1039
@@ -175,13 +259,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae8c4238b0d1eb546acddff100481dae
+      spriteID: af4eccfa3e4d0fd4d9f3cef2dc1e4964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet ataque_4
+      name: spritesheet final air attack_8
       rect:
         serializedVersion: 2
         x: 0
@@ -195,13 +279,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05bf78cd62b32104b854f03171a1cb34
+      spriteID: 29e7b8aafb9a5de4d815977726e5f2a9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet ataque_5
+      name: spritesheet final air attack_9
       rect:
         serializedVersion: 2
         x: 1039
@@ -215,7 +299,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f135d26f41e44e548aebaa0ea6322edf
+      spriteID: 04de8bf81f3b2204aa35f465b46dc7d3
       vertices: []
       indices: 
       edges: []
@@ -223,7 +307,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 707f4f313aea18b4c92758d91a3e9d89
+    spriteID: 211bc091923b2354f9dd8121d1fe789c
     vertices: []
     indices: 
     edges: []

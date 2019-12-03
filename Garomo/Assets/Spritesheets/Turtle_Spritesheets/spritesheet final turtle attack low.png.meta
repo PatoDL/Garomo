@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-guid: 116a1e7bb0100d149a7dc0e88935a123
+guid: 6835ecd6fec2d9f4a95ff6d83d6da47a
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spritesheet damage_0
-    21300002: spritesheet damage_1
-    21300004: spritesheet damage_2
-    21300006: spritesheet damage_3
-    21300008: spritesheet damage_4
-    21300010: spritesheet damage_5
+    21300000: spritesheet final turtle attack low_0
+    21300002: spritesheet final turtle attack low_1
+    21300004: spritesheet final turtle attack low_2
+    21300006: spritesheet final turtle attack low_3
+    21300008: spritesheet final turtle attack low_4
+    21300010: spritesheet final turtle attack low_5
+    21300012: spritesheet final turtle attack low_6
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -51,7 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 175
+  spritePixelsToUnits: 150
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,61 +98,17 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet damage_0
+      name: spritesheet final turtle attack low_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1516
-        width: 1039
-        height: 758
+        y: 2520
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,19 +116,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bc031f20ede0c94f91a562e7657c2d0
+      spriteID: f66fa557d67499245add7d6eeb4a58bf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet damage_1
+      name: spritesheet final turtle attack low_1
       rect:
         serializedVersion: 2
-        x: 1039
-        y: 1516
-        width: 1039
-        height: 758
+        x: 1520
+        y: 2520
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,19 +136,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 152b4605fb6700343afd782c05ce6dc0
+      spriteID: 1a50a29bc1bd9ef48bdd419019da6653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet damage_2
+      name: spritesheet final turtle attack low_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 758
-        width: 1039
-        height: 758
+        y: 1680
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,19 +156,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cf8037b2d13fb748b550d8e3c247328
+      spriteID: 3411d82018ce88c4db802d7b55075033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet damage_3
+      name: spritesheet final turtle attack low_3
       rect:
         serializedVersion: 2
-        x: 1039
-        y: 750
-        width: 1039
-        height: 758
+        x: 1520
+        y: 1680
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,19 +176,59 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdcc99c37f9ed75429e3f80a463bc08a
+      spriteID: 7bb9226f95f10714aa48370c959f07a6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet damage_4
+      name: spritesheet final turtle attack low_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 1520
+        height: 840
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb550c4b31083104b9d4bef6b926884c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet final turtle attack low_5
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 840
+        width: 1520
+        height: 840
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eeb61a407b94fe40a66ba49e164fb98
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet final turtle attack low_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1039
-        height: 758
+        width: 1520
+        height: 840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,27 +236,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14f6439c2fceb814aa3f8d3b3d73f36b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet damage_5
-      rect:
-        serializedVersion: 2
-        x: 1039
-        y: 0
-        width: 1039
-        height: 758
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d8f0265deb9235459575f9bdfb950ca
+      spriteID: b6f9a32f7d50c844584481611982a569
       vertices: []
       indices: 
       edges: []
@@ -267,7 +244,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: dbd9c345206d6cc4aa9dac57f5c06391
+    spriteID: 045373ec48c7bef49a6953835b66acad
     vertices: []
     indices: 
     edges: []
