@@ -12,8 +12,6 @@ public class FlamencoBehaviour : MonoBehaviour
 
     float changeDirTimer = 0;
 
-    private float normalizedHorizontalSpeed = 0;
-
     public float shotTimerMax = 2f;
     public float shotTimer = 2f;
     public GameObject shot;

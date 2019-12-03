@@ -45,7 +45,6 @@ public class GaromoController : MonoBehaviour
     public float recoilTime = 3.0f;
     public float recoil = 0f;
     private bool immunity = false;
-    private float enemyCollisionTimer = 0.0f;
 
     [Header("Roll")]
     public float rollTimer = 0.0f;
