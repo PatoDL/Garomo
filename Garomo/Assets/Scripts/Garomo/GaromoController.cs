@@ -204,9 +204,9 @@ public class GaromoController : MonoBehaviour
                 }
                 else
                 {
-                    if (runModifierMultiplier > 0f)
-                        runModifierMultiplier -= Time.deltaTime;
-                    else
+                    //if (runModifierMultiplier > 0f)
+                    //    runModifierMultiplier -= Time.deltaTime;
+                    //else
                         normalizedHorizontalSpeed = 0;
                 }
                 if (runModifierMultiplier > 0.5f)
@@ -226,7 +226,6 @@ public class GaromoController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z) && canMove && !isRolling)
         {
             _animator.SetTrigger("Punch");
-            
         }
 
 		// we can only jump whilst grounded
