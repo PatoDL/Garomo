@@ -3,11 +3,13 @@ guid: d7c045fdbceabd147a5542a0b859e64d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
+    100000: edificio3
+    100002: //RootNode
+    400000: edificio3
+    400002: //RootNode
+    2100000: lambert4
+    2300000: edificio3
+    3300000: edificio3
     4300000: edificio3
   externalObjects: {}
   materials:
