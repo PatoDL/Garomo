@@ -42,8 +42,8 @@ This game was also possible thanks to the support of these professors:
 
 ## Acknowledgements
 
--Gregorio Gomez, whose voice was used in enemies sounds.
--Everyone who playtested our game at "Nucleo".
+- Gregorio Gomez, whose voice was used in enemies sounds.
+- Everyone who playtested our game at "Nucleo".
 
 
 ## Links
