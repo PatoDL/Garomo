@@ -2877,7 +2877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &464757032
 Transform:
   m_ObjectHideFlags: 0
@@ -7579,27 +7579,7 @@ PrefabInstance:
       propertyPath: garomoController
       value: 
       objectReference: {fileID: 1907683050}
-    - target: {fileID: 8226904823406005537, guid: 9ca572d69cef4cb4da5def2df6a72a80,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226904822761683775, guid: 9ca572d69cef4cb4da5def2df6a72a80,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226904824039803042, guid: 9ca572d69cef4cb4da5def2df6a72a80,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2641781681491034055, guid: 9ca572d69cef4cb4da5def2df6a72a80,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226904822384736387, guid: 9ca572d69cef4cb4da5def2df6a72a80,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7623,6 +7603,26 @@ PrefabInstance:
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226904823406005537, guid: 9ca572d69cef4cb4da5def2df6a72a80,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226904822761683775, guid: 9ca572d69cef4cb4da5def2df6a72a80,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226904824039803042, guid: 9ca572d69cef4cb4da5def2df6a72a80,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226904822384736387, guid: 9ca572d69cef4cb4da5def2df6a72a80,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ca572d69cef4cb4da5def2df6a72a80, type: 3}
@@ -21520,6 +21520,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1310591727}
     m_Modifications:
+    - target: {fileID: 1804424086003931983, guid: 1ec80041f92479c40ab380bc37346702,
+        type: 3}
+      propertyPath: m_Name
+      value: Tuberialineal
+      objectReference: {fileID: 0}
     - target: {fileID: 1804424086003894127, guid: 1ec80041f92479c40ab380bc37346702,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21574,11 +21579,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804424086003931983, guid: 1ec80041f92479c40ab380bc37346702,
-        type: 3}
-      propertyPath: m_Name
-      value: Tuberialineal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ec80041f92479c40ab380bc37346702, type: 3}
