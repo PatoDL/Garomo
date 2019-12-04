@@ -126,8 +126,7 @@ public class GaromoController : MonoBehaviour
 
         if (col.transform.tag == "LimitTrigger")
         {
-            BeDamaged();
-            transform.position = (Vector2)CheckPointManager.instance.GetLastCheckPoint().transform.position;
+            GetDamage(true);
         }
 
         if(col.transform.tag == "NextScene")
@@ -250,7 +249,7 @@ public class GaromoController : MonoBehaviour
 
         if(enemyCollision)
         {
-            BeDamaged();
+            GetDamage(false);
             _animator.SetTrigger("Damage");
             isRecoiling = true;
             enemyCollision = false;
@@ -439,20 +438,25 @@ public class GaromoController : MonoBehaviour
         }
     }
 
-    void BeDamaged()
+    void GetDamage(bool returnToCheck)
     {
         if(life <= 1)
         {
-            _animator.SetTrigger("Dead");
-            canMove = false;
-            _velocity = Vector3.zero;
             GaromoDie();
-            transform.position = (Vector2)CheckPointManager.instance.GetLastCheckPoint().transform.position;
+            returnToCheck = true;
         }
         else
         {
             life -= 1;
         }
+
+        if(returnToCheck)
+        {
+            transform.position = (Vector2)CheckPointManager.instance.GetLastCheckPoint().transform.position;
+        }
+
+        //canMove = false;
+        _velocity = Vector3.zero;
     }
 
     public void ApplyGravity()
