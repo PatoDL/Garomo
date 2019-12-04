@@ -155,7 +155,7 @@ public class GaromoController : MonoBehaviour
         {
             win = true;
             GaromoWin();
-            CheckPointManager.instance.RestartLevel();
+            //CheckPointManager.instance.RestartLevel();
         }
     }
 
@@ -453,6 +453,8 @@ public class GaromoController : MonoBehaviour
         if(returnToCheck)
         {
             transform.position = (Vector2)CheckPointManager.instance.GetLastCheckPoint().transform.position;
+            isRecoiling = false;
+            isRolling = false;
         }
 
         //canMove = false;
