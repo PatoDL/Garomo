@@ -102,7 +102,7 @@ MonoBehaviour:
   shotTimer: 2
   shot: {fileID: 3345883960903355751, guid: 1403a5f8209bfab46aa719e9f74da2f3, type: 3}
   deadBodySpeed: 50
-  deadBody: {fileID: 21300006, guid: 24365d5fbb8bcb84b80ae8aab5280af1, type: 3}
+  deadBody: {fileID: 21300006, guid: 44f2e30f5ff31e24f80faee105998ce1, type: 3}
   dead: 0
 --- !u!61 &4717678708450897720
 BoxCollider2D:

@@ -71,7 +71,12 @@ public class GaromoController : MonoBehaviour
 
     void Awake()
 	{
-		_animator = GetComponent<Animator>();
+        if (!UIController.Instance.garomoController)
+        {
+            UIController.Instance.garomoController = this as GaromoController;
+        }
+
+        _animator = GetComponent<Animator>();
 		_controller = GetComponent<CharacterController2Di>();
         idleCollider = _controller.boxCollider;
         spr = GetComponent<SpriteRenderer>();
@@ -103,9 +108,10 @@ public class GaromoController : MonoBehaviour
             runModifierMultiplier = 0f;
             isRolling = canMove = false;
 
-            AkSoundEngine.PostEvent("Garomo_hurt", gameObject);
+            if (GameManager.Instance.soundOn)
+                AkSoundEngine.PostEvent("Garomo_hurt", gameObject);
 
-            if(col.GetComponentInParent<TurtleController>())
+            if(col.GetComponentInParent<TurtleController>() && GameManager.Instance.soundOn)
             {
                 AkSoundEngine.PostEvent("Turtle_Punch_Hit", gameObject);
             }
@@ -132,12 +138,14 @@ public class GaromoController : MonoBehaviour
         if(col.tag == "Potion")
         {
             life = maxLives;
-            AkSoundEngine.PostEvent("Life_Potion", gameObject);
+            if (GameManager.Instance.soundOn)
+                AkSoundEngine.PostEvent("Life_Potion", gameObject);
         }
 
         if (col.transform.tag == "Trampoline")
         {
-            AkSoundEngine.PostEvent("Trampoline", gameObject);
+            if (GameManager.Instance.soundOn)
+                AkSoundEngine.PostEvent("Trampoline", gameObject);
             Jump(true);
             _animator.SetBool("Jumping", true);
             _animator.SetBool("Running", false);
@@ -231,10 +239,13 @@ public class GaromoController : MonoBehaviour
 		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) && canMove )
 		{
             Jump(false);
-            if (isRolling)
-                AkSoundEngine.PostEvent("Garomo_roll_jump", gameObject);
-            else
-                AkSoundEngine.PostEvent("Garomo_Jump", gameObject);
+            if (GameManager.Instance.soundOn)
+            {
+                if (isRolling)
+                    AkSoundEngine.PostEvent("Garomo_roll_jump", gameObject);
+                else
+                    AkSoundEngine.PostEvent("Garomo_Jump", gameObject);
+            }
         }
 
         if(enemyCollision)
@@ -261,7 +272,8 @@ public class GaromoController : MonoBehaviour
             _animator.Play("Garomo_roll");
             rollTimer = rollDistance;
             _velocity = Vector3.zero;
-            AkSoundEngine.PostEvent("Garomo_roll", gameObject);
+            if(GameManager.Instance.soundOn)
+                AkSoundEngine.PostEvent("Garomo_roll", gameObject);
         }
 
         if (isRolling)
@@ -273,7 +285,7 @@ public class GaromoController : MonoBehaviour
         if(gravityAct)
             ApplyGravity();
 
-        if (!_controller.collisionState.wasGroundedLastFrame && _controller.isGrounded)
+        if (!_controller.collisionState.wasGroundedLastFrame && _controller.isGrounded && GameManager.Instance.soundOn)
             AkSoundEngine.PostEvent("Garomo_Land", gameObject);
 
         if(isRestarting)
@@ -350,7 +362,9 @@ public class GaromoController : MonoBehaviour
             GroundAttackCollider.gameObject.SetActive(true);
         else
             AirAttackCollider.gameObject.SetActive(true);
-        AkSoundEngine.PostEvent("Garomo_Punch", gameObject);
+
+        if (GameManager.Instance.soundOn)
+            AkSoundEngine.PostEvent("Garomo_Punch", gameObject);
     }
 
     public void DeActivePunch(int air)

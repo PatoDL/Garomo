@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class UIController : MonoBehaviour
+public class UIController : MonoBehaviourSingleton<UIController>
 {
     int touches = 0;
     public GameObject cheatsPanel;
@@ -72,7 +72,8 @@ public class UIController : MonoBehaviour
                     {
                         GameManager.ResumeTime();
                     }
-                    AkSoundEngine.PostEvent("Close_Help", gameObject);
+                    if (GameManager.Instance.soundOn)
+                        AkSoundEngine.PostEvent("Close_Help", gameObject);
                 }
 
                 if (Input.GetKeyDown(KeyCode.Y))
@@ -80,12 +81,14 @@ public class UIController : MonoBehaviour
                     instructionsPanel.SetActive(!instructionsPanel.activeInHierarchy);
                     if (instructionsPanel.activeInHierarchy)
                     {
-                        AkSoundEngine.PostEvent("Open_Help", gameObject);
+                        if (GameManager.Instance.soundOn)
+                            AkSoundEngine.PostEvent("Open_Help", gameObject);
                         GameManager.PauseTime();
                     }
                     else
                     {
-                        AkSoundEngine.PostEvent("Close_Help", gameObject);
+                        if (GameManager.Instance.soundOn)
+                            AkSoundEngine.PostEvent("Close_Help", gameObject);
                         GameManager.ResumeTime();
                     }
                 }
@@ -179,7 +182,8 @@ public class UIController : MonoBehaviour
         MenuPanel.gameObject.SetActive(false);
         inGameUI.gameObject.SetActive(true);
         instructionsPanel.SetActive(true);
-        AkSoundEngine.PostEvent("Open_Help", gameObject);
+        if (GameManager.Instance.soundOn)
+            AkSoundEngine.PostEvent("Open_Help", gameObject);
     }
 
     public void OpenCredits()

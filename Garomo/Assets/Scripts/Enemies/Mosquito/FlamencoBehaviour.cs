@@ -101,7 +101,8 @@ public class FlamencoBehaviour : MonoBehaviour
                 dead = true;
             }
 
-            AkSoundEngine.PostEvent("Garomo_punch_hit", gameObject);
+            if (GameManager.Instance.soundOn)
+                AkSoundEngine.PostEvent("Garomo_punch_hit", gameObject);
         }
         else if (collision.transform.tag == "LimitTrigger")
         {

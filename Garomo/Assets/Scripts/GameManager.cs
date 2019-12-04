@@ -9,12 +9,22 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     LevelData actualLevel;
 
+    public bool soundOn;
+    public bool musicOn;
+
     public void Start()
     {
         actualLevel = GameObject.Find("LevelData").GetComponent<LevelData>();
         GaromoController.GoToNext = NextLevel;
+        soundOn = true;
+        musicOn = true;
+        
     }
 
+    public void ToggleSound()
+    {
+        soundOn = !soundOn;
+    }
 
     public void NextLevel(int lives)
     {
@@ -23,6 +33,8 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         actualLevel = GameObject.Find("LevelData").GetComponent<LevelData>();
 
         GameObject.Find("Garomo").GetComponent<GaromoController>().life = lives;
+
+        
     }
 
     public void GoToLevel(int level)

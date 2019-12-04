@@ -17,21 +17,21 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 1ffe64ec2306db44b1a9dbfd348fd34b
     GuidInternal: 
-    m_lastTime: -8586275760679062691
+    m_lastTime: -8586261767138902975
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 74f6a4b75f89dd41860adda4644cac0a
     GuidInternal: 
-    m_lastTime: -8586275760680020125
+    m_lastTime: -8586261767145813353
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 3cf09f2719429b46bf87ba38eb206c91
     GuidInternal: 
-    m_lastTime: -8586268160504637544
+    m_lastTime: -8586261767138962823
     List:
     - name: main
       guid: 7fc84f9f0e3943458fd5bc3d6d69fb91
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: c2757170fbe8004db9c23c34c691edf3
     GuidInternal: 
-    m_lastTime: -8586268040955150042
+    m_lastTime: -8586261767158485105
     List:
     - name: Blades
       guid: dc945f7ef0762646b573eba42172598d
@@ -59,8 +59,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Blades
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Checkpoint
       guid: c35fd6b3e3a4cc478976f2e6be7298a6
       id: 612075679
@@ -227,8 +227,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Saw
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Spike_Off
       guid: d06750efad1dae489f54537c1e24c940
       id: 4121003771
@@ -239,8 +239,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Spike_Off
       maxAttenuation: 0
-      maxDuration: 1492625
-      minDuration: 1492625
+      maxDuration: 0
+      minDuration: 0
     - name: Spike_On
       guid: b767adab30a0174986da7059ad8fc830
       id: 691680519
@@ -251,8 +251,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Spike_On
       maxAttenuation: 0
-      maxDuration: 1635146
-      minDuration: 1635146
+      maxDuration: 0
+      minDuration: 0
     - name: Trampoline
       guid: f1f66489704a3a4cb788915a72c1c6c7
       id: 960094356
@@ -305,41 +305,39 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 26d8aa339e26584fa9718a423f9ed546
     GuidInternal: 
-    m_lastTime: -8586275760679481581
+    m_lastTime: -8586261767158485105
     List: []
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: ea1eb2bd78057f4698971cdd48cf579e
     GuidInternal: 
-    m_lastTime: -8586268202112627824
+    m_lastTime: -8586261767151016398
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 08bc90285e5a4446969fc6cf37210c09
     GuidInternal: 
-    m_lastTime: -8586275760679112572
+    m_lastTime: -8586261767138952836
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 312acbb1fb51d54ca4d59de78211ddab
     GuidInternal: 
-    m_lastTime: -8586275760679441690
+    m_lastTime: -8586261767138893006
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 0cb22f6105f4cc47ab2418ce50209c71
     GuidInternal: 
-    m_lastTime: -8586275760679092609
+    m_lastTime: -8586261767138922922
     List: []
   ExpandedItems:
   - /Garomo_WwiseProject
   - /Garomo_WwiseProject/Events
   - /Garomo_WwiseProject/Events/Default Work Unit
-  - /Garomo_WwiseProject/SoundBanks
-  - /Garomo_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

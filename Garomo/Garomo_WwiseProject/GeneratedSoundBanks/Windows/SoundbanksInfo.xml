@@ -21,7 +21,7 @@
 			<ShortName>main</ShortName>
 			<Path>main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1041766312" Name="Blades" ObjectPath="\Events\Default Work Unit\Blades" DurationType="Infinite"/>
+				<Event Id="1041766312" Name="Blades" ObjectPath="\Events\Default Work Unit\Blades" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="612075679" Name="Checkpoint" ObjectPath="\Events\Default Work Unit\Checkpoint" DurationType="OneShot" DurationMin="1.227587" DurationMax="1.712634"/>
 				<Event Id="3133371051" Name="Close_Help" ObjectPath="\Events\Default Work Unit\Close_Help" DurationType="OneShot" DurationMin="1.227587" DurationMax="1.712634"/>
 				<Event Id="2050870508" Name="Garomo_Hurt" ObjectPath="\Events\Default Work Unit\Garomo_Hurt" DurationType="OneShot" DurationMin="0.384762" DurationMax="0.442982"/>
@@ -34,10 +34,11 @@
 				<Event Id="1568957323" Name="Life_Potion" ObjectPath="\Events\Default Work Unit\Life_Potion" DurationType="OneShot" DurationMin="2.211000" DurationMax="2.300000"/>
 				<Event Id="1690405279" Name="Menu_Press_Button" ObjectPath="\Events\Default Work Unit\Menu_Press_Button" DurationType="OneShot" DurationMin="0.337604" DurationMax="0.337604"/>
 				<Event Id="2885501293" Name="Menu_Shade_Button" ObjectPath="\Events\Default Work Unit\Menu_Shade_Button" DurationType="OneShot" DurationMin="0.048208" DurationMax="0.048208"/>
+				<Event Id="3725903807" Name="Music_Start" ObjectPath="\Events\Default Work Unit\Music_Start" DurationType="Infinite"/>
 				<Event Id="3442252589" Name="Open_Help" ObjectPath="\Events\Default Work Unit\Open_Help" DurationType="OneShot" DurationMin="0.432896" DurationMax="0.432896"/>
-				<Event Id="443572616" Name="Saw" ObjectPath="\Events\Default Work Unit\Saw" DurationType="Infinite"/>
-				<Event Id="4121003771" Name="Spike_Off" ObjectPath="\Events\Default Work Unit\Spike_Off" DurationType="OneShot" DurationMin="1.492625" DurationMax="1.492625"/>
-				<Event Id="691680519" Name="Spike_On" ObjectPath="\Events\Default Work Unit\Spike_On" DurationType="OneShot" DurationMin="1.635146" DurationMax="1.635146"/>
+				<Event Id="443572616" Name="Saw" ObjectPath="\Events\Default Work Unit\Saw" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="4121003771" Name="Spike_Off" ObjectPath="\Events\Default Work Unit\Spike_Off" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="691680519" Name="Spike_On" ObjectPath="\Events\Default Work Unit\Spike_On" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="960094356" Name="Trampoline" ObjectPath="\Events\Default Work Unit\Trampoline" DurationType="OneShot" DurationMin="1.056479" DurationMax="1.056479"/>
 				<Event Id="1417097572" Name="Turtle_Death" ObjectPath="\Events\Default Work Unit\Turtle_Death" DurationType="OneShot" DurationMin="1.150375" DurationMax="1.150375"/>
 				<Event Id="3072157990" Name="Turtle_Punch" ObjectPath="\Events\Default Work Unit\Turtle_Punch" DurationType="OneShot" DurationMin="0.285981" DurationMax="0.331880"/>
@@ -48,17 +49,9 @@
 					<ShortName>Garomo_Land.wav</ShortName>
 					<Path>SFX\Garomo_Land_10C4C929.wem</Path>
 				</File>
-				<File Id="29366322" Language="SFX">
-					<ShortName>Spike_Off.wav</ShortName>
-					<Path>SFX\Spike_Off_10C4C929.wem</Path>
-				</File>
 				<File Id="32215052" Language="SFX">
 					<ShortName>Turtle_Death.wav</ShortName>
 					<Path>SFX\Turtle_Death_10C4C929.wem</Path>
-				</File>
-				<File Id="87936577" Language="SFX">
-					<ShortName>Blades_Motor.wav</ShortName>
-					<Path>SFX\Blades_Motor_D79FB2B7.wem</Path>
 				</File>
 				<File Id="96111811" Language="SFX">
 					<ShortName>Garomo_Throw_Punch.wav</ShortName>
@@ -108,10 +101,6 @@
 					<ShortName>Garomo_Punch_Hit3.wav</ShortName>
 					<Path>SFX\Garomo_Punch_Hit3_10C4C929.wem</Path>
 				</File>
-				<File Id="279056906" Language="SFX">
-					<ShortName>Blades_Sword.wav</ShortName>
-					<Path>SFX\Blades_Sword_D79FB2B7.wem</Path>
-				</File>
 				<File Id="314851852" Language="SFX">
 					<ShortName>Garomo_Hurt.wav</ShortName>
 					<Path>SFX\Garomo_Hurt_80BCCA0A.wem</Path>
@@ -120,10 +109,6 @@
 					<ShortName>Turtle_Voice_Punch.wav</ShortName>
 					<Path>SFX\Turtle_Voice_Punch_E499E871.wem</Path>
 				</File>
-				<File Id="366508295" Language="SFX">
-					<ShortName>Saw_Motor1.wav</ShortName>
-					<Path>SFX\Saw_Motor1_D79FB2B7.wem</Path>
-				</File>
 				<File Id="374279151" Language="SFX">
 					<ShortName>Garomo_Roll_Jump.wav</ShortName>
 					<Path>SFX\Garomo_Roll_Jump_10C4C929.wem</Path>
@@ -131,6 +116,10 @@
 				<File Id="375552362" Language="SFX">
 					<ShortName>Garomo_Roll1.wav</ShortName>
 					<Path>SFX\Garomo_Roll1_10C4C929.wem</Path>
+				</File>
+				<File Id="404257484" Language="SFX">
+					<ShortName>track 1 garomo loop fixed.wav</ShortName>
+					<Path>SFX\track 1 garomo loop fixed_D79FB2B7.wem</Path>
 				</File>
 				<File Id="406092925" Language="SFX">
 					<ShortName>Turtle_Voice_Punch.wav</ShortName>
@@ -147,10 +136,6 @@
 				<File Id="448369915" Language="SFX">
 					<ShortName>Garomo_Jump1.wav</ShortName>
 					<Path>SFX\Garomo_Jump1_10C4C929.wem</Path>
-				</File>
-				<File Id="481252642" Language="SFX">
-					<ShortName>Spike_On.wav</ShortName>
-					<Path>SFX\Spike_On_10C4C929.wem</Path>
 				</File>
 				<File Id="563855763" Language="SFX">
 					<ShortName>Turtle_Voice_Punch.wav</ShortName>
@@ -200,17 +185,9 @@
 					<ShortName>Garomo_Throw_Punch.wav</ShortName>
 					<Path>SFX\Garomo_Throw_Punch_74A06062.wem</Path>
 				</File>
-				<File Id="956005044" Language="SFX">
-					<ShortName>Saw_Motor2.wav</ShortName>
-					<Path>SFX\Saw_Motor2_C5579977.wem</Path>
-				</File>
 				<File Id="956168966" Language="SFX">
 					<ShortName>Garomo_Laugh.wav</ShortName>
 					<Path>SFX\Garomo_Laugh_E7E2D5BB.wem</Path>
-				</File>
-				<File Id="1005977076" Language="SFX">
-					<ShortName>Saw_Sword.wav</ShortName>
-					<Path>SFX\Saw_Sword_D79FB2B7.wem</Path>
 				</File>
 				<File Id="1008271331" Language="SFX">
 					<ShortName>Close_Help.wav</ShortName>

@@ -21,7 +21,8 @@ public class MyButtonBehaviour : EventTrigger
     public override void OnPointerEnter(PointerEventData data)
     {
         transform.localScale *= 1.2f;
-        AkSoundEngine.PostEvent("Menu_Shade_Button", gameObject);
+        if (GameManager.Instance.soundOn)
+            AkSoundEngine.PostEvent("Menu_Shade_Button", gameObject);
     }
 
     public override void OnPointerExit(PointerEventData data)
@@ -36,6 +37,7 @@ public class MyButtonBehaviour : EventTrigger
 
     private void ClickSound()
     {
-        AkSoundEngine.PostEvent("Menu_Press_button", gameObject);
+        if (GameManager.Instance.soundOn)
+            AkSoundEngine.PostEvent("Menu_Press_button", gameObject);
     }
 }

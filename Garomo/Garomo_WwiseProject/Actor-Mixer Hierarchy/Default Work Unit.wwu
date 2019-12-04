@@ -129,7 +129,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-2</Value>
+										<Value>1</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -527,6 +527,13 @@
 									</ChildrenList>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="Garomo_Hurt" ID="{DC944D77-E032-4413-8EF3-937D09F2234E}" ShortID="63593085">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
@@ -640,6 +647,13 @@
 									</ChildrenList>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="Garomo_Laugh" ID="{3C277684-B641-4F46-A8F7-1BB3AEA97279}" ShortID="542882671">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
@@ -1113,7 +1127,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>2</Value>
+												<Value>5</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -1166,6 +1180,13 @@
 						<Folder Name="Help" ID="{49288D79-B275-4E78-94D2-01E0D70663B9}" ShortID="1072234858">
 							<ChildrenList>
 								<Sound Name="Close_Help" ID="{83C92EFD-E680-40FD-976A-8814D997BDA8}" ShortID="816949428">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
@@ -1185,6 +1206,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Open_Help" ID="{5E7068EF-4C16-41E2-B97F-176FE326E783}" ShortID="1073443752">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
@@ -1210,6 +1238,13 @@
 				<Folder Name="Level" ID="{5F709398-6FAB-4AA7-9407-6E88DF23B7AF}" ShortID="361811578">
 					<ChildrenList>
 						<Sound Name="Trampoline" ID="{7BD0A565-FC56-4121-9791-96F463609669}" ShortID="402204536">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
@@ -1256,6 +1291,11 @@
 						</Sound>
 						<Sound Name="Spike_Off" ID="{36149C18-6880-41A1-8C5B-D20D96DA66D4}" ShortID="186559395">
 							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>1</Value>
@@ -1282,6 +1322,11 @@
 						</Sound>
 						<Sound Name="Spike_On" ID="{CC7D4533-C030-49AC-958E-B4C6F0D991A5}" ShortID="829042690">
 							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>3</Value>
@@ -1307,6 +1352,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<BlendContainer Name="Blades" ID="{DC6CD203-AF11-4DBB-9EC0-DE29B58B7F10}" ShortID="491031059">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
@@ -1368,6 +1420,13 @@
 							</ChildrenList>
 						</BlendContainer>
 						<BlendContainer Name="Saw" ID="{FE1069B7-063C-4416-87F4-6FEA15D6A2F1}" ShortID="713716218">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
@@ -1453,6 +1512,37 @@
 								</Sound>
 							</ChildrenList>
 						</BlendContainer>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Music" ID="{2F142083-6ED8-43AF-B98F-B5A1D3F3068E}" ShortID="964622389">
+					<ChildrenList>
+						<Sound Name="track 1 garomo loop fixed" ID="{B540B94D-BC2E-4085-BAFF-262949FBA43F}" ShortID="77715385">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="track 1 garomo loop fixed" ID="{428DF00E-6E73-468E-A687-5F9DDFC47082}" ShortID="404257484">
+									<Language>SFX</Language>
+									<AudioFile>track 1 garomo loop fixed.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="track 1 garomo loop fixed" ID="{428DF00E-6E73-468E-A687-5F9DDFC47082}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

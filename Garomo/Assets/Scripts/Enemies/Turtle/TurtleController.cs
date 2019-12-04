@@ -101,7 +101,8 @@ public class TurtleController : MonoBehaviour
 	{
         if (col.tag == "Attack")
         {
-            AkSoundEngine.PostEvent("Garomo_punch_hit", gameObject);
+            if (GameManager.Instance.soundOn)
+                AkSoundEngine.PostEvent("Garomo_punch_hit", gameObject);
             if (life <= 1)
             {
                 GetComponent<SpriteRenderer>().sprite = deadTurtle;
@@ -110,7 +111,8 @@ public class TurtleController : MonoBehaviour
                 _controller.rigidBody2D.Sleep();
                 falling = true;
                 fallingTime = fallingMaxTime;
-                AkSoundEngine.PostEvent("Turtle_Death", gameObject);
+                if (GameManager.Instance.soundOn)
+                    AkSoundEngine.PostEvent("Turtle_Death", gameObject);
             }
             else
             {
@@ -212,7 +214,8 @@ public class TurtleController : MonoBehaviour
     {
         if (!wasDamaged && !attacked)
         {
-            AkSoundEngine.PostEvent("Turtle_Punch", gameObject);
+            if (GameManager.Instance.soundOn)
+                AkSoundEngine.PostEvent("Turtle_Punch", gameObject);
             whereToAttack = Random.Range(0, 2);
             _animator.SetTrigger("Attack");
             if (whereToAttack == 0)

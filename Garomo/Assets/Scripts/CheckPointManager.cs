@@ -29,7 +29,9 @@ public class CheckPointManager : MonoBehaviour
             lastCheckPoint.GetComponent<CheckPointBehaviour>().RestartSprite();
         }
         lastCheckPoint = checkPoint;
-        AkSoundEngine.PostEvent("Checkpoint", gameObject);
+
+        if (GameManager.Instance.soundOn)
+            AkSoundEngine.PostEvent("Checkpoint", gameObject);
     }
 
     public GameObject GetLastCheckPoint()

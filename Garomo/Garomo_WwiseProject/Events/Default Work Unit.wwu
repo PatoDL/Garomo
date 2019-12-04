@@ -276,6 +276,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Music_Start" ID="{DA2F30E7-F41F-4570-AEE2-1CFB02F5EE07}">
+					<ChildrenList>
+						<Action Name="" ID="{0DE38593-BA0F-49E7-8A4E-53E79CFEC81E}" ShortID="1045894468">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="track 1 garomo loop fixed" ID="{B540B94D-BC2E-4085-BAFF-262949FBA43F}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
