@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{CFD8554E-8C5A-4A3E-AC41-5CF6B56B443D}" SchemaVersion="94">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit2" ID="{CFD8554E-8C5A-4A3E-AC41-5CF6B56B443D}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="New Soundcaster Session" ID="{7B068E73-0DE5-4498-8BFC-EA1755283F70}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Music_Start" ID="{1D977E9A-F2AF-4C44-8228-EE6FDEB2CCBA}" WorkUnitID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Checkpoint" ID="{8728C931-7747-4D78-A836-16422D1F5708}" WorkUnitID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Menu" ID="{5C9465B9-2F7E-49C1-946D-22DC36C99ABF}" WorkUnitID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Lvl_1" ID="{498BBE2E-FC07-4451-B9EF-B48105682A3B}" WorkUnitID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Pause_on" ID="{D6FBA7C0-D232-4E23-ADC1-F7F177BBB98B}" WorkUnitID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Lvl_2" ID="{99ECB79C-FD8A-470A-B485-C4E70D1FBC32}" WorkUnitID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Pause_off" ID="{E7E01AB9-7266-438E-8896-3E9B37055636}" WorkUnitID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="Pause" ID="{9DFB2904-2D37-4605-A63A-C0DD38367387}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Checkpoint" ID="{258A1FC4-818C-4CF1-A976-1661CC6ECD99}"/>
+							<Value>100</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Lvl_2" ID="{1F1309EA-57BA-4C0A-BD99-AFDA39D4B309}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

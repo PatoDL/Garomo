@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{B1CB2A31-51FB-4CD5-A4D5-9DE78211DDAB}" SchemaVersion="94">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{B1CB2A31-51FB-4CD5-A4D5-9DE78211DDAB}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{B1CB2A31-51FB-4CD5-A4D5-9DE78211DDAB}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Level" ID="{BBEC6A81-77E8-40DC-8BA9-4D4704F3E260}">
+					<ChildrenList>
+						<Switch Name="Menu" ID="{EAC56A98-0560-4DF7-A023-91FD62859B84}"/>
+						<Switch Name="Lvl_1" ID="{BACECF7E-AAD7-4E69-B82B-15AB4A1826FE}"/>
+						<Switch Name="Lvl_2" ID="{1F1309EA-57BA-4C0A-BD99-AFDA39D4B309}"/>
+						<Switch Name="Lvl_3" ID="{ADC8AA49-522B-4A75-A883-3C7BBB812BCB}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>

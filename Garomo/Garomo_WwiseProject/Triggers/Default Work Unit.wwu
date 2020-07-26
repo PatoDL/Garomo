@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{612FB20C-F405-47CC-AB24-18CE50209C71}" SchemaVersion="94">
 	<Triggers>
-		<WorkUnit Name="Default Work Unit" ID="{612FB20C-F405-47CC-AB24-18CE50209C71}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{612FB20C-F405-47CC-AB24-18CE50209C71}" PersistMode="Standalone">
+			<ChildrenList>
+				<Trigger Name="Checkpoint" ID="{61DC4E41-AC68-480A-B52A-32FADE6E1027}"/>
+			</ChildrenList>
+		</WorkUnit>
 	</Triggers>
 </WwiseDocument>

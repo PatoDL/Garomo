@@ -12,13 +12,15 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     public bool soundOn;
     public bool musicOn;
 
+    public string musicLevelStart = "level1";
+
     public void Start()
     {
         actualLevel = GameObject.Find("LevelData").GetComponent<LevelData>();
         GaromoController.GoToNext = NextLevel;
         soundOn = true;
         musicOn = true;
-        AkSoundEngine.PostEvent("Music_start", gameObject);
+        AkSoundEngine.PostEvent("Music_Start", gameObject);
     }
 
     public void ToggleMusic()
@@ -28,7 +30,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         if(!musicOn)
             AkSoundEngine.StopAll();
         else
-            AkSoundEngine.PostEvent("Music_start", gameObject);
+            AkSoundEngine.PostEvent("Music_Start", gameObject);
     }
 
     public void ToggleSound()

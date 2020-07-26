@@ -5,17 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
-  - Garomo
   - Enemy
-  - Attack
-  - Trampoline
-  - LimitTrigger
+  - Fire
   - EndlevelTrigger
+  - Trampoline
+  - Redirectioner
+  - Potion
+  - Checkpoint
   - NextScene
   - SewTile
-  - Redirectioner
-  - Checkpoint
-  - Potion
   layers:
   - Default
   - TransparentFX
@@ -25,15 +23,15 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - Player
-  - TriggerLayer
-  - Enemy
-  - luz tarde
-  - luz adelante
-  - tuberias
-  - Obstacle
-  - WalkableEnemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

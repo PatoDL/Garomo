@@ -40,7 +40,7 @@ public class CheckPointBehaviour : MonoBehaviour
                 decoration.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.green);
                 checkLight.SetActive(true);
                 ReachCheckPoint(this.gameObject);
-
+                GaromoController.AdjustTowerRotation("checkpoint");
             }
         }
     }

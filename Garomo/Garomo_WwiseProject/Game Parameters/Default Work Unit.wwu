@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{BDB21EEA-0578-467F-9897-1CDD48CF579E}" SchemaVersion="94">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{BDB21EEA-0578-467F-9897-1CDD48CF579E}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{BDB21EEA-0578-467F-9897-1CDD48CF579E}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="Checkpoint" ID="{258A1FC4-818C-4CF1-A976-1661CC6ECD99}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Pause" ID="{9DFB2904-2D37-4605-A63A-C0DD38367387}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>

@@ -830,8 +830,358 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Garomo_Fall" ID="{074E0B03-CBA4-4E29-AD97-57831B4CA24F}" ShortID="559058218">
+									<PropertyList>
+										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Garomo_Fall_Scream" ID="{C40C691F-D58B-4341-BE23-4C7DAB88FB98}" ShortID="555542070">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Garomo_Fall_Scream" ID="{225CEDE2-6056-46C8-B8FE-EF238877CBD8}" ShortID="1043082999">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="9.04465212876428E-02"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.25742471443406"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.25742471443406"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.04548286604361"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Garomo_Fall_Scream.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="12887297"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Garomo_Fall_Scream" ID="{225CEDE2-6056-46C8-B8FE-EF238877CBD8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Garomo_Fall_Scream_01" ID="{76C9F6A5-7AD2-4D7D-84FB-2C33C485D729}" ShortID="902130369">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Garomo_Fall_Scream" ID="{99DCA5EE-D828-41D2-89F9-BEB0691AE279}" ShortID="320737816">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="5.56593977154725E-02"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.278296988577362"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.79688473520249"/>
+														<Property Name="TrimEnd" Type="Real64" Value="4.52232606438214"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Garomo_Fall_Scream.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Garomo_Fall_Scream" ID="{99DCA5EE-D828-41D2-89F9-BEB0691AE279}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Garomo_Fall_Scream_02" ID="{DCF0B9E5-2F14-4645-A31C-71C507449960}" ShortID="921615308">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Garomo_Fall_Scream" ID="{0363F4E5-A59D-486C-882F-BDFE99EFB728}" ShortID="12887297">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="5.56593977154725E-02"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.243509865005192"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.93977154724818"/>
+														<Property Name="TrimEnd" Type="Real64" Value="6.51214953271028"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Garomo_Fall_Scream.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="1043082999"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Garomo_Fall_Scream" ID="{0363F4E5-A59D-486C-882F-BDFE99EFB728}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
+						<Sound Name="Garomo_Kick" ID="{E34E0B5F-62CA-46E7-B158-1D967259E935}" ShortID="181751954">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Whiff_Kick" ID="{7D0CECC4-42E6-4076-B0F2-029381CB6F11}" ShortID="1014283435">
+									<Language>SFX</Language>
+									<AudioFile>Whiff_Kick.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Whiff_Kick" ID="{7D0CECC4-42E6-4076-B0F2-029381CB6F11}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Garomo_Kick_Hit" ID="{51400020-EA0F-4D3E-BD21-6FFE63058BA2}" ShortID="777166252">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Kick_Hit" ID="{04E71D82-0EAA-476D-8C28-D89FCB29162D}" ShortID="891119199">
+									<Language>SFX</Language>
+									<AudioFile>Kick_Hit.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Kick_Hit" ID="{04E71D82-0EAA-476D-8C28-D89FCB29162D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="Garomo_Footsteps" ID="{7023C678-919B-45F6-A183-3A813FCC704F}" ShortID="230784272">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Garomo_Footsteps" ID="{D92DEE6D-B0C5-4171-BCBE-97F61F262464}" ShortID="653914525">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Garomo_Footsteps" ID="{66C3153C-8E19-4D3F-8670-D071B8F0DD52}" ShortID="451916968">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="1.59224645205954E-02"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.165593631014192"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="7.35159817351598E-02"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.499965385946694"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Garomo_Footsteps.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="409596702"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Garomo_Footsteps" ID="{66C3153C-8E19-4D3F-8670-D071B8F0DD52}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Garomo_Footsteps_01" ID="{8C0D713B-AD12-490D-BFD0-9B85F7F570C5}" ShortID="797591266">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Garomo_Footsteps" ID="{DA712FEB-5C51-4C8B-910C-429599D5256C}" ShortID="638747550">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="2.54759432329525E-02"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.114641744548287"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.675112495673243"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.14641744548287"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Garomo_Footsteps.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Garomo_Footsteps" ID="{DA712FEB-5C51-4C8B-910C-429599D5256C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Garomo_Footsteps_02" ID="{A41F46DE-F5B5-4396-995D-C8B1F98B41E2}" ShortID="613054280">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Garomo_Footsteps" ID="{0F5F2F53-720D-4653-8C8E-AA1F801E0211}" ShortID="478610509">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="4.13984077535479E-02"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.130564209068882"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.29927310488058"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.75465559016961"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Garomo_Footsteps.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Garomo_Footsteps" ID="{0F5F2F53-720D-4653-8C8E-AA1F801E0211}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Garomo_Footsteps_03" ID="{1443A19D-1C6D-466D-B3CE-23C8662BC44C}" ShortID="546882455">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Garomo_Footsteps" ID="{347A4BC5-53E7-47DF-9EDD-F1A3F70B6D20}" ShortID="409596702">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="3.18449290411909E-02"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.178331602630668"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.9361716857044"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.38200069228107"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Garomo_Footsteps.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="543541564"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Garomo_Footsteps" ID="{347A4BC5-53E7-47DF-9EDD-F1A3F70B6D20}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Garomo_Footsteps_04" ID="{68D6EB0E-67BD-49A4-BF5D-27F032A2A2ED}" ShortID="570800064">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Garomo_Footsteps" ID="{839268E8-E0E3-4C70-A841-CFED4813A4F1}" ShortID="543541564">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="1.27379716164762E-02"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.216545517480097"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.52848736587054"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.96157840083074"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Garomo_Footsteps.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="451916968"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Garomo_Footsteps" ID="{839268E8-E0E3-4C70-A841-CFED4813A4F1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<Sound Name="Garomo_Fall_Lvl1" ID="{884E6F69-1606-49D2-9C1B-B08E9482890D}" ShortID="798798801">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Fall_Lvl1" ID="{FC8F7778-17E3-4FD9-A215-5E9A33DCE16D}" ShortID="785275918">
+									<Language>SFX</Language>
+									<AudioFile>Fall_Lvl1.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Fall_Lvl1" ID="{FC8F7778-17E3-4FD9-A215-5E9A33DCE16D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Garomo_Fall_Lvl2" ID="{A0A5B6D0-6727-4DA4-9015-D7E743949D05}" ShortID="1038990509">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Fall_Lvl2" ID="{D8569690-DF1E-4AC3-B045-CB249A844A3A}" ShortID="452775126">
+									<Language>SFX</Language>
+									<AudioFile>Fall_Lvl2.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Fall_Lvl2" ID="{D8569690-DF1E-4AC3-B045-CB249A844A3A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Turtle" ID="{BDA69160-4685-4A38-AD52-EE506AA7746B}" ShortID="332872232">
@@ -1024,7 +1374,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>2</Value>
+												<Value>6</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -1512,16 +1862,183 @@
 								</Sound>
 							</ChildrenList>
 						</BlendContainer>
+						<SwitchContainer Name="Level" ID="{DDD92CFD-2BA9-4123-8760-F820D1A2AE45}" ShortID="221313911">
+							<PropertyList>
+								<Property Name="SwitchBehavior" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{DE8CB241-F546-4F86-92A2-19DD2F1DA387}" ShortID="380240232">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="Pause" ID="{9DFB2904-2D37-4605-A63A-C0DD38367387}" WorkUnitID="{BDB21EEA-0578-467F-9897-1CDD48CF579E}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{F01896B5-1C59-40FE-95E1-219F4ED4D8BA}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>50</XPos>
+														<YPos>0</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>50.001</XPos>
+														<YPos>-200</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>-200</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Menu" ID="{EAC56A98-0560-4DF7-A023-91FD62859B84}" WorkUnitID="{B1CB2A31-51FB-4CD5-A4D5-9DE78211DDAB}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="Level" ID="{BBEC6A81-77E8-40DC-8BA9-4D4704F3E260}" WorkUnitID="{B1CB2A31-51FB-4CD5-A4D5-9DE78211DDAB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Lv2_Amb" ID="{FF1F1521-95DC-4301-9CD2-4FC716BC12B4}" ShortID="500127213">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Lv2_Amb" ID="{3FD5AD51-A1C6-4CE1-B892-64507180B842}" ShortID="252209589">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="2055.263"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="1.16735894773278"/>
+												<Property Name="LoopBegin" Type="Real64" Value="1.29023883696781"/>
+												<Property Name="LoopEnd" Type="Real64" Value="10.5430944963655"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Lv2_Amb.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Lv2_Amb" ID="{3FD5AD51-A1C6-4CE1-B892-64507180B842}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Lvl1_Amb" ID="{F2CA71BB-1C0F-4DC2-B3BD-6EC9D0A2ACB0}" ShortID="122574342">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Lvl1_Amb" ID="{1467E394-A11E-427E-93D0-548E41AAAF59}" ShortID="365237323">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="1433.596"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.634652934844972"/>
+												<Property Name="LoopBegin" Type="Real64" Value="1.77379716164763"/>
+												<Property Name="LoopEnd" Type="Real64" Value="8.04440983039114"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Lvl1_Amb.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="165807974"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Lvl1_Amb" ID="{1467E394-A11E-427E-93D0-548E41AAAF59}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Lv2_Amb" ID="{FF1F1521-95DC-4301-9CD2-4FC716BC12B4}"/>
+										<PropertyList>
+											<Property Name="FadeInTime" Type="Real64">
+												<ValueList>
+													<Value>3.5</Value>
+												</ValueList>
+											</Property>
+										</PropertyList>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Lvl1_Amb" ID="{F2CA71BB-1C0F-4DC2-B3BD-6EC9D0A2ACB0}"/>
+										<PropertyList>
+											<Property Name="FadeOutTime" Type="Real64">
+												<ValueList>
+													<Value>3</Value>
+												</ValueList>
+											</Property>
+										</PropertyList>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Lvl_1" ID="{BACECF7E-AAD7-4E69-B82B-15AB4A1826FE}"/>
+										<ItemList>
+											<ItemRef Name="Lvl1_Amb" ID="{F2CA71BB-1C0F-4DC2-B3BD-6EC9D0A2ACB0}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Lvl_2" ID="{1F1309EA-57BA-4C0A-BD99-AFDA39D4B309}"/>
+										<ItemList>
+											<ItemRef Name="Lv2_Amb" ID="{FF1F1521-95DC-4301-9CD2-4FC716BC12B4}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="Music" ID="{2F142083-6ED8-43AF-B98F-B5A1D3F3068E}" ShortID="964622389">
+				<Folder Name="Flamenco" ID="{E7F2486B-8D25-49C4-AD47-792D30D04234}" ShortID="120416523">
 					<ChildrenList>
-						<Sound Name="track 1 garomo loop fixed" ID="{B540B94D-BC2E-4085-BAFF-262949FBA43F}" ShortID="77715385">
+						<Sound Name="Flamenco_Egg_Fall" ID="{F49AE260-8586-43B8-A176-AEFF25131445}" ShortID="941452572">
 							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-5</Value>
+										<Value>4</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1534,13 +2051,282 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="track 1 garomo loop fixed" ID="{428DF00E-6E73-468E-A687-5F9DDFC47082}" ShortID="404257484">
+								<AudioFileSource Name="Egg_Fall" ID="{40C2E5DA-B3B2-4747-99E9-F72EBFAEE2ED}" ShortID="586683746">
 									<Language>SFX</Language>
-									<AudioFile>track 1 garomo loop fixed.wav</AudioFile>
+									<AudioFile>Egg_Fall.wav</AudioFile>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="track 1 garomo loop fixed" ID="{428DF00E-6E73-468E-A687-5F9DDFC47082}" Platform="Linked"/>
+								<ActiveSource Name="Egg_Fall" ID="{40C2E5DA-B3B2-4747-99E9-F72EBFAEE2ED}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Flamenco_Egg_Hit" ID="{97DC9AEE-745E-4533-A097-C03F6FD06A2F}" ShortID="870944074">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Egg_Hit" ID="{A9A7430D-434F-4CD2-AD1F-A00497203A46}" ShortID="609118877">
+									<Language>SFX</Language>
+									<AudioFile>Egg_Hit.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Egg_Hit" ID="{A9A7430D-434F-4CD2-AD1F-A00497203A46}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Folder Name="Flamenco_Voices" ID="{4D876FED-3C62-4F01-9FC7-E72652210E84}" ShortID="155401162">
+							<ChildrenList>
+								<RandomSequenceContainer Name="Flamenco_Spit" ID="{7F19F5A6-9271-40A2-9F53-3B4EEB67609B}" ShortID="743516112">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Flamenco_Spit" ID="{D519D999-E569-4AA5-B61E-8909CD9328B8}" ShortID="76921430">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Flamenco_Spit" ID="{C029879C-D517-46E9-87A3-21447BD1BEFE}" ShortID="346875447">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="1.70965732087227E-02"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="6.41121495327103E-02"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.217981308411215"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.86765109034268"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Flamenco_Spit.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="121111758"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Flamenco_Spit" ID="{C029879C-D517-46E9-87A3-21447BD1BEFE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Flamenco_Spit_01" ID="{2A4874B1-4ABF-4750-AED4-01CA5959031C}" ShortID="400899883">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Flamenco_Spit" ID="{F80586B4-EE69-45A4-88A5-03FEAE793E11}" ShortID="485950384">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="3.41931464174454E-02"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.102579439252336"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="1.52159501557632"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.29948909657321"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Flamenco_Spit.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Flamenco_Spit" ID="{F80586B4-EE69-45A4-88A5-03FEAE793E11}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Flamenco_Spit_02" ID="{B6090D44-2B5C-4CD1-B4F6-D58FDC638CBD}" ShortID="718767576">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Flamenco_Spit" ID="{9F558A9E-770D-4734-96F6-09B7A33BBD22}" ShortID="121111758">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="2.56448598130841E-02"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.085482866043614"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.98335202492212"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.76552024922118"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Flamenco_Spit.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="346875447"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Flamenco_Spit" ID="{9F558A9E-770D-4734-96F6-09B7A33BBD22}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Flamenco_Scream" ID="{3B5A5B66-630F-42B8-BCB6-0737057B58D2}" ShortID="576630437">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Flamenco_Death_Scream" ID="{0E01C389-9FB7-4DFE-8998-1DBD145F19A2}" ShortID="1043739077">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Flamenco_Death" ID="{5C9CFCBF-6B29-485B-A98F-35F9BC83198A}" ShortID="406833689">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="2.40913811007269E-02"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.120456905503634"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.120456905503634"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.88515057113188"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Flamenco_Death.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="422650453"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Flamenco_Death" ID="{5C9CFCBF-6B29-485B-A98F-35F9BC83198A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Flamenco_Death_Scream_01" ID="{AB2D4C40-DFE8-4047-A6AA-9BED8DA39FF3}" ShortID="829641167">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Flamenco_Death" ID="{63E3781D-D177-4590-8495-7DF44C7E01FB}" ShortID="852275383">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="5.42056074766355E-02"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.120456905503634"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.15617860851506"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.63779854620976"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Flamenco_Death.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Flamenco_Death" ID="{63E3781D-D177-4590-8495-7DF44C7E01FB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Flamenco_Death_Scream_02" ID="{8490EA7D-2242-4B4E-A3E9-E66DB65526D9}" ShortID="1034850852">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Flamenco_Death" ID="{9CCD820A-7109-492B-8145-E82DF0D3EB48}" ShortID="422650453">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="4.81827622014537E-02"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.204776739356178"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="3.99916926272066"/>
+														<Property Name="TrimEnd" Type="Real64" Value="5.61329179646937"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Flamenco_Death.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="406833689"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Flamenco_Death" ID="{9CCD820A-7109-492B-8145-E82DF0D3EB48}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</Folder>
+						<Sound Name="Flamenco_Fall" ID="{65F1F0C7-211E-4F97-A333-9574486BED52}" ShortID="317757">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Flamenco_Fall" ID="{B324E4D5-4CEC-4D5E-B2D7-A9BF0B984910}" ShortID="104385632">
+									<Language>SFX</Language>
+									<AudioFile>Flamenco_Fall.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Flamenco_Fall" ID="{B324E4D5-4CEC-4D5E-B2D7-A9BF0B984910}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

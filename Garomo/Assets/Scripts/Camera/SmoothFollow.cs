@@ -26,6 +26,7 @@ public class SmoothFollow : MonoBehaviour
 	{
 		if( !useFixedUpdate )
 			updateCameraPosition();
+        
 	}
 
 
