@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 public class UIController : MonoBehaviourSingleton<UIController>
 {
@@ -52,6 +54,25 @@ public class UIController : MonoBehaviourSingleton<UIController>
     float fadingTimeMax = 1.5f;
     float fadingTime = 1.5f;
 
+    bool helpInput = false;
+    bool backInput = false;
+    bool startInput = false;
+
+    public void OnHelpOpen(InputAction.CallbackContext context)
+    {
+        helpInput = true;
+    }
+
+    public void OnBackInput(InputAction.CallbackContext context)
+    {
+        backInput = true;
+    }
+
+    public void OnStartInput(InputAction.CallbackContext context)
+    {
+        startInput = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -60,7 +81,7 @@ public class UIController : MonoBehaviourSingleton<UIController>
             if(!MenuPanel.activeInHierarchy && !GameOverPanel.activeInHierarchy &&
                 !CreditsPanel.activeInHierarchy && !PausePanel.activeInHierarchy && !WinPanel.activeInHierarchy)
             {
-                if (Input.anyKeyDown && instructionsPanel.activeInHierarchy)
+                if (backInput && instructionsPanel.activeInHierarchy)
                 {
                     instructionsPanel.SetActive(false);
                     if (firstTime)
@@ -76,7 +97,7 @@ public class UIController : MonoBehaviourSingleton<UIController>
                         AkSoundEngine.PostEvent("Close_Help", gameObject);
                 }
 
-                if (Input.GetKeyDown(KeyCode.Y))
+                if (helpInput)
                 {
                     instructionsPanel.SetActive(!instructionsPanel.activeInHierarchy);
                     if (instructionsPanel.activeInHierarchy)
@@ -91,9 +112,10 @@ public class UIController : MonoBehaviourSingleton<UIController>
                             AkSoundEngine.PostEvent("Close_Help", gameObject);
                         GameManager.ResumeTime();
                     }
+                    
                 }
 
-                if (Input.GetKeyDown(KeyCode.Escape))
+                if (startInput)
                 {
                     PauseGame(true);
                 }
@@ -169,6 +191,10 @@ public class UIController : MonoBehaviourSingleton<UIController>
                 fadingTime = 5f;
             }
         }
+
+        helpInput = false;
+        backInput = false;
+        startInput = false;
     }
 
     public void ShowGameOver()

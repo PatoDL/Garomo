@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using Prime31;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 public class GaromoController : MonoBehaviour
 {
@@ -23,12 +24,12 @@ public class GaromoController : MonoBehaviour
     bool teleporting = false;
     GameObject tp1 = null;
 
-	[Header("Movement")]
-	public float gravity = -25f;
-	public float runSpeed = 8f;
-	public float groundDamping = 20f; // how fast do we change direction? higher means faster
-	public float inAirDamping = 5f;
-	public float jumpHeight = 3f;
+    [Header("Movement")]
+    public float gravity = -25f;
+    public float runSpeed = 8f;
+    public float groundDamping = 20f; // how fast do we change direction? higher means faster
+    public float inAirDamping = 5f;
+    public float jumpHeight = 3f;
     public bool canMove = true;
     public AnimationCurve runVelocityModifier;
     public float runModifierMultiplier;
@@ -74,40 +75,39 @@ public class GaromoController : MonoBehaviour
     private CharacterController2Di _controller;
     public Animator _animator;
 
-
     void Awake()
-	{
+    {
         if (!UIController.Instance.garomoController)
         {
             UIController.Instance.garomoController = this as GaromoController;
         }
 
         _animator = GetComponent<Animator>();
-		_controller = GetComponent<CharacterController2Di>();
+        _controller = GetComponent<CharacterController2Di>();
         idleCollider = _controller.boxCollider;
         spr = GetComponent<SpriteRenderer>();
-		// listen to some events for illustration purposes
-		_controller.onControllerCollidedEvent += onControllerCollider;
-		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
+        // listen to some events for illustration purposes
+        _controller.onControllerCollidedEvent += onControllerCollider;
+        _controller.onTriggerEnterEvent += onTriggerEnterEvent;
         _controller.onTriggerStayEvent += onTriggerStayEvent;
         _controller.onTriggerExitEvent += onTriggerExitEvent;
         maxLives = life;
 
         gravityAct = true;
-	}
-
-
-	#region Event Listeners
-
-	void onControllerCollider( RaycastHit2D hit )
-	{
-		if( hit.normal.y == 1f )
-			return;
     }
 
 
-	void onTriggerEnterEvent( Collider2D col )
-	{
+    #region Event Listeners
+
+    void onControllerCollider(RaycastHit2D hit)
+    {
+        if (hit.normal.y == 1f)
+            return;
+    }
+
+
+    void onTriggerEnterEvent(Collider2D col)
+    {
         if (col.tag == "Enemy" && !immunity)
         {
             enemyCollision = immunity = true;
@@ -117,7 +117,7 @@ public class GaromoController : MonoBehaviour
             if (GameManager.Instance.soundOn)
                 AkSoundEngine.PostEvent("Garomo_hurt", gameObject);
 
-            if(col.GetComponentInParent<TurtleController>() && GameManager.Instance.soundOn)
+            if (col.GetComponentInParent<TurtleController>() && GameManager.Instance.soundOn)
             {
                 AkSoundEngine.PostEvent("Turtle_Punch_Hit", gameObject);
             }
@@ -136,12 +136,12 @@ public class GaromoController : MonoBehaviour
             AdjustTowerRotation("fall");
         }
 
-        if(col.transform.tag == "NextScene")
+        if (col.transform.tag == "NextScene")
         {
             GoToNext(life);
         }
 
-        if(col.tag == "Potion")
+        if (col.tag == "Potion")
         {
             life = maxLives;
             if (GameManager.Instance.soundOn)
@@ -155,7 +155,7 @@ public class GaromoController : MonoBehaviour
             Jump(true);
             _animator.SetBool("Jumping", true);
             _animator.SetBool("Running", false);
-           _controller.move(_velocity * Time.deltaTime);
+            _controller.move(_velocity * Time.deltaTime);
         }
 
         if (col.transform.tag == "EndlevelTrigger")
@@ -165,14 +165,14 @@ public class GaromoController : MonoBehaviour
             //CheckPointManager.instance.RestartLevel();
         }
 
-        if(col.transform.tag == "Teleporter" && !teleporting)
+        if (col.transform.tag == "Teleporter" && !teleporting)
         {
-            if(tp1 == null)
+            if (tp1 == null)
             {
                 TeleportTo(new Vector3(col.transform.GetComponent<Teleport>().Destiny.position.x, transform.position.y, transform.position.z));
                 teleporting = true;
                 tp1 = col.gameObject;
-                
+
             }
         }
     }
@@ -189,8 +189,8 @@ public class GaromoController : MonoBehaviour
             enemyCollision = immunity = true;
     }
 
-    void onTriggerExitEvent( Collider2D col )
-	{
+    void onTriggerExitEvent(Collider2D col)
+    {
         if (col.transform.tag == "SewTile" && _controller.boxCollider == skinnyGaromo)
         {
             _controller.boxCollider = idleCollider;
@@ -200,7 +200,7 @@ public class GaromoController : MonoBehaviour
 
         if (col.transform.tag == "Teleporter" && teleporting)
         {
-            if(tp1.gameObject != col.gameObject)
+            if (tp1.gameObject != col.gameObject)
             {
                 teleporting = false;
                 tp1 = null;
@@ -212,8 +212,40 @@ public class GaromoController : MonoBehaviour
 
     bool isRestarting = false;
 
-	// the Update loop contains a very simple example of moving the character around and controlling the animation
-	void Update()
+    bool jumpInput = false;
+    bool punchInput = false;
+    bool rollInput = false;
+
+    Vector2 move = new Vector2(0.0f, 0.0f);
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        move = context.ReadValue<Vector2>();
+
+        if (move.sqrMagnitude < 0.001f)
+            return;
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Started)
+            jumpInput = true;
+    }
+
+    public void OnRoll(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+            rollInput = true;
+    }
+
+    public void OnPunch(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+            punchInput = true;
+    }
+
+    // the Update loop contains a very simple example of moving the character around and controlling the animation
+    void Update()
 	{
         if (_controller.isGrounded)
         {
@@ -225,22 +257,20 @@ public class GaromoController : MonoBehaviour
         {
             if (Time.timeScale > 0f)
             {
-                if (Input.GetKey(KeyCode.RightArrow))
-                {
-                    normalizedHorizontalSpeed = 1;
-                    runModifierMultiplier += Time.deltaTime;
-                }
-                else if (Input.GetKey(KeyCode.LeftArrow))
+                //normalizedHorizontalSpeed = 0;
+                if (move.x < -0.5f)
                 {
                     normalizedHorizontalSpeed = -1;
                     runModifierMultiplier += Time.deltaTime;
                 }
+                else if(move.x > 0.5f)
+                {
+                    normalizedHorizontalSpeed = 1;
+                    runModifierMultiplier += Time.deltaTime;
+                }
                 else
                 {
-                    //if (runModifierMultiplier > 0f)
-                    //    runModifierMultiplier -= Time.deltaTime;
-                    //else
-                        normalizedHorizontalSpeed = 0;
+                    normalizedHorizontalSpeed = 0;
                 }
                 if (runModifierMultiplier > 0.5f)
                     runModifierMultiplier = 0.5f;
@@ -252,18 +282,11 @@ public class GaromoController : MonoBehaviour
             Walk();
         }
 
-
         _animator.SetFloat("Yvel", _velocity.y);
 
-
-        if (Input.GetKeyDown(KeyCode.Z) && canMove && !isRolling)
+        // we can only jump whilst grounded
+        if (_controller.isGrounded && canMove && jumpInput)
         {
-            _animator.SetTrigger("Punch");
-        }
-
-		// we can only jump whilst grounded
-		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) && canMove )
-		{
             Jump(false);
             if (GameManager.Instance.soundOn)
             {
@@ -274,7 +297,7 @@ public class GaromoController : MonoBehaviour
             }
         }
 
-        if(enemyCollision)
+        if (enemyCollision)
         {
             GetDamage(false);
             _animator.SetTrigger("Damage");
@@ -290,16 +313,19 @@ public class GaromoController : MonoBehaviour
             Recoil();
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && canMove && !isRolling && _controller.isGrounded)
+        if (rollInput) 
         {
-            isRolling = true;
-            //_controller.ignoreSlopeModifier = true;
-            _animator.SetBool("Running", false);
-            _animator.Play("Garomo_roll");
-            rollTimer = rollDistance;
-            _velocity = Vector3.zero;
-            if(GameManager.Instance.soundOn)
-                AkSoundEngine.PostEvent("Garomo_roll", gameObject);
+            if(canMove && !isRolling && _controller.isGrounded)
+            {
+                isRolling = true;
+                _animator.SetBool("Running", false);
+                _animator.Play("Garomo_roll");
+                rollTimer = rollDistance;
+                _velocity = Vector3.zero;
+                if (GameManager.Instance.soundOn)
+                    AkSoundEngine.PostEvent("Garomo_roll", gameObject);
+            }
+            rollInput = false;
         }
 
         if (isRolling)
@@ -314,7 +340,14 @@ public class GaromoController : MonoBehaviour
         if (!_controller.collisionState.wasGroundedLastFrame && _controller.isGrounded && GameManager.Instance.soundOn)
             AkSoundEngine.PostEvent("Garomo_Land", gameObject);
 
-        if(isRestarting)
+        if (punchInput)
+        {
+            if(canMove && !isRolling)
+                _animator.SetTrigger("Punch");
+            punchInput = false;
+        }
+
+        if (isRestarting)
         {
             if (transform.localScale.x < 0f)
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
@@ -334,7 +367,9 @@ public class GaromoController : MonoBehaviour
 
         // grab our current _velocity to use as a base for all calculations
         _velocity = _controller.velocity;
-	}
+
+        
+    }
 
     public void Restart()
     {
@@ -374,7 +409,7 @@ public class GaromoController : MonoBehaviour
         {
             rollJump = true;
         }
-
+        jumpInput = false;
     }
 
     public void TeleportTo(Vector3 t)
