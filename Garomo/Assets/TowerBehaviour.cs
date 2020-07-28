@@ -26,11 +26,11 @@ public class TowerBehaviour : MonoBehaviour
 
             if(garomoX > towerX)
             {
-                transform.Rotate(new Vector3(0.0f, rotationSpeed * Time.deltaTime, 0.0f));
+                transform.Rotate(new Vector3(0.0f, (garomoX - towerX) * rotationSpeed * Time.deltaTime, 0.0f));
             }
             else
             {
-                transform.Rotate(new Vector3(0.0f, -rotationSpeed * Time.deltaTime, 0.0f));
+                transform.Rotate(new Vector3(0.0f, (garomoX - towerX) * rotationSpeed * Time.deltaTime, 0.0f));
             }
             transform.position = new Vector3(Garomo.position.x, transform.position.y, transform.position.z);
         }

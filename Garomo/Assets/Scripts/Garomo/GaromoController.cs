@@ -20,6 +20,9 @@ public class GaromoController : MonoBehaviour
     public delegate void OnGaromoFall(string whatHappened);
     public static OnGaromoFall AdjustTowerRotation;
 
+    bool teleporting = false;
+    GameObject tp1 = null;
+
 	[Header("Movement")]
 	public float gravity = -25f;
 	public float runSpeed = 8f;
@@ -161,6 +164,17 @@ public class GaromoController : MonoBehaviour
             GaromoWin();
             //CheckPointManager.instance.RestartLevel();
         }
+
+        if(col.transform.tag == "Teleporter" && !teleporting)
+        {
+            if(tp1 == null)
+            {
+                TeleportTo(new Vector3(col.transform.GetComponent<Teleport>().Destiny.position.x, transform.position.y, transform.position.z));
+                teleporting = true;
+                tp1 = col.gameObject;
+                
+            }
+        }
     }
 
     void onTriggerStayEvent(Collider2D col)
@@ -182,6 +196,15 @@ public class GaromoController : MonoBehaviour
             _controller.boxCollider = idleCollider;
             _controller.recalculateDistanceBetweenRays();
             skinnyGaromo.gameObject.SetActive(false);
+        }
+
+        if (col.transform.tag == "Teleporter" && teleporting)
+        {
+            if(tp1.gameObject != col.gameObject)
+            {
+                teleporting = false;
+                tp1 = null;
+            }
         }
     }
 
@@ -354,9 +377,10 @@ public class GaromoController : MonoBehaviour
 
     }
 
-    public void TeleportTo(Transform t)
+    public void TeleportTo(Vector3 t)
     {
-        transform.position = t.position;
+        transform.position = t;
+        Camera.main.transform.position = transform.position - Camera.main.GetComponent<SmoothFollow>().cameraOffset;
     }
 
     public void ActivePunch(int air)

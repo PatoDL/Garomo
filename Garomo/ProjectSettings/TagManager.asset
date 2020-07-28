@@ -14,6 +14,10 @@ TagManager:
   - Checkpoint
   - NextScene
   - SewTile
+  - Garomo
+  - LimitTrigger
+  - Attack
+  - Teleporter
   layers:
   - Default
   - TransparentFX
@@ -23,7 +27,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - CollisionLayer
   - 
   - 
   - 
