@@ -133,7 +133,10 @@ public class GaromoController : MonoBehaviour
         if (col.transform.tag == "LimitTrigger")
         {
             GetDamage(true);
-            AdjustTowerRotation("fall");
+            if(AdjustTowerRotation != null)
+            {
+                AdjustTowerRotation("fall");
+            }
         }
 
         if (col.transform.tag == "NextScene")
@@ -285,17 +288,22 @@ public class GaromoController : MonoBehaviour
         _animator.SetFloat("Yvel", _velocity.y);
 
         // we can only jump whilst grounded
-        if (_controller.isGrounded && canMove && jumpInput)
+        if(jumpInput)
         {
-            Jump(false);
-            if (GameManager.Instance.soundOn)
+            if (_controller.isGrounded && canMove)
             {
-                if (isRolling)
-                    AkSoundEngine.PostEvent("Garomo_roll_jump", gameObject);
-                else
-                    AkSoundEngine.PostEvent("Garomo_Jump", gameObject);
+                Jump(false);
+                if (GameManager.Instance.soundOn)
+                {
+                    if (isRolling)
+                        AkSoundEngine.PostEvent("Garomo_roll_jump", gameObject);
+                    else
+                        AkSoundEngine.PostEvent("Garomo_Jump", gameObject);
+                }
             }
+            jumpInput = false;
         }
+        
 
         if (enemyCollision)
         {
@@ -409,7 +417,6 @@ public class GaromoController : MonoBehaviour
         {
             rollJump = true;
         }
-        jumpInput = false;
     }
 
     public void TeleportTo(Vector3 t)

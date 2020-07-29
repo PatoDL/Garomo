@@ -32,13 +32,7 @@ public class TowerBehaviour : MonoBehaviour
 
     void AdjustTowerRotation(string whatHappened)
     {
-        if(whatHappened == "fall")
-        {
-            transform.eulerAngles = checkPointRotation;
-        }
-        else if(whatHappened == "checkpoint")
-        {
-            checkPointRotation = transform.eulerAngles;
-        }
+        transform.position = new Vector3(Garomo.position.x, transform.position.y, transform.position.z);
+        transform.rotation = Quaternion.identity;
     }
 }

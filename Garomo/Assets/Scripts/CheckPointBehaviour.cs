@@ -9,9 +9,8 @@ public class CheckPointBehaviour : MonoBehaviour
     Texture badGuyCheck;
     Material mat;
 
-    public GameObject decoration;
+    public GameObject SpotLight;
     public GameObject checkLight;
-    Color decoOrigColor;
 
     public delegate void OnCheckPointReach(GameObject cp);
     public static OnCheckPointReach ReachCheckPoint;
@@ -20,7 +19,6 @@ public class CheckPointBehaviour : MonoBehaviour
     {
         mat = image.GetComponent<MeshRenderer>().material;
         GaromoController.GaromoWin += RestartSprite;
-        decoOrigColor = decoration.GetComponent<MeshRenderer>().material.color;
     }
 
     private void OnDestroy()
@@ -36,11 +34,10 @@ public class CheckPointBehaviour : MonoBehaviour
             {
                 badGuyCheck = mat.mainTexture;
                 mat.mainTexture = garomoCheck;
-                decoration.GetComponent<MeshRenderer>().material.color = Color.green;
-                decoration.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.green);
+                SpotLight.SetActive(true);
                 checkLight.SetActive(true);
                 ReachCheckPoint(this.gameObject);
-                GaromoController.AdjustTowerRotation("checkpoint");
+                //GaromoController.AdjustTowerRotation("checkpoint");
             }
         }
     }
@@ -48,8 +45,7 @@ public class CheckPointBehaviour : MonoBehaviour
     public void RestartSprite()
     {
         mat.mainTexture = badGuyCheck;
-        decoration.GetComponent<MeshRenderer>().material.color = decoOrigColor;
-        decoration.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", decoOrigColor);
+        SpotLight.SetActive(false);
         checkLight.SetActive(false);
     }
 }

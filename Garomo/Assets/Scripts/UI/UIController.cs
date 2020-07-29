@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.Interactions;
 
 public class UIController : MonoBehaviourSingleton<UIController>
@@ -27,23 +28,90 @@ public class UIController : MonoBehaviourSingleton<UIController>
     public GameObject retryButton;
 
     public GameObject MenuPanel;
+    public MyButtonBehaviour[] myMenuButtons;
     public GameObject PausePanel;
+    public MyButtonBehaviour[] myPauseButtons;
     public GameObject CreditsBackground;
     public GameObject CreditsPanel;
+    public MyButtonBehaviour[] myCreditsButtons;
     public GameObject WinPanel;
+    public MyButtonBehaviour[] myWinButtons;
     public GameObject GameOverPanel;
+    public MyButtonBehaviour[] myGameoverButtons;
     public GameObject inGameUI;
+    public MyButtonBehaviour[] mySettingsButtons;
+
+    MyButtonBehaviour[] myCurrentButtons;
 
     bool firstTime;
+
+    InputDevice device;
+
+    MyButtonBehaviour actualButton;
+
+    int currentButtonValue = 0;
+    bool buttonsHaveChanged = false;
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            Vector2 v = context.ReadValue<Vector2>();
+            if (v.y > 0.0f)
+            {
+                currentButtonValue--;
+                if (currentButtonValue < 0)
+                    currentButtonValue = 0;
+            }
+            else if (v.y < 0.0f)
+            {
+                currentButtonValue++;
+                if(currentButtonValue > myCurrentButtons.Length-1)
+                {
+                    currentButtonValue--;
+                }
+            }
+
+            SelectButton(myCurrentButtons[currentButtonValue]);
+        }
+    }
+
+    public void OnAccept(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            if (actualButton)
+                ActivateButton();
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        device = Gamepad.current;
         versionText.text = "v" + Application.version;
         GaromoController.GaromoDie = ShowGameOver;
         GaromoController.GaromoWin += OpenCredits;
         actualFading = fadingPanels[0];
         firstTime = true;
+
+
+        myCurrentButtons = myMenuButtons;
+        SelectButton(myCurrentButtons[currentButtonValue]);
+
+        InputSystem.onDeviceChange +=
+        (device, change) =>
+        {
+            switch (change)
+            {
+                case InputDeviceChange.Disconnected:
+                    device = Keyboard.current;
+                    break;
+                case InputDeviceChange.Reconnected:
+                    device = Gamepad.current;
+                    break;
+            }
+        };
     }
 
     private void OnDestroy()
@@ -60,17 +128,23 @@ public class UIController : MonoBehaviourSingleton<UIController>
 
     public void OnHelpOpen(InputAction.CallbackContext context)
     {
-        helpInput = true;
+        if(context.phase == InputActionPhase.Started)
+            helpInput = true;
     }
 
     public void OnBackInput(InputAction.CallbackContext context)
     {
-        backInput = true;
+        if (context.phase == InputActionPhase.Started)
+            backInput = true;
     }
 
     public void OnStartInput(InputAction.CallbackContext context)
     {
-        startInput = true;
+        if (context.phase == InputActionPhase.Started)
+        {
+            startInput = true;
+            SetCurrentButtons("Pause");
+        }
     }
 
     // Update is called once per frame
@@ -125,14 +199,18 @@ public class UIController : MonoBehaviourSingleton<UIController>
                     Cursor.visible = false;
                     Cursor.lockState = CursorLockMode.Locked;
                 }
+
+                if (!garomoController.GetComponent<PlayerInput>().enabled)
+                    garomoController.GetComponent<PlayerInput>().enabled = true;
             }
             else
             {
-                if(!Cursor.visible)
+                if(!Cursor.visible && device != Gamepad.current)
                 {
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
                 }
+                garomoController.GetComponent<PlayerInput>().enabled = false;
             }
 
             
@@ -197,9 +275,59 @@ public class UIController : MonoBehaviourSingleton<UIController>
         startInput = false;
     }
 
+    public void SetCurrentButtons(string panel)
+    {
+        if(actualButton)
+        {
+            var pointer = new PointerEventData(EventSystem.current);
+            ExecuteEvents.Execute(actualButton.gameObject, pointer, ExecuteEvents.pointerExitHandler);
+        }
+            
+        switch (panel)
+        {
+            case "Menu":
+                myCurrentButtons = myMenuButtons;
+                break;
+            case "Settings":
+                myCurrentButtons = mySettingsButtons;
+                break;
+            case "Pause":
+                myCurrentButtons = myPauseButtons;
+                break;
+            case "Credits":
+                myCurrentButtons = myCreditsButtons;
+                break;
+            case "Win":
+                myCurrentButtons = myWinButtons;
+                break;
+            case "Gameover":
+                myCurrentButtons = myGameoverButtons;
+                break;
+        }
+        SelectButton(myCurrentButtons[0]);
+    }
+
+    void SelectButton(MyButtonBehaviour newButton)
+    {
+        if (actualButton == newButton)
+            return;
+        var pointer = new PointerEventData(EventSystem.current);
+        if(actualButton!=null)
+            ExecuteEvents.Execute(actualButton.gameObject, pointer, ExecuteEvents.pointerExitHandler);
+        actualButton = newButton;
+        ExecuteEvents.Execute(actualButton.gameObject, pointer, ExecuteEvents.pointerEnterHandler);
+    }
+
+    void ActivateButton()
+    {
+        var pointer = new PointerEventData(EventSystem.current);
+        ExecuteEvents.Execute(actualButton.gameObject, pointer, ExecuteEvents.pointerClickHandler);
+    }
+
     public void ShowGameOver()
     {
         GameOverPanel.gameObject.SetActive(true);
+        SetCurrentButtons("Gameover");
         GameManager.PauseTime();
     }
 
@@ -246,6 +374,8 @@ public class UIController : MonoBehaviourSingleton<UIController>
             touches = 0;
         }
     }
+
+    
 
     public void PauseGame(bool pause)
     {
