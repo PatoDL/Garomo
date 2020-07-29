@@ -209,6 +209,12 @@ public class GaromoController : MonoBehaviour
                 tp1 = null;
             }
         }
+
+        if(col.transform.tag == "TowerPlatform")
+        {
+            Destroy(col.gameObject);
+            Debug.Log("salio");
+        }
     }
 
     #endregion

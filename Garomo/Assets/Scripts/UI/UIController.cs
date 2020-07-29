@@ -358,7 +358,10 @@ public class UIController : MonoBehaviourSingleton<UIController>
     public void Restart(bool fromTheStart)
     {
         if (fromTheStart)
-            CheckPointManager.instance.RestartLevel();
+        {
+            if (CheckPointManager.instance)
+                CheckPointManager.instance.RestartLevel();
+        }
         GameManager.ResumeTime();
         garomoController.Restart();
         EnemyManager.instance.RestartEnemies();

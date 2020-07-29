@@ -24,7 +24,15 @@ public class TowerBehaviour : MonoBehaviour
             float garomoX = Garomo.position.x;
             float towerX = transform.position.x;
 
-            transform.Rotate(new Vector3(0.0f, (garomoX - towerX) * rotationSpeed * Time.deltaTime, 0.0f));
+            if(garomoX > towerX)
+            {
+                transform.eulerAngles += new Vector3(0.0f, (garomoX - towerX) + rotationSpeed * Time.deltaTime, 0.0f);
+            }
+            else
+            {
+                transform.eulerAngles += new Vector3(0.0f, (garomoX - towerX) - rotationSpeed * Time.deltaTime, 0.0f);
+            }
+            
             
             transform.position = new Vector3(Garomo.position.x, transform.position.y, transform.position.z);
         }
