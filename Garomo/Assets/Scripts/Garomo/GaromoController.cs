@@ -18,7 +18,7 @@ public class GaromoController : MonoBehaviour
     public delegate void OnLevelPass(int livesAm);
     public static OnLevelPass GoToNext;
 
-    public delegate void OnGaromoFall(string whatHappened);
+    public delegate void OnGaromoFall();
     public static OnGaromoFall AdjustTowerRotation;
 
     bool teleporting = false;
@@ -74,6 +74,7 @@ public class GaromoController : MonoBehaviour
 
     private CharacterController2Di _controller;
     public Animator _animator;
+    public GameObject shadow;
 
     void Awake()
     {
@@ -133,9 +134,9 @@ public class GaromoController : MonoBehaviour
         if (col.transform.tag == "LimitTrigger")
         {
             GetDamage(true);
-            if(AdjustTowerRotation != null)
+            if (AdjustTowerRotation != null)
             {
-                AdjustTowerRotation("fall");
+                AdjustTowerRotation();
             }
         }
 
@@ -260,6 +261,17 @@ public class GaromoController : MonoBehaviour
         {
             _velocity.y = 0;
             _animator.SetBool("Jumping", false);
+            if(!shadow.activeInHierarchy)
+            {
+                shadow.SetActive(true);
+            }
+        }
+        else
+        {
+            if (shadow.activeInHierarchy)
+            {
+                shadow.SetActive(false);
+            }
         }
 
         if (canMove)
@@ -374,6 +386,8 @@ public class GaromoController : MonoBehaviour
             _velocity = Vector3.zero;
             transform.position = (Vector2)CheckPointManager.instance.GetLastCheckPoint().transform.position;
             Camera.main.transform.position = transform.position - Camera.main.GetComponent<SmoothFollow>().cameraOffset;
+            if (AdjustTowerRotation != null)
+                AdjustTowerRotation();
             isRestarting = false;
         }
 

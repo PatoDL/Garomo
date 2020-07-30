@@ -347,6 +347,7 @@ public class UIController : MonoBehaviourSingleton<UIController>
         {
             CreditsPanel.gameObject.SetActive(false);
             WinPanel.gameObject.SetActive(true);
+            SetCurrentButtons("Win");
         }
         else
         {

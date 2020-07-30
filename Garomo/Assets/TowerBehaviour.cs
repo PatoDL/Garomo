@@ -38,7 +38,7 @@ public class TowerBehaviour : MonoBehaviour
         }
     }
 
-    void AdjustTowerRotation(string whatHappened)
+    void AdjustTowerRotation()
     {
         transform.position = new Vector3(Garomo.position.x, transform.position.y, transform.position.z);
         transform.rotation = Quaternion.identity;
