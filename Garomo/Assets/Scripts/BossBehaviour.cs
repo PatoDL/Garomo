@@ -99,6 +99,11 @@ public class BossBehaviour : MonoBehaviour
         animator.SetBool("InScene", inScreen);
     }
 
+    public void PlayBossAudio()
+    {
+        GameManager.Instance.PlaySound("Boss");
+    }
+
     public void ActivateBoss()
     {
         animator.enabled = true;
@@ -140,6 +145,7 @@ public class BossBehaviour : MonoBehaviour
         else if(life<=0)
         {
             animator.SetTrigger("Death");
+            GameManager.Instance.PlaySound("Boss_dead");
             EraseCollider();
             inScreen = false;
         }
