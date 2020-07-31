@@ -16,6 +16,8 @@ public class EnemyManager : MonoBehaviour
 
     List<GameObject> foxes;
 
+    List<GameObject> others;
+
     public static EnemyManager instance;
     public bool startDisabled = false;
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class EnemyManager : MonoBehaviour
         turtles = new List<GameObject>();
         mosquitos = new List<GameObject>();
         foxes = new List<GameObject>();
+        others = new List<GameObject>();
 
         for(int i = 0; i<levelEnemies.transform.childCount; i++)
         {
@@ -37,9 +40,13 @@ public class EnemyManager : MonoBehaviour
             {
                 turtles.Add(levelEnemies.transform.GetChild(i).gameObject);
             }
-            else
+            else if (levelEnemies.transform.GetChild(i).GetComponent<FoxBehaviour>())
             {
                 foxes.Add(levelEnemies.transform.GetChild(i).gameObject);
+            }
+            else
+            {
+                others.Add(levelEnemies.transform.GetChild(i).gameObject);
             }
         }
 
@@ -101,6 +108,14 @@ public class EnemyManager : MonoBehaviour
             g.transform.position = foxesPos[i];
             g.SetActive(true);
             i++;
+        }
+
+        foreach(GameObject g in others)
+        {
+            if(g.GetComponent<BossBehaviour>() != null)
+            {
+                g.GetComponent<BossBehaviour>().Restart();
+            }
         }
 
         if (startDisabled)

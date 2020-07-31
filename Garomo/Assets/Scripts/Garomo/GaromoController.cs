@@ -104,6 +104,7 @@ public class GaromoController : MonoBehaviour
         maxLives = life;
         gravityAct = true;
         garomoMat = GetComponent<SpriteRenderer>().material;
+        BossBehaviour.Die = SetWin;
     }
 
 
@@ -630,5 +631,11 @@ public class GaromoController : MonoBehaviour
     public void ApplyGravity()
     {
         _velocity.y += gravity * Time.deltaTime;
+    }
+
+    public void SetWin()
+    {
+        win = true;
+        GaromoWin();
     }
 }

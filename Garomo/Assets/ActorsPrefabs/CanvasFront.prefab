@@ -694,6 +694,7 @@ GameObject:
   - component: {fileID: 4306220424473946135}
   - component: {fileID: 1605359132270604484}
   - component: {fileID: 494838607}
+  - component: {fileID: 1059064029}
   m_Layer: 5
   m_Name: SoundToggle
   m_TagString: Untagged
@@ -792,6 +793,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+--- !u!114 &1059064029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7069002603401033290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727b691f9bc40d3469571ec257679de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &7784768748037236374
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +817,7 @@ GameObject:
   - component: {fileID: 6398025027531705563}
   - component: {fileID: 7085322794496205696}
   - component: {fileID: 494838606}
+  - component: {fileID: 1059064028}
   m_Layer: 5
   m_Name: SoundFXToggle
   m_TagString: Untagged
@@ -889,6 +904,19 @@ MonoBehaviour:
         m_CallState: 2
   m_IsOn: 1
 --- !u!114 &494838606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7784768748037236374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727b691f9bc40d3469571ec257679de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+--- !u!114 &1059064028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2705,7 +2733,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b9460120a47df9f4e8f52939619f79d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 471bc98dd33cef04f90f1387ae9ea2b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5888,6 +5916,7 @@ GameObject:
   - component: {fileID: 8226904823845607584}
   - component: {fileID: 8226904823845607580}
   - component: {fileID: 494838605}
+  - component: {fileID: 1059064027}
   m_Layer: 5
   m_Name: CanvasFront
   m_TagString: Untagged
@@ -6041,11 +6070,137 @@ MonoBehaviour:
   - {fileID: 8226904823179132318}
   inGameUI: {fileID: 8226904824039803042}
   mySettingsButtons:
-  - {fileID: 494838607}
-  - {fileID: 494838606}
+  - {fileID: 1059064029}
+  - {fileID: 1059064028}
   - {fileID: 3210040512421348663}
   PlayButton: {fileID: 8226904824183170768}
 --- !u!114 &494838605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8226904823845607587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: f75788ba8213cdb48a3b1fb83f5dc93b,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 45a8da37-68f9-48fe-b8f9-ab4997f2f75d
+    m_ActionName: Gameplay/Move[/XInputControllerWindows/leftStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8708f507-a83a-4fe5-9fe9-94b979cfc9ac
+    m_ActionName: Gameplay/Jump[/XInputControllerWindows/buttonSouth,/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 819be283-bb50-47f0-a468-aec6a01b861d
+    m_ActionName: Gameplay/Roll[/Keyboard/c,/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7ad3351a-65f1-4bc1-86a2-8a25742e05ff
+    m_ActionName: Gameplay/Punch[/Keyboard/z,/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8226904823845607580}
+        m_MethodName: OnBackInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e6c91570-6554-4675-b194-3c6dbaec81cf
+    m_ActionName: UI/Back[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8226904823845607587}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: efa2b8dd-b2e5-4371-9cf4-194987ec7f38
+    m_ActionName: UI/Select[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8226904823845607580}
+        m_MethodName: OnStartInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dc5a549e-d7c9-4ad6-8845-11802417ae86
+    m_ActionName: UI/Start[/XInputControllerWindows/start,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c6585ebe-434b-4599-85f0-e574e2bc71be
+    m_ActionName: UI/AnyKey[/XInputControllerWindows/start,/XInputControllerWindows/select,/XInputControllerWindows/leftStickPress,/XInputControllerWindows/rightStickPress,/XInputControllerWindows/leftShoulder,/XInputControllerWindows/rightShoulder,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonNorth,/XInputControllerWindows/leftTrigger,/XInputControllerWindows/rightTrigger,/Keyboard/anyKey,/Keyboard/escape,/Keyboard/space,/Keyboard/enter,/Keyboard/tab,/Keyboard/backquote,/Keyboard/quote,/Keyboard/semicolon,/Keyboard/comma,/Keyboard/period,/Keyboard/slash,/Keyboard/backslash,/Keyboard/leftBracket,/Keyboard/rightBracket,/Keyboard/minus,/Keyboard/equals,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/a,/Keyboard/b,/Keyboard/c,/Keyboard/d,/Keyboard/e,/Keyboard/f,/Keyboard/g,/Keyboard/h,/Keyboard/i,/Keyboard/j,/Keyboard/k,/Keyboard/l,/Keyboard/m,/Keyboard/n,/Keyboard/o,/Keyboard/p,/Keyboard/q,/Keyboard/r,/Keyboard/s,/Keyboard/t,/Keyboard/u,/Keyboard/v,/Keyboard/w,/Keyboard/x,/Keyboard/y,/Keyboard/z,/Keyboard/1,/Keyboard/2,/Keyboard/3,/Keyboard/4,/Keyboard/5,/Keyboard/6,/Keyboard/7,/Keyboard/8,/Keyboard/9,/Keyboard/0,/Keyboard/leftShift,/Keyboard/rightShift,/Keyboard/shift,/Keyboard/leftAlt,/Keyboard/rightAlt,/Keyboard/alt,/Keyboard/leftCtrl,/Keyboard/rightCtrl,/Keyboard/ctrl,/Keyboard/leftMeta,/Keyboard/rightMeta,/Keyboard/contextMenu,/Keyboard/backspace,/Keyboard/pageDown,/Keyboard/pageUp,/Keyboard/home,/Keyboard/end,/Keyboard/insert,/Keyboard/delete,/Keyboard/capsLock,/Keyboard/numLock,/Keyboard/printScreen,/Keyboard/scrollLock,/Keyboard/pause,/Keyboard/numpadEnter,/Keyboard/numpadDivide,/Keyboard/numpadMultiply,/Keyboard/numpadPlus,/Keyboard/numpadMinus,/Keyboard/numpadPeriod,/Keyboard/numpadEquals,/Keyboard/numpad1,/Keyboard/numpad2,/Keyboard/numpad3,/Keyboard/numpad4,/Keyboard/numpad5,/Keyboard/numpad6,/Keyboard/numpad7,/Keyboard/numpad8,/Keyboard/numpad9,/Keyboard/numpad0,/Keyboard/f1,/Keyboard/f2,/Keyboard/f3,/Keyboard/f4,/Keyboard/f5,/Keyboard/f6,/Keyboard/f7,/Keyboard/f8,/Keyboard/f9,/Keyboard/f10,/Keyboard/f11,/Keyboard/f12,/Keyboard/OEM1,/Keyboard/OEM2,/Keyboard/OEM3,/Keyboard/OEM4,/Keyboard/OEM5,/Keyboard/IMESelected,/Mouse/press,/Mouse/leftButton,/Mouse/rightButton,/Mouse/middleButton,/Mouse/forwardButton,/Mouse/backButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8226904823845607580}
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 75b50175-bc4a-43e1-b7c1-d7913ea6c243
+    m_ActionName: UI/Move[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8226904823845607580}
+        m_MethodName: OnAccept
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7ca4e62f-7dd7-439d-85e0-230eda3b9aa4
+    m_ActionName: UI/Accept[/XInputControllerWindows/buttonSouth]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: UI
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1059064027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

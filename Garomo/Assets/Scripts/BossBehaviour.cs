@@ -31,6 +31,9 @@ public class BossBehaviour : MonoBehaviour
 
     int foxCount = 0;
 
+    public delegate void OnBossDead();
+    public static OnBossDead Die;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +41,6 @@ public class BossBehaviour : MonoBehaviour
         animator.enabled = false;
         sign.StartFight += ActivateBoss;
         attackTime = attackTimeMax;
-        inScreen = false;
         BossPunchBehaviour.HitEnemy = GetDamage;
         maxLife = life;
         if (EnemyManager.instance)
@@ -80,11 +82,13 @@ public class BossBehaviour : MonoBehaviour
         {
             switch (phase)
             {
-                case 1:
+                case 1: 
+                case 2:
                     animator.SetTrigger("Attack");
                     attack = false;
                     break;
                 case 3:
+                case 4:
                     animator.SetTrigger("Attack");
                     animator.SetInteger("AttackNumber", 1);
                     attack = false;
@@ -103,7 +107,11 @@ public class BossBehaviour : MonoBehaviour
 
     public void SpawnCollider(int hand)
     {
-        Vector3 pos = bossPunchColliders3D[hand].bounds.center;
+        Vector3 pos = bossPunchColliders3D[hand].transform.position;
+        if(hand == 1)
+        {
+            pos.x -= 7f;
+        }
         pos.z = 0.0f;
         bossPunchCollider2D.transform.position = pos;
         bossPunchCollider2D.SetActive(true);
@@ -129,6 +137,22 @@ public class BossBehaviour : MonoBehaviour
             animator.SetTrigger("Death");
             inScreen = false;
         }
+    }
+
+    internal void Restart()
+    {
+        phase = 1;
+        animator.enabled = false;
+        life = maxLife;
+        foreach (GameObject g in foxList)
+        {
+            g.GetComponent<FoxBehaviour>().Restart();
+        }
+    }
+
+    public void OnDead()
+    {
+        Die();
     }
 
     public void SpawnFox()

@@ -38,6 +38,16 @@ public class BossPunchBehaviour : MonoBehaviour
             if (HitEnemy != null)
                 HitEnemy();
         }
+        else if(collision.tag == "Garomo")
+        {
+            if (collision.GetComponent<GaromoController>().immunityPowerUp)
+            {
+                SwitchModeToPunchable();
+                Vector3 newGPos = collision.transform.position;
+                newGPos.x += collision.transform.localScale.x * GetComponent<Collider2D>().bounds.extents.x*1.5f;
+                collision.transform.position = newGPos;
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -150,6 +150,15 @@ public class FoxBehaviour : MonoBehaviour
         Debug.Log(col.name);
     }
 
+    internal void Restart()
+    {
+        life = maxLives;
+        falling = false;
+        _animator.enabled = true;
+        _controller.boxCollider.enabled = true;
+        _controller.rigidBody2D.WakeUp();
+    }
+
     void onTriggerStayEvent(Collider2D col)
     {
 

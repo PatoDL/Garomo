@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PotionBehaviour : MonoBehaviour
 {
+    public GameObject Base;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag=="Garomo")
         {
-            gameObject.SetActive(false);
+            Base.SetActive(false);
         }
     }
 }

@@ -197,11 +197,11 @@ public class UIController : MonoBehaviourSingleton<UIController>
                     PauseGame(true);
                 }
 
-                if (Cursor.visible)
-                {
-                    Cursor.visible = false;
-                    Cursor.lockState = CursorLockMode.Locked;
-                }
+                //if (Cursor.visible)
+                //{
+                //    Cursor.visible = false;
+                //    Cursor.lockState = CursorLockMode.Locked;
+                //}
 
                 if (!garomoController.GetComponent<PlayerInput>().enabled)
                     garomoController.GetComponent<PlayerInput>().enabled = true;
@@ -210,8 +210,8 @@ public class UIController : MonoBehaviourSingleton<UIController>
             {
                 if(!Cursor.visible && device != Gamepad.current)
                 {
-                    Cursor.visible = true;
-                    Cursor.lockState = CursorLockMode.None;
+                    //Cursor.visible = true;
+                    //Cursor.lockState = CursorLockMode.None;
                 }
                 garomoController.GetComponent<PlayerInput>().enabled = false;
             }
