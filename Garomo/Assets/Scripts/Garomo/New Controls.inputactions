@@ -240,6 +240,17 @@
                 },
                 {
                     "name": "",
+                    "id": "52bbd76c-cf46-41bb-8c9c-a86d2e44d9c1",
+                    "path": "<Keyboard>/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2d91cd39-2ca0-40e3-9456-e57d5706172f",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
