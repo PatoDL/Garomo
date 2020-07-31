@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValidationCache Version="1" SchemaVersion="94">
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1595725151" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Conversion Settings\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Effects\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Effects\Factory Effects.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Events\Default Work Unit.wwu" DateLow="1595725151" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Events\Game Parameters\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="1595725151" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Garomo_WwiseProject.Francisco.wsettings" DateLow="1595750009" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Garomo_WwiseProject.wproj" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1595725151" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Mixing Sessions\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Modulators\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Presets\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Queries\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Queries\Factory Queries.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Soundcaster Sessions\Default Work Unit2.wwu" DateLow="1595725248" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\States\Default Work Unit music.wwu" DateLow="1593252662" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\States\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Switches\Default Work Unit.wwu" DateLow="1595725138" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="1594182646" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\Virtual Acoustics\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo\Garomo_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo\Garomo_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo\Garomo_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
@@ -32,7 +61,7 @@
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo\Garomo_WwiseProject\Switches\Music.wwu" DateLow="1594192954" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo\Garomo_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="1594182646" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo\Garomo_WwiseProject\Virtual Acoustics\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1595721951" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1595725151" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
@@ -41,14 +70,14 @@
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Effects\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Effects\Factory Effects.wwu" DateLow="1594837285" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Events\Default Work Unit.wwu" DateLow="1595720450" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Events\Default Work Unit.wwu" DateLow="1595725151" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Events\Game Parameters\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Events\Music.wwu" DateLow="1595721951" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="1595725151" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Game Parameters\Music.wwu" DateLow="1594193848" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Garomo_WwiseProject.Francisco.wsettings" DateLow="1595722081" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Garomo_WwiseProject.Francisco.wsettings" DateLow="1595725374" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Garomo_WwiseProject.wproj" DateLow="1594837285" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1595721951" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1595725151" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Mixing Sessions\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Modulators\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
@@ -57,10 +86,10 @@
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Queries\Factory Queries.wwu" DateLow="1594837285" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Soundcaster Sessions\Default Work Unit2.wwu" DateLow="1595722079" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Soundcaster Sessions\Default Work Unit2.wwu" DateLow="1595725248" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\States\Default Work Unit music.wwu" DateLow="1593252662" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\States\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Switches\Default Work Unit.wwu" DateLow="1595720450" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Switches\Default Work Unit.wwu" DateLow="1595725138" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Switches\Music.wwu" DateLow="1594192954" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="1594182646" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\Virtual Acoustics\Default Work Unit.wwu" DateLow="1594837285" DateHigh="0"/>

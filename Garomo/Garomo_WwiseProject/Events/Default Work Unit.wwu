@@ -609,6 +609,34 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Boss" ID="{DA2854F7-BA5C-4602-B0E2-0D93EDBF1C58}">
+					<ChildrenList>
+						<Action Name="" ID="{6AEA9232-68D4-4BC1-91F9-41BBBE5E138F}" ShortID="130928248">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="23"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Lvl_3_Boss" ID="{78808D70-0444-4D88-9588-255A9ECD8790}" WorkUnitID="{B1CB2A31-51FB-4CD5-A4D5-9DE78211DDAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Boss_dead" ID="{6BE878DC-6D27-4948-AC64-D4E34D161517}">
+					<ChildrenList>
+						<Action Name="" ID="{8E746124-13DC-42F2-855D-18EF9FC61942}" ShortID="663034238">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="23"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu" ID="{EAC56A98-0560-4DF7-A023-91FD62859B84}" WorkUnitID="{B1CB2A31-51FB-4CD5-A4D5-9DE78211DDAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

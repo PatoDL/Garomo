@@ -100,9 +100,6 @@ public class FlamencoBehaviour : MonoBehaviour
                 anim.enabled = false;
                 dead = true;
             }
-
-            if (GameManager.Instance.soundOn)
-                AkSoundEngine.PostEvent("Garomo_punch_hit", gameObject);
         }
         else if (collision.transform.tag == "LimitTrigger")
         {

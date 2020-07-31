@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class GaromoChecker : MonoBehaviour
 {
-    public delegate void OnGaromoEnter();
+    public delegate void OnGaromoEnter(GameObject garomo);
     public OnGaromoEnter GaromoEntrance;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Garomo")
         {
-            GaromoEntrance();
+            GaromoEntrance(other.gameObject);
         }
     }
 }

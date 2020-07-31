@@ -33,6 +33,18 @@
 							<ObjectRef Name="Pause_off" ID="{E7E01AB9-7266-438E-8896-3E9B37055636}" WorkUnitID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}"/>
 							<Position X="3" Y="1"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="Lvl_3" ID="{0A1DF3A0-F778-42D4-9469-330C178194CE}" WorkUnitID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Boss" ID="{DA2854F7-BA5C-4602-B0E2-0D93EDBF1C58}" WorkUnitID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}"/>
+							<Position X="4" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Boss_dead" ID="{6BE878DC-6D27-4948-AC64-D4E34D161517}" WorkUnitID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}"/>
+							<Position X="4" Y="2"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
@@ -46,7 +58,7 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Lvl_2" ID="{1F1309EA-57BA-4C0A-BD99-AFDA39D4B309}"/>
+						<CurrentSwitchRef Name="Lvl_3" ID="{ADC8AA49-522B-4A75-A883-3C7BBB812BCB}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

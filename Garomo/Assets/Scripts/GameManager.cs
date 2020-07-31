@@ -7,12 +7,14 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 {
     int livesToPass;
 
-    LevelData actualLevel;
+    public LevelData actualLevel;
 
     public bool soundOn;
     public bool musicOn;
 
-    public string musicLevelStart = "level1";
+    string actualMusic;
+
+    
 
     public void Start()
     {
@@ -20,7 +22,18 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         GaromoController.GoToNext = NextLevel;
         soundOn = true;
         musicOn = true;
+        actualMusic = "Music_Start";
         AkSoundEngine.PostEvent("Music_Start", gameObject);
+        SceneManager.sceneLoaded += OnSceneChange;
+    }
+
+    void OnSceneChange(Scene scene, LoadSceneMode mode)
+    {
+        actualLevel = GameObject.Find("LevelData").GetComponent<LevelData>();
+
+        GameObject.Find("Garomo").GetComponent<GaromoController>().life = livesToPass;
+
+        ChangeMusic("Lvl_" + (actualLevel.actualLevel+1));
     }
 
     public void ToggleMusic()
@@ -41,12 +54,23 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     public void NextLevel(int lives)
     {
         //AkSoundEngine.StopAll();
-        SceneManager.LoadScene(actualLevel.nextLevel);
-        actualLevel = GameObject.Find("LevelData").GetComponent<LevelData>();
+        livesToPass = lives;
+        SceneManager.LoadScene(actualLevel.nextLevel);   
+    }
 
-        GameObject.Find("Garomo").GetComponent<GaromoController>().life = lives;
+    public void PlaySound(string sound)
+    {
+        if(soundOn)
+            AkSoundEngine.PostEvent(sound, gameObject);
+    }
 
-        
+    public void ChangeMusic(string newMusic)
+    {
+        if (musicOn)
+        {
+            AkSoundEngine.PostEvent(newMusic, gameObject);
+        }
+        actualMusic = newMusic;
     }
 
     public void GoToLevel(int level)

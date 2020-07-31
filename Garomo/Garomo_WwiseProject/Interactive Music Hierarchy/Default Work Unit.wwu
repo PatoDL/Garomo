@@ -463,7 +463,7 @@
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+							<ObjectRef Name="Music" ID="{40F6F9FB-532A-482F-921B-B0ED466BE855}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
@@ -795,6 +795,897 @@
 								</MusicPlaylistItem>
 							</Playlist>
 						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="LVL 3_BOSS" ID="{61099046-C046-4E8B-A9E0-9C8DC6D58BA0}" ShortID="117375881">
+							<PropertyList>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+								<Property Name="Tempo" Type="Real64" Value="73"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="LVL 3" ID="{493B8073-34C0-4A78-AF8F-DFDC88D7AB71}" ShortID="259629087">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="68171.6307077626"/>
+										<Property Name="Tempo" Type="Real64" Value="163"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="LEVEL 3 BOSS Garomo SOLO BATA" ID="{D8DD5F3E-6650-455D-9A6E-ECD3D5D5E08F}" ShortID="527730100">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="LEVEL 3 BOSS Garomo SOLO BATA" ID="{0398AC85-EB9E-4D43-A8FB-ADC32F1571AC}" ShortID="56427654">
+													<Language>SFX</Language>
+													<AudioFile>LEVEL 3 BOSS Garomo SOLO BATA.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{E2CFC7B6-ED29-4D9F-A23C-908F2A8B2BB1}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{8A5D65EB-6C03-4960-877A-295176C44FBB}">
+													<ClipList>
+														<MusicClip Name="LEVEL 3 BOSS Garomo SOLO BATA" ID="{940C0079-D4F0-4300-9E76-2594E4C14FEB}">
+															<PropertyList>
+																<Property Name="BeginTrimOffset" Type="Real64" Value="3287.67123287671"/>
+																<Property Name="EndTrimOffset" Type="Real64" Value="59966.0416666667"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="-3287.67123287671"/>
+															</PropertyList>
+															<AudioSourceRef Name="LEVEL 3 BOSS Garomo SOLO BATA" ID="{0398AC85-EB9E-4D43-A8FB-ADC32F1571AC}"/>
+															<PropertyCurveList>
+																<PropertyCurve PropertyName="Highpass">
+																	<Curve Name="" ID="{A9508E4D-ED28-4E67-BE0B-75A5EC4F7319}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>3.28767</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>59.9660416666667</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Lowpass">
+																	<Curve Name="" ID="{5E689973-6CA3-4B78-9430-EF90F4F856B9}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>3.28767</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>59.9660416666667</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Volume">
+																	<Curve Name="" ID="{48619DA9-5184-48EB-BE77-8704113439A1}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>3.28767</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>59.9660416666667</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+															</PropertyCurveList>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+										<MusicTrack Name="LEVEL 3 BOSS Garomo SOLO ORQUESTA" ID="{6384B62F-0587-48F8-9C1C-E0235F55121D}" ShortID="863396333">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="LEVEL 3 BOSS Garomo SOLO ORQUESTA" ID="{19557D2C-EB20-40D1-83CE-4ECA6797F905}" ShortID="716788854">
+													<Language>SFX</Language>
+													<AudioFile>LEVEL 3 BOSS Garomo SOLO ORQUESTA.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{5225590D-DFCD-433C-B357-7D435E15F42E}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{A2E3B750-E432-4FB8-B039-2035B8A3CB5A}">
+													<ClipList>
+														<MusicClip Name="LEVEL 3 BOSS Garomo SOLO ORQUESTA" ID="{36F35D1D-BC7F-44DB-89EE-5C772BCA6D7E}">
+															<PropertyList>
+																<Property Name="BeginTrimOffset" Type="Real64" Value="6575.34246575343"/>
+																<Property Name="EndTrimOffset" Type="Real64" Value="59178.0833333333"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="-3287.67123287671"/>
+															</PropertyList>
+															<AudioSourceRef Name="LEVEL 3 BOSS Garomo SOLO ORQUESTA" ID="{19557D2C-EB20-40D1-83CE-4ECA6797F905}"/>
+															<PropertyCurveList>
+																<PropertyCurve PropertyName="Highpass">
+																	<Curve Name="" ID="{73354021-9F49-4D68-A988-93C9D9F60C61}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>6.57534</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>59.1780833333333</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Lowpass">
+																	<Curve Name="" ID="{DB3ACADF-2A1D-4099-8E83-59D6DE8EE65F}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>6.57534</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>59.1780833333333</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Volume">
+																	<Curve Name="" ID="{9B552FF3-782C-4D32-A76F-6F9D8AACE04E}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>6.57534</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>59.1780833333333</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+															</PropertyCurveList>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+										<MusicTrack Name="LEVEL 3 BOSS Garomo SOLO SINTES" ID="{EC27C062-6E34-4914-9BBD-6E1B32298A92}" ShortID="791180850">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="LEVEL 3 BOSS Garomo SOLO SINTES" ID="{5065FFD3-0652-4F2E-A6BB-EE12C46D7CE0}" ShortID="448503361">
+													<Language>SFX</Language>
+													<AudioFile>LEVEL 3 BOSS Garomo SOLO SINTES.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{DAD8E6FB-F18C-4433-8424-25596AB9B152}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{183D55ED-A694-4F86-9E53-33C9A09812F7}">
+													<ClipList>
+														<MusicClip Name="LEVEL 3 BOSS Garomo SOLO SINTES" ID="{4BA3E248-F3F7-4031-B275-1FE0C70A5016}">
+															<PropertyList>
+																<Property Name="BeginTrimOffset" Type="Real64" Value="6575.34246575343"/>
+																<Property Name="EndTrimOffset" Type="Real64" Value="64062.0416666667"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="-3287.67123287671"/>
+															</PropertyList>
+															<AudioSourceRef Name="LEVEL 3 BOSS Garomo SOLO SINTES" ID="{5065FFD3-0652-4F2E-A6BB-EE12C46D7CE0}"/>
+															<PropertyCurveList>
+																<PropertyCurve PropertyName="Highpass">
+																	<Curve Name="" ID="{F68150F0-DC64-4E82-B4A0-04AD387135A4}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>6.57534</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>64.0620416666667</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Lowpass">
+																	<Curve Name="" ID="{B34E765B-D3E7-435C-B4F1-177313801EB3}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>6.57534</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>64.0620416666667</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Volume">
+																	<Curve Name="" ID="{F5F3F629-9CC2-40AE-A68F-CCDD13EB6049}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>6.57534</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>64.0620416666667</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+															</PropertyCurveList>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+										<MusicTrack Name="LEVEL 3 BOSS Garomo" ID="{CD3E9453-24BE-46B6-B7C3-72A8C24A5C13}" ShortID="434919389">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="LEVEL 3 BOSS Garomo" ID="{D48D26F5-BFDE-4786-A4D8-82CEABA527EB}" ShortID="37157831">
+													<Language>SFX</Language>
+													<AudioFile>LEVEL 3 BOSS Garomo.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{87701026-380B-472D-A4D5-5F73FFD3766B}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{70E2009F-2A38-4577-85AA-B6765DC46EC2}">
+													<ClipList>
+														<MusicClip Name="LEVEL 3 BOSS Garomo" ID="{D351E263-EDFA-49E4-915F-51D292625442}">
+															<PropertyList>
+																<Property Name="BeginTrimOffset" Type="Real64" Value="6575.34246575343"/>
+																<Property Name="EndTrimOffset" Type="Real64" Value="64062.0416666667"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="-3287.67123287671"/>
+															</PropertyList>
+															<AudioSourceRef Name="LEVEL 3 BOSS Garomo" ID="{D48D26F5-BFDE-4786-A4D8-82CEABA527EB}"/>
+															<PropertyCurveList>
+																<PropertyCurve PropertyName="Highpass">
+																	<Curve Name="" ID="{C1C59CC2-FECC-4700-9188-48DA30A03BC8}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>6.57534</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>64.0620416666667</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Lowpass">
+																	<Curve Name="" ID="{C0DB2C70-4502-4A53-B730-394E3640120B}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>6.57534</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>64.0620416666667</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Volume">
+																	<Curve Name="" ID="{1F94C24E-F4F7-4CAF-A0B8-F58472C536D4}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>6.57534</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>64.0620416666667</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+															</PropertyCurveList>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+									</ChildrenList>
+									<CueList>
+										<MusicCue Name="Entry Cue" ID="{BBE9CF58-9C06-4ED3-B6BC-423D0B25C343}">
+											<PropertyList>
+												<Property Name="TimeMs" Type="Real64" Value="3287.67123287671"/>
+											</PropertyList>
+										</MusicCue>
+										<MusicCue Name="Exit Cue" ID="{22F059CE-B271-4F3D-B284-B229F49485C1}">
+											<PropertyList>
+												<Property Name="CueType" Type="int16" Value="1"/>
+												<Property Name="TimeMs" Type="Real64" Value="55890.4109589041"/>
+											</PropertyList>
+										</MusicCue>
+									</CueList>
+								</MusicSegment>
+								<MusicSegment Name="intro lvl3" ID="{6E092BC7-1E1E-47D6-A726-1805C95AD577}" ShortID="893567608">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="64109.5890410959"/>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="LEVEL 3 BOSS Garomo" ID="{8C0220D5-FAC9-4A54-90E9-839F3D153840}" ShortID="985509346">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="LEVEL 3 BOSS Garomo" ID="{030587C8-9A06-42F6-8929-B145A684F91E}" ShortID="24641571">
+													<Language>SFX</Language>
+													<AudioFile>LEVEL 3 BOSS Garomo.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="37157831"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{C0EAFC01-AD76-46C3-8D3D-5775C4877E40}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{C9C522EB-4E7A-48F5-A8A5-ECDADCF99418}">
+													<ClipList>
+														<MusicClip Name="LEVEL 3 BOSS Garomo" ID="{9215B9A6-BD06-4C74-8D56-D3E4825030A1}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="6575.34246575341"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+															</PropertyList>
+															<AudioSourceRef Name="LEVEL 3 BOSS Garomo" ID="{030587C8-9A06-42F6-8929-B145A684F91E}"/>
+															<PropertyCurveList>
+																<PropertyCurve PropertyName="Highpass">
+																	<Curve Name="" ID="{7D6BDAF1-BF97-49CC-A8CB-1276C039039E}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>6.57534</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Lowpass">
+																	<Curve Name="" ID="{2B98959D-FF55-4DA5-8AC1-58E9E4AD7589}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>6.57534</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Volume">
+																	<Curve Name="" ID="{496CF46E-4750-44B5-AF8C-BE7B05AFD8C5}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>6.57534</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+															</PropertyCurveList>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+									</ChildrenList>
+									<CueList>
+										<MusicCue Name="Entry Cue" ID="{88F85FE6-87CC-4388-AB23-432DFE819DF0}"/>
+										<MusicCue Name="Exit Cue" ID="{54BCC74E-5A20-4CD5-89E0-19EC364C310D}">
+											<PropertyList>
+												<Property Name="CueType" Type="int16" Value="1"/>
+												<Property Name="TimeMs" Type="Real64" Value="6575.34246575342"/>
+											</PropertyList>
+										</MusicCue>
+									</CueList>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{D8371C21-7941-4E95-97D2-E8E5F8E2A5B9}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{70A79627-6B53-4D52-999A-CC65D8CC2D69}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{B51B0BDB-8666-4004-82C7-0FDC01618AB4}" ShortID="851803999">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{A15D7863-30D5-41F2-8F4F-613670FE46F7}" ShortID="400530543">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="intro lvl3" ID="{6E092BC7-1E1E-47D6-A726-1805C95AD577}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{E37E6638-356C-471C-A7E1-72CAFCC02F35}" ShortID="221966418">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="LVL 3" ID="{493B8073-34C0-4A78-AF8F-DFDC88D7AB71}"/>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="LVL 3" ID="{EB9E36A1-47E2-4FD1-A586-E354F85372B8}" ShortID="419310944">
+							<PropertyList>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+								<Property Name="Tempo" Type="Real64" Value="73"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="LEVEL 3 Garomo" ID="{22D9D816-A7BD-4F33-AA1F-50ED6C59AD94}" ShortID="762120584">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="108391.00456621"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="LEVEL 3 Garomo" ID="{87CF18B4-7F31-4EFD-8C3A-9DE181C36A3C}" ShortID="834230856">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="LEVEL 3 Garomo" ID="{D7AFE10C-2590-42EC-B222-8A94985C454C}" ShortID="88125874">
+													<Language>SFX</Language>
+													<AudioFile>LEVEL 3 Garomo.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{BF2D3E4D-2626-4FCB-B8B0-E6B812ED6194}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{EE3243A1-6854-4982-A46F-1A8B5BA41199}">
+													<ClipList>
+														<MusicClip Name="LEVEL 3 Garomo" ID="{BC5BC887-9227-4559-8ABB-F6C3F6CBE8EB}">
+															<PropertyList>
+																<Property Name="BeginTrimOffset" Type="Real64" Value="19726.0273972603"/>
+																<Property Name="EndTrimOffset" Type="Real64" Value="105103.333333333"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="-19726.0273972603"/>
+															</PropertyList>
+															<AudioSourceRef Name="LEVEL 3 Garomo" ID="{D7AFE10C-2590-42EC-B222-8A94985C454C}"/>
+															<PropertyCurveList>
+																<PropertyCurve PropertyName="Highpass">
+																	<Curve Name="" ID="{7F6F1278-C9EF-4E8B-888A-377A8FE9E723}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>19.72603</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>105.103333333333</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Lowpass">
+																	<Curve Name="" ID="{7961F220-5B63-4E96-8213-F102F35D1D01}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>19.72603</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>105.103333333333</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Volume">
+																	<Curve Name="" ID="{14E83F56-39CA-48CE-8CBE-4A25AAF00676}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>19.72603</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>105.103333333333</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+															</PropertyCurveList>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+									</ChildrenList>
+									<CueList>
+										<MusicCue Name="Entry Cue" ID="{C80AE717-CA96-496B-B1EA-D5948E7B4D73}">
+											<PropertyList>
+												<Property Name="TimeMs" Type="Real64" Value="1.02318153949454E-11"/>
+											</PropertyList>
+										</MusicCue>
+										<MusicCue Name="Exit Cue" ID="{D67899F6-29B2-4982-826B-AD5945822BF9}">
+											<PropertyList>
+												<Property Name="CueType" Type="int16" Value="1"/>
+												<Property Name="TimeMs" Type="Real64" Value="78904.109589041"/>
+											</PropertyList>
+										</MusicCue>
+									</CueList>
+								</MusicSegment>
+								<MusicSegment Name="Intro LEVEL 3 Garomo" ID="{E282F31A-47D6-4AEF-893D-516F7DA6EA47}" ShortID="165416169">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="19834.9562634098"/>
+										<Property Name="Tempo" Type="Real64" Value="163"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="LEVEL 3 Garomo" ID="{78B464BE-89B6-454B-BD71-F41A5C85E7C5}" ShortID="337628986">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="LEVEL 3 Garomo" ID="{17F70DD1-2D28-4C98-A792-A4E7FF0DA0B8}" ShortID="752130213">
+													<Language>SFX</Language>
+													<AudioFile>LEVEL 3 Garomo.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="88125874"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{CFB9F858-1B12-4D53-9410-D28FC390192C}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{81613D40-41BC-4EE6-B051-06B440F6AC4B}">
+													<ClipList>
+														<MusicClip Name="LEVEL 3 Garomo" ID="{CF47BD1A-20F7-49DA-B048-0E90D85168B4}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="19726.0273972603"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+															</PropertyList>
+															<AudioSourceRef Name="LEVEL 3 Garomo" ID="{17F70DD1-2D28-4C98-A792-A4E7FF0DA0B8}"/>
+															<PropertyCurveList>
+																<PropertyCurve PropertyName="Highpass">
+																	<Curve Name="" ID="{9833F191-88EE-4AFA-ACAE-A419AB9130C5}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>19.72603</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Lowpass">
+																	<Curve Name="" ID="{6EA36DC4-AFCD-4076-B1BF-DE66EAB49849}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>19.72603</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Volume">
+																	<Curve Name="" ID="{20575F0A-9F19-4A56-B495-C56B540BBCD3}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>19.72603</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+															</PropertyCurveList>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+									</ChildrenList>
+									<CueList>
+										<MusicCue Name="Entry Cue" ID="{8D52098E-B4B4-4576-93D6-9E48475D0FA5}"/>
+										<MusicCue Name="Exit Cue" ID="{9937B8BA-8295-4B86-9571-19F172B05694}">
+											<PropertyList>
+												<Property Name="CueType" Type="int16" Value="1"/>
+												<Property Name="TimeMs" Type="Real64" Value="19726.0273972603"/>
+											</PropertyList>
+										</MusicCue>
+									</CueList>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{AEBD53D7-24AC-4178-B4FD-36DDC0A3E64B}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{C47E1B59-2246-4E64-B3C5-E38C0A6AA8CD}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{1C546B0C-1DFB-458B-8C68-D8FFAAE43929}" ShortID="889926836">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{5C135182-9BC6-431A-A9CB-7FEAC3D9AE2E}" ShortID="452771899">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Intro LEVEL 3 Garomo" ID="{E282F31A-47D6-4AEF-893D-516F7DA6EA47}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{C75FBADB-4EC1-418F-8C98-D1969CB0A312}" ShortID="433372971">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="LEVEL 3 Garomo" ID="{22D9D816-A7BD-4F33-AA1F-50ED6C59AD94}"/>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
 					</ChildrenList>
 					<TransitionList>
 						<MusicTransition Name="Root" ID="{6CB285FF-7903-47BF-A85A-8D39E12CDF57}">
@@ -864,6 +1755,88 @@
 										</SourceFadeOut>
 									</TransitionInfo>
 								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{5E86760E-CAE1-4D1F-8AD0-4E57B34107AE}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+										<Property Name="UseTransitionObject" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="LVL 3" ID="{EB9E36A1-47E2-4FD1-A586-E354F85372B8}" WorkUnitID="{166A9378-5C06-4E95-B47F-CCC861E415A3}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="LVL 2" ID="{F2C920DF-2B9D-4FF2-B63B-C217444B13A4}" WorkUnitID="{166A9378-5C06-4E95-B47F-CCC861E415A3}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<TransitionObjectRef Name="Transición lvl 1 a 2" ID="{7209D5D7-20CC-409A-82A6-DFDF1F6E5ACF}" WorkUnitID="{166A9378-5C06-4E95-B47F-CCC861E415A3}"/>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{34EAC436-4AD3-437C-92D9-2BE7F4945523}">
+												<PropertyList>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{585BDF99-F246-4722-A2BC-B3E94B9A04A9}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="2"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="LVL 3_BOSS" ID="{61099046-C046-4E8B-A9E0-9C8DC6D58BA0}" WorkUnitID="{166A9378-5C06-4E95-B47F-CCC861E415A3}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="LVL 3" ID="{EB9E36A1-47E2-4FD1-A586-E354F85372B8}" WorkUnitID="{166A9378-5C06-4E95-B47F-CCC861E415A3}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{2A419472-DB14-4CC7-AF7C-6C2E50CA420A}">
+												<PropertyList>
+													<Property Name="FadeTime" Type="Real64" Value="2.7"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{885FBBCF-E194-4F98-A339-ECB3F8467DF5}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+										<Property Name="UseTransitionObject" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Menu" ID="{9D8F0724-449C-4267-B2B1-E096440FA178}" WorkUnitID="{166A9378-5C06-4E95-B47F-CCC861E415A3}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="LVL 3_BOSS" ID="{61099046-C046-4E8B-A9E0-9C8DC6D58BA0}" WorkUnitID="{166A9378-5C06-4E95-B47F-CCC861E415A3}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<TransitionObjectRef Name="Transición lvl 1 a 2" ID="{7209D5D7-20CC-409A-82A6-DFDF1F6E5ACF}" WorkUnitID="{166A9378-5C06-4E95-B47F-CCC861E415A3}"/>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{2EF12A75-069B-4563-B292-4614D7C8D499}">
+												<PropertyList>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+									</TransitionInfo>
+								</MusicTransition>
 							</ChildrenList>
 							<TransitionInfo/>
 						</MusicTransition>
@@ -903,6 +1876,22 @@
 							</Path>
 							<AudioNodeInfo>
 								<AudioNodeRef Name="Menu" ID="{9D8F0724-449C-4267-B2B1-E096440FA178}" WorkUnitID="{166A9378-5C06-4E95-B47F-CCC861E415A3}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Lvl_3" ID="{ADC8AA49-522B-4A75-A883-3C7BBB812BCB}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="LVL 3" ID="{EB9E36A1-47E2-4FD1-A586-E354F85372B8}" WorkUnitID="{166A9378-5C06-4E95-B47F-CCC861E415A3}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Lvl_3_Boss" ID="{78808D70-0444-4D88-9588-255A9ECD8790}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="LVL 3_BOSS" ID="{61099046-C046-4E8B-A9E0-9C8DC6D58BA0}" WorkUnitID="{166A9378-5C06-4E95-B47F-CCC861E415A3}" Platform="Linked"/>
 							</AudioNodeInfo>
 						</Entry>
 					</EntryList>

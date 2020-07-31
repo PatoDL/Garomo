@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6147514764258404418}
   - component: {fileID: 6251206481716675213}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Redirectioner
   m_TagString: Redirectioner
   m_Icon: {fileID: 0}

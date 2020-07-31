@@ -40,8 +40,9 @@ public class UIController : MonoBehaviourSingleton<UIController>
     public MyButtonBehaviour[] myGameoverButtons;
     public GameObject inGameUI;
     public MyButtonBehaviour[] mySettingsButtons;
-
     MyButtonBehaviour[] myCurrentButtons;
+
+    public Button PlayButton;
 
     bool firstTime;
 
@@ -112,6 +113,8 @@ public class UIController : MonoBehaviourSingleton<UIController>
                     break;
             }
         };
+
+        PlayButton.onClick.AddListener(PlayStartMusic);
     }
 
     private void OnDestroy()
@@ -307,6 +310,11 @@ public class UIController : MonoBehaviourSingleton<UIController>
         SelectButton(myCurrentButtons[0]);
     }
 
+    void PlayStartMusic()
+    {
+        GameManager.Instance.ChangeMusic("Lvl_" + (GameManager.Instance.actualLevel.actualLevel+1));
+    }
+
     void SelectButton(MyButtonBehaviour newButton)
     {
         if (actualButton == newButton)
@@ -365,8 +373,10 @@ public class UIController : MonoBehaviourSingleton<UIController>
         }
         GameManager.ResumeTime();
         garomoController.Restart();
-        EnemyManager.instance.RestartEnemies();
-        ItemManager.instance.RestartItems();
+        if (EnemyManager.instance)
+            EnemyManager.instance.RestartEnemies();
+        if(ItemManager.instance)
+            ItemManager.instance.RestartItems();
     }
 
     public void Touch()
@@ -385,6 +395,7 @@ public class UIController : MonoBehaviourSingleton<UIController>
     {
         if (pause)
         {
+            GameManager.Instance.PlaySound("Pause_on");
             if (!PausePanel.gameObject.activeInHierarchy)
             {
                 Time.timeScale = 0f;
@@ -400,6 +411,7 @@ public class UIController : MonoBehaviourSingleton<UIController>
         {
             Time.timeScale = 1f;
             PausePanel.gameObject.SetActive(false);
+            GameManager.Instance.PlaySound("Pause_off");
         }
     }
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\Francisco\Desktop\Garomo\Garomo_WwiseProject v0.6\Garomo_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -22,6 +22,8 @@
 			<Path>main.bnk</Path>
 			<IncludedEvents>
 				<Event Id="1041766312" Name="Blades" ObjectPath="\Events\Default Work Unit\Blades" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1560169506" Name="Boss" ObjectPath="\Events\Default Work Unit\Boss" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1165767839" Name="Boss_dead" ObjectPath="\Events\Default Work Unit\Boss_dead" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="612075679" Name="Checkpoint" ObjectPath="\Events\Default Work Unit\Checkpoint" DurationType="OneShot" DurationMin="1.227587" DurationMax="1.712634"/>
 				<Event Id="3133371051" Name="Close_Help" ObjectPath="\Events\Default Work Unit\Close_Help" DurationType="OneShot" DurationMin="1.227587" DurationMax="1.712634"/>
 				<Event Id="3000406861" Name="Flamenco_Death" ObjectPath="\Events\Default Work Unit\Flamenco_Death" DurationType="OneShot" DurationMin="1.766667" DurationMax="1.766667"/>
@@ -61,7 +63,7 @@
 			<IncludedMemoryFiles>
 				<File Id="1882509" Language="SFX">
 					<ShortName>LEVEL 2 Garomo.wav</ShortName>
-					<Path>SFX\LEVEL 2 Garomo_D79FB2B7.wem</Path>
+					<Path>SFX\LEVEL 2 Garomo_9B96ECC7.wem</Path>
 				</File>
 				<File Id="12887297" Language="SFX">
 					<ShortName>Garomo_Fall_Scream.wav</ShortName>
@@ -75,9 +77,17 @@
 					<ShortName>Turtle_Death.wav</ShortName>
 					<Path>SFX\Turtle_Death_10C4C929.wem</Path>
 				</File>
+				<File Id="56427654" Language="SFX">
+					<ShortName>LEVEL 3 BOSS Garomo SOLO BATA.wav</ShortName>
+					<Path>SFX\LEVEL 3 BOSS Garomo SOLO BATA_9B96ECC7.wem</Path>
+				</File>
 				<File Id="61208076" Language="SFX">
 					<ShortName>Checkpoint.wav</ShortName>
 					<Path>SFX\Checkpoint_D79FB2B7.wem</Path>
+				</File>
+				<File Id="88125874" Language="SFX">
+					<ShortName>LEVEL 3 Garomo.wav</ShortName>
+					<Path>SFX\LEVEL 3 Garomo_9B96ECC7.wem</Path>
 				</File>
 				<File Id="96111811" Language="SFX">
 					<ShortName>Garomo_Throw_Punch.wav</ShortName>
@@ -195,6 +205,10 @@
 					<ShortName>Garomo_Jump1.wav</ShortName>
 					<Path>SFX\Garomo_Jump1_10C4C929.wem</Path>
 				</File>
+				<File Id="448503361" Language="SFX">
+					<ShortName>LEVEL 3 BOSS Garomo SOLO SINTES.wav</ShortName>
+					<Path>SFX\LEVEL 3 BOSS Garomo SOLO SINTES_9B96ECC7.wem</Path>
+				</File>
 				<File Id="451916968" Language="SFX">
 					<ShortName>Garomo_Footsteps.wav</ShortName>
 					<Path>SFX\Garomo_Footsteps_1B981856.wem</Path>
@@ -209,7 +223,7 @@
 				</File>
 				<File Id="480669596" Language="SFX">
 					<ShortName>LEVEL 1 Garomo.wav</ShortName>
-					<Path>SFX\LEVEL 1 Garomo_D79FB2B7.wem</Path>
+					<Path>SFX\LEVEL 1 Garomo_9B96ECC7.wem</Path>
 				</File>
 				<File Id="485950384" Language="SFX">
 					<ShortName>Flamenco_Spit.wav</ShortName>
@@ -247,6 +261,10 @@
 					<ShortName>Garomo_Footsteps.wav</ShortName>
 					<Path>SFX\Garomo_Footsteps_87E89C88.wem</Path>
 				</File>
+				<File Id="716788854" Language="SFX">
+					<ShortName>LEVEL 3 BOSS Garomo SOLO ORQUESTA.wav</ShortName>
+					<Path>SFX\LEVEL 3 BOSS Garomo SOLO ORQUESTA_9B96ECC7.wem</Path>
+				</File>
 				<File Id="722633583" Language="SFX">
 					<ShortName>Turtle_Voice_Death3.wav</ShortName>
 					<Path>SFX\Turtle_Voice_Death3_10C4C929.wem</Path>
@@ -261,7 +279,7 @@
 				</File>
 				<File Id="813279608" Language="SFX">
 					<ShortName>MENU GAROMO.wav</ShortName>
-					<Path>SFX\MENU GAROMO_D79FB2B7.wem</Path>
+					<Path>SFX\MENU GAROMO_9B96ECC7.wem</Path>
 				</File>
 				<File Id="826769350" Language="SFX">
 					<ShortName>Life_Potion.wav</ShortName>

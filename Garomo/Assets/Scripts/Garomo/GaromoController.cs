@@ -76,6 +76,11 @@ public class GaromoController : MonoBehaviour
     public Animator _animator;
     public GameObject shadow;
 
+    float walkSoundTimer = 0.0f;
+    public float walkSoundTimerHandler;
+
+    Material garomoMat;
+
     void Awake()
     {
         if (!UIController.Instance.garomoController)
@@ -93,8 +98,8 @@ public class GaromoController : MonoBehaviour
         _controller.onTriggerStayEvent += onTriggerStayEvent;
         _controller.onTriggerExitEvent += onTriggerExitEvent;
         maxLives = life;
-
         gravityAct = true;
+        garomoMat = GetComponent<SpriteRenderer>().material;
     }
 
 
@@ -106,6 +111,10 @@ public class GaromoController : MonoBehaviour
             return;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.name);
+    }
 
     void onTriggerEnterEvent(Collider2D col)
     {
@@ -133,6 +142,7 @@ public class GaromoController : MonoBehaviour
 
         if (col.transform.tag == "LimitTrigger")
         {
+            GameManager.Instance.PlaySound("Garomo_Fall_LVL" + (GameManager.Instance.actualLevel.actualLevel+1));
             GetDamage(true);
             if (AdjustTowerRotation != null)
             {
@@ -166,7 +176,6 @@ public class GaromoController : MonoBehaviour
         {
             win = true;
             GaromoWin();
-            //CheckPointManager.instance.RestartLevel();
         }
 
         if (col.transform.tag == "Teleporter" && !teleporting)
@@ -214,19 +223,18 @@ public class GaromoController : MonoBehaviour
         if(col.transform.tag == "TowerPlatform")
         {
             Destroy(col.gameObject);
-            Debug.Log("salio");
         }
     }
 
     #endregion
-
-    bool isRestarting = false;
 
     bool jumpInput = false;
     bool punchInput = false;
     bool rollInput = false;
 
     Vector2 move = new Vector2(0.0f, 0.0f);
+
+    
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -339,6 +347,14 @@ public class GaromoController : MonoBehaviour
             Recoil();
         }
 
+        if(immunity)
+        {
+            if (garomoMat.color == Color.white)
+                garomoMat.color = Color.clear;
+            else
+                garomoMat.color = Color.white;
+        }
+
         if (rollInput) 
         {
             if(canMove && !isRolling && _controller.isGrounded)
@@ -373,23 +389,7 @@ public class GaromoController : MonoBehaviour
             punchInput = false;
         }
 
-        if (isRestarting)
-        {
-            if (transform.localScale.x < 0f)
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            life = maxLives;
-            canMove = true;
-            isRolling = false;
-            enemyCollision = false;
-            immunity = false;
-            win = false;
-            _velocity = Vector3.zero;
-            transform.position = (Vector2)CheckPointManager.instance.GetLastCheckPoint().transform.position;
-            Camera.main.transform.position = transform.position - Camera.main.GetComponent<SmoothFollow>().cameraOffset;
-            if (AdjustTowerRotation != null)
-                AdjustTowerRotation();
-            isRestarting = false;
-        }
+
 
         _controller.move( _velocity * Time.deltaTime );
 
@@ -401,7 +401,20 @@ public class GaromoController : MonoBehaviour
 
     public void Restart()
     {
-        isRestarting = true;
+        if (transform.localScale.x < 0f)
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        life = maxLives;
+        canMove = true;
+        isRolling = false;
+        enemyCollision = false;
+        immunity = false;
+        win = false;
+        _velocity = Vector3.zero;
+        transform.position = (Vector2)CheckPointManager.instance.GetLastCheckPoint().transform.position;
+        if (Camera.main.GetComponent<SmoothFollow>().enabled)
+            Camera.main.transform.position = transform.position - Camera.main.GetComponent<SmoothFollow>().cameraOffset;
+        if (AdjustTowerRotation != null)
+            AdjustTowerRotation();
     }
 
     public void CrouchColliderActivation(string action)
@@ -442,30 +455,40 @@ public class GaromoController : MonoBehaviour
     public void TeleportTo(Vector3 t)
     {
         transform.position = t;
-        Camera.main.transform.position = transform.position - Camera.main.GetComponent<SmoothFollow>().cameraOffset;
+        if (Camera.main.GetComponent<SmoothFollow>().enabled)
+            Camera.main.transform.position = transform.position - Camera.main.GetComponent<SmoothFollow>().cameraOffset;
     }
 
     public void ActivePunch(int air)
     {
         if(air == 0)
+        {
             GroundAttackCollider.gameObject.SetActive(true);
+        }
         else
+        {
             AirAttackCollider.gameObject.SetActive(true);
-
-        if (GameManager.Instance.soundOn)
-            AkSoundEngine.PostEvent("Garomo_Punch", gameObject);
+        }
     }
 
     public void DeActivePunch(int air)
     {
         if (air == 0)
+        {
+            GroundAttackCollider.GetComponent<PunchBehaviour>().air = false;
             GroundAttackCollider.gameObject.SetActive(false);
+
+        }
         else
+        {
+            GroundAttackCollider.GetComponent<PunchBehaviour>().air = true;
             AirAttackCollider.gameObject.SetActive(false);
+        }
     }
 
     void Walk()
     {
+        bool playSound = true;
         if (_controller.isGrounded)
             _animator.SetBool("Running", true);
 
@@ -482,6 +505,20 @@ public class GaromoController : MonoBehaviour
         else
         {
             _animator.SetBool("Running", false);
+            playSound = false;
+        }
+
+        if (!_controller.isGrounded)
+            playSound = false;
+
+        if (playSound)
+        {
+            walkSoundTimer += Time.deltaTime;
+            if(walkSoundTimer > walkSoundTimerHandler)
+            {
+                GameManager.Instance.PlaySound("Garomo_Walk");
+                walkSoundTimer = 0.0f;
+            }
         }
 
         var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
@@ -525,6 +562,7 @@ public class GaromoController : MonoBehaviour
             canMove = true;
             recoilTime = recoilTimeMax;
             immunity = false;
+            garomoMat.color = Color.white;
         }
     }
 
@@ -545,7 +583,8 @@ public class GaromoController : MonoBehaviour
             transform.position = (Vector2)CheckPointManager.instance.GetLastCheckPoint().transform.position;
             isRecoiling = false;
             isRolling = false;
-            Camera.main.transform.position = transform.position - Camera.main.GetComponent<SmoothFollow>().cameraOffset;
+            if (Camera.main.GetComponent<SmoothFollow>().enabled)
+                Camera.main.transform.position = transform.position - Camera.main.GetComponent<SmoothFollow>().cameraOffset;
         }
 
         //canMove = false;

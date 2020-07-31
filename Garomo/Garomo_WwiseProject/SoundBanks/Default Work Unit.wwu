@@ -4,6 +4,13 @@
 		<WorkUnit Name="Default Work Unit" ID="{279FF03C-4219-469B-BF87-BA38EB206C91}" PersistMode="Standalone">
 			<ChildrenList>
 				<SoundBank Name="main" ID="{9F4FC87F-390E-4543-8FD5-BC3D6D69FB91}">
+					<PropertyList>
+						<Property Name="Maximum" Type="int32">
+							<ValueList>
+								<Value>51380224</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ObjectInclusionList>
 						<ObjectRef Name="Game Parameters" ID="{D6928966-64AA-4B18-BA92-2B9D59E1A3FA}" WorkUnitID="{D6928966-64AA-4B18-BA92-2B9D59E1A3FA}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Default Work Unit" ID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}" WorkUnitID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}" Filter="7" Origin="Manual"/>

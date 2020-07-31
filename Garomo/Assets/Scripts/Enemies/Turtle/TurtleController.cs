@@ -101,8 +101,6 @@ public class TurtleController : MonoBehaviour
 	{
         if (col.tag == "Attack")
         {
-            if (GameManager.Instance.soundOn)
-                AkSoundEngine.PostEvent("Garomo_punch_hit", gameObject);
             if (life <= 1)
             {
                 GetComponent<SpriteRenderer>().sprite = deadTurtle;
@@ -208,7 +206,7 @@ public class TurtleController : MonoBehaviour
 
     int whereToAttack;
 
-    void Attack()
+    void Attack(GameObject garomo)
     {
         if (!wasDamaged && !attacked)
         {

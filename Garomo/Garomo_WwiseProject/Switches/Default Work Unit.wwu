@@ -9,6 +9,7 @@
 						<Switch Name="Lvl_1" ID="{BACECF7E-AAD7-4E69-B82B-15AB4A1826FE}"/>
 						<Switch Name="Lvl_2" ID="{1F1309EA-57BA-4C0A-BD99-AFDA39D4B309}"/>
 						<Switch Name="Lvl_3" ID="{ADC8AA49-522B-4A75-A883-3C7BBB812BCB}"/>
+						<Switch Name="Lvl_3_Boss" ID="{78808D70-0444-4D88-9588-255A9ECD8790}"/>
 					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>
