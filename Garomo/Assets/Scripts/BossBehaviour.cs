@@ -102,6 +102,11 @@ public class BossBehaviour : MonoBehaviour
     public void ActivateBoss()
     {
         animator.enabled = true;
+        animator.Play("Boss_Start", -1, 0);
+        for(int i=0;i<transform.childCount;i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(true);
+        }
         inScreen = true;
     }
 
@@ -135,6 +140,7 @@ public class BossBehaviour : MonoBehaviour
         else if(life<=0)
         {
             animator.SetTrigger("Death");
+            EraseCollider();
             inScreen = false;
         }
     }
@@ -142,12 +148,18 @@ public class BossBehaviour : MonoBehaviour
     internal void Restart()
     {
         phase = 1;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
         animator.enabled = false;
         life = maxLife;
         foreach (GameObject g in foxList)
         {
             g.GetComponent<FoxBehaviour>().Restart();
         }
+        sign.gameObject.SetActive(true);
+        sign.GetComponent<Animator>().Play("animacion cartel", -1, 0);
     }
 
     public void OnDead()

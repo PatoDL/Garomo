@@ -7,6 +7,13 @@ public class SignBehaviour : MonoBehaviour
     public delegate void OnFightStart();
     public OnFightStart StartFight;
 
+    public GameObject garomo;
+
+    private void OnEnable()
+    {
+        garomo.SetActive(false);
+    }
+
     public void Fight()
     {
         StartFight();
