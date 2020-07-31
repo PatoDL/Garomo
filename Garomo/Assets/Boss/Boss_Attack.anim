@@ -29500,7 +29500,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 5.766667
-    functionName: 
+    functionName: SpawnCollider
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 17.966667
+    functionName: EraseCollider
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

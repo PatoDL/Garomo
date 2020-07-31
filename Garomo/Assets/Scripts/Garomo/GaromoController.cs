@@ -576,6 +576,7 @@ public class GaromoController : MonoBehaviour
         else
         {
             life -= 1;
+            Debug.Log("vida menos");
         }
 
         if(returnToCheck)

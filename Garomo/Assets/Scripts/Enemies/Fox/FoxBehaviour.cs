@@ -47,12 +47,14 @@ public class FoxBehaviour : MonoBehaviour
 
     public GaromoChecker[] gc;
 
-    enum Action
+    enum State
     {
         idle, run, attack
     }
 
-    Action action = Action.idle;
+    State action = State.idle;
+
+    public static event Action onFoxDeathEvent;
 
     // Start is called before the first frame update
     void Awake()
@@ -75,6 +77,11 @@ public class FoxBehaviour : MonoBehaviour
             gc[i].GaromoEntrance = Attack;
         }
         falling = false;
+    }
+
+    public void OnDisable()
+    {
+        onFoxDeathEvent();
     }
 
     #region Event Listeners
@@ -125,7 +132,7 @@ public class FoxBehaviour : MonoBehaviour
         else if (col.tag == "Redirectioner")
         {
             _animator.SetBool("Running", false);
-            action = Action.idle;
+            action = State.idle;
             if (wasDamaged)
             {
                 _velocity = Vector3.zero;
@@ -191,18 +198,18 @@ public class FoxBehaviour : MonoBehaviour
 
         switch(action)
         {
-            case Action.idle:
+            case State.idle:
                 {
                     _animator.SetBool("Running", false);
                     runTime -= Time.deltaTime;
                     if(runTime <= 0.0f)
                     {
                         runTime = runTimeMax;
-                        action = Action.run;
+                        action = State.run;
                     }
                     break;
                 }
-            case Action.run:
+            case State.run:
                 {
                     if (canMove)
                     {
@@ -211,11 +218,11 @@ public class FoxBehaviour : MonoBehaviour
                     }
                     break;
                 }
-            case Action.attack:
+            case State.attack:
                 {
                     if(punched)
                     {
-                        action = Action.idle;
+                        action = State.idle;
                     }
                     break;
                 }
@@ -285,7 +292,7 @@ public class FoxBehaviour : MonoBehaviour
         {
             garomoPosition = garomo.transform.position;
             _velocity.x = 0.0f;
-            action = Action.attack;
+            action = State.attack;
             if (!punched)
             {
                 _animator.SetTrigger("Attack");

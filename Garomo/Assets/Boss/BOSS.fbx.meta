@@ -1,383 +1,175 @@
 fileFormatVersion: 2
 guid: 989335d702db5044797c933eb231b682
 ModelImporter:
-  serializedVersion: 19300
-  internalIDToNameTable:
-  - first:
-      1: 100000
-    second: Antebrazo_der_JN
-  - first:
-      1: 100002
-    second: antebrazo_der_low
-  - first:
-      1: 100004
-    second: Antebrazo_izq_JN
-  - first:
-      1: 100006
-    second: antebrazo_izq_low
-  - first:
-      1: 100008
-    second: //RootNode
-  - first:
-      1: 100010
-    second: BOSS_JN
-  - first:
-      1: 100012
-    second: BOSS_model_low
-  - first:
-      1: 100014
-    second: Brazo_der_JN
-  - first:
-      1: 100016
-    second: brazo_der_low
-  - first:
-      1: 100018
-    second: Brazo_izq_JN
-  - first:
-      1: 100020
-    second: brazo_izq_low
-  - first:
-      1: 100022
-    second: brazo_sup_der_low
-  - first:
-      1: 100024
-    second: brazo_sup_izq_low
-  - first:
-      1: 100026
-    second: cabeza_low
-  - first:
-      1: 100028
-    second: cabeza_sup_low
-  - first:
-      1: 100030
-    second: Codo_der_JN
-  - first:
-      1: 100032
-    second: codo_der_low
-  - first:
-      1: 100034
-    second: Codo_izq_JN
-  - first:
-      1: 100036
-    second: codo_izq_low
-  - first:
-      1: 100038
-    second: Cuello_JN
-  - first:
-      1: 100040
-    second: Cuerpo_JN
-  - first:
-      1: 100042
-    second: cuerpo_low
-  - first:
-      1: 100044
-    second: Guante_der_JN
-  - first:
-      1: 100046
-    second: guante_der_low
-  - first:
-      1: 100048
-    second: Guante_izq_JN
-  - first:
-      1: 100050
-    second: guante_izq_low
-  - first:
-      1: 100052
-    second: Hombro_der_JN
-  - first:
-      1: 100054
-    second: hombro_der_low
-  - first:
-      1: 100056
-    second: Hombro_izq_JN
-  - first:
-      1: 100058
-    second: hombro_izq_low
-  - first:
-      1: 100060
-    second: Lengua_JN
-  - first:
-      1: 100062
-    second: lengua_low
-  - first:
-      1: 100064
-    second: mandibula_low
-  - first:
-      1: 100066
-    second: Mandubula_JN
-  - first:
-      1: 100068
-    second: Ojo_der_JN
-  - first:
-      1: 100070
-    second: Ojo_Izq_JN
-  - first:
-      1: 100072
-    second: ojos_low
-  - first:
-      1: 100074
-    second: Propulsores_JN
-  - first:
-      1: 100076
-    second: propulsores_low
-  - first:
-      4: 400000
-    second: Antebrazo_der_JN
-  - first:
-      4: 400002
-    second: antebrazo_der_low
-  - first:
-      4: 400004
-    second: Antebrazo_izq_JN
-  - first:
-      4: 400006
-    second: antebrazo_izq_low
-  - first:
-      4: 400008
-    second: //RootNode
-  - first:
-      4: 400010
-    second: BOSS_JN
-  - first:
-      4: 400012
-    second: BOSS_model_low
-  - first:
-      4: 400014
-    second: Brazo_der_JN
-  - first:
-      4: 400016
-    second: brazo_der_low
-  - first:
-      4: 400018
-    second: Brazo_izq_JN
-  - first:
-      4: 400020
-    second: brazo_izq_low
-  - first:
-      4: 400022
-    second: brazo_sup_der_low
-  - first:
-      4: 400024
-    second: brazo_sup_izq_low
-  - first:
-      4: 400026
-    second: cabeza_low
-  - first:
-      4: 400028
-    second: cabeza_sup_low
-  - first:
-      4: 400030
-    second: Codo_der_JN
-  - first:
-      4: 400032
-    second: codo_der_low
-  - first:
-      4: 400034
-    second: Codo_izq_JN
-  - first:
-      4: 400036
-    second: codo_izq_low
-  - first:
-      4: 400038
-    second: Cuello_JN
-  - first:
-      4: 400040
-    second: Cuerpo_JN
-  - first:
-      4: 400042
-    second: cuerpo_low
-  - first:
-      4: 400044
-    second: Guante_der_JN
-  - first:
-      4: 400046
-    second: guante_der_low
-  - first:
-      4: 400048
-    second: Guante_izq_JN
-  - first:
-      4: 400050
-    second: guante_izq_low
-  - first:
-      4: 400052
-    second: Hombro_der_JN
-  - first:
-      4: 400054
-    second: hombro_der_low
-  - first:
-      4: 400056
-    second: Hombro_izq_JN
-  - first:
-      4: 400058
-    second: hombro_izq_low
-  - first:
-      4: 400060
-    second: Lengua_JN
-  - first:
-      4: 400062
-    second: lengua_low
-  - first:
-      4: 400064
-    second: mandibula_low
-  - first:
-      4: 400066
-    second: Mandubula_JN
-  - first:
-      4: 400068
-    second: Ojo_der_JN
-  - first:
-      4: 400070
-    second: Ojo_Izq_JN
-  - first:
-      4: 400072
-    second: ojos_low
-  - first:
-      4: 400074
-    second: Propulsores_JN
-  - first:
-      4: 400076
-    second: propulsores_low
-  - first:
-      21: 2100000
-    second: Ojos_MAT
-  - first:
-      21: 2100002
-    second: Cuerpo_MAT
-  - first:
-      21: 2100004
-    second: Cabeza_MAT
-  - first:
-      21: 2100006
-    second: Brazos_MAT
-  - first:
-      21: 2100008
-    second: lambert1
-  - first:
-      43: 4300000
-    second: ojos_low
-  - first:
-      43: 4300002
-    second: propulsores_low
-  - first:
-      43: 4300004
-    second: cabeza_sup_low
-  - first:
-      43: 4300006
-    second: mandibula_low
-  - first:
-      43: 4300008
-    second: lengua_low
-  - first:
-      43: 4300010
-    second: cuerpo_low
-  - first:
-      43: 4300012
-    second: hombro_der_low
-  - first:
-      43: 4300014
-    second: brazo_sup_der_low
-  - first:
-      43: 4300016
-    second: codo_der_low
-  - first:
-      43: 4300018
-    second: antebrazo_der_low
-  - first:
-      43: 4300020
-    second: guante_der_low
-  - first:
-      43: 4300022
-    second: hombro_izq_low
-  - first:
-      43: 4300024
-    second: brazo_sup_izq_low
-  - first:
-      43: 4300026
-    second: codo_izq_low
-  - first:
-      43: 4300028
-    second: antebrazo_izq_low
-  - first:
-      43: 4300030
-    second: guante_izq_low
-  - first:
-      74: 7400000
-    second: Boss_Idle
-  - first:
-      74: 7400002
-    second: Boss_Start
-  - first:
-      74: 7400004
-    second: Boss_Attack1
-  - first:
-      74: 7400006
-    second: Boss_Attack
-  - first:
-      74: 7400008
-    second: Boss_Escape
-  - first:
-      74: 7400010
-    second: Boss_Attack1_Death1
-  - first:
-      74: 7400012
-    second: Boss_Attack2_Death2
-  - first:
-      74: 7400014
-    second: animacion_completa
-  - first:
-      95: 9500000
-    second: //RootNode
-  - first:
-      137: 13700000
-    second: antebrazo_der_low
-  - first:
-      137: 13700002
-    second: antebrazo_izq_low
-  - first:
-      137: 13700004
-    second: brazo_sup_der_low
-  - first:
-      137: 13700006
-    second: brazo_sup_izq_low
-  - first:
-      137: 13700008
-    second: cabeza_sup_low
-  - first:
-      137: 13700010
-    second: codo_der_low
-  - first:
-      137: 13700012
-    second: codo_izq_low
-  - first:
-      137: 13700014
-    second: cuerpo_low
-  - first:
-      137: 13700016
-    second: guante_der_low
-  - first:
-      137: 13700018
-    second: guante_izq_low
-  - first:
-      137: 13700020
-    second: hombro_der_low
-  - first:
-      137: 13700022
-    second: hombro_izq_low
-  - first:
-      137: 13700024
-    second: lengua_low
-  - first:
-      137: 13700026
-    second: mandibula_low
-  - first:
-      137: 13700028
-    second: ojos_low
-  - first:
-      137: 13700030
-    second: propulsores_low
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Antebrazo_der_JN
+    100002: antebrazo_der_low
+    100004: Antebrazo_izq_JN
+    100006: antebrazo_izq_low
+    100008: //RootNode
+    100010: BOSS_JN
+    100012: BOSS_model_low
+    100014: Brazo_der_JN
+    100016: brazo_der_low
+    100018: Brazo_izq_JN
+    100020: brazo_izq_low
+    100022: brazo_sup_der_low
+    100024: brazo_sup_izq_low
+    100026: cabeza_low
+    100028: cabeza_sup_low
+    100030: Codo_der_JN
+    100032: codo_der_low
+    100034: Codo_izq_JN
+    100036: codo_izq_low
+    100038: Cuello_JN
+    100040: Cuerpo_JN
+    100042: cuerpo_low
+    100044: Guante_der_JN
+    100046: guante_der_low
+    100048: Guante_izq_JN
+    100050: guante_izq_low
+    100052: Hombro_der_JN
+    100054: hombro_der_low
+    100056: Hombro_izq_JN
+    100058: hombro_izq_low
+    100060: Lengua_JN
+    100062: lengua_low
+    100064: mandibula_low
+    100066: Mandubula_JN
+    100068: Ojo_der_JN
+    100070: Ojo_Izq_JN
+    100072: ojos_low
+    100074: Propulsores_JN
+    100076: propulsores_low
+    100078: Ctrl_antebrazo_der
+    100080: Ctrl_antebrazo_izq
+    100082: Ctrl_BOSS
+    100084: Ctrl_brazo_der
+    100086: Ctrl_brazo_izq
+    100088: Ctrl_codo_der
+    100090: Ctrl_codo_izq
+    100092: Ctrl_cuello
+    100094: Ctrl_general
+    100096: Ctrl_guante_der
+    100098: Ctrl_guante_izq
+    100100: Ctrl_hombro_der
+    100102: Ctrl_hombro_izq
+    100104: Ctrl_lengua
+    100106: Ctrl_mandibula
+    100108: Ctrl_ojo_der
+    100110: Ctrl_ojo_izq
+    100112: Ctrl_ojos
+    100114: Ctrl_propulsores
+    400000: Antebrazo_der_JN
+    400002: antebrazo_der_low
+    400004: Antebrazo_izq_JN
+    400006: antebrazo_izq_low
+    400008: //RootNode
+    400010: BOSS_JN
+    400012: BOSS_model_low
+    400014: Brazo_der_JN
+    400016: brazo_der_low
+    400018: Brazo_izq_JN
+    400020: brazo_izq_low
+    400022: brazo_sup_der_low
+    400024: brazo_sup_izq_low
+    400026: cabeza_low
+    400028: cabeza_sup_low
+    400030: Codo_der_JN
+    400032: codo_der_low
+    400034: Codo_izq_JN
+    400036: codo_izq_low
+    400038: Cuello_JN
+    400040: Cuerpo_JN
+    400042: cuerpo_low
+    400044: Guante_der_JN
+    400046: guante_der_low
+    400048: Guante_izq_JN
+    400050: guante_izq_low
+    400052: Hombro_der_JN
+    400054: hombro_der_low
+    400056: Hombro_izq_JN
+    400058: hombro_izq_low
+    400060: Lengua_JN
+    400062: lengua_low
+    400064: mandibula_low
+    400066: Mandubula_JN
+    400068: Ojo_der_JN
+    400070: Ojo_Izq_JN
+    400072: ojos_low
+    400074: Propulsores_JN
+    400076: propulsores_low
+    400078: Ctrl_antebrazo_der
+    400080: Ctrl_antebrazo_izq
+    400082: Ctrl_BOSS
+    400084: Ctrl_brazo_der
+    400086: Ctrl_brazo_izq
+    400088: Ctrl_codo_der
+    400090: Ctrl_codo_izq
+    400092: Ctrl_cuello
+    400094: Ctrl_general
+    400096: Ctrl_guante_der
+    400098: Ctrl_guante_izq
+    400100: Ctrl_hombro_der
+    400102: Ctrl_hombro_izq
+    400104: Ctrl_lengua
+    400106: Ctrl_mandibula
+    400108: Ctrl_ojo_der
+    400110: Ctrl_ojo_izq
+    400112: Ctrl_ojos
+    400114: Ctrl_propulsores
+    2100000: Ojos_MAT
+    2100002: Cuerpo_MAT
+    2100004: Cabeza_MAT
+    2100006: Brazos_MAT
+    2100008: lambert1
+    4300000: ojos_low
+    4300002: propulsores_low
+    4300004: cabeza_sup_low
+    4300006: mandibula_low
+    4300008: lengua_low
+    4300010: cuerpo_low
+    4300012: hombro_der_low
+    4300014: brazo_sup_der_low
+    4300016: codo_der_low
+    4300018: antebrazo_der_low
+    4300020: guante_der_low
+    4300022: hombro_izq_low
+    4300024: brazo_sup_izq_low
+    4300026: codo_izq_low
+    4300028: antebrazo_izq_low
+    4300030: guante_izq_low
+    7400000: Boss_Start
+    7400002: Boss_Idle
+    7400004: Boss_Attack1
+    7400006: Boss_Attack2
+    7400008: Boss_Escape
+    7400010: Boss_Attack1_Death1
+    7400012: Boss_Attack2_Death2
+    7400014: animacion_completa
+    7400016: 'Boss_Idle2 '
+    7400018: Boss_Idle3
+    9500000: //RootNode
+    13700000: antebrazo_der_low
+    13700002: antebrazo_izq_low
+    13700004: brazo_sup_der_low
+    13700006: brazo_sup_izq_low
+    13700008: cabeza_sup_low
+    13700010: codo_der_low
+    13700012: codo_izq_low
+    13700014: cuerpo_low
+    13700016: guante_der_low
+    13700018: guante_izq_low
+    13700020: hombro_der_low
+    13700022: hombro_izq_low
+    13700024: lengua_low
+    13700026: mandibula_low
+    13700028: ojos_low
+    13700030: propulsores_low
   externalObjects: {}
   materials:
-    materialImportMode: 1
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -406,9 +198,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Boss_Start
       takeName: Take 001
-      internalID: 0
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 62
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -435,9 +226,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Boss_Idle
       takeName: Take 001
-      internalID: 0
       firstFrame: 70
-      lastFrame: 220
+      lastFrame: 222
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -445,7 +235,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -464,9 +254,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Boss_Attack1
       takeName: Take 001
-      internalID: 0
       firstFrame: 230
-      lastFrame: 962
+      lastFrame: 526
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -491,11 +280,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Boss_Attack
+      name: Boss_Attack2
       takeName: Take 001
-      internalID: 0
-      firstFrame: 980
-      lastFrame: 1610
+      firstFrame: 702
+      lastFrame: 1041
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -522,9 +310,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Boss_Escape
       takeName: Take 001
-      internalID: 0
-      firstFrame: 1615
-      lastFrame: 1670
+      firstFrame: 1083
+      lastFrame: 1169
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -551,9 +338,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Boss_Attack1_Death1
       takeName: Take 001
-      internalID: 0
-      firstFrame: 1676
-      lastFrame: 1791
+      firstFrame: 1171
+      lastFrame: 1326
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -580,9 +366,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Boss_Attack2_Death2
       takeName: Take 001
-      internalID: 0
-      firstFrame: 1823
-      lastFrame: 1933
+      firstFrame: 1371
+      lastFrame: 1498
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -609,7 +394,6 @@ ModelImporter:
     - serializedVersion: 16
       name: animacion_completa
       takeName: Take 001
-      internalID: 0
       firstFrame: 0
       lastFrame: 2060
       wrapMode: 0
@@ -635,6 +419,62 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: 'Boss_Idle2 '
+      takeName: Take 001
+      firstFrame: 1506
+      lastFrame: 1788
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Boss_Idle3
+      takeName: Take 001
+      firstFrame: 1788
+      lastFrame: 2011
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -642,7 +482,6 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -650,19 +489,18 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -671,10 +509,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 1
+  copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -684,16 +522,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

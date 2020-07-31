@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,6 +24,12 @@ public class BossBehaviour : MonoBehaviour
 
     public BoxCollider[] bossPunchColliders3D;
 
+    public int maxLife;
+
+    List<GameObject> foxList;
+
+    int foxCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +38,20 @@ public class BossBehaviour : MonoBehaviour
         sign.StartFight += ActivateBoss;
         attackTime = attackTimeMax;
         inScreen = false;
-        BossPunchBehaviour.HitEnemy = GetDamage; 
+        BossPunchBehaviour.HitEnemy = GetDamage;
+        maxLife = life;
+        if (EnemyManager.instance)
+            foxList = EnemyManager.instance.GetList("Fox");
+
+        foreach(GameObject g in foxList)
+        {
+            FoxBehaviour.onFoxDeathEvent += DeadFoxEvent;
+        }
+    }
+
+    private void DeadFoxEvent()
+    {
+        inScreen = true;
     }
 
     private void OnDestroy()
@@ -54,9 +74,21 @@ public class BossBehaviour : MonoBehaviour
 
         if(attack)
         {
-            animator.SetTrigger("Attack");
-            attack = false;
+            switch (phase)
+            {
+                case 1:
+                    animator.SetTrigger("Attack");
+                    attack = false;
+                    break;
+                case 3:
+                    animator.SetTrigger("Attack");
+                    animator.SetInteger("AttackNumber", 1);
+                    attack = false;
+                    break;
+            }
         }
+
+        animator.SetBool("InScene", inScreen);
     }
 
     public void ActivateBoss()
@@ -67,7 +99,7 @@ public class BossBehaviour : MonoBehaviour
 
     public void SpawnCollider(int hand)
     {
-        Vector3 pos = bossPunchColliders3D[hand].transform.position;
+        Vector3 pos = bossPunchColliders3D[hand].bounds.center;
         pos.z = 0.0f;
         bossPunchCollider2D.transform.position = pos;
         bossPunchCollider2D.SetActive(true);
@@ -80,13 +112,24 @@ public class BossBehaviour : MonoBehaviour
 
     public void GetDamage()
     {
-        if(life < 0.0f)
+        life -= 1;
+        if((life < maxLife / 4 && phase == 3) || (life < maxLife / 2) && phase == 2 || (life < maxLife * 3 / 4) && phase == 1)
         {
+            phase += 1;
+            animator.SetTrigger("AttackCancel");
+            EraseCollider();
+            inScreen = false;
+        }
+        else if(life<=0)
+        {
+            animator.SetTrigger("Death");
+            inScreen = false;
+        }
+    }
 
-        }
-        else
-        {
-            life -= 2;
-        }
+    public void SpawnFox()
+    {
+        foxList.ToArray()[foxCount].SetActive(true);
+        foxCount++;
     }
 }
