@@ -146,7 +146,6 @@ public class UIController : MonoBehaviourSingleton<UIController>
         if (context.phase == InputActionPhase.Started)
         {
             startInput = true;
-            SetCurrentButtons("Pause");
         }
     }
 
@@ -320,8 +319,8 @@ public class UIController : MonoBehaviourSingleton<UIController>
         if (actualButton == newButton)
             return;
         var pointer = new PointerEventData(EventSystem.current);
-        if(actualButton!=null)
-            ExecuteEvents.Execute(actualButton.gameObject, pointer, ExecuteEvents.pointerExitHandler);
+        //if(actualButton!=null)
+        //    ExecuteEvents.Execute(actualButton.gameObject, pointer, ExecuteEvents.pointerExitHandler);
         actualButton = newButton;
         ExecuteEvents.Execute(actualButton.gameObject, pointer, ExecuteEvents.pointerEnterHandler);
     }
@@ -330,6 +329,7 @@ public class UIController : MonoBehaviourSingleton<UIController>
     {
         var pointer = new PointerEventData(EventSystem.current);
         ExecuteEvents.Execute(actualButton.gameObject, pointer, ExecuteEvents.pointerClickHandler);
+        ExecuteEvents.Execute(actualButton.gameObject, pointer, ExecuteEvents.pointerExitHandler);
     }
 
     public void ShowGameOver()
@@ -395,23 +395,24 @@ public class UIController : MonoBehaviourSingleton<UIController>
     {
         if (pause)
         {
-            GameManager.Instance.PlaySound("Pause_on");
             if (!PausePanel.gameObject.activeInHierarchy)
             {
                 Time.timeScale = 0f;
                 PausePanel.gameObject.SetActive(true);
+                GameManager.Instance.PlaySound("Pause_on");
+                SetCurrentButtons("Pause");
             }
             else
             {
                 Time.timeScale = 1f;
                 PausePanel.gameObject.SetActive(false);
+                GameManager.Instance.PlaySound("Pause_off");
             }
         }
         else
         {
             Time.timeScale = 1f;
             PausePanel.gameObject.SetActive(false);
-            GameManager.Instance.PlaySound("Pause_off");
         }
     }
 
