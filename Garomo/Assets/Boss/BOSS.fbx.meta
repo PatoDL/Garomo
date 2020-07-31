@@ -167,7 +167,27 @@ ModelImporter:
     13700026: mandibula_low
     13700028: ojos_low
     13700030: propulsores_low
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brazos_MAT
+    second: {fileID: 2100000, guid: 1a77958433dc9df4ab85240fc678ef41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabeza_MAT
+    second: {fileID: 2100000, guid: daef3df8bd26f4b41b5bd8a3c28d1e6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cuerpo_MAT
+    second: {fileID: 2100000, guid: 1e08e791b2e6a534e90ba840733f807f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ojos_MAT
+    second: {fileID: 2100000, guid: fa7a6d77ba54415488da380bcf28a27b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
