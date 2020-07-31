@@ -27,6 +27,7 @@ public class BossBehaviour : MonoBehaviour
     public int maxLife;
 
     List<GameObject> foxList;
+    List<GameObject> powerUpList;
 
     int foxCount = 0;
 
@@ -42,6 +43,9 @@ public class BossBehaviour : MonoBehaviour
         maxLife = life;
         if (EnemyManager.instance)
             foxList = EnemyManager.instance.GetList("Fox");
+
+        if (ItemManager.instance)
+            powerUpList = ItemManager.instance.GetListOfTag("PowerUp");
 
         foreach(GameObject g in foxList)
         {
@@ -130,6 +134,8 @@ public class BossBehaviour : MonoBehaviour
     public void SpawnFox()
     {
         foxList.ToArray()[foxCount].SetActive(true);
+        if(powerUpList != null)
+            powerUpList.ToArray()[foxCount].SetActive(true);
         foxCount++;
     }
 }

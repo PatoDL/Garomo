@@ -18,6 +18,7 @@ TagManager:
   - LimitTrigger
   - Attack
   - TowerPlatform
+  - PowerUp
   layers:
   - Default
   - TransparentFX

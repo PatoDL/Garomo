@@ -81,6 +81,10 @@ public class GaromoController : MonoBehaviour
 
     Material garomoMat;
 
+    public bool immunityPowerUp;
+    float immunityTimer;
+    public float immunityTimerMax;
+
     void Awake()
     {
         if (!UIController.Instance.garomoController)
@@ -118,7 +122,7 @@ public class GaromoController : MonoBehaviour
 
     void onTriggerEnterEvent(Collider2D col)
     {
-        if (col.tag == "Enemy" && !immunity)
+        if (col.tag == "Enemy" && (!immunity || !immunityPowerUp))
         {
             enemyCollision = immunity = true;
             runModifierMultiplier = 0f;
@@ -162,6 +166,11 @@ public class GaromoController : MonoBehaviour
                 AkSoundEngine.PostEvent("Life_Potion", gameObject);
         }
 
+        if (col.tag == "PowerUp")
+        {
+             immunity = immunityPowerUp = true;
+        }
+
         if (col.transform.tag == "Trampoline")
         {
             if (GameManager.Instance.soundOn)
@@ -177,6 +186,8 @@ public class GaromoController : MonoBehaviour
             win = true;
             GaromoWin();
         }
+
+        
 
         if (col.transform.tag == "Teleporter" && !teleporting)
         {
@@ -234,7 +245,6 @@ public class GaromoController : MonoBehaviour
 
     Vector2 move = new Vector2(0.0f, 0.0f);
 
-    
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -329,7 +339,6 @@ public class GaromoController : MonoBehaviour
             }
             jumpInput = false;
         }
-        
 
         if (enemyCollision)
         {
@@ -347,12 +356,32 @@ public class GaromoController : MonoBehaviour
             Recoil();
         }
 
-        if(immunity)
+        if (immunity)
         {
-            if (garomoMat.color == Color.white)
-                garomoMat.color = Color.clear;
+            if(immunityPowerUp)
+            {
+                if (garomoMat.color == Color.white)
+                    garomoMat.color = Color.red;
+                else
+                    garomoMat.color = Color.white;
+                immunityTimer -= Time.deltaTime;
+                if (immunityTimer <= 0.0f)
+                {
+                    immunityTimer = immunityTimerMax;
+                    immunity = false;
+                    immunityPowerUp = false;
+                    garomoMat.color = Color.white;
+                }
+                
+            }
             else
-                garomoMat.color = Color.white;
+            {
+                if (garomoMat.color == Color.white)
+                    garomoMat.color = Color.clear;
+                else
+                    garomoMat.color = Color.white;
+            }
+            
         }
 
         if (rollInput) 
@@ -408,6 +437,7 @@ public class GaromoController : MonoBehaviour
         isRolling = false;
         enemyCollision = false;
         immunity = false;
+        immunityTimer = immunityTimerMax;
         win = false;
         _velocity = Vector3.zero;
         transform.position = (Vector2)CheckPointManager.instance.GetLastCheckPoint().transform.position;
@@ -525,7 +555,7 @@ public class GaromoController : MonoBehaviour
         _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
         //_velocity.x = normalizedHorizontalSpeed * runSpeed /** runVelocityModifier.Evaluate(runModifierMultiplier)*/;
     }
-
+    int rollcalls = 0;
     public void Roll()
     {
         rollTimer -= Time.deltaTime;
@@ -550,6 +580,10 @@ public class GaromoController : MonoBehaviour
             rollTimer = rollDistance;
             rollJump = false;
         }
+
+        //_controller.move(_velocity);
+        rollcalls++;
+        Debug.Log(Time.deltaTime);
     }
 
     public void Recoil()
@@ -562,6 +596,7 @@ public class GaromoController : MonoBehaviour
             canMove = true;
             recoilTime = recoilTimeMax;
             immunity = false;
+            immunityTimer = immunityTimerMax;
             garomoMat.color = Color.white;
         }
     }
