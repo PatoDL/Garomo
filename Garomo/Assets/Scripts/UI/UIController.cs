@@ -316,11 +316,11 @@ public class UIController : MonoBehaviourSingleton<UIController>
 
     void SelectButton(MyButtonBehaviour newButton)
     {
-        if (actualButton == newButton)
-            return;
+        //if (actualButton == newButton)
+        //    return;
         var pointer = new PointerEventData(EventSystem.current);
-        //if(actualButton!=null)
-        //    ExecuteEvents.Execute(actualButton.gameObject, pointer, ExecuteEvents.pointerExitHandler);
+        if (actualButton != null)
+            ExecuteEvents.Execute(actualButton.gameObject, pointer, ExecuteEvents.pointerExitHandler);
         actualButton = newButton;
         ExecuteEvents.Execute(actualButton.gameObject, pointer, ExecuteEvents.pointerEnterHandler);
     }

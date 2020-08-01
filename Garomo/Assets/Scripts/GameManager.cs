@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
         GameObject.Find("Garomo").GetComponent<GaromoController>().life = livesToPass;
 
+
         ChangeMusic("Lvl_" + (actualLevel.actualLevel+1));
     }
 
@@ -66,6 +67,9 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     public void ChangeMusic(string newMusic)
     {
+        if (newMusic == "Lvl_4")
+            newMusic = "Lvl_3";
+
         if (musicOn)
         {
             AkSoundEngine.PostEvent(newMusic, gameObject);

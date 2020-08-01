@@ -22,7 +22,7 @@ public class BossBehaviour : MonoBehaviour
 
     public GameObject bossPunchCollider2D;
 
-    public BoxCollider[] bossPunchColliders3D;
+    public GameObject[] bossPunchColliders3D;
 
     public int maxLife;
 
@@ -85,6 +85,7 @@ public class BossBehaviour : MonoBehaviour
                 case 1: 
                 case 2:
                     animator.SetTrigger("Attack");
+                    animator.SetInteger("AttackNumber", 0);
                     attack = false;
                     break;
                 case 3:
@@ -118,10 +119,6 @@ public class BossBehaviour : MonoBehaviour
     public void SpawnCollider(int hand)
     {
         Vector3 pos = bossPunchColliders3D[hand].transform.position;
-        if(hand == 1)
-        {
-            pos.x -= 7f;
-        }
         pos.z = 0.0f;
         bossPunchCollider2D.transform.position = pos;
         bossPunchCollider2D.SetActive(true);
@@ -166,6 +163,7 @@ public class BossBehaviour : MonoBehaviour
         }
         sign.gameObject.SetActive(true);
         sign.GetComponent<Animator>().Play("animacion cartel", -1, 0);
+        EraseCollider();
     }
 
     public void OnDead()
