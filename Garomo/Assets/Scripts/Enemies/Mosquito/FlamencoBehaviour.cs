@@ -96,6 +96,7 @@ public class FlamencoBehaviour : MonoBehaviour
             if(life <= 0f)
             {
                 spr.sprite = deadBody;
+                GameManager.Instance.PlaySound("Flamenco_Death");
                 col.isTrigger = true;
                 anim.enabled = false;
                 dead = true;
@@ -106,5 +107,10 @@ public class FlamencoBehaviour : MonoBehaviour
             gameObject.SetActive(false);
             Restart();
         }
+    }
+
+    public void PlaySpitSound()
+    {
+        GameManager.Instance.PlaySound("Flamenco_Spit_Egg");
     }
 }

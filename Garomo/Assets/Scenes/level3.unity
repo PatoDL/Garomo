@@ -55700,7 +55700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1142507932}
   - component: {fileID: 1142507933}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: CrouchTrigger
   m_TagString: Garomo
   m_Icon: {fileID: 0}
@@ -61467,7 +61467,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 148.189, y: -101.414, z: -87.57999}
 --- !u!1 &1566239929
 GameObject:
@@ -71167,7 +71167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1622346321}
   - component: {fileID: 1622346322}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SkinnyGaromo
   m_TagString: Garomo
   m_Icon: {fileID: 0}
@@ -81124,7 +81124,7 @@ GameObject:
   - component: {fileID: 1686318505}
   - component: {fileID: 1686318504}
   - component: {fileID: 1686318503}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Garomo
   m_TagString: Garomo
   m_Icon: {fileID: 0}
@@ -86872,7 +86872,7 @@ GameObject:
   - component: {fileID: 1856473854}
   - component: {fileID: 1856473853}
   - component: {fileID: 1856473855}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: AirAttack
   m_TagString: Attack
   m_Icon: {fileID: 0}
@@ -97201,7 +97201,7 @@ GameObject:
   - component: {fileID: 2072555260}
   - component: {fileID: 2072555259}
   - component: {fileID: 2072555261}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: GroundAttack
   m_TagString: Attack
   m_Icon: {fileID: 0}

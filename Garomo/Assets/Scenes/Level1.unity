@@ -1192,7 +1192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 34794687}
   - component: {fileID: 34794686}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: CrouchTrigger
   m_TagString: Garomo
   m_Icon: {fileID: 0}
@@ -2416,7 +2416,7 @@ GameObject:
   - component: {fileID: 106590739}
   - component: {fileID: 106590738}
   - component: {fileID: 106590746}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Garomo
   m_TagString: Garomo
   m_Icon: {fileID: 0}
@@ -6323,7 +6323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 327540221}
   - component: {fileID: 327540222}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GaromoShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13638,7 +13638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 784164213}
   - component: {fileID: 784164212}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SkinnyGaromo
   m_TagString: Garomo
   m_Icon: {fileID: 0}

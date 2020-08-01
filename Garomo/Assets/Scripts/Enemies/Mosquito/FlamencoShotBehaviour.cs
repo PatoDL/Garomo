@@ -10,5 +10,9 @@ public class FlamencoShotBehaviour : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        if(collision.tag =="Garomo")
+        {
+            GameManager.Instance.PlaySound("Flamenco_Egg_Hit");
+        }
     }
 }
