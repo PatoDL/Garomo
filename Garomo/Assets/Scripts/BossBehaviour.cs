@@ -164,6 +164,7 @@ public class BossBehaviour : MonoBehaviour
         sign.gameObject.SetActive(true);
         sign.GetComponent<Animator>().Play("animacion cartel", -1, 0);
         EraseCollider();
+        foxCount = 0;
     }
 
     public void OnDead()
