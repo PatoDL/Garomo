@@ -224,6 +224,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Tap"
+                },
+                {
+                    "name": "Help",
+                    "type": "Button",
+                    "id": "30add2c5-a137-47d1-887c-ca51fb4f8e13",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap"
                 }
             ],
             "bindings": [
@@ -240,8 +248,8 @@
                 },
                 {
                     "name": "",
-                    "id": "52bbd76c-cf46-41bb-8c9c-a86d2e44d9c1",
-                    "path": "<Keyboard>/y",
+                    "id": "5cff0826-ba12-4560-8185-8dd9a4a20406",
+                    "path": "<Keyboard>/anyKey",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -356,6 +364,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Accept",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bc563184-1d92-4efb-a434-c5a9f10c2e9a",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Help",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41f9645b-8766-406e-96e4-ab94e229d643",
+                    "path": "<Keyboard>/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Help",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

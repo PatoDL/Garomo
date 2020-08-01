@@ -188,8 +188,10 @@ public class UIController : MonoBehaviourSingleton<UIController>
                             AkSoundEngine.PostEvent("Close_Help", gameObject);
                         GameManager.ResumeTime();
                     }
-                    
+
                 }
+                else if (instructionsPanel.activeInHierarchy && backInput)
+                    instructionsPanel.SetActive(false);
 
                 if (startInput)
                 {
