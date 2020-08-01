@@ -556,7 +556,8 @@ public class GaromoController : MonoBehaviour
         _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
         //_velocity.x = normalizedHorizontalSpeed * runSpeed /** runVelocityModifier.Evaluate(runModifierMultiplier)*/;
     }
-    int rollcalls = 0;
+
+
     public void Roll()
     {
         rollTimer -= Time.deltaTime;
@@ -572,7 +573,7 @@ public class GaromoController : MonoBehaviour
             rollSpeedAux *=  1.5f;
         }
 
-        _velocity.x = rollSpeedAux * transform.localScale.x * rollVelVariation.Evaluate((rollDistance - rollTimer) / rollDistance) * Time.deltaTime;
+        _velocity.x = rollSpeedAux * transform.localScale.x * rollVelVariation.Evaluate((rollDistance - rollTimer) / rollDistance);
 
         if (rollTimer <= 0.0f)
         {
@@ -581,10 +582,6 @@ public class GaromoController : MonoBehaviour
             rollTimer = rollDistance;
             rollJump = false;
         }
-
-        //_controller.move(_velocity);
-        rollcalls++;
-        Debug.Log(Time.deltaTime);
     }
 
     public void Recoil()

@@ -47,12 +47,17 @@
 											<Modifier Name="" ID="{E4423EF7-6835-4A42-B7C8-AE91271902D1}">
 												<PropertyList>
 													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="51"/>
-													<Property Name="Min" Type="Real64" Value="-51"/>
+													<Property Name="Max" Type="Real64" Value="177"/>
+													<Property Name="Min" Type="Real64" Value="-177"/>
 												</PropertyList>
 											</Modifier>
 										</ModifierInfo>
 									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
@@ -985,7 +990,25 @@
 						<RandomSequenceContainer Name="Garomo_Footsteps" ID="{7023C678-919B-45F6-A183-3A813FCC704F}" ShortID="230784272">
 							<PropertyList>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{7B97C3FA-0415-45E0-91E3-3776EED8AC6F}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="202"/>
+													<Property Name="Min" Type="Real64" Value="-202"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1862,7 +1885,7 @@
 								</Sound>
 							</ChildrenList>
 						</BlendContainer>
-						<SwitchContainer Name="Level" ID="{DDD92CFD-2BA9-4123-8760-F820D1A2AE45}" ShortID="221313911">
+						<SwitchContainer Name="Amb" ID="{DDD92CFD-2BA9-4123-8760-F820D1A2AE45}" ShortID="221313911">
 							<PropertyList>
 								<Property Name="SwitchBehavior" Type="int16" Value="1"/>
 								<Property Name="Volume" Type="Real64">
@@ -1956,11 +1979,6 @@
 								<Sound Name="Lvl1_Amb" ID="{F2CA71BB-1C0F-4DC2-B3BD-6EC9D0A2ACB0}" ShortID="122574342">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>5</Value>
-											</ValueList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -1974,7 +1992,7 @@
 										<AudioFileSource Name="Lvl1_Amb" ID="{1467E394-A11E-427E-93D0-548E41AAAF59}" ShortID="365237323">
 											<PropertyList>
 												<Property Name="CrossfadeDuration" Type="Real64" Value="1433.596"/>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.634652934844972"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.941471903346183"/>
 												<Property Name="LoopBegin" Type="Real64" Value="1.77379716164763"/>
 												<Property Name="LoopEnd" Type="Real64" Value="8.04440983039114"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
@@ -1988,6 +2006,40 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="Lvl1_Amb" ID="{1467E394-A11E-427E-93D0-548E41AAAF59}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Lv3_Amb" ID="{945EE57D-82A7-4216-A94E-F5DF7983869E}" ShortID="462670468">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Lv3_Amb" ID="{D9FC0C58-75C9-4617-BBFF-1D66029470A9}" ShortID="230238634">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="1636.491"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="2.17210107303565"/>
+												<Property Name="LoopBegin" Type="Real64" Value="3.17009345794393"/>
+												<Property Name="LoopEnd" Type="Real64" Value="13.0326064382139"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Lv3_Amb.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Lv3_Amb" ID="{D9FC0C58-75C9-4617-BBFF-1D66029470A9}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
@@ -2004,6 +2056,9 @@
 										</PropertyList>
 									</GroupingBehavior>
 									<GroupingBehavior>
+										<ItemRef Name="Lv3_Amb" ID="{945EE57D-82A7-4216-A94E-F5DF7983869E}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
 										<ItemRef Name="Lvl1_Amb" ID="{F2CA71BB-1C0F-4DC2-B3BD-6EC9D0A2ACB0}"/>
 										<PropertyList>
 											<Property Name="FadeOutTime" Type="Real64">
@@ -2015,6 +2070,18 @@
 									</GroupingBehavior>
 								</GroupingBehaviorList>
 								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Lvl_3" ID="{ADC8AA49-522B-4A75-A883-3C7BBB812BCB}"/>
+										<ItemList>
+											<ItemRef Name="Lv3_Amb" ID="{945EE57D-82A7-4216-A94E-F5DF7983869E}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Lvl_3_Boss" ID="{78808D70-0444-4D88-9588-255A9ECD8790}"/>
+										<ItemList>
+											<ItemRef Name="Lv3_Amb" ID="{945EE57D-82A7-4216-A94E-F5DF7983869E}"/>
+										</ItemList>
+									</Grouping>
 									<Grouping>
 										<SwitchRef Name="Lvl_1" ID="{BACECF7E-AAD7-4E69-B82B-15AB4A1826FE}"/>
 										<ItemList>
@@ -2030,6 +2097,32 @@
 								</GroupingList>
 							</GroupingInfo>
 						</SwitchContainer>
+						<Sound Name="Checkpoint_Lights" ID="{0DFE8067-7943-4BC8-A5DD-EB355826055B}" ShortID="347788563">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A8217230-15EA-429D-BDDB-283277B516DF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B7A4F674-895F-41DD-860A-DDA4644CAC0A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Checkpoint_Lights" ID="{63DCA6EF-1A54-4AFC-B996-76EF4BB0A040}" ShortID="367890943">
+									<Language>SFX</Language>
+									<AudioFile>Checkpoint_Lights.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Checkpoint_Lights" ID="{63DCA6EF-1A54-4AFC-B996-76EF4BB0A040}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Flamenco" ID="{E7F2486B-8D25-49C4-AD47-792D30D04234}" ShortID="120416523">

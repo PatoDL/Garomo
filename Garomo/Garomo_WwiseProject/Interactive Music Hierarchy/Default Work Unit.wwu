@@ -1772,7 +1772,7 @@
 										</Reference>
 									</ReferenceList>
 									<TransitionInfo>
-										<TransitionObjectRef Name="Transición lvl 1 a 2" ID="{7209D5D7-20CC-409A-82A6-DFDF1F6E5ACF}" WorkUnitID="{166A9378-5C06-4E95-B47F-CCC861E415A3}"/>
+										<TransitionObjectRef Name="Bateria transición menu lvl1 GAROMO" ID="{17D9AECC-BD7C-412F-9931-D041AB86CD20}" WorkUnitID="{166A9378-5C06-4E95-B47F-CCC861E415A3}"/>
 										<SourceFadeOut>
 											<MusicFade Name="Source Fade-out" ID="{34EAC436-4AD3-437C-92D9-2BE7F4945523}">
 												<PropertyList>
@@ -1787,7 +1787,7 @@
 									<PropertyList>
 										<Property Name="DestinationContextType" Type="int16" Value="2"/>
 										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
-										<Property Name="ExitSourceAt" Type="int16" Value="2"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
 										<Property Name="SourceContextType" Type="int16" Value="2"/>
 									</PropertyList>
 									<ReferenceList>

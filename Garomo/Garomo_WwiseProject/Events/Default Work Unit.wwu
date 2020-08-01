@@ -486,7 +486,7 @@
 						<Action Name="" ID="{BE9A30BE-ABA0-4B0B-93AC-27B0EF3B256B}" ShortID="128393496">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Level" ID="{DDD92CFD-2BA9-4123-8760-F820D1A2AE45}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+									<ObjectRef Name="Amb" ID="{DDD92CFD-2BA9-4123-8760-F820D1A2AE45}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -542,6 +542,13 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Garomo_Laugh" ID="{3C277684-B641-4F46-A8F7-1BB3AEA97279}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{EB5FB65F-76FF-4774-8818-B965F8C8CFD0}" ShortID="759035747">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Checkpoint_Lights" ID="{0DFE8067-7943-4BC8-A5DD-EB355826055B}" WorkUnitID="{3F33D0C1-850C-44E5-A8FC-0069CBBB7C17}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

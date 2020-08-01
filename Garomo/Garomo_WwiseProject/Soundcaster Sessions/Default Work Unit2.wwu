@@ -18,6 +18,10 @@
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Garomo_Walk" ID="{DCEBC9F8-7E95-47AE-8631-D4E38EC50BBB}" WorkUnitID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Lvl_1" ID="{498BBE2E-FC07-4451-B9EF-B48105682A3B}" WorkUnitID="{707175C2-E8FB-4D00-B9C2-3C34C691EDF3}"/>
 							<Position X="2" Y="0"/>
 						</Module>
@@ -58,7 +62,7 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Lvl_3" ID="{ADC8AA49-522B-4A75-A883-3C7BBB812BCB}"/>
+						<CurrentSwitchRef Name="Menu" ID="{EAC56A98-0560-4DF7-A023-91FD62859B84}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

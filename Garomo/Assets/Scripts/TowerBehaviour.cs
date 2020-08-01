@@ -20,6 +20,11 @@ public class TowerBehaviour : MonoBehaviour
         electricRingInitialPos = electricRing.transform.position;
     }
 
+    private void OnDestroy()
+    {
+        GaromoController.AdjustTowerRotation -= AdjustTowerRotation;
+    }
+
     // Update is called once per frame
     void Update()
     {

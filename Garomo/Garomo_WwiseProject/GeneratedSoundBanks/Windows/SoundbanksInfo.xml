@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Jose Ernesto\Desktop\Game Audio Jose\Portfolio\Garomo\Garomo_WwiseProject v1.1\Garomo_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Jose Ernesto\Desktop\Game Audio Jose\Portfolio\Garomo\Garomo_WwiseProject v1.1\Garomo_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Jose Ernesto\Desktop\Game Audio Jose\Portfolio\Garomo\Garomo_WwiseProject v1.1\Garomo_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\Francisco\Desktop\Garomo\Garomo PROYECTOS WWISE\Garomo_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Jose Ernesto\Desktop\Game Audio Jose\Portfolio\Garomo\Garomo_WwiseProject v1.1\Garomo_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -24,7 +24,7 @@
 				<Event Id="1041766312" Name="Blades" ObjectPath="\Events\Default Work Unit\Blades" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1560169506" Name="Boss" ObjectPath="\Events\Default Work Unit\Boss" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1165767839" Name="Boss_dead" ObjectPath="\Events\Default Work Unit\Boss_dead" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="612075679" Name="Checkpoint" ObjectPath="\Events\Default Work Unit\Checkpoint" DurationType="OneShot" DurationMin="1.227587" DurationMax="1.712634"/>
+				<Event Id="612075679" Name="Checkpoint" ObjectPath="\Events\Default Work Unit\Checkpoint" DurationType="OneShot" DurationMin="1.266667" DurationMax="1.712634"/>
 				<Event Id="3133371051" Name="Close_Help" ObjectPath="\Events\Default Work Unit\Close_Help" DurationType="OneShot" DurationMin="1.227587" DurationMax="1.712634"/>
 				<Event Id="3000406861" Name="Flamenco_Death" ObjectPath="\Events\Default Work Unit\Flamenco_Death" DurationType="OneShot" DurationMin="1.766667" DurationMax="1.766667"/>
 				<Event Id="3091451726" Name="Flamenco_Egg_Hit" ObjectPath="\Events\Default Work Unit\Flamenco_Egg_Hit" DurationType="OneShot" DurationMin="0.753375" DurationMax="0.753375"/>
@@ -35,12 +35,12 @@
 				<Event Id="1042161699" Name="Garomo_Jump" ObjectPath="\Events\Default Work Unit\Garomo_Jump" DurationType="OneShot" DurationMin="0.504406" DurationMax="0.566831"/>
 				<Event Id="4024708937" Name="Garomo_Kick" ObjectPath="\Events\Default Work Unit\Garomo_Kick" DurationType="OneShot" DurationMin="0.359086" DurationMax="0.402492"/>
 				<Event Id="1801598875" Name="Garomo_Kick_Hit" ObjectPath="\Events\Default Work Unit\Garomo_Kick_Hit" DurationType="OneShot" DurationMin="0.511000" DurationMax="0.511000"/>
-				<Event Id="409651904" Name="Garomo_Land" ObjectPath="\Events\Default Work Unit\Garomo_Land" DurationType="OneShot" DurationMin="0.226034" DurationMax="0.239751"/>
+				<Event Id="409651904" Name="Garomo_Land" ObjectPath="\Events\Default Work Unit\Garomo_Land" DurationType="OneShot" DurationMin="0.210167" DurationMax="0.257851"/>
 				<Event Id="3693086541" Name="Garomo_Punch" ObjectPath="\Events\Default Work Unit\Garomo_Punch" DurationType="OneShot" DurationMin="0.359086" DurationMax="0.402492"/>
 				<Event Id="344699183" Name="Garomo_Punch_Hit" ObjectPath="\Events\Default Work Unit\Garomo_Punch_Hit" DurationType="OneShot" DurationMin="0.371924" DurationMax="0.452022"/>
 				<Event Id="3352118102" Name="Garomo_Roll" ObjectPath="\Events\Default Work Unit\Garomo_Roll" DurationType="OneShot" DurationMin="0.843399" DurationMax="0.873312"/>
 				<Event Id="291580225" Name="Garomo_Roll_Jump" ObjectPath="\Events\Default Work Unit\Garomo_Roll_Jump" DurationType="OneShot" DurationMin="1.037662" DurationMax="1.166083"/>
-				<Event Id="231236196" Name="Garomo_Walk" ObjectPath="\Events\Default Work Unit\Garomo_Walk" DurationType="OneShot" DurationMin="0.426449" DurationMax="0.471305"/>
+				<Event Id="231236196" Name="Garomo_Walk" ObjectPath="\Events\Default Work Unit\Garomo_Walk" DurationType="OneShot" DurationMin="0.379485" DurationMax="0.529633"/>
 				<Event Id="1568957323" Name="Life_Potion" ObjectPath="\Events\Default Work Unit\Life_Potion" DurationType="OneShot" DurationMin="2.211000" DurationMax="2.300000"/>
 				<Event Id="2397100949" Name="Lvl_1" ObjectPath="\Events\Default Work Unit\Lvl_1" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2397100950" Name="Lvl_2" ObjectPath="\Events\Default Work Unit\Lvl_2" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -131,7 +131,7 @@
 				</File>
 				<File Id="165807974" Language="SFX">
 					<ShortName>Lvl1_Amb.wav</ShortName>
-					<Path>SFX\Lvl1_Amb_DD812899.wem</Path>
+					<Path>SFX\Lvl1_Amb_662DDC70.wem</Path>
 				</File>
 				<File Id="185100644" Language="SFX">
 					<ShortName>Garomo_Laugh.wav</ShortName>
@@ -140,6 +140,10 @@
 				<File Id="208315072" Language="SFX">
 					<ShortName>Garomo_Drink2.wav</ShortName>
 					<Path>SFX\Garomo_Drink2_10C4C929.wem</Path>
+				</File>
+				<File Id="230238634" Language="SFX">
+					<ShortName>Lv3_Amb.wav</ShortName>
+					<Path>SFX\Lv3_Amb_C550A066.wem</Path>
 				</File>
 				<File Id="250801007" Language="SFX">
 					<ShortName>Garomo_Hurt.wav</ShortName>
@@ -168,6 +172,10 @@
 				<File Id="346875447" Language="SFX">
 					<ShortName>Flamenco_Spit.wav</ShortName>
 					<Path>SFX\Flamenco_Spit_C395A03A.wem</Path>
+				</File>
+				<File Id="367890943" Language="SFX">
+					<ShortName>Checkpoint_Lights.wav</ShortName>
+					<Path>SFX\Checkpoint_Lights_10C4C929.wem</Path>
 				</File>
 				<File Id="374279151" Language="SFX">
 					<ShortName>Garomo_Roll_Jump.wav</ShortName>

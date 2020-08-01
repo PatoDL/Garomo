@@ -14,8 +14,6 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     string actualMusic;
 
-    
-
     public void Start()
     {
         actualLevel = GameObject.Find("LevelData").GetComponent<LevelData>();
@@ -33,6 +31,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
         GameObject.Find("Garomo").GetComponent<GaromoController>().life = livesToPass;
 
+        UIController.Instance.garomoController = GameObject.Find("Garomo").GetComponent<GaromoController>();
 
         ChangeMusic("Lvl_" + (actualLevel.actualLevel+1));
     }
