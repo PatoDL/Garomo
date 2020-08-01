@@ -111,6 +111,6 @@ public class FlamencoBehaviour : MonoBehaviour
 
     public void PlaySpitSound()
     {
-        GameManager.Instance.PlaySound("Flamenco_Spit_Egg");
+        //GameManager.Instance.PlaySound("Flamenco_Spit_Egg");
     }
 }
